@@ -61,7 +61,7 @@
             resultDiv.innerHTML = ''; // Limpar resultado anterior
 
          if (bin.length !== 6 || !/^\d+$/.test(bin)) {
-                resultDiv.innerHTML = '<span class="error">Por favor, insira um BIN válido com pelo menos 6 dígitos.</span>';
+                resultDiv.innerHTML = '<span class="error">Por favor, insira um BIN válido com 6 dígitos.</span>';
              return;
           }
             carregarConfig().then(apiKey => {
