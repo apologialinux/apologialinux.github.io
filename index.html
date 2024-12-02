@@ -34,7 +34,7 @@
 <body>
     <div class="container">
         <h1>Consulta de BIN</h1>
-        <input type="text" id="binInput" placeholder="Digite os BINs (Ex: 513380; 123456; 654321)">
+        <input type="text" id="binInput" placeholder="Digite os BINs (Ex: 513380; 123456; LQP2(1)534540)">
         <button onclick="consultarApi()">Consultar</button>
         <div id="result"></div>
     </div>
@@ -61,12 +61,10 @@
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
 
-            // Filtra e extrai apenas números de 6 dígitos
-            const bins = binInput.split(/[,; ]+/)  // Divide por vírgula, ponto e vírgula ou espaço
-                .map(bin => bin.trim())            // Remove espaços
-                .filter(bin => bin.length === 6 && /^\d+$/.test(bin)); // Mantém apenas os BINs válidos
+            // Filtra e extrai apenas números de 6 dígitos da string de entrada
+            const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
 
-            if (bins.length === 0) {
+            if (!bins || bins.length === 0) {
                 resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
                 return;
             }
