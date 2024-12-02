@@ -59,7 +59,7 @@
             const bin = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = ''; // Limpar resultado anterior
-
+            // if (bin.length < 6 || isNaN(bin)) { //
             if (!bin) {
                 resultDiv.innerHTML = '<span class="error">Por favor, insira um BIN válido.</span>';
                 return;
