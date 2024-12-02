@@ -33,26 +33,14 @@
             color: orange;
             font-weight: bold;
         }
-        .copy-button {
-            background-color: #4CAF50;
-            color: white;
-            font-size: 16px;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-        }
-        .copy-button:hover {
-            background-color: #45a049;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Consulta de BIN</h1>
-        <input type="text" id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ...">
+        <input type="text" id="binInput" placeholder="Digite os BINs (Ex: 513380; 123456; LQP2(1)534540)">
         <button onclick="consultarApi()">Consultar</button>
         <div id="result"></div>
-        <button id="copyButton" class="copy-button" style="display:none;" onclick="copiarResultado()">Copiar Resultado</button>
     </div>
 
     <script>
@@ -75,9 +63,7 @@
         async function consultarApi() {
             const binInput = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
-            const copyButton = document.getElementById('copyButton');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
-            copyButton.style.display = 'none'; // Esconder o botão de copiar inicialmente
 
             // Filtra e extrai apenas números de 6 dígitos da string de entrada
             const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
@@ -94,8 +80,6 @@
                 resultDiv.innerHTML = '<span class="error">Erro ao carregar a chave da API.</span>';
                 return;
             }
-
-            let resultText = ''; // Variável para armazenar o resultado sem o alerta
 
             // Processa cada BIN com delay
             for (const bin of bins) {
@@ -127,7 +111,7 @@ ISO3: ${response.iso3 || 'N/A'}
 Country: ${response.country || 'N/A'}
 <br>`;
 
-                                resultText += output; // Adiciona a resposta no texto a ser copiado
+                                resultDiv.innerHTML += output;
 
                                 // Verificar se o brand é Mastercard, Elo ou Visa e exibir o alerta
                                 const alertBrands = ['Mastercard', 'Elo', 'Visa'];
@@ -147,31 +131,6 @@ Country: ${response.country || 'N/A'}
                 xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
                 xhr.send(data);
             }
-
-            resultDiv.innerHTML = resultText; // Exibe apenas os resultados no resultDiv
-            copyButton.style.display = 'block'; // Exibe o botão de copiar
-        }
-
-        // Função para copiar o resultado
-        function copiarResultado() {
-            const resultDiv = document.getElementById('result');
-            const textToCopy = resultDiv.innerText; // Obtém o texto que será copiado
-
-            // Criar um campo de texto temporário para copiar o conteúdo
-            const tempTextArea = document.createElement('textarea');
-            tempTextArea.value = textToCopy; // Define o texto a ser copiado
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select(); // Seleciona o texto
-
-            // Tenta copiar o texto para a área de transferência
-            try {
-                document.execCommand('copy');
-                alert('Resultado copiado com sucesso!');
-            } catch (err) {
-                alert('Falha ao copiar o resultado.');
-            }
-
-            document.body.removeChild(tempTextArea); // Remove o campo temporário
         }
     </script>
 </body>
