@@ -59,15 +59,11 @@
             const bin = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = ''; // Limpar resultado anterior
-            // if (bin.length < 6 || isNaN(bin)) { //
-            // if (!bin) {
-            //    resultDiv.innerHTML = '<span class="error">Por favor, insira um BIN válido.</span>';
-            //    return;
-            // }
-         if (bin.length < 6 || !/^\d+$/.test(bin)) {
+
+         if (bin.length !== 6 || !/^\d+$/.test(bin)) {
                 resultDiv.innerHTML = '<span class="error">Por favor, insira um BIN válido com pelo menos 6 dígitos.</span>';
-        return;
-    }
+             return;
+          }
             carregarConfig().then(apiKey => {
                 if (apiKey === null) {
                     resultDiv.innerHTML = '<span class="error">Erro ao carregar a chave da API.</span>';
