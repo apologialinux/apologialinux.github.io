@@ -34,7 +34,7 @@
 <body>
     <div class="container">
         <h1>Consulta de BIN</h1>
-        <input type="text" id="binInput" placeholder="Digite o BIN (Ex: 513380)">
+        <input type="text" id="binInput" placeholder="Digite ou cole múltiplos BINs separados por vírgula, ponto e vírgula ou espaço">
         <button onclick="consultarApi()">Consultar</button>
         <div id="result"></div>
     </div>
@@ -42,7 +42,7 @@
     <script>
         const data = null;
 
-        // Carregar a chave da API do arquivo config.json
+        // Função para carregar a chave da API a partir do arquivo config.json
         function carregarConfig() {
             return fetch('config.json')
                 .then(response => response.json())
@@ -55,34 +55,47 @@
                 });
         }
 
+        // Função para consultar a API
         function consultarApi() {
-            const bin = document.getElementById('binInput').value;
+            const binInput = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = ''; // Limpar resultado anterior
+            resultDiv.innerHTML = ''; // Limpar resultados anteriores
 
-         if (bin.length !== 6 || !/^\d+$/.test(bin)) {
-                resultDiv.innerHTML = '<span class="error">Por favor, insira um BIN válido com 6 dígitos.</span>';
-             return;
-          }
-            carregarConfig().then(apiKey => {
-                if (apiKey === null) {
-                    resultDiv.innerHTML = '<span class="error">Erro ao carregar a chave da API.</span>';
-                    return;
-                }
+            // Filtra e extrai apenas os números de 6 dígitos
+            const bins = binInput.split(/[,; ]+/)
+                .map(bin => bin.trim())
+                .filter(bin => bin.length === 6 && /^\d+$/.test(bin));
 
-                const xhr = new XMLHttpRequest();
-                xhr.withCredentials = true;
+            if (bins.length === 0) {
+                resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos com 6 dígitos.</span>';
+                return;
+            }
 
-                xhr.addEventListener('readystatechange', function () {
-                    if (this.readyState === this.DONE) {
-                        try {
-                            const response = JSON.parse(this.responseText);
+            // Função para consulta com delay entre as requisições
+            async function consultarComDelay() {
+                for (let i = 0; i < bins.length; i++) {
+                    const bin = bins[i];
+                    resultDiv.innerHTML += `<h3>Consultando BIN: ${bin}</h3>`; // Exibe qual BIN está sendo consultado
 
-                            if (response.message) {
-                                resultDiv.innerHTML = `<span class="error">${response.message}</span>`;
-                            } else {
-                                // Formatar os dados retornados
-                                const output = `
+                    await carregarConfig().then(apiKey => {
+                        if (apiKey === null) {
+                            resultDiv.innerHTML += '<span class="error">Erro ao carregar a chave da API.</span>';
+                            return;
+                        }
+
+                        const xhr = new XMLHttpRequest();
+                        xhr.withCredentials = true;
+
+                        xhr.addEventListener('readystatechange', function () {
+                            if (this.readyState === this.DONE) {
+                                try {
+                                    const response = JSON.parse(this.responseText);
+
+                                    if (response.message) {
+                                        resultDiv.innerHTML += `<span class="error">${response.message}</span>`;
+                                    } else {
+                                        // Formatar os dados retornados
+                                        const output = `
 BIN: ${response.bin || 'N/A'}
 Brand: ${response.brand || 'N/A'}
 Type: ${response.type || 'N/A'}
@@ -93,21 +106,28 @@ Issuer URL: ${response.issuer_url || 'N/A'}
 ISO2: ${response.iso2 || 'N/A'}
 ISO3: ${response.iso3 || 'N/A'}
 Country: ${response.country || 'N/A'}
-                            `;
-                                resultDiv.innerText = output;
+                                        `;
+                                        resultDiv.innerText += output;
+                                    }
+                                } catch (e) {
+                                    resultDiv.innerHTML += `<span class="error">Erro ao processar a resposta da API.</span>`;
+                                }
                             }
-                        } catch (e) {
-                            resultDiv.innerHTML = `<span class="error">Erro ao processar a resposta da API.</span>`;
-                        }
-                    }
-                });
+                        });
 
-                xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
-                xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
-                xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
+                        xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
+                        xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
+                        xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
 
-                xhr.send(data);
-            });
+                        xhr.send(data);
+                    });
+
+                    // Delay de 300ms entre as requisições
+                    await new Promise(resolve => setTimeout(resolve, 300));
+                }
+            }
+
+            consultarComDelay();
         }
     </script>
 </body>
