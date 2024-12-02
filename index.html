@@ -108,6 +108,12 @@ Country: ${response.country || 'N/A'}
 <br>`;
                                 resultDiv.innerHTML += output;
                             }
+                             // Verificar se o brand é Mastercard, Elo ou Visa e exibir o alerta
+                                const alertBrands = ['Mastercard', 'Elo', 'Visa'];
+                                if (alertBrands.includes(response.brand)) {
+                                    const alertMessage = `Necessário boletim para o ${response.brand}.`;
+                                    resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
+                                }
                         } catch (e) {
                             resultDiv.innerHTML += `<span class="error">Erro ao processar a resposta da API para o BIN ${bin}.</span><br>`;
                         }
