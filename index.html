@@ -34,7 +34,7 @@
 <body>
     <div class="container">
         <h1>Consulta de BIN</h1>
-        <input type="text" id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 4540; ...">
+        <input type="text" id="binInput" placeholder="Digite o BIN (Ex: 513380)">
         <button onclick="consultarApi()">Consultar</button>
         <div id="result"></div>
     </div>
@@ -55,25 +55,13 @@
                 });
         }
 
-        // Função para extrair BINs de 6 dígitos da entrada do usuário
-        function extrairBins() {
-            const binInput = document.getElementById('binInput').value;
-            const bins = binInput.split(';'); // Divide a entrada por ponto e vírgula
-
-            // Filtra e retorna apenas os BINs com exatamente 6 dígitos numéricos
-            return bins
-                .map(bin => bin.trim()) // Remove espaços extras
-                .filter(bin => /^\d{6}$/.test(bin)); // Filtra para manter apenas os BINs de 6 dígitos
-        }
-
         function consultarApi() {
+            const bin = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = ''; // Limpar resultado anterior
 
-            const bins = extrairBins();
-
-            if (bins.length === 0) {
-                resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
+            if (!bin) {
+                resultDiv.innerHTML = '<span class="error">Por favor, insira um BIN válido.</span>';
                 return;
             }
 
@@ -83,23 +71,19 @@
                     return;
                 }
 
-                let consultasPendentes = bins.length;
-                let resultados = '';
+                const xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
 
-                bins.forEach(bin => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.withCredentials = true;
+                xhr.addEventListener('readystatechange', function () {
+                    if (this.readyState === this.DONE) {
+                        try {
+                            const response = JSON.parse(this.responseText);
 
-                    xhr.addEventListener('readystatechange', function () {
-                        if (this.readyState === this.DONE) {
-                            try {
-                                const response = JSON.parse(this.responseText);
-
-                                if (response.message) {
-                                    resultados += `<span class="error">BIN ${bin}: ${response.message}</span><br>`;
-                                } else {
-                                    // Formatar os dados retornados
-                                    const output = `
+                            if (response.message) {
+                                resultDiv.innerHTML = `<span class="error">${response.message}</span>`;
+                            } else {
+                                // Formatar os dados retornados
+                                const output = `
 BIN: ${response.bin || 'N/A'}
 Brand: ${response.brand || 'N/A'}
 Type: ${response.type || 'N/A'}
@@ -110,26 +94,20 @@ Issuer URL: ${response.issuer_url || 'N/A'}
 ISO2: ${response.iso2 || 'N/A'}
 ISO3: ${response.iso3 || 'N/A'}
 Country: ${response.country || 'N/A'}
-                                    `;
-                                    resultados += `BIN ${bin}:<br>${output}<br>`;
-                                }
-                            } catch (e) {
-                                resultados += `<span class="error">Erro ao processar a resposta da API para o BIN ${bin}.</span><br>`;
+                            `;
+                                resultDiv.innerText = output;
                             }
+                        } catch (e) {
+                            resultDiv.innerHTML = `<span class="error">Erro ao processar a resposta da API.</span>`;
                         }
-
-                        // Quando todas as consultas terminarem, exibe o resultado
-                        if (--consultasPendentes === 0) {
-                            resultDiv.innerHTML = resultados;
-                        }
-                    });
-
-                    xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
-                    xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
-                    xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
-
-                    xhr.send(data);
+                    }
                 });
+
+                xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
+                xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
+                xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
+
+                xhr.send(data);
             });
         }
     </script>
