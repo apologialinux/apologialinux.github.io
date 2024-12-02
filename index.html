@@ -117,7 +117,8 @@ Country: ${response.country || 'N/A'}
                                 const alertBrands = ['MASTERCARD', 'ELO', 'VISA'];
                                 if (alertBrands.includes(response.brand)) {
                                     const alertMessage = `Necessário boletim para o ${response.brand}.`;
-                                    resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
+                                   // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
+                                    alert(${alertMessage});
                                 }
                             }
                         } catch (e) {
