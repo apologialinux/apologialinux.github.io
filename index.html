@@ -29,12 +29,16 @@
         .error {
             color: red;
         }
+        .alert {
+            color: orange;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Consulta de BIN</h1>
-        <input type="text" id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ...">
+        <input type="text" id="binInput" placeholder="Digite os BINs (Ex: 513380; 123456; LQP2(1)534540)">
         <button onclick="consultarApi()">Consultar</button>
         <div id="result"></div>
     </div>
@@ -106,14 +110,16 @@ ISO2: ${response.iso2 || 'N/A'}
 ISO3: ${response.iso3 || 'N/A'}
 Country: ${response.country || 'N/A'}
 <br>`;
+
                                 resultDiv.innerHTML += output;
-                            }
-                             // Verificar se o brand é Mastercard, Elo ou Visa e exibir o alerta
+
+                                // Verificar se o brand é Mastercard, Elo ou Visa e exibir o alerta
                                 const alertBrands = ['Mastercard', 'Elo', 'Visa'];
                                 if (alertBrands.includes(response.brand)) {
                                     const alertMessage = `Necessário boletim para o ${response.brand}.`;
                                     resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
                                 }
+                            }
                         } catch (e) {
                             resultDiv.innerHTML += `<span class="error">Erro ao processar a resposta da API para o BIN ${bin}.</span><br>`;
                         }
