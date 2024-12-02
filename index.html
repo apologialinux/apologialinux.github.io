@@ -42,6 +42,19 @@
     <script>
         const data = null;
 
+        // Carregar a chave da API do arquivo config.json
+        function carregarConfig() {
+            return fetch('config.json')
+                .then(response => response.json())
+                .then(config => {
+                    return config.apiKey; // Retorna a chave da API
+                })
+                .catch(error => {
+                    console.error("Erro ao carregar a configuração:", error);
+                    return null;
+                });
+        }
+
         function consultarApi() {
             const bin = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
@@ -52,19 +65,25 @@
                 return;
             }
 
-            const xhr = new XMLHttpRequest();
-            xhr.withCredentials = true;
+            carregarConfig().then(apiKey => {
+                if (apiKey === null) {
+                    resultDiv.innerHTML = '<span class="error">Erro ao carregar a chave da API.</span>';
+                    return;
+                }
 
-            xhr.addEventListener('readystatechange', function () {
-                if (this.readyState === this.DONE) {
-                    try {
-                        const response = JSON.parse(this.responseText);
+                const xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
 
-                        if (response.message) {
-                            resultDiv.innerHTML = `<span class="error">${response.message}</span>`;
-                        } else {
-                            // Formatar os dados retornados
-                            const output = `
+                xhr.addEventListener('readystatechange', function () {
+                    if (this.readyState === this.DONE) {
+                        try {
+                            const response = JSON.parse(this.responseText);
+
+                            if (response.message) {
+                                resultDiv.innerHTML = `<span class="error">${response.message}</span>`;
+                            } else {
+                                // Formatar os dados retornados
+                                const output = `
 BIN: ${response.bin || 'N/A'}
 Brand: ${response.brand || 'N/A'}
 Type: ${response.type || 'N/A'}
@@ -76,21 +95,21 @@ ISO2: ${response.iso2 || 'N/A'}
 ISO3: ${response.iso3 || 'N/A'}
 Country: ${response.country || 'N/A'}
                             `;
-                            resultDiv.innerText = output;
+                                resultDiv.innerText = output;
+                            }
+                        } catch (e) {
+                            resultDiv.innerHTML = `<span class="error">Erro ao processar a resposta da API.</span>`;
                         }
-                    } catch (e) {
-                        resultDiv.innerHTML = `<span class="error">Erro ao processar a resposta da API.</span>`;
                     }
-                }
+                });
+
+                xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
+                xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
+                xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
+
+                xhr.send(data);
             });
-
-            xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
-            xhr.setRequestHeader('x-rapidapi-key', '81f898a3cbmsh02266e96e3cbd62p17da60jsn46bf115b91f0');
-            xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
-
-            xhr.send(data);
         }
     </script>
 </body>
 </html>
-
