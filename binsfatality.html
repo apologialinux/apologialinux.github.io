@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de BIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta de BIN</h1>
+        <input type="text" id="binInput" placeholder="Digite o BIN (Ex: 513380)">
+        <button onclick="consultarApi()">Consultar</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const data = null;
+
+        function consultarApi() {
+            const bin = document.getElementById('binInput').value;
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = ''; // Limpar resultado anterior
+
+            if (!bin) {
+                resultDiv.innerHTML = '<span class="error">Por favor, insira um BIN válido.</span>';
+                return;
+            }
+
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener('readystatechange', function () {
+                if (this.readyState === this.DONE) {
+                    try {
+                        const response = JSON.parse(this.responseText);
+
+                        if (response.message) {
+                            resultDiv.innerHTML = `<span class="error">${response.message}</span>`;
+                        } else {
+                            // Formatar os dados retornados
+                            const output = `
+BIN: ${response.bin || 'N/A'}
+Brand: ${response.brand || 'N/A'}
+Type: ${response.type || 'N/A'}
+Category: ${response.category || 'N/A'}
+Issuer: ${response.issuer || 'N/A'}
+Issuer Phone: ${response.issuer_phone || 'N/A'}
+Issuer URL: ${response.issuer_url || 'N/A'}
+ISO2: ${response.iso2 || 'N/A'}
+ISO3: ${response.iso3 || 'N/A'}
+Country: ${response.country || 'N/A'}
+                            `;
+                            resultDiv.innerText = output;
+                        }
+                    } catch (e) {
+                        resultDiv.innerHTML = `<span class="error">Erro ao processar a resposta da API.</span>`;
+                    }
+                }
+            });
+
+            xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
+            xhr.setRequestHeader('x-rapidapi-key', '81f898a3cbmsh02266e96e3cbd62p17da60jsn46bf115b91f0');
+            xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
+
+            xhr.send(data);
+        }
+    </script>
+</body>
+</html>
+
