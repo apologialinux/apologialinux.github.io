@@ -13,52 +13,37 @@
             max-width: 500px;
             margin: auto;
         }
-        input, button {
+        textarea, button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            font-size: 60px;
+            font-size: 16px;
         }
         #result {
             margin-top: 20px;
             padding: 10px;
-            border: 1px solid #FFFFFF;
-            background-color: #FFFFFF;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
             white-space: pre-wrap;
         }
         .error {
             color: red;
-            font-size: 30px;
         }
         .alert {
             color: orange;
             font-weight: bold;
         }
-        h1 {
-            text-align: center;
-        }
-        p {
-            font-size: 60px;
-        }
-        #result {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #FFFFFF;
-            background-color: #FFFFFF;
-            white-space: pre-wrap;
-            font-size: 40px; /* Aumenta o tamanho da fonte do resultado */
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1><p>Consulta de BINs</p></h1>
-        <input type="text" id="binInput" size="100" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ...">
+        <h1>Consulta de BIN</h1>
+        <!-- Alterando o campo de input para textarea -->
+        <textarea id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ..." rows="8"></textarea>
         <button onclick="consultarApi()">Consultar</button>
-        <button onclick="copiarResultado()">Copiar Resultado</button>
         <div id="result"></div>
         <!-- Botão para copiar o resultado -->
-        
+        <button onclick="copiarResultado()">Copiar Resultado</button>
     </div>
 
     <script>
