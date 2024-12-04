@@ -40,16 +40,25 @@
         p {
             font-size: 60px;
         }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+            font-size: 140px; /* Aumenta o tamanho da fonte do resultado */
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1><p>Consulta de BIN</p></h1>
-        <input type="text" id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ...">
+        <h1><p>Digite ou cole:</p></h1>
+        <input type="text" id="binInput" placeholder="LQP2(1)534540; 650491; 454066; ...">
         <button onclick="consultarApi()">Consultar</button>
+        <button onclick="copiarResultado()">Copiar Resultado</button>
         <div id="result"></div>
         <!-- Botão para copiar o resultado -->
-        <button onclick="copiarResultado()">Copiar Resultado</button>
+        
     </div>
 
     <script>
