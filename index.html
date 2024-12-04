@@ -41,6 +41,8 @@
         <input type="text" id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ...">
         <button onclick="consultarApi()">Consultar</button>
         <div id="result"></div>
+        <!-- Botão para copiar o resultado -->
+        <button onclick="copiarResultado()">Copiar Resultado</button>
     </div>
 
     <script>
@@ -117,7 +119,7 @@ Country: ${response.country || 'INDISPONÍVEL'}
                                 const alertBrands = ['MASTERCARD', 'ELO', 'VISA'];
                                 if (alertBrands.includes(response.brand)) {
                                     const alertMessage = `Necessário boletim para o ${response.brand}.`;
-                                   // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
+                                    // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
                                     alert(alertMessage);
                                 }
                             }
@@ -131,6 +133,24 @@ Country: ${response.country || 'INDISPONÍVEL'}
                 xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
                 xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
                 xhr.send(data);
+            }
+        }
+
+        // Função para copiar o resultado da pesquisa
+        function copiarResultado() {
+            const resultDiv = document.getElementById('result');
+            const textToCopy = resultDiv.innerText || resultDiv.textContent;
+
+            if (textToCopy) {
+                navigator.clipboard.writeText(textToCopy)
+                    .then(() => {
+                        alert("Resultado copiado com sucesso!");
+                    })
+                    .catch(err => {
+                        alert("Erro ao copiar o resultado: " + err);
+                    });
+            } else {
+                alert("Não há resultados para copiar.");
             }
         }
     </script>
