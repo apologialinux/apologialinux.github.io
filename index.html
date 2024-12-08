@@ -158,8 +158,8 @@ Country: ${response.country || 'INDISPONÍVEL'}
             const textToCopy = resultDiv.innerText || resultDiv.textContent;
 
             if (textToCopy) {
-               /*navigator.clipboard.writeText(textToCopy)
-                    .then(() => { */
+                navigator.clipboard.writeText(textToCopy)
+                    .then(() => { 
                         alert("Resultado copiado com sucesso!");
                     })
                     .catch(err => {
