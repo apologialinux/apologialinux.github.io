@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
 function myFunction() {
 
 	const d = new Date();
