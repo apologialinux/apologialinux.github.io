@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-/*Take Action
 function myFunction() {
 
 	const d = new Date();
@@ -96,7 +95,7 @@ function desmarcar() {
 }
 
 
- Fim Take Action*/
+
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
