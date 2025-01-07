@@ -120,21 +120,21 @@
                                 // Formatar os dados retornados
                                 const output = `
 BIN: ${response.bin || 'INDISPONÍVEL'}
-Brand: ${response.brand || 'INDISPONÍVEL'}
-Type: ${response.type || 'INDISPONÍVEL'}
-Category: ${response.category || 'INDISPONÍVEL'}
-Issuer: ${response.issuer || 'INDISPONÍVEL'}
-Country: ${response.country || 'INDISPONÍVEL'}
+Marca: ${response.brand || 'INDISPONÍVEL'}
+Tipo: ${response.type || 'INDISPONÍVEL'}
+Categoria: ${response.category || 'INDISPONÍVEL'}
+Banco: ${response.issuer || 'INDISPONÍVEL'}
+País: ${response.country || 'INDISPONÍVEL'}
 <br>`;
 
                                 resultDiv.innerHTML += output;
 
                                 // Verificar se o brand é Mastercard, Elo ou Visa e exibir o alerta
-                                const alertIssuer = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
-                                if (alertIssuer.includes(response.issuer)) {
+                                const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
+                                if (alertBanco.includes(response.issuer)) {
                                     const alertMessage = `Necessário boletim para o ${response.issuer}.`;
-                                    // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
-                                    alert(alertMessage);
+                                     resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
+                                    //alert(alertMessage);
                                 }
                             }
                         } catch (e) {
