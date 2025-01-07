@@ -130,9 +130,9 @@ Country: ${response.country || 'INDISPONÍVEL'}
                                 resultDiv.innerHTML += output;
 
                                 // Verificar se o brand é Mastercard, Elo ou Visa e exibir o alerta
-                                const alertBrands = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
-                                if (alertBrands.includes(response.brand)) {
-                                    const alertMessage = `Necessário boletim para o ${response.brand}.`;
+                                const alertIssuer = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
+                                if (alertIssuer.includes(response.issuer)) {
+                                    const alertMessage = `Necessário boletim para o ${response.issuer}.`;
                                     // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
                                     alert(alertMessage);
                                 }
