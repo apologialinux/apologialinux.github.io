@@ -1,3 +1,27 @@
+/* Take action */
+document.getElementById("myBtn").style.background="black";
+ document.getElementById("myBtn").style.color="white";
+function corbotao(){
+	document.getElementById("myBtn").style.background="black";
+	document.getElementById("myBtn").style.color="white";
+}
+function myCopy() {
+      const result = document.getElementById('demo');
+      navigator.clipboard.writeText(result.innerText);
+	  demo.innerHTML = 'COPIADO: ' + document.getElementById('numb').value; 
+	  document.getElementById('numb').value='';
+	  desmarcar();
+	  document.getElementById("botao2").style.display = 'none';
+}
+function zerar() {
+	document.getElementById('numb').value='';
+}
+function desmarcar() {
+  document.getElementById("AGencia").checked = false;
+  document.getElementById("MAssiva").checked = false;
+}
+/* FIM Take action */
+
 document.addEventListener('DOMContentLoaded', function() {
     const zoomControl = document.getElementById('zoomControl');
 
