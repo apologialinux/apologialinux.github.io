@@ -1,3 +1,19 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const zoomControl = document.getElementById('zoomControl');
+
+    // Atualiza o estado do checkbox conforme o zoom inicial
+    zoomControl.checked = document.body.style.zoom === '1.0';
+
+    zoomControl.addEventListener('change', function() {
+        if (this.checked) {
+            document.body.style.zoom = '1.0';
+        } else {
+            document.body.style.zoom = '0.34';
+        }
+    });
+});
+
+
 /* Take action */
 document.getElementById("myBtn").style.background="black";
  document.getElementById("myBtn").style.color="white";
@@ -22,20 +38,6 @@ function desmarcar() {
 }
 /* FIM Take action */
 
-document.addEventListener('DOMContentLoaded', function() {
-    const zoomControl = document.getElementById('zoomControl');
-
-    // Atualiza o estado do checkbox conforme o zoom inicial
-    zoomControl.checked = document.body.style.zoom === '1.0';
-
-    zoomControl.addEventListener('change', function() {
-        if (this.checked) {
-            document.body.style.zoom = '1.0';
-        } else {
-            document.body.style.zoom = '0.34';
-        }
-    });
-});
 
 
 function dragElement(elmnt) {
