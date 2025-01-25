@@ -12,11 +12,68 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+/*Take Action*/
+function myFunction() {
 
+	const d = new Date();
+	let Dhor = d.getHours();
+	let Dmin = d.getMinutes();
+	let Day = d.getDate();
+	let Mes = d.getMonth();
+	 
+  // Get the value of the input field with id="numb"
+  <!-- let y = document.getElementById("numb2").value; -->
+  let x = document.getElementById("numb").value;
+  let N = document.getElementById("name").value;
+  x = x.replace(/\s/g, '');
+  // If x is Not a Number or less than one or greater than 10
+	let text;
+	let w
+	let SelecionaAG = document.getElementById("AGencia").checked;
+	let SelecionaMA = document.getElementById("MAssiva").checked;
+  
+	if ( Dhor < 10 ) {
+		Dhor = ('0' + Dhor).slice(-2);
+	} else {
+		Dhor = Dhor + '';
+	}
+	if ( Dmin < 10) { // or min = min < 10 ? '0' + min : min; 
+		Dmin = ('0' + Dmin).slice(-2);
+	} else {
+		Dmin = Dmin + '';
+	}
+	if ( Day < 10) { // or min = min < 10 ? '0' + min : min; 
+		Day = ('0' + Day).slice(-2);
+	} else {
+		Day = Day + '';
+	}
+	
+	if ( Mes < 10) { // or min = min < 10 ? '0' + min : min; 
+		Mes = ('' + Mes).slice(-2);
+	} 
+	
+	if ( SelecionaAG === true ) {
+		w = " [AGÊNCIA] - ";
+	} else if ( SelecionaMA === true ) {
+		w = " [MASSIVA] - ";
+	} else {
+		w = " - ";
+		
+	}	
+	
+	if ( x.length == 7 && ( N != "" ) ) {
+    text = "Incidente " + x + w + N;
+	document.getElementById("demo").innerHTML = Day + "/" + (Mes + 1) + "/" + d.getFullYear() + " " + Dhor + ":" + Dmin +  " - " +  text;
+	document.getElementById("botao2").style.display = 'block';
+  } else {
+	document.getElementById("demo").innerHTML = "Dados incompletos";
+	document.getElementById("botao2").style.display = 'none';
+	 
+  }
+	
+  
+}
 
-/* Take action */
-document.getElementById("myBtn").style.background="black";
- document.getElementById("myBtn").style.color="white";
 function corbotao(){
 	document.getElementById("myBtn").style.background="black";
 	document.getElementById("myBtn").style.color="white";
@@ -32,14 +89,14 @@ function myCopy() {
 function zerar() {
 	document.getElementById('numb').value='';
 }
+
 function desmarcar() {
   document.getElementById("AGencia").checked = false;
   document.getElementById("MAssiva").checked = false;
 }
-/* FIM Take action */
 
 
-
+/* Fim Take Action*/
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
