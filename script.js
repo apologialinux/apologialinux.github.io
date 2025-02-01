@@ -19,7 +19,7 @@ function myFunction() {
 	let Dhor = d.getHours();
 	let Dmin = d.getMinutes();
 	let Day = d.getDate();
-	let Mes = d.getMonth();
+	let Mes = d.getMonth() + 1;
 	 
   // Get the value of the input field with id="numb"
   <!-- let y = document.getElementById("numb2").value; -->
@@ -49,7 +49,7 @@ function myFunction() {
 	}
 	
 	if ( Mes < 10) { // or min = min < 10 ? '0' + min : min; 
-		Mes = ('' + Mes).slice(-2);
+		Mes = ('0' + Mes).slice(-2);
 	} 
 	
 	if ( SelecionaAG === true ) {
@@ -63,7 +63,7 @@ function myFunction() {
 	
 	if ( x.length == 7 && ( N != "" ) ) {
     text = "Incidente " + x + w + N;
-	document.getElementById("demo").innerHTML = Day + "/" + (Mes + 1) + "/" + d.getFullYear() + " " + Dhor + ":" + Dmin +  " - " +  text;
+	document.getElementById("demo").innerHTML = Day + "/" + Mes + "/" + d.getFullYear() + " " + Dhor + ":" + Dmin +  " - " +  text;
 	document.getElementById("botao2").style.display = 'block';
   } else {
 	document.getElementById("demo").innerHTML = "Dados incompletos";
