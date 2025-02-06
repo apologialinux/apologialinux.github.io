@@ -47,6 +47,7 @@ h2 {
   margin: 4px 2px;
   transition-duration: 0.8s;
   cursor: pointer;
+  background-color: Red;
 }
 
 #botao3:hover {
