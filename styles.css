@@ -30,6 +30,11 @@ h2 {
   cursor: pointer;
 }
 
+#botao:hover {
+  background-color: Green;
+  color: white;
+}
+
 #botao3 {
   margin: 0 auto;
   text-align: center;
@@ -45,10 +50,9 @@ h2 {
 }
 
 #botao3:hover {
-  background-color: Red;
-  color: black;
+  background-color: Green;
+  color: white;
 }
-
 
 #botao2 {
   margin: 0 auto;
@@ -60,6 +64,11 @@ h2 {
   font-size: 45px;
   transition-duration: 0.8s;
   cursor: pointer;
+}
+
+#botao2:hover {
+  background-color: Green;
+  color: white;
 }
 
 #name {
