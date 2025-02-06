@@ -53,7 +53,7 @@ function myFunction() {
 	} 
 	
 	if ( SelecionaAG === true ) {
-		w = " [AGÊNCIA] - ";
+		w = " [AG] - ";
 	} else if ( SelecionaMA === true ) {
 		w = " [MASSIVA] - ";
 	} else {
