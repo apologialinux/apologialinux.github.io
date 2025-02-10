@@ -1,0 +1,174 @@
+/usr/local/bin/interface_web_helper -e
+
+tcpdump -i br0 -n -s 1500 -c 1000000 -w IZI_NFE_com_hyper_desativado.dump host 186.192.44.135 
+
+/etc/init.d/net.br0 zap & /etc/init.d/net.br0 restart
+
+/etc/init.d/ospf stop
+rc-update show default
+start
+rc-uptade add ospfd default
+
+SNMP
+Executar: /home/hyper/snmp.sh | Depois: /etc/init.d/snmpd restart
+
+ZABBIX
+/etc/zabbix/zabbix_agentd.conf
+Ticket#2011110810002432
+crontab -l  | crontab -e|ctrl+k|ctrl+x|/etc/init.d/vixie-cron restart|/etc/init.d/zabbix-agentd restart
+
+netstat
+netstat -aln | sed '/^tcp/!d'|cut -c 68-|sort|uniq -c|sort -n
+
+Rotas para clientes
+route -n | grep -v Kernel | grep -v Destination | awk '{print $1"\t\t"$3"\t\t"$2}' | sort
+
+ip route | awk '{print $1"   "$2"   "$3}' | sed "s/dev\ br0//g" | sort
+
+Hyper não inicia
+rm /usr/local/hyper/var/logs/squid.pid no /usr/local/bin/monitora_boot_squid.sh
+
+swapoff /dev/sda2
+echo "0" > /proc/sys/vm/swappiness
+
+shopt -s cdspell
+
+netstat -aln | grep SYN | egrep -o '([0-9]{1,3}\.){3}[0-9]{1,3}:[0-9]{3,10}' | egrep -o '([0-9]{1,3}\.){3}[0-9]{1,3}' | sort -n | uniq -c | sort -n
+
+PROBLEMA - EXIBIÇÃO DO HD INCORRETO
+
+cd /var/www/localhost/htdocs/
+grep df *
+vi hd_pie.hyper --> alterar de sda1 para hyper
+
+Smart
+smartctl --test=long /dev/sda
+smartctl --all /dev/sda
+
+/usr/local/bin/interface_web_worker -s rotas
+
+scp  /bin/hyper* /usr/local/hyper/etc/hyper.conf /usr/local/hyper/sbin/hyper hyper@XXX:
+
+/opt/comandos.rotas
+vim /etc/init.d/hyper-scripts
+/opt/comandos.rotas &
+
+Ver qual é o algoritmos de controle de congestionamento:
+cat /proc/sys/net/ipv4/tcp_congestion_control
+
+Para ver qual é o IO scheduler:
+        cat /sys/block/sdb/queue/scheduler
+echo 128 > /sys/block/sdb/queue/read_ahead_kb
+echo 128 > /sys/block/sdb/queue/nr_requests
+echo 10 > /proc/sys/vm/dirty_background_ratio
+echo 20 > /proc/sys/vm/dirty_ratio
+
+HISTORY
+ cd /etc
+export HISTTIMEFORMAT='%F %T  '
+
+Forçar negociação full 
+ethtool -s eth0 speed 100 duplex full autoneg off
+
+Priorização 
+tcpdump -i eth1 -n -vvv | grep "0xc,"
+e tcpdump -i eth2 -qn src port 80 -c 1000
+
+Exclui tudo para www.live.com 
+ebtables -t broute -A BROUTING -i eth1 -p ipv4 --ip-dst 65.55.206.0/24 --ip-proto tcp -j redirect --redirect-target ACCEPT
+ebtables -t broute -A BROUTING -i eth2 -p ipv4 --ip-src 65.55.206.0/24 --ip-proto tcp -j redirect --redirect-target ACCEPT
+
+hyper hyper # cat /proc/sys/fs/file-max  | 1000000
+hyper hyper # cat /sys/block/sdb/queue/nr_requests  | 131072
+sed -n '19 p' /etc/init.d/hyper 
+iostat -x 1 /dev/sdb
+
+z
+cat /etc/fstab
+fdisk /dev/sdb
+mount /dev/sdb1 /usr/local/hyper/var/cache/
+
+após ext4 formatar a partição hyer 1.0
+cd /usr/local/hyper/var/cache
+mkdir coss1 coss2 coss3
+cd ../
+chown nobody:nobody cache -R
+/usr/local/hyper/sbin/squid -z
+
+2.9/5.2/5.4/5.11
+
+/etc/init.d/cas status
+tail -f /tmp/installpkg.log
+
+tcpdump -i br0 -qn -vvv host 186.232.70.11
+
+lspci -v | grep -i raid
+mount /boot/ -o remount,rw
+sync
+
+wget http://cloud.taghos.com.br/cas-diagnostic ; chmod +x cas-diagnostic ; ./cas-diagnostic
+ /usr/local/hyper/scripts/hyper_desliga ; xfs_bmap /usr/local/hyper/var/cache/hyper.cache
+
+Checar o banco de dados do Hyper:
+mysqlcheck -u root -podorstop678# -e hyper
+
+mysql -u root -podorstop678# hyper
+odorstop678#
+use hyper;
+DROP table hyper_config_excecoes;
+
+Em outro hyper: 
+mysqldump -d -u root -podorstop678# hyper hyper_stats_5min_hit > hyper_stats_5min_hit.sql
+mysqldump -d -u root -podorstop678# hyper hyper_stats_5min_miss > hyper_stats_5min_miss.sql
+mysqldump -d -u root -podorstop678# hyper hyper_stats_5min_miss_multimidia > hyper_stats_5min_miss_multimidia.sql
+scp hyper_stats_5min_* hyper@IP_DO_HYPER:
+
+De volta ao mysql com problema: 
+mysql -u root -podorstop678# hyper
+DROP table hyper_config_excecoes;
+mysql -u root -podorstop678# hyper<hyper_stats_5min_hit.sql
+odorstop678#
+mysqlcheck -u root -podorstop678# -e hyper
+intercampo@gmail.com
+
+
+mysqlrepair -u root -podorstop678# -e hyper
+
+mysql -u root -podorstop678# hyper
+select * from hyper_interface_usuario;
+UPDATE hyper_interface_usuario SET senha=md5('102030') WHERE id=1;
+INSERT into hyper_interface_usuario (id,usuario,senha,admin,operador) values (1,'admin','qualquercoisa',1,1);
+
+regras de cache{
+        nome = "Exclui avira-update.com";
+        dominio = ".*(avira-update.com)";
+        normalizacao do host = "avira";
+
+        not = ".*";
+};
+
+    regras de cache{
+        nome = "Exclui avast.com";
+        dominio = ".*(avast.com)";
+        normalizacao do host = "avira";
+        not = ".*";
+};
+
+
+2.2 - 3.2.6
+#!/bin/bash -x
+#quem tem o hyper 2.2 deve ter o kernel 3.2.6 e o binário ddee9f50a47124a19e5137d399976e7f
+/usr/local/hyper/scripts/hyper_desliga
+/etc/init.d/hyper stop
+tar xfvz hyper-2.2-d0cc5e5.tar.gz
+cd hyper-2.2-d0cc5e5
+mv hyper /usr/local/hyper/sbin/hyper
+mv hyper.conf /usr/local/hyper/etc/hyper.conf
+mv hyperlog /bin/hyperlog
+mv hypermanager /bin/hypermanager
+mv hyperstat /bin/hyperstat
+cd ..
+rm -rf hyper-2.2-d0cc5e5*
+/etc/init.d/hyper start
+/usr/local/hyper/scripts/hyper_liga
+
