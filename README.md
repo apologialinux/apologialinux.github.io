@@ -1,2 +1,2 @@
 # apologialinux.github.io
-Apologia Linux
+Arquivos de teste. Necessário refazer todos.
