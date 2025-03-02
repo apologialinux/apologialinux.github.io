@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mensagem do banner
     var mensagem = document.createElement("div");
-    mensagem.innerHTML = '<p><i class="fas fa-exclamation-triangle" style="color: yellow; margin-right: 10px;"></i>Este Dashboard4Skills esta desatualizado.</p><p>Update, deverá ser feito até 01/ABRIL/2025, já consta com:</p><p><li>Ajuste de cores</li><li>Ajustes de layout</li><li>Adequação de links</li></p> <p>REMOVA o(s) arquivo(s) antigo(s) e mantenha APENAS este novo.</p>';
+    mensagem.innerHTML = '<p><i class="fas fa-exclamation-triangle" style="color: yellow; margin-right: 10px;"></i>Este Dashboard4Skills esta desatualizado.</p><p>Update, deverá ser feito até 22/MARÇO/2025, já consta com:</p><p><li>Ajuste de cores</li><li>Ajustes de layout</li><li>Adequação de links</li></p> <p>REMOVA o(s) arquivo(s) antigo(s) e mantenha APENAS este novo.</p>';
 
     // Botão de download
     var button = document.createElement("button");
