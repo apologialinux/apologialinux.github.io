@@ -13,7 +13,63 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+/*Download */
+ 
+ document.addEventListener("DOMContentLoaded", function() {
+    // Adicionando o link da biblioteca Font Awesome
+    var link = document.createElement('link');
+    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
 
+    // Criando o banner
+    var banner = document.createElement("div");
+    banner.style.position = "fixed";
+    banner.style.bottom = "20px";
+    banner.style.left = "20px";
+    banner.style.width = "800px"
+    banner.style.padding = "20px";
+	banner.style.fontSize = "64px";
+    banner.style.backgroundColor = "#808080";
+    banner.style.boxShadow = "0 -2px 4px rgba(0, 0, 0, 0.1)";
+    banner.style.zIndex = "9999";
+    banner.style.display = "flex";
+    banner.style.flexDirection = "column";
+    banner.style.alignItems = "center";
+	banner.style.borderRadius = "30px"; // Bordas arredondadas para um visual mais quadrado
+    banner.style.margin = "20px"; //
+
+    // Mensagem do banner
+    var mensagem = document.createElement("div");
+    mensagem.innerHTML = '<p><i class="fas fa-exclamation-triangle" style="color: yellow; margin-right: 10px;"></i>Este Dashboard4Skills esta desatualizado.</p><p>Update, deverá ser feito até 01/ABRIL/2025, já consta com:</p><p><li>Ajuste de cores</li><li>Ajustes de layout</li><li>Adequação de links</li></p> <p>REMOVA o(s) arquivo(s) antigo(s) e mantenha APENAS este novo.</p>';
+
+    // Botão de download
+    var button = document.createElement("button");
+    button.innerHTML = '<i class="fas fa-download" style="margin-right: 10px;"></i>Dashboard4Skills.zip';
+   /* button.style.padding = "20px 20px";
+    button.style.fontSize = "64px"; 
+    button.style.backgroundColor = "Green"; */
+    button.style.color = "#000000";
+    /*button.style.border = "none";
+    button.style.borderRadius = "25px";
+	button.style.marginRight = "50px"; 
+    button.style.cursor = "pointer"; */
+
+    button.onclick = function() {
+        var link = document.createElement("a");
+        link.href = "https://apologialinux.github.io/Dashboard4Skills.zip";
+        link.download = "Dashboard4Skills";
+        link.click();
+    };
+
+    // Adicionando a mensagem e o botão ao banner
+    banner.appendChild(mensagem);
+    banner.appendChild(button);
+
+    // Adicionando o banner ao corpo do documento
+    document.body.appendChild(banner);
+});
+/* Fim Download */
 
 /*Take Action*/
 function myFunction() {
