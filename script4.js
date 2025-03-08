@@ -785,6 +785,7 @@ function dragElement(elmnt) {
 				document.getElementById('bmq1l02').src += '';
 				document.getElementById('MCpagtituloutros02').src += '';
 				document.getElementById('OMpagtitulban02').src += '';
+				document.getElementById('OBpagtitulban02').src += '';
 				document.getElementById('pxu1l02').src += '';			
 			}
 			
