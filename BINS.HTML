@@ -6,39 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de BIN</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .container {
-            max-width: 500px;
-            margin: auto;
-        }
-        input, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 16px;
-        }
-        #result {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
-            white-space: pre-wrap;
-        }
-        .error {
-            color: red;
-        }
-        .alert {
-            color: orange;
-            font-weight: bold;
-        }
-    </style>
+
 </head>
 <body>
-    
+    <style>
+	button {
+  border: 3px solid white;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 45px;
+  margin: 4px 2px;
+  transition-duration: 0.8s;
+  cursor: pointer;
+}
+	</style>
     <script>
        document.addEventListener("DOMContentLoaded", function() {
     // Adicionando o link da biblioteca Font Awesome
@@ -52,9 +36,9 @@
     banner.style.position = "fixed";
     banner.style.bottom = "20px";
     banner.style.left = "20px";
-    banner.style.width = "800px"
+    banner.style.width = "1000px"
     banner.style.padding = "20px";
-	banner.style.fontSize = "64px";
+	banner.style.fontSize = "100px";
     banner.style.backgroundColor = "#808080";
     banner.style.boxShadow = "0 -2px 4px rgba(0, 0, 0, 0.1)";
     banner.style.zIndex = "9999";
