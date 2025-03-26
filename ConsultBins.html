@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de BIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            border: 1px solid #FFFFFF;
+            background-color: #fefefe;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 60px;
+            resize: none;
+           
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #FFFFFF;
+            background-color: #fefefe;
+            white-space: pre-wrap;
+        }
+        .error {
+            color: red;
+        }
+        .alert {
+            color: orange;
+            font-weight: bold;
+        }
+                h1 {
+            text-align: center;
+        }
+        p {
+            font-size: 60px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #FFFFFF;
+            background-color: #fefefe;
+            white-space: pre-wrap;
+            font-size: 40px; /* Aumenta o tamanho da fonte do resultado */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><p>Consulta de BIN</p></h1>
+        <!-- Alterando o campo de input para textarea -->
+        <textarea id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ..." rows="4"></textarea>
+        <button onclick="consultarApi()">Consultar</button>
+        <button onclick="copiarResultado()">Copiar Resultado</button>
+        <div id="result"></div>
+        <!-- Botão para copiar o resultado -->
+        
+    </div>
+
+    <script>
+        const data = null;
+
+        // Carregar a chave da API do arquivo config.json
+        function carregarConfig() {
+            return fetch('config.json')
+                .then(response => response.json())
+                .then(config => {
+                    return config.apiKey; // Retorna a chave da API
+                })
+                .catch(error => {
+                    console.error("Erro ao carregar a configuração:", error);
+                    return null;
+                });
+        }
+
+        // Função para consultar a API
+        async function consultarApi() {
+            const binInput = document.getElementById('binInput').value;
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = ''; // Limpar resultados anteriores
+
+            // Filtra e extrai apenas números de 6 dígitos da string de entrada
+            const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
+
+            if (!bins || bins.length === 0) {
+                resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
+                return;
+            }
+
+            // Carrega a chave da API
+            const apiKey = await carregarConfig();
+
+            if (!apiKey) {
+                resultDiv.innerHTML = '<span class="error">Erro ao carregar a chave da API.</span>';
+                return;
+            }
+
+            // Processa cada BIN com delay
+            for (const bin of bins) {
+                // Espera 300ms antes de fazer a próxima consulta
+                await new Promise(resolve => setTimeout(resolve, 300));
+
+                const xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
+
+                xhr.addEventListener('readystatechange', function () {
+                    if (this.readyState === this.DONE) {
+                        try {
+                            const response = JSON.parse(this.responseText);
+
+                            if (response.message) {
+                                resultDiv.innerHTML += `<span class="error">Erro no BIN ${bin}: ${response.message}</span><br>`;
+                            } else {
+                                // Formatar os dados retornados
+                                const output = `
+BIN: ${response.bin || 'INDISPONÍVEL'}
+Marca: ${response.brand || 'INDISPONÍVEL'}
+Tipo: ${response.type || 'INDISPONÍVEL'}
+Categoria: ${response.category || 'INDISPONÍVEL'}
+Banco: ${response.issuer || 'INDISPONÍVEL'}
+País: ${response.country || 'INDISPONÍVEL'}
+<br>`;
+
+                                resultDiv.innerHTML += output;
+
+                                // Verificar se o Banco requer boletim
+                                const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
+                                if (alertBanco.includes(response.issuer)) {
+                                    const alertMessage = `Necessário boletim para o ${response.issuer}.`;
+                                    // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
+                                    alert(alertMessage);
+                                }
+                            }
+                        } catch (e) {
+                            resultDiv.innerHTML += `<span class="error">Erro ao processar a resposta da API para o BIN ${bin}.</span><br>`;
+                        }
+                    }
+                });
+
+                xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
+                xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
+                xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
+                xhr.send(data);
+            }
+        }
+
+        // Função para copiar o resultado da pesquisa
+        function copiarResultado() {
+            const resultDiv = document.getElementById('result');
+            const textToCopy = resultDiv.innerText || resultDiv.textContent;
+
+            if (textToCopy) {
+                navigator.clipboard.writeText(textToCopy)
+                    .then(() => { 
+                        alert("Resultado copiado com sucesso!");
+                    })
+                    .catch(err => {
+                        alert("Erro ao copiar o resultado: " + err);
+                    });
+            } else {
+                alert("Não há resultados para copiar.");
+            }
+        }
+    </script>
+    <!-- Issuer Phone: ${response.issuer_phone || 'INDISPONÍVEL'}
+Issuer URL: ${response.issuer_url || 'INDISPONÍVEL'}
+ISO2: ${response.iso2 || 'INDISPONÍVEL'}
+ISO3: ${response.iso3 || 'INDISPONÍVEL'} -->
+</body>
+</html>
