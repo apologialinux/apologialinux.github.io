@@ -3,55 +3,47 @@
 <head>
     <script>
         function includeHTML(callback) {
-            var z, i, elmnt, file, xhttp;
-            z = document.getElementsByTagName("*");
-            let total = 0;
+            var elements = document.querySelectorAll("[w3-include-html]");
+            let total = elements.length;
             let loaded = 0;
 
-            for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                file = elmnt.getAttribute("w3-include-html");
+            elements.forEach(elmnt => {
+                let file = elmnt.getAttribute("w3-include-html");
                 if (file) {
-                    total++; // Contamos quantos arquivos serão carregados
-
-                    xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4) {
-                            if (this.status == 200) {
-                                elmnt.innerHTML = this.responseText;
-                            }
-                            if (this.status == 404) {
-                                elmnt.innerHTML = "Dashboard4Skills não encontrado.";
-                            }
+                    fetch(file)
+                        .then(response => response.text())
+                        .then(data => {
+                            elmnt.innerHTML = data;
                             elmnt.removeAttribute("w3-include-html");
 
-                            loaded++; // Contamos os arquivos carregados
+                            // Executar scripts dentro do HTML incluído
+                            executarScripts(elmnt);
 
+                            loaded++;
                             if (loaded === total && typeof callback === "function") {
-                                callback(); // Executamos callback após todos os HTMLs serem carregados
+                                callback();
                             }
-                        }
-                    };
-                    xhttp.open("GET", file, true);
-                    xhttp.send();
-                }
-            }
-        }
-
-        function recarregarScripts() {
-            console.log("Recarregando scripts...");
-
-            // Reexecuta os scripts do HTML carregado
-            document.querySelectorAll("script").forEach(oldScript => {
-                if (oldScript.src) {
-                    let newScript = document.createElement("script");
-                    newScript.src = oldScript.src;
-                    newScript.async = false; // Garante que scripts externos sejam executados na ordem correta
-                    document.body.appendChild(newScript);
+                        })
+                        .catch(error => console.error("Erro ao carregar HTML:", error));
                 }
             });
+        }
 
-            // Reaplicando eventos, se necessário
+        function executarScripts(element) {
+            // Remove scripts antigos e adiciona novos scripts
+            element.querySelectorAll("script").forEach(oldScript => {
+                let newScript = document.createElement("script");
+                if (oldScript.src) {
+                    newScript.src = oldScript.src;
+                    newScript.async = false;
+                } else {
+                    newScript.textContent = oldScript.textContent;
+                }
+                document.body.appendChild(newScript);
+                oldScript.remove();
+            });
+
+            // Reaplicando eventos do modal, se necessário
             document.querySelectorAll(".modal-trigger").forEach(el => {
                 el.addEventListener("click", function () {
                     let target = document.querySelector(el.getAttribute("data-target"));
@@ -70,8 +62,7 @@
 
     <script>
         includeHTML(() => {
-            console.log("HTML incluído!");
-            recarregarScripts(); // Reexecuta os scripts após o carregamento do HTML
+            console.log("HTML incluído e scripts reexecutados!");
         });
     </script>
 </body>
