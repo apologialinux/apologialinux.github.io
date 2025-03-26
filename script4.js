@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 */
 /* Fim Download */
 
-/*Take Action
+/*Take Action */
 function myFunction() {
 
 	const d = new Date();
@@ -158,7 +158,7 @@ function desmarcar() {
 }
 
 
-Fim Take Action*/
+/*Fim Take Action*/
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
