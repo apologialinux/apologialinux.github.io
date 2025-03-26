@@ -136,19 +136,6 @@ function myFunction() {
   
 }
 
-/*Theme*/
-
-function dark()
-{
-document.getElementById('bg').style.background= '#212121 center center no-repeat';
-}
-function light()
-{
-document.getElementById('bg').style.background= '#e6e6e6 center center no-repeat';
-}
-/*FIM Theme*/
-
-
 function corbotao(){
 	document.getElementById("myBtn").style.background="black";
 	document.getElementById("myBtn").style.color="white";
