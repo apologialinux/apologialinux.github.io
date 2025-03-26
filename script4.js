@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
  */  /* button.style.padding = "20px 20px";
     button.style.fontSize = "64px"; 
     button.style.backgroundColor = "Green"; */
-    button.style.color = "#000000";
+    //button.style.color = "#000000";
     /*button.style.border = "none";
     button.style.borderRadius = "25px";
 	button.style.marginRight = "50px"; 
