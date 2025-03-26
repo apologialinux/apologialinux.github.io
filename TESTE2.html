@@ -1,44 +1,78 @@
 <!DOCTYPE html>
 <html>
-<script>
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /* Loop through a collection of all HTML elements: */
-  z = document.getElementsByTagName("*");
-   for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /* Make an HTTP request using the attribute value as the file name: */
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Dashboard4Skills não encontrado.";}
-          /* Remove the attribute, and call this function once more: */
-          elmnt.removeAttribute("w3-include-html");
-		  
-          includeHTML();
+<head>
+    <script>
+        function includeHTML(callback) {
+            var z, i, elmnt, file, xhttp;
+            z = document.getElementsByTagName("*");
+            let total = 0;
+            let loaded = 0;
+
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    total++; // Contamos quantos arquivos serão carregados
+
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "Dashboard4Skills não encontrado.";
+                            }
+                            elmnt.removeAttribute("w3-include-html");
+
+                            loaded++; // Contamos os arquivos carregados
+
+                            if (loaded === total && typeof callback === "function") {
+                                callback(); // Executamos callback após todos os HTMLs serem carregados
+                            }
+                        }
+                    };
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                }
+            }
         }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /* Exit the function: */
-	  	
-      return;
-    }
-  }
-}
 
-</script>
+        function recarregarScripts() {
+            console.log("Recarregando scripts...");
+
+            // Reexecuta os scripts do HTML carregado
+            document.querySelectorAll("script").forEach(oldScript => {
+                if (oldScript.src) {
+                    let newScript = document.createElement("script");
+                    newScript.src = oldScript.src;
+                    newScript.async = false; // Garante que scripts externos sejam executados na ordem correta
+                    document.body.appendChild(newScript);
+                }
+            });
+
+            // Reaplicando eventos, se necessário
+            document.querySelectorAll(".modal-trigger").forEach(el => {
+                el.addEventListener("click", function () {
+                    let target = document.querySelector(el.getAttribute("data-target"));
+                    if (target) {
+                        target.classList.add("show");
+                    }
+                });
+            });
+        }
+    </script>
+</head>
 <body>
-<script src="https://apologialinux.github.io/script4.js"> </script>
-<div w3-include-html="https://apologialinux.github.io/Dashboard4Skills.html"></div> 
+    <script src="https://apologialinux.github.io/script4.js"></script>
 
-<script>
-includeHTML();
-</script>
+    <div w3-include-html="https://apologialinux.github.io/Dashboard4Skills.html"></div>
 
+    <script>
+        includeHTML(() => {
+            console.log("HTML incluído!");
+            recarregarScripts(); // Reexecuta os scripts após o carregamento do HTML
+        });
+    </script>
 </body>
 </html>
