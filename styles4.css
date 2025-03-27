@@ -360,6 +360,15 @@ button.Indic:hover {
   color: white;
 }
 
+button.M365 {
+  background-color: ##934DD8; <!-- Violeta -->
+  color: white;
+}
+
+button.M365:hover {
+  background-color: Green;
+  color: white;
+}
 
 
 #sair2 {
