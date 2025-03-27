@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /*Download */
-/*
+
  
  document.addEventListener("DOMContentLoaded", function() {
     // Adicionando o link da biblioteca Font Awesome
@@ -47,15 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Botão de download
     var button = document.createElement("button");
     button.innerHTML = '<i class="fas fa-download" style="margin-right: 10px;"></i>Dashboard4Skills.zip';
- */  /* button.style.padding = "20px 20px";
+    button.style.padding = "20px 20px";
     button.style.fontSize = "64px"; 
-    button.style.backgroundColor = "Green"; */
+    button.style.backgroundColor = "Green"; 
     button.style.color = "#000000";
     /*button.style.border = "none";
     button.style.borderRadius = "25px";
 	button.style.marginRight = "50px"; 
     button.style.cursor = "pointer"; */
-	/*
+	
 
     button.onclick = function() {
         var link = document.createElement("a");
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adicionando o banner ao corpo do documento
     document.body.appendChild(banner);
 });
-*/
+
 /* Fim Download */
 
 /*Take Action*/
