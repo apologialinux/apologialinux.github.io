@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mensagem do banner
     var mensagem = document.createElement("div");
-    mensagem.innerHTML = '<p><i class="fas fa-exclamation-triangle" style="color: green; margin-right: 10px;"></i>Este Dashboard4Skills não receberá mais atualizações via downloads.</p><p>Efetue o download desta última atualização, pois a partir dela:</p><p><li>As atualizações serão automáticas.</li><li>Não haverá necessidade de novos downloads.</li><li>Modificações com maior confiabilidade e agilidade.</li></p> <p>REMOVA o(s) arquivo(s) antigo(s) e mantenha APENAS este novo.</p>';
+    mensagem.innerHTML = '<p><i class="fas fa-exclamation-triangle" style="color: green; margin-right: 10px;"></i>Este Dashboard4Skills não receberá mais atualizações via downloads.</p><p>Efetue o download desta última atualização, pois a partir dela:</p><p><li>As atualizações serão automáticas.</li><li>Não haverá necessidade de novos downloads.</li><li>Modificações com maior confiabilidade e agilidade.</li></p> <p>REMOVA o(s) Dashboard4Skills antigo(s) e mantenha APENAS este novo.</p>';
 
     // Botão de download
     var button = document.createElement("button");
