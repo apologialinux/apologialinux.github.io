@@ -88,6 +88,8 @@ h2 {
 #divbutton {
     position: fixed;
 	z-index: 2; 
+	background-color: rgb(0,0,0);  
+	background-color: rgba(0,0,0,0.5);  
 }
 #divbutton2 {
     position: fixed; <!--  position: flex; fixed, absolute -->
