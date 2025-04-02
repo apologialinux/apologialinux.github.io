@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de BIN</title>
+    <title>Calculadora&BIN</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,6 +42,7 @@
         }
         p {
             font-size: 60px;
+			text-align: center;
         }
         #result {
             margin-top: 20px;
@@ -51,10 +52,47 @@
             white-space: pre-wrap;
             font-size: 40px; /* Aumenta o tamanho da fonte do resultado */
         }
+		
+input[type=date] {
+    transform: scale(4);
+	padding-left: 0px;
+	text-align: center;
+	margin: 1.4rem 1;
+} 
+input[type=time] {
+    transform: scale(4);
+	padding-left: 0px;
+	text-align: center;
+	margin: 1.4rem 1;
+	
+} 
+label {
+  color: black;
+  font-size: 60px;
+  padding: 0px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+}
     </style>
 </head>
-<body>
+<body onload="definirDataAtual()">
     <div class="container">
+		    <h1><p>Calculadora de Data/Horas</p></h1>
+
+	<p>Data/Hora Inicial:</p>
+	<p><input type="date" id="dataInicial"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaInicial">  </p>
+
+    <p>Data/Hora Final:</p>
+	<p><input type="date" id="dataFinal"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaFinal"></p>
+    <br>
+    <button onclick="calcularDiferenca()">Calcular</button>
+    <button onclick="copiarResultado2()">Copiar Resultado</button>
+	<p id="resultado"></p>
+	
         <h1><p>Consulta de BIN</p></h1>
         <!-- Alterando o campo de input para textarea -->
         <textarea id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ..." rows="4"></textarea>
@@ -66,6 +104,91 @@
     </div>
 
     <script>
+	// CALCULADORA
+	function calcularDiferenca() {
+    let dataInicial = document.getElementById("dataInicial").value;
+    let horaInicial = document.getElementById("horaInicial").value;
+    let dataFinal = document.getElementById("dataFinal").value;
+    let horaFinal = document.getElementById("horaFinal").value;
+	
+    
+    let inicio = new Date(`${dataInicial}T${horaInicial}`);
+    let fim = new Date(`${dataFinal}T${horaFinal}`);
+		let anoI = inicio.getFullYear();
+    	let DayI = inicio.getDate();
+		let MesI = inicio.getMonth() + 1;
+		let DayF = fim.getDate();
+		let MesF = fim.getMonth() + 1;
+		let anoF = fim.getFullYear();
+		
+    if (isNaN(inicio) || isNaN(fim)) {
+        //document.getElementById("resultado").innerText = "Dados incompletos!";
+		alert("Dados incompletos!");
+        return;
+    }
+    
+    let diferencaMs = fim - inicio;
+    if (diferencaMs < 0) {
+        //document.getElementById("resultado").innerText = "A data final deve ser maior que a data inicial.";
+		alert("A data final deve ser maior que a data inicial.");
+        return;
+    }
+    
+    let totalMinutos = Math.floor(diferencaMs / (1000 * 60));
+    let horas = Math.floor(totalMinutos / 60);
+    let minutos = totalMinutos % 60;
+		if ( horas < 10 ) {
+		horas = ('0' + horas).slice(-2);
+	} else {
+		horas = horas + '';
+	}
+	if ( minutos < 10) { // or min = min < 10 ? '0' + min : min; 
+		minutos = ('0' + minutos).slice(-2);
+	} else {
+		minutos = minutos + '';
+	}
+    
+    let resultado = `${horas}:${minutos}`;
+
+	if ( DayI < 10) { // or min = min < 10 ? '0' + min : min; 
+		DayI = ('0' + DayI).slice(-2);
+	} else {
+		DayI = DayI + '';
+	}
+	if ( MesI < 10) { // or min = min < 10 ? '0' + min : min; 
+		MesI = ('0' + MesI).slice(-2);
+	}
+	if ( DayF < 10) { // or min = min < 10 ? '0' + min : min; 
+		DayF = ('0' + DayF).slice(-2);
+	} else {
+		DayF = DayF + '';
+	}
+	if ( MesF < 10) { // or min = min < 10 ? '0' + min : min; 
+		MesF = ('0' + MesF).slice(-2);
+	}
+	if (dataInicial == dataFinal) {
+	document.getElementById("resultado").innerText = "Início: " + horaInicial + "\nFim: " + horaFinal + "\nTempo total: " + resultado;
+	} else {
+	document.getElementById("resultado").innerText = "Início: " + DayI + "/" + MesI + "/" + anoI + " às " + horaInicial + "\nFim: " + DayF + "/" + MesF + "/" + anoF + " às " + horaFinal + "\nTempo total: " + resultado;
+
+	}
+}
+function copiarResultado2() {
+    let resultado = document.getElementById("resultado").innerText;
+    navigator.clipboard.writeText(resultado).then(() => {
+        //document.getElementById("resultado").innerText = "Copiado!";
+		alert("Resultado copiado com sucesso!");
+    });
+
+}
+function definirDataAtual() {
+    let hoje = new Date().toISOString().split('T')[0];
+    document.getElementById("dataInicial").value = hoje;
+    document.getElementById("dataFinal").value = hoje;
+}
+
+	// FIM CALCULADORA
+	
         const data = null;
 
         // Carregar a chave da API do arquivo config.json
