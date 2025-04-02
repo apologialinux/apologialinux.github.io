@@ -180,6 +180,7 @@ function copiarResultado2() {
     navigator.clipboard.writeText(resultado).then(() => {
         //document.getElementById("resultado").innerText = "Copiado!";
 		alert("Resultado copiado com sucesso!");
+	    document.getElementById("botaoCopy2").style.display = 'block';
     });
 
 }
@@ -187,6 +188,7 @@ function definirDataAtual() {
     let hoje = new Date().toISOString().split('T')[0];
     document.getElementById("dataInicial").value = hoje;
     document.getElementById("dataFinal").value = hoje;
+	document.getElementById("botaoCopy2").style.display = 'note';
 }
 
 	// FIM CALCULADORA
