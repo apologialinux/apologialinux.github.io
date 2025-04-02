@@ -112,6 +112,7 @@ h2 {
     let horaInicial = document.getElementById("horaInicial").value;
     let dataFinal = document.getElementById("dataFinal").value;
     let horaFinal = document.getElementById("horaFinal").value;
+    document.getElementById("botaoCopy2").style.display = 'block';
 	
     
     let inicio = new Date(`${dataInicial}T${horaInicial}`);
@@ -180,7 +181,7 @@ function copiarResultado2() {
     navigator.clipboard.writeText(resultado).then(() => {
         //document.getElementById("resultado").innerText = "Copiado!";
 		alert("Resultado copiado com sucesso!");
-	    document.getElementById("botaoCopy2").style.display = 'block';
+	    
     });
 
 }
