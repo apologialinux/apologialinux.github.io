@@ -220,7 +220,7 @@ function definirDataAtual() {
             const binInput = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
-			document.getElementById("botaoCopy").style.display = 'none';
+			document.getElementById("botaoCopy").style.display = 'block';
 
             // Filtra e extrai apenas números de 6 dígitos da string de entrada
             const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
