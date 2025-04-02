@@ -112,7 +112,7 @@ h2 {
     let horaInicial = document.getElementById("horaInicial").value;
     let dataFinal = document.getElementById("dataFinal").value;
     let horaFinal = document.getElementById("horaFinal").value;
-    document.getElementById("botaoCopy2").style.display = 'block';
+    
 	
     
     let inicio = new Date(`${dataInicial}T${horaInicial}`);
@@ -171,8 +171,10 @@ h2 {
 	}
 	if (dataInicial == dataFinal) {
 	document.getElementById("resultado").innerText = "Início: " + horaInicial + "\nFim: " + horaFinal + "\nTempo total: " + resultado;
+		document.getElementById("botaoCopy2").style.display = 'block';
 	} else {
 	document.getElementById("resultado").innerText = "Início: " + DayI + "/" + MesI + "/" + anoI + " às " + horaInicial + "\nFim: " + DayF + "/" + MesF + "/" + anoF + " às " + horaFinal + "\nTempo total: " + resultado;
+		document.getElementById("botaoCopy2").style.display = 'block';
 
 	}
 }
