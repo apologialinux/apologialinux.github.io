@@ -53,14 +53,25 @@
             font-size: 40px; /* Aumenta o tamanho da fonte do resultado */
         }
 		
-input[type=date] {
+/*input[type=date] {
     transform: scale(5);
 	padding-left: 0px;
 	text-align: center;
 	margin: 0.4rem 0;
 	border: 0px;
 	outline: none;
-} 
+} */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  font-size: 40px; /* Ajuste o tamanho */
+   transform: scale(5);
+	padding-left: 0px;
+	text-align: center;
+	margin: 0.4rem 0;
+	border: 0px;
+	outline: none;
+}
+
+
 input[type=time] {
     transform: scale(5);
 	padding-left: 0px;
