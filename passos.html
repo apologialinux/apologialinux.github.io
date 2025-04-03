@@ -19,7 +19,16 @@
             max-width: 600px;
             background-color: #fff;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0); 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
+        }
+		.container2 {
+            width: 100%;
+            max-width: 1050px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
+			position: absolute;
+            top: 63%;
         }
         .stepper {
             display: flex;
@@ -91,11 +100,15 @@
 			background-color: Green;
 			color: white;
 		}
+
+		
     </style>
 </head>
 <body>
+
     <div class="container">
 		<h2>GERADOR DE BOLETIM</h2>
+		
         <div class="stepper">
             <div class="step active" data-step="1">
                 <div class="step-number">1</div>
@@ -121,6 +134,7 @@
 			<li>Existindo horário de fim, calcular TEMPO TOTAL e acrescenter "FIM" ao ASSUNTO da mensagem.</li>
 			<li>Número do incidente.</li>
 			<li>URL para o incidente.</li>
+			<br>
 		</p>
         </div>
         <div class="content" data-content="2">
@@ -129,6 +143,7 @@
 				<li>Listar serviços para seleção.</li>
 				<li>Serão exibidos no ASSUNTO da mensagem.</li>
 				<li>Serão listados na coluna CANAIS.</li>
+				<br>
 				<br>
 				<br>
 			</p>
@@ -141,6 +156,7 @@
 				<li>Definir tipo de FALHA.</li>
 				<br>
 				<br>
+				<br>
 			</p>
         </div>
         <div class="content" data-content="4">
@@ -151,17 +167,186 @@
 				<li>Controle de erro e enfatizar responsabilidades.</li>
 				<li>Indicar modelo correto.</li>
 				<li>Botões para copiar ASSUNTO e CONTEÚDO.</li>
+				<li>Verificar se o REMETENTE é "Logistica TI Monitoracao".</li>
 			</p>
         </div>
         <div class="buttons">
             <button id="prevBtn" onclick="changeStep(-1)">Anterior</button>
             <button id="nextBtn" onclick="changeStep(1)">Próximo</button>
         </div>
+		
 		<p><i>*Ajustar comportamento dos botões.
 		<br>*Não limpar campos.</i></p>
 
     </div>
-
+<div class="container2">
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=1041
+ style='width:781.0pt;border-collapse:collapse;mso-yfti-tbllook:1184;
+ mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:23.0pt'>
+  <td width=157 colspan=2 style='width:118.0pt;border:solid windowtext 1.0pt;
+  border-right:solid black 1.0pt;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;
+  height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Início<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=157 colspan=2 style='width:118.0pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid black 1.0pt;
+  background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Fim<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=64 rowspan=3 style='width:48.0pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#A9D08E;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Tempo total<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=205 style='width:154.0pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Causa<o:p></o:p></span></b></p>
+  </td>
+  <td width=229 style='width:172.0pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Impacto<o:p></o:p></span></b></p>
+  </td>
+  <td width=131 style='width:98.0pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Canais<o:p></o:p></span></b></p>
+  </td>
+  <td width=97 style='width:73.0pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Falha<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:23.0pt'>
+  <td width=93 rowspan=2 style='width:70.0pt;border-top:none;border-left:solid windowtext 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#A8D08D;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Data<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=64 rowspan=2 style='width:48.0pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#A8D08D;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Hora<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=93 rowspan=2 style='width:70.0pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#A8D08D;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Data<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=64 rowspan=2 style='width:48.0pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#A8D08D;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Hora<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=205 rowspan=3 style='width:154.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Em análise...<o:p></o:p></span></p>
+  </td>
+  <td width=229 style='width:172.0pt;border:none;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'>(&nbsp;&nbsp; ) <b>Degradado</b><o:p></o:p></span></p>
+  </td>
+  <td width=131 rowspan=3 style='width:98.0pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Rede Vero&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td width=97 style='width:73.0pt;border:none;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'>( &nbsp;&nbsp;) Interna<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:23.0pt'>
+  <td width=229 style='width:172.0pt;border:none;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'>(&nbsp;&nbsp; ) <b>Severamente
+  Degradado</b><o:p></o:p></span></p>
+  </td>
+  <td width=97 style='width:73.0pt;border:none;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'>&nbsp;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes;height:23.0pt'>
+  <td width=93 nowrap style='width:70.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>xx/xx/2025<o:p></o:p></span></p>
+  </td>
+  <td width=64 nowrap style='width:48.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>xx:xx<o:p></o:p></span></p>
+  </td>
+  <td width=93 nowrap style='width:70.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=64 nowrap style='width:48.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=64 nowrap style='width:48.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=229 style='width:172.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'>(&nbsp;&nbsp) <b>Indisponível</b><o:p></o:p></span></p>
+  </td>
+  <td width=97 style='width:73.0pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:white;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'>(&nbsp;&nbsp) Externa<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+		</div>
     <script>
 	
 		document.getElementById("prevBtn").style.color = "#ccc";
@@ -178,7 +363,7 @@
 
             if (currentStep < 1) {
 				document.getElementById("prevBtn").style.color = "#ccc";
-
+				
                 currentStep = 1;
 				
             } else if (currentStep > steps.length) {
@@ -190,5 +375,6 @@
             contents[currentStep - 1].classList.add('active');
         }
     </script>
+			
 </body>
 </html>
