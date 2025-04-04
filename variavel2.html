@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiperlink com Número</title>
+</head>
+<body>
+    <!-- Campos de entrada -->
+    <label for="link">Digite um link (URL):</label>
+    <input type="url" id="link" placeholder="https://exemplo.com"><br><br>
+
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" placeholder="123"><br><br>
+
+    <!-- Label para exibir o resultado -->
+    <label id="resultado">O número aparecerá aqui</label><br><br>
+
+    <script>
+        // Adiciona eventos de entrada aos campos
+        const campoLink = document.getElementById('link');
+        const campoNumero = document.getElementById('numero');
+        const resultado = document.getElementById('resultado');
+
+        function atualizarLabel() {
+            const link = campoLink.value;
+            const numero = campoNumero.value;
+
+            if (link && numero) {
+                // Cria a label com hiperlink
+                resultado.innerHTML = `<a href="${link}" target="_blank">${numero}</a>`;
+            } else {
+                resultado.innerText = 'Preencha os campos para visualizar o resultado';
+            }
+        }
+
+        // Ouvintes para atualizar a label em tempo real
+        campoLink.addEventListener('input', atualizarLabel);
+        campoNumero.addEventListener('input', atualizarLabel);
+    </script>
+</body>
+</html>
