@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização em Tempo Real</title>
+</head>
+<body>
+    <label id="resultado">Selecione uma data</label><br>
+    <input type="date" id="entrada">
+
+    <script>
+        // Adiciona um ouvinte de evento ao campo de entrada
+        document.getElementById('entrada').addEventListener('input', function() {
+            const valorEntrada = this.value; // Valor no formato yyyy-mm-dd (padrão)
+
+            if (valorEntrada) {
+                // Separa o ano, mês e dia
+                const [ano, mes, dia] = valorEntrada.split('-');
+
+                // Formata no estilo dd/mm/yyyy
+                const dataFormatada = `${dia}/${mes}/${ano}`;
+
+                // Atualiza o conteúdo da label
+                document.getElementById('resultado').innerText = `Data selecionada: ${dataFormatada}`;
+            } else {
+                document.getElementById('resultado').innerText = 'Selecione uma data';
+            }
+        });
+    </script>
+</body>
+</html>
