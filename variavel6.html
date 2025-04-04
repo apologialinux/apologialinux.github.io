@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar Tabela</title>
+</head>
+<body>
+    <!-- Tabela container2 existente no site -->
+    <div id="container2">
+        <h2>Exemplo de Tabela</h2>
+        <table border="1" style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th style="padding: 8px; border: 1px solid #ccc;">Coluna 1</th>
+                    <th style="padding: 8px; border: 1px solid #ccc;">Coluna 2</th>
+                    <th style="padding: 8px; border: 1px solid #ccc;">Coluna 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #ccc;">Dado 1</td>
+                    <td style="padding: 8px; border: 1px solid #ccc;">Dado 2</td>
+                    <td style="padding: 8px; border: 1px solid #ccc;">Dado 3</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #ccc;">Dado 4</td>
+                    <td style="padding: 8px; border: 1px solid #ccc;">Dado 5</td>
+                    <td style="padding: 8px; border: 1px solid #ccc;">Dado 6</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Botão para copiar a tabela -->
+    <button id="copiar">Copiar Conteúdo</button>
+
+    <script>
+        document.getElementById('copiar').addEventListener('click', function() {
+            // Seleciona o container2
+            const container = document.getElementById('container2');
+
+            // Cria um range para selecionar o conteúdo do container
+            const range = document.createRange();
+            range.selectNode(container);
+
+            // Copia o conteúdo selecionado
+            const sel = window.getSelection();
+            sel.removeAllRanges(); // Remove seleções anteriores
+            sel.addRange(range); // Adiciona a seleção ao range
+            document.execCommand('copy'); // Comando para copiar o conteúdo
+
+            // Limpa a seleção
+            sel.removeAllRanges();
+
+            alert('Conteúdo copiado com formatação! Cole no seu e-mail.');
+        });
+    </script>
+</body>
+</html>
