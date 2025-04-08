@@ -164,7 +164,7 @@ select {
             <h2>Incidente</h2>
 			    <!-- INCIDENTE -->
 	<label for="numero">Incidente: </label>
-    <input  id="numero" align="left"  placeholder="12345678"> <br><br>		
+    <input  id="numero" align="center"  placeholder="12345678"> <br><br>		
     <label for="link">URL do Incidente:</label>
     <input type="url" id="link" placeholder="http://servicedesk/CAisd/pdmweb.exe?OP=SEARCH+FACTORY=cr+SKIPLIST=1+QBE.EQ.id=11223344">
 	
@@ -174,13 +174,13 @@ select {
 	<label>INICÍO:&nbsp <input type="date" id="dataInicial"></label> &nbsp<input type="time" id="horaInicial"></label>
  
     <label>FIM:&nbsp <input type="date" id="dataFinal"></label> &nbsp <input type="time" id="horaFinal"></label>
-            <p>
+            <!-- p>
 			<li id="ok"> Horário de inicio.✔</li>
 			<li>Existindo horário de fim, calcular TEMPO TOTAL e acrescenter "FIM" ao ASSUNTO da mensagem.</li>
 			<li id="ok">Número do incidente.✔</li>
 			<li id="ok">URL para o incidente.✔</li>
 
-		</p>
+		</p -->
         </div>
         <div class="content" data-content="2">
             <h2>Serviços</h2>
@@ -198,8 +198,10 @@ select {
             <h2>Causa</h2>
 			<input type="radio" name="radiofalha" id="falhaInt" onclick="myRadiofalha()">&nbsp  Interna &nbsp &nbsp
 			<input type="radio" name="radiofalha" id="falhaExt" onclick="myRadiofalha()">&nbsp  Externa &nbsp &nbsp
-				<select id="dropdown">
-		<option value="opcao1">Escolha uma causa:</option>
+			<br>
+
+			<select id="dropdown">
+		<option value="opcao1">Defina uma causa:</option>
 		<option value="opcao1">Falha externa</option>
 		<option value="opcao1">Em análise</option>
 		<option value="opcao1">Em análise pela CSU</option>
@@ -216,14 +218,18 @@ select {
 		<option value="opcao3">Monitor_Erro_91</option>
 		<option value="opcao3">Monitor_Erro_90</option>
     </select>
-            <p>
+			<br>
+			<input type="radio" name="radiofalha2" id="falhaDeg" onclick="myImpacto()">&nbsp  Degradado &nbsp &nbsp
+			<input type="radio" name="radiofalha2" id="falhaSevDeg" onclick="myImpacto()">&nbsp  Severamente Degradado &nbsp &nbsp
+			<input type="radio" name="radiofalha2" id="falhaIndisp" onclick="myImpacto()">&nbsp  Indisponível &nbsp &nbsp
+            <!-- p>
 				<li id="ok">Definir CAUSA.✔</li>
 				<li>Definir tipo de IMPACTO (com imagens de exemplo).</li>
 				<li id="ok">Definir tipo de FALHA.✔</li>
 				<br>
 				<br>
 				<br>
-			</p>
+			</p -->
         </div>
         <div class="content" data-content="4">
             <h2>Revisão</h2>
@@ -241,11 +247,15 @@ select {
             <button id="nextBtn" onclick="changeStep(1)">Próximo</button>
         </div>
 		
-		<p><i>*Ajustar comportamento dos botões.
-		<br>*Não limpar campos.</i></p>
+		<!-- p><i>*Ajustar comportamento dos botões.
+		<br>*Não limpar campos.</i></p -->
 
     </div>
 <div class="container2">
+<table>
+<label align="center"><b>Assunto:</b> Boletim de Eventos -</label><label> Serviços </label>
+</table>
+<br>
 <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=1041
  style='width:781.0pt;border-collapse:collapse;mso-yfti-tbllook:1184;
  mso-padding-alt:0cm 0cm 0cm 0cm'>
@@ -335,7 +345,7 @@ select {
   <td width=229 style='width:172.0pt;border:none;border-right:solid windowtext 1.0pt;
   background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
   <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
-  color:black;mso-fareast-language:PT-BR'>(&nbsp;&nbsp;) <b>Degradado</b><o:p></o:p></span></p>
+  color:black;mso-fareast-language:PT-BR'><o:p>(<label id="impactDeg"> </label>) <b>Degradado</b></o:p></span></p>
   </td>
   <td width=131 rowspan=3 style='width:98.0pt;border-top:none;border-left:none;
   border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
@@ -354,8 +364,8 @@ select {
   <td width=229 style='width:197pt;border:none;border-right:solid windowtext 1.0pt;
   background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
   <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
-  color:black;mso-fareast-language:PT-BR'>(&nbsp;&nbsp;) <b>Severamente
-  Degradado</b><o:p></o:p></span></p>
+  color:black;mso-fareast-language:PT-BR'><o:p>(<label id="impactSevDeg"> </label>) <b>Severamente
+  Degradado</b></o:p></span></p>
   </td>
   <td width=97 style='width:73.0pt;border:none;border-right:solid windowtext 1.0pt;
   background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
@@ -402,7 +412,7 @@ select {
   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
   <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
-  color:black;mso-fareast-language:PT-BR'>(&nbsp;&nbsp;)<b> Indisponível</b><o:p></o:p></span></p>
+  color:black;mso-fareast-language:PT-BR'><o:p>(<label id="impactIndisp"> </label>)<b> Indisponível</b></o:p></span></p>
   </td>
   <td width=97 style='width:73.0pt;border-top:none;border-left:none;border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:white;
@@ -412,7 +422,7 @@ select {
   </td>
  </tr>
 </table><br>
-<b><label id="resultadoInc">Mais informações no incidente: </label></b>
+<b><label id="resultadoInc">Incidente e URL</label></b>
 		</div>
     <script>
 		// INCIDENTE
@@ -427,11 +437,11 @@ select {
 
             if (link && numero) {
                 // Cria a label com hiperlink
-                resultadoInc.innerHTML = `Mais informações no incidente:<a href="${link}" target="_blank">${numero}</a>`;
+                resultadoInc.innerHTML = `Mais informações no incidente: <a href="${link}" target="_blank">${numero}</a>`;
             } else {
-                //resultado.innerText = 'Dados incompletos!';
-				alert("Dados incompletos!");
-            }
+                //resultadoInc.innerText = 'Dados incompletos!';
+				//alert("Dados incompletos!");
+            }  
         }
 
 
@@ -471,81 +481,7 @@ select {
 		
 		// FIM ANTERIOR PROXIMO
 		
-		// DATA E HORA
-		function calcularDiferenca() {
-    let dataInicial = document.getElementById("dataInicial").value;
-    let horaInicial = document.getElementById("horaInicial").value;
-    let dataFinal = document.getElementById("dataFinal").value;
-    let horaFinal = document.getElementById("horaFinal").value;
 
-    
-    let inicio = new Date(`${dataInicial}T${horaInicial}`);
-    let fim = new Date(`${dataFinal}T${horaFinal}`);
-		let anoI = inicio.getFullYear();
-    	let DayI = inicio.getDate();
-		let MesI = inicio.getMonth() + 1;
-		let DayF = fim.getDate();
-		let MesF = fim.getMonth() + 1;
-		let anoF = fim.getFullYear();
-		 
-		
-    if (isNaN(inicio) || isNaN(fim)) {
-        document.getElementById("resultado").innerText = "Dados incompletos!";
-		
-        return;
-    }
-    
-    let diferencaMs = fim - inicio;
-    if (diferencaMs < 0) {
-        document.getElementById("resultado").innerText = "A data final deve ser maior que a data inicial.";
-        return;
-    }
-    
-    let totalMinutos = Math.floor(diferencaMs / (1000 * 60));
-    let horas = Math.floor(totalMinutos / 60);
-    let minutos = totalMinutos % 60;
-		if ( horas < 10 ) {
-		horas = ('0' + horas).slice(-2);
-	} else {
-		horas = horas + '';
-	}
-	if ( minutos < 10) { // or min = min < 10 ? '0' + min : min; 
-		minutos = ('0' + minutos).slice(-2);
-	} else {
-		minutos = minutos + '';
-	}
-    
-    let resultado = `${horas}:${minutos}`;
-
-	if ( DayI < 10) { // or min = min < 10 ? '0' + min : min; 
-		DayI = ('0' + DayI).slice(-2);
-	} else {
-		DayI = DayI + '';
-	}
-	if ( MesI < 10) { // or min = min < 10 ? '0' + min : min; 
-		MesI = ('0' + MesI).slice(-2);
-	}
-	if ( DayF < 10) { // or min = min < 10 ? '0' + min : min; 
-		DayF = ('0' + DayF).slice(-2);
-	} else {
-		DayF = DayF + '';
-	}
-	if ( MesF < 10) { // or min = min < 10 ? '0' + min : min; 
-		MesF = ('0' + MesF).slice(-2);
-	}
-	if (dataInicial == dataFinal) {
-	document.getElementById("tempototal").innerText = resultado;
-	} /* else {
-	document.getElementById("resultado").innerText = "Início: " + DayI + "/" + MesI + "/" + anoI + " às " + horaInicial + "\nFim: " + DayF + "/" + MesF + "/" + anoF + " às " + horaFinal + "\nTempo total: " + resultado;
-
-	} */
-}
-		function definirDataAtual() {
-    let hoje = new Date().toISOString().split('T')[0];
-    //document.getElementById("dataInicial").value = hoje;
-    //document.getElementById("dataFinal").value = hoje;
-
-}
        // Data Início
 			document.getElementById('dataInicial').addEventListener('input', function() {
             const valorEntrada = this.value; // Valor no formato yyyy-mm-dd (padrão)
@@ -617,6 +553,9 @@ select {
                 document.getElementById('horafim').innerText = '';
             }
         });
+		
+		
+
 		// CAUSA
 		// Adiciona um ouvinte de evento ao dropdown
         document.getElementById('dropdown').addEventListener('change', function() {
@@ -637,6 +576,30 @@ function myRadiofalha() {
 				document.getElementById('erroExt').innerText = "X";
 				document.getElementById('erroInt').innerText = "  ";
 			}  
+			}
+			
+			
+			// IMPACTO
+function myImpacto() {
+			let testedeg = document.getElementById("falhaDeg").checked;
+			let testesevdeg = document.getElementById("falhaSevDeg").checked;
+			let testeindisp = document.getElementById("falhaIndisp").checked;
+		
+			
+			if ( testedeg === true ) {
+				document.getElementById('impactDeg').innerText = "X";
+				document.getElementById('impactIndisp').innerText = "  ";
+				document.getElementById('impactSevDeg').innerText = "  ";
+			} else if ( testeindisp === true ) {
+				document.getElementById('impactDeg').innerText = "  ";
+				document.getElementById('impactIndisp').innerText = "X";
+				document.getElementById('impactSevDeg').innerText = "  ";
+			} else {
+				document.getElementById('impactDeg').innerText = "  ";
+				document.getElementById('impactIndisp').innerText = "  ";
+				document.getElementById('impactSevDeg').innerText = "X";
+			} 
+			
 			}
     </script>
 			
