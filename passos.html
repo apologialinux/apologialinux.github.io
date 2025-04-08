@@ -126,6 +126,17 @@ select {
             font-size: 16px;
 			outline: none;
         }
+
+#dropzinho {
+            width: 110px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            font-size: 16px;
+			outline: none;
+        }
+		
 #link {
 	width: 600px;
 	outline: none;
@@ -251,10 +262,16 @@ select {
 		<br>*Não limpar campos.</i></p -->
 
     </div>
-<div class="container2">
+<div class="container2" id="container2">
 <table>
-<label align="center"><b>Assunto:</b> Boletim de Eventos -</label><label> Serviços </label>
+<label align="center"><b>Assunto:</b> Boletim de Eventos -</label><label id="assunt">  </label> <!-- select id="dropzinho">
+		<option value="opcao1">PARCIAL</option>
+		<option value="opcao1">ATUALIZAÇÃO</option>
+		<option value="opcao1">ERRATA</option>
+		</select -->
 </table>
+
+ 
 <br>
 <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=1041
  style='width:781.0pt;border-collapse:collapse;mso-yfti-tbllook:1184;
@@ -422,8 +439,10 @@ select {
   </td>
  </tr>
 </table><br>
-<b><label id="resultadoInc">Incidente e URL</label></b>
+<b><label id="resultadoInc">Incidente e URL</label></b><br>
+<button id="copiar">Copiar Conteúdo</button>
 		</div>
+		
     <script>
 		// INCIDENTE
 		// Adiciona eventos de entrada aos campos
@@ -494,6 +513,7 @@ select {
 
                  
                 document.getElementById('datainicio').innerText = `${dataFormatada}`;
+				document.getElementById('assunt').innerText = " Serviços - INÍCIO";
             } else {
                 document.getElementById('datainicio').innerText = '';
             }
@@ -530,6 +550,7 @@ select {
 
                 // Atualiza o conteúdo da label
                 document.getElementById('datafim').innerText = `${dataFormatada2}`;
+				document.getElementById('assunt').innerText = " Serviços - INÍCIO/FIM";
             } else {
                 document.getElementById('datafim').innerText = '';
             }
@@ -601,6 +622,27 @@ function myImpacto() {
 			} 
 			
 			}
+    </script>
+	<script>
+        document.getElementById('copiar').addEventListener('click', function() {
+            // Seleciona o container2
+            const containercopy = document.getElementById('container2');
+
+            // Cria um range para selecionar o conteúdo do container
+            const range = document.createRange();
+            range.selectNode(containercopy);
+
+            // Copia o conteúdo selecionado
+            const sel = window.getSelection();
+            sel.removeAllRanges(); // Remove seleções anteriores
+            sel.addRange(range); // Adiciona a seleção ao range
+            document.execCommand('copy'); // Comando para copiar o conteúdo
+
+            // Limpa a seleção
+            sel.removeAllRanges();
+
+            alert('Conteúdo copiado com formatação! Cole no seu e-mail.');
+        });
     </script>
 			
 </body>
