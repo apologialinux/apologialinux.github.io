@@ -5,21 +5,26 @@
     <title>Boletim de Eventos</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 80vh;
+            height: 95vh;
             background-color: #ffffff;
+			
         }
         .container {
-            width: 80%;
-            max-width: 600px;
+            width: 100%;
+            max-width: 1045px;
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
+			position: absolute;			
+			left: 5%;
+		 
+			 
         }
 		.container2 {
             width: 100%;
@@ -28,7 +33,9 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
 			position: absolute;
-            top: 70%;
+            top: 5%;
+			left: 5%;
+			justify-content: center;
         }
         .stepper {
             display: flex;
@@ -76,7 +83,7 @@
         .content.active {
             display: block;
         }
-        .buttons {
+        .buttons { 
             display: flex;
             justify-content: space-between;
         }
@@ -100,6 +107,10 @@
 			background-color: Green;
 			color: white;
 		}
+		input[type=checkbox] {
+			transform: scale(2);
+			outline: none;
+		}	 
 		input[type=date] {
 			transform: scale(1);
 			outline: none;
@@ -125,6 +136,7 @@ select {
             background-color: #f9f9f9;
             font-size: 16px;
 			outline: none;
+			
         }
 
 #dropzinho {
@@ -135,6 +147,27 @@ select {
             background-color: #f9f9f9;
             font-size: 16px;
 			outline: none;
+			
+        }
+textarea {
+			width: 30%;
+            padding: 10px;
+            margin: 0px 0;
+            font-size: 10px;
+			resize: none;
+                     
+        }
+	        
+		.container3 {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
+			position: absolute;
+            top: 5%;
+			left: 50%;
+			justify-content: center;
         }
 		
 #link {
@@ -145,6 +178,17 @@ select {
 	width: 70px;
 	outline: none;
 }	
+#CorLetra {
+	color: white;
+}
+	
+textarea {
+            width: 30%;
+            padding: 10px;
+            margin: 0px ;
+            resize: none;
+			font-size: 16px;
+        }	
 	
     </style>
 </head>
@@ -156,61 +200,33 @@ select {
         <div class="stepper">
             <div class="step active" data-step="1">
                 <div class="step-number">1</div>
-                <div class="step-title">INCIDENTE</div>
+                <div class="step-title">BOLETIM</div>
             </div>
             <div class="step" data-step="2">
                 <div class="step-number">2</div>
-                <div class="step-title">SERVIÇOS</div>
+                <div class="step-title">ENVIO</div>
             </div>
-            <div class="step" data-step="3">
-                <div class="step-number">3</div>
-                <div class="step-title">CAUSA</div>
-            </div>
-            <div class="step" data-step="4">
-                <div class="step-number">4</div>
-                <div class="step-title">REVISÃO</div>
-            </div>
-        </div>
-        <div class="content active" data-content="1">
-            <h2>Incidente</h2>
-			    <!-- INCIDENTE -->
-	<label for="numero">Incidente: </label>
-    <input  id="numero" align="center"  placeholder="12345678"> <br><br>		
-    <label for="link">URL do Incidente:</label>
-    <input type="url" id="link" placeholder="http://servicedesk/CAisd/pdmweb.exe?OP=SEARCH+FACTORY=cr+SKIPLIST=1+QBE.EQ.id=11223344">
-	
-	<br><br>
-    <!-- Label para exibir o resultado -->
 
-	<label>INICÍO:&nbsp <input type="date" id="dataInicial"></label> &nbsp<input type="time" id="horaInicial"></label>
+        </div>
+		
+        <div class="content active" data-content="1">
+          
+	<label for="numero">Incidente: </label>
+    <input  id="numero" align="left"  placeholder="12345678"> 	
+    <label for="link">URL do Incidente:</label>
+    <textarea id="link" placeholder="http://servicedesk/CAisd/pdmweb.exe?OP=SEARCH+FACTORY=cr+SKIPLIST=1+QBE.EQ.id=11223344" rows="2"></textarea>
+	<br><br>
+   	<label>INICÍO:&nbsp <input type="date" id="dataInicial"></label> &nbsp<input type="time" id="horaInicial"></label>
  
     <label>FIM:&nbsp <input type="date" id="dataFinal"></label> &nbsp <input type="time" id="horaFinal"></label>
-            <!-- p>
-			<li id="ok"> Horário de inicio.✔</li>
-			<li>Existindo horário de fim, calcular TEMPO TOTAL e acrescenter "FIM" ao ASSUNTO da mensagem.</li>
-			<li id="ok">Número do incidente.✔</li>
-			<li id="ok">URL para o incidente.✔</li>
-
-		</p -->
-        </div>
-        <div class="content" data-content="2">
-            <h2>Serviços</h2>
-		
-            <p>
-				<li>Listar serviços para seleção.</li>
-				<li>Serão exibidos no ASSUNTO da mensagem.</li>
-				<li>Serão listados na coluna CANAIS.</li>
-				<br>
-				<br>
-				<br>
-			</p>
-        </div>
-        <div class="content" data-content="3">
-            <h2>Causa</h2>
+	       <br><br>
 			<input type="radio" name="radiofalha" id="falhaInt" onclick="myRadiofalha()">&nbsp  Interna &nbsp &nbsp
 			<input type="radio" name="radiofalha" id="falhaExt" onclick="myRadiofalha()">&nbsp  Externa &nbsp &nbsp
-			<br>
-
+		<br><br>
+			<input type="radio" name="radiofalha2" id="falhaDeg" onclick="myImpacto()">&nbsp  Degradado &nbsp &nbsp
+			<input type="radio" name="radiofalha2" id="falhaSevDeg" onclick="myImpacto()">&nbsp  Severamente Degradado &nbsp &nbsp
+			<input type="radio" name="radiofalha2" id="falhaIndisp" onclick="myImpacto()">&nbsp  Indisponível &nbsp &nbsp
+		<br><br>
 			<select id="dropdown">
 		<option value="opcao1">Defina uma causa:</option>
 		<option value="opcao1">Falha externa</option>
@@ -230,20 +246,40 @@ select {
 		<option value="opcao3">Monitor_Erro_90</option>
 		<option value="opcao3">Monitor_Erro_96</option>
     </select>
-			<br>
-			<input type="radio" name="radiofalha2" id="falhaDeg" onclick="myImpacto()">&nbsp  Degradado &nbsp &nbsp
-			<input type="radio" name="radiofalha2" id="falhaSevDeg" onclick="myImpacto()">&nbsp  Severamente Degradado &nbsp &nbsp
-			<input type="radio" name="radiofalha2" id="falhaIndisp" onclick="myImpacto()">&nbsp  Indisponível &nbsp &nbsp
-            <!-- p>
-				<li id="ok">Definir CAUSA.✔</li>
-				<li>Definir tipo de IMPACTO (com imagens de exemplo).</li>
-				<li id="ok">Definir tipo de FALHA.✔</li>
-				<br>
-				<br>
-				<br>
-			</p -->
+<br><br>
+         
+			<div>
+			<tr>
+			<td id="MC0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Minha Conta"><input type="checkbox" name="primeiro" id="Teste" onclick="graficMC00010102()"><label id="CorLetra"  style="background-color:Gray;">&nbsp MC-Acesso</label></a>
+			</td>
+			<td id="OB0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Office Banking"><input type="checkbox" name="primeiro" id="Teste" onclick="graficOB0001()"><label id="CorLetra"  style="background-color:Gray;">&nbsp OB-Acesso</label></a>
+			</td>
+			<td id="OM0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Office Mobile "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp OM-Acesso</label></a>
+			</td>
+			<td id="HB0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=20&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Home Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp HB-Acesso</label></a>
+			</td>
+			<td id="MCard0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=95&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Meus Cartões "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp MCard-Acesso</label></a>
+			</td>
+			<td id="MC1001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Minha Conta "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MC-Extrato C. Corrente</label></a>
+			</td>
+			<td id="OB1001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Office Banking "> <input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp OB-Extrato C. Corrente</label></a>
+			</td>
+			</tr>
+			
+ 	'		
+ 
+
+			</div>
+ 
         </div>
-        <div class="content" data-content="4">
+        <div class="content" data-content="2">
             <h2>Revisão</h2>
             <p>
 				<li id="ok">Mostar boletim de exemplo preenchido.✔</li>
@@ -258,14 +294,12 @@ select {
             <button id="prevBtn" onclick="changeStep(-1)">Anterior</button>
             <button id="nextBtn" onclick="changeStep(1)">Próximo</button>
         </div>
-		
-		<!-- p><i>*Ajustar comportamento dos botões.
-		<br>*Não limpar campos.</i></p -->
-
+ 
     </div>
 <div class="container2" id="container2">
 <table>
-<label align="center"><b>Assunto:</b> Boletim de Eventos -</label><label id="assunt">  </label> <!-- select id="dropzinho">
+		
+<label align="center"><b>Boletim de Eventos -</b></label><label id="assunt">Serviço </label> <!-- select id="dropzinho">
 		<option value="opcao1">PARCIAL</option>
 		<option value="opcao1">ATUALIZAÇÃO</option>
 		<option value="opcao1">ERRATA</option>
@@ -370,7 +404,7 @@ select {
   background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
   <p class=MsoNormal align=center style='text-align:center'><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
-  mso-fareast-language:PT-BR'>Rede Vero&nbsp;<o:p></o:p></span></p>
+  mso-fareast-language:PT-BR'><o:p><label id="canaisStatus"> </label></o:p></span></p>
   </td>
   <td width=97 style='width:73.0pt;border:none;border-right:solid windowtext 1.0pt;
   background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
@@ -443,8 +477,50 @@ select {
 <b><label id="resultadoInc">Incidente e URL</label></b><br>
 <button id="copiar">Copiar Conteúdo</button>
 		</div>
+ <div class="container3"> 
+	<iframe src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=17&servico=1&tipo=1&graf=2" width="980" height="580"  id="graficMC00010102" style="display:none"></iframe> <!--  Acesso 0001 / Minha Conta -->
+	<iframe src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=10&servico=1&tipo=1&graf=2" width="980" height="580"  id="graficOB0001" style="display:none"></iframe> <!--  OB-Acesso 0001 -->
+ 
+ </div>
 		
-    <script>
+    <script>  
+	// SERVICOS 2 ESCALA A
+	function graficMC00010102() {
+		
+		var x = document.getElementById('graficMC00010102');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "Internet Banking";
+			document.getElementById('assunt').innerText += " 0001 (Acesso)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficMC00010102').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('assunt').innerText = "";
+				
+				
+			}
+	}
+graficOB0001	
+	function graficOB0001() {
+		
+		var x = document.getElementById('graficOB0001');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "Internet Banking";
+			document.getElementById('assunt').innerText += "0001 (Acesso)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficOB0001').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('assunt').innerText = "";
+				
+			}
+	}
+
+	// FIM SERVICOS 2 ESCALA A
 		// INCIDENTE
 		// Adiciona eventos de entrada aos campos
         const campoLink = document.getElementById('link');
@@ -644,6 +720,7 @@ function myImpacto() {
 
             alert('Conteúdo copiado com formatação! Cole no seu e-mail.');
         });
+		 //FONTE ARIAL
     </script>
 			
 </body>
