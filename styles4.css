@@ -330,7 +330,7 @@ button.corS {
 button.corS:hover {
   background-color: Green;
   color: white;
-  transform: rotateY(150deg);
+  /* transform: rotateY(150deg); */
 }
 
 button.verD {
