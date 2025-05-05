@@ -381,7 +381,7 @@ function dragElement(elmnt) {
 			}
 		
 			 function Loading() {	
-			corbotao();REF();REFB();REFA();Backg();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();EscA0();EscA1();EscA2();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();Aackg();
+			corbotao();REF();REFB();REFA();Backg();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();Aackg();
 			}
             function Fbanri1() {
 			var x = document.getElementById('banri1');
@@ -1115,6 +1115,8 @@ function dragElement(elmnt) {
 				document.getElementById('MC00010102').src += '';
 				document.getElementById('OB00010102').src += '';
 				document.getElementById('OM00010102').src += '';
+				document.getElementById('MBA00010102').src += '';
+				document.getElementById('BanriF00010102').src += '';
 				document.getElementById('HB00010102').src += '';
 				document.getElementById('MCard00010102').src += '';
 				document.getElementById('MC10010102').src += '';
@@ -1185,6 +1187,34 @@ function dragElement(elmnt) {
 			} else {
 				x.style.display = 'none';
 				document.getElementById('OM000101').style.display='none'; <!--  Gráfico -->
+				tag.style.background="black";
+					}
+			}
+			function EscA2MBA() {
+			var x = document.getElementById('MBA0001');
+			var tag=document.getElementById("clicado41");
+			if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('MBA000101').style.display='block'; <!--  Gráfico -->
+			tag.style.background="#6495ED";
+			tag.style.color="white";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('MBA000101').style.display='none'; <!--  Gráfico -->
+				tag.style.background="black";
+					}
+			}
+			function EscA2BanriF() {
+			var x = document.getElementById('BanriF0001');
+			var tag=document.getElementById("clicado41");
+			if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('BanriF000101').style.display='block'; <!--  Gráfico -->
+			tag.style.background="#6495ED";
+			tag.style.color="white";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('BanriF000101').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
 					}
 			}
