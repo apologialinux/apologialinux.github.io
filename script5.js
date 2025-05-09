@@ -125,7 +125,7 @@ function myFunction() {
 	
 	if ( x.length == 7 && ( N != "" ) ) {
     text = "Incidente " + x + w + N;
-	document.getElementById("demo").innerHTML = Day + "/" + Mes + "/" + d.getFullYear() + " " + Dhor + ":" + Dmin +  " - " +  text;
+	document.getElementById("demo").innerHTML = Day + "/" + Mes + "/" + d.getFullYear() + " " + Dhor + ":" + Dmin +  " — " +  text;
 	document.getElementById("botao2").style.display = 'block';
   } else {
 	document.getElementById("demo").innerHTML = "Dados incompletos";
