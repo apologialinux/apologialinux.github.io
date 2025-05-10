@@ -301,12 +301,12 @@ function dragElement(elmnt) {
 			document.getElementById('P01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-			//PP1();
+		
 			} else {
 				x.style.display = 'none';
 				document.getElementById('P01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();			
+						
 					}
 			}
 			
@@ -320,12 +320,12 @@ function dragElement(elmnt) {
 			document.getElementById('P02').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-			//PP1();
+
 			} else {
 				y.style.display = 'none';
 				document.getElementById('P02').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			
@@ -335,10 +335,12 @@ function dragElement(elmnt) {
 			z.style.display = 'block';
 			document.getElementById('todasPayware').style.display='block'; <!--  Gráfico -->
 			document.getElementById("clicado50").style.background="#6495ED";
+			document.getElementById('divbutton2').style.display='block';
 			} else {
 				z.style.display = 'none';
 				document.getElementById('todasPayware').style.display='none'; <!--  Gráfico -->
 				document.getElementById("clicado50").style.background="black";
+				document.getElementById('divbutton2').style.display='none';
 					}
 
 			}
@@ -382,12 +384,12 @@ function dragElement(elmnt) {
 			document.getElementById('P03').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				z.style.display = 'none';
 				document.getElementById('P03').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 
 			}
@@ -404,14 +406,14 @@ function dragElement(elmnt) {
 			document.getElementById('autband01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				z.style.display = 'none';
 				document.getElementById('autband01').style.display='none'; <!--  Gráfico -->
 				document.getElementById('autband3').style.display='none';
 				document.getElementById('autband03').style.display='none';
 				tag.style.background="black";
-				//PP2();
+				
 				
 					}
 			}
@@ -445,13 +447,13 @@ function dragElement(elmnt) {
 			document.getElementById('banri01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#6495ED";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('banri01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
 				tag.style.color="white";
-				//PP2();
+				
 					}
 			}
 			
@@ -464,12 +466,12 @@ function dragElement(elmnt) {
 			document.getElementById('verdec01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('verdec01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			
@@ -482,12 +484,12 @@ function dragElement(elmnt) {
 			document.getElementById('banricard01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('banricard01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+			
 					}
 			}
 			
@@ -500,12 +502,12 @@ function dragElement(elmnt) {
 			document.getElementById('cabal01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-			//PP1();
+		
 			} else {
 				x.style.display = 'none';
 				document.getElementById('cabal01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+			
 					}
 			}
 			
@@ -518,12 +520,12 @@ function dragElement(elmnt) {
 			document.getElementById('bok01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('bok01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			
@@ -536,12 +538,12 @@ function dragElement(elmnt) {
 			document.getElementById('bph01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			//PP1();
+
 			} else {
 				x.style.display = 'none';
 				document.getElementById('bph01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			
@@ -554,12 +556,12 @@ function dragElement(elmnt) {
 			document.getElementById('pix01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('pix01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			
@@ -572,12 +574,11 @@ function dragElement(elmnt) {
 			document.getElementById('vrbene01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			//PP1();
-			} else {
+			
 				x.style.display = 'none';
 				document.getElementById('vrbene01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
             function Fcabalv1() {
@@ -589,12 +590,12 @@ function dragElement(elmnt) {
 			document.getElementById('cabalv01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('cabalv01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			            
@@ -607,12 +608,12 @@ function dragElement(elmnt) {
 			document.getElementById('pluxee01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('pluxee01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			
@@ -625,12 +626,12 @@ function dragElement(elmnt) {
 			document.getElementById('alelo01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('alelo01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			
@@ -643,12 +644,12 @@ function dragElement(elmnt) {
 			document.getElementById('ticket01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('ticket01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			
@@ -661,12 +662,12 @@ function dragElement(elmnt) {
 			document.getElementById('greencard01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('greencard01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}	
 			
@@ -679,12 +680,12 @@ function dragElement(elmnt) {
 			document.getElementById('senff01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('senff01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}	
 			
@@ -697,12 +698,12 @@ function dragElement(elmnt) {
 			document.getElementById('tcp01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('tcp01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			            
@@ -715,12 +716,12 @@ function dragElement(elmnt) {
 			document.getElementById('conduct01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('conduct01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			
@@ -733,12 +734,12 @@ function dragElement(elmnt) {
 			document.getElementById('payw01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('payw01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+			
 					}
 			}
 			
@@ -751,12 +752,12 @@ function dragElement(elmnt) {
 			document.getElementById('total01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			//PP1();
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('total01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			
@@ -1156,11 +1157,11 @@ function dragElement(elmnt) {
 			x.style.display = 'block';
 			tag.style.background="#808080";
 			tag.style.color="white";
-			//PP1();
+		
 			} else {
 				x.style.display = 'none';
 				tag.style.background="black";
-				//PP2();
+				
 					}
 			}
 			
