@@ -430,7 +430,7 @@ function dragElement(elmnt) {
 			}
 		
 			function Loading() {	
-			corbotao();Divis();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();
+			FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();
 			Backg();Aackg();
 			Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();
 			document.getElementById("clicado40").style.background="black";
