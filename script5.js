@@ -574,7 +574,7 @@ function dragElement(elmnt) {
 			document.getElementById('vrbene01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			
+			} else {
 				x.style.display = 'none';
 				document.getElementById('vrbene01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
