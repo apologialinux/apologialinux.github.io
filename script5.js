@@ -430,6 +430,7 @@ function dragElement(elmnt) {
 			FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();
 			Backg();
 			Aackg();
+			Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();
 			document.getElementById("clicado40").style.background="black";
 			document.getElementById("clicado41").style.background="black";
 			document.getElementById("clicado50").style.background="black";
@@ -1155,11 +1156,11 @@ function dragElement(elmnt) {
 			x.style.display = 'block';
 			tag.style.background="#808080";
 			tag.style.color="white";
-			PP1();
+			//PP1();
 			} else {
 				x.style.display = 'none';
 				tag.style.background="black";
-				PP2();
+				//PP2();
 					}
 			}
 			
