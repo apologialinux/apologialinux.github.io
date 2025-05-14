@@ -18,7 +18,7 @@ h2 {
 
 iframe {
     transition: transform 0.4s ease-in-out; /* Efeito suave */
-    position: relative;
+    /*position: relative;*/
     margin: 0;
     padding: 0;
     z-index: 100; 
