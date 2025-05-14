@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener("DOMContentLoaded", function () {
     // Mapeamento de gráficos e suas URLs de destino
     const mapeamentoLinks = {
-        "MC000101": "https://github.com/apologialinux",
-        "OB000101": "https://github.com/apologialinux",
-        "HB000101": "https://github.com/apologialinux",
+        "MC00010102": "https://github.com/apologialinux",
+        "OB00010102": "https://github.com/apologialinux",
+        "HB00010102": "https://github.com/apologialinux",
         // Adicione mais conforme necessário
     };
 
