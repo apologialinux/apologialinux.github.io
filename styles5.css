@@ -17,7 +17,7 @@ h2 {
 }
 
 iframe {
-    transition: transform 0.3s ease-in-out; /* Efeito suave */
+    transition: transform 1.0s ease-in-out; /* Efeito suave */
     margin: 0;
     padding: 0;
 	
