@@ -21,7 +21,7 @@ iframe {
 }
 
 iframe:hover {
-    transform: scale(1.3); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
 }
 
 
