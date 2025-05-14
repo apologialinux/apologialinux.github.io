@@ -225,7 +225,7 @@ table, th, td, {
   border: 1px solid black;
   border-spacing: collapse;
   border-collapse: collapse;
-  text-align: center;
+  text-align: bottom;
   padding: 0px;
 }
 
