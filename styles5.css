@@ -424,6 +424,10 @@ button.M365:hover {
     }
  }
 
+#APIalerta02:hover {
+	transform: scale(2.0);
+}
+
 #passagemT{
   position:fixed; 
   top:95%;
