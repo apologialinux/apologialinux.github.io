@@ -1,13 +1,8 @@
-window.addEventListener("resize", function() {
-    console.log("A janela foi redimensionada para:", window.innerWidth, "x", window.innerHeight);
-});
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const zoomControl = document.getElementById('zoomControl');
 
     // Atualiza o estado do checkbox conforme o zoom inicial
-    zoomControl.checked = document.body.style.zoom === '1.0';
+    zoomControl.checked = document.body.style.zoom === '0.5';
 
     zoomControl.addEventListener('change', function() {
         if (this.checked) {
