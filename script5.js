@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+/*
 document.querySelectorAll("iframe").forEach(function(iframe) {
     iframe.addEventListener("click", function() {
         var destino = iframe.getAttribute("data-url"); // Obtém a URL de destino
@@ -21,7 +22,7 @@ document.querySelectorAll("iframe").forEach(function(iframe) {
         }
     });
 });
-
+*/
 window.onload = function() {
     alert("Página carregada com sucesso!");
 };
