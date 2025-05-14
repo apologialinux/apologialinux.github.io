@@ -13,6 +13,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Mapeamento de gráficos e suas URLs de destino
+    const mapeamentoLinks = {
+        "MC0001": "https://www.exemplo1.com",
+        "OB0001": "https://www.exemplo2.com",
+        "HB0001": "https://www.exemplo3.com",
+        // Adicione mais conforme necessário
+    };
+
+    // Aplicar evento de clique em todos os iframes
+    Object.keys(mapeamentoLinks).forEach(function (id) {
+        let iframe = document.getElementById(id);
+        if (iframe) {
+            iframe.addEventListener("click", function () {
+                window.open(mapeamentoLinks[id], "_blank");
+            });
+        }
+    });
+});
+
 
 /*Download */
 /*
