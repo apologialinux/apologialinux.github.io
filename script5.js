@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.getElementById("MC0001").addEventListener("click", function() {
+    window.open("https://www.exemplo.com", "_blank"); // Altere para o destino desejado
+});
+
 /*Download */
 /*
  
