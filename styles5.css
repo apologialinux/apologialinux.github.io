@@ -472,7 +472,7 @@ button.M365:hover {
 
 .imgcontainer {
   text-align: center;
-  position: relative;
+  position: fixed;
 }
 
 .container {
