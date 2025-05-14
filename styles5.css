@@ -18,6 +18,9 @@ h2 {
 
 iframe {
     transition: transform 0.3s ease-in-out; /* Efeito suave */
+    margin: 0;
+    padding: 0;
+	
 }
 
 iframe:hover {
