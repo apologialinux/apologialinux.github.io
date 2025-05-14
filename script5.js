@@ -13,25 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Mapeamento de gráficos e suas URLs de destino
-    const mapeamentoLinks = {
-        "MC00010102": "https://github.com/apologialinux",
-        "OB00010102": "https://github.com/apologialinux",
-        "HB00010102": "https://github.com/apologialinux",
-        // Adicione mais conforme necessário
-    };
-
-    // Aplicar evento de clique em todos os iframes
-    Object.keys(mapeamentoLinks).forEach(function (id) {
-        let iframe = document.getElementById(id);
-        if (iframe) {
-            iframe.addEventListener("click", function () {
-                window.open(mapeamentoLinks[id], "_blank");
-            });
+document.querySelectorAll("iframe").forEach(function(iframe) {
+    iframe.addEventListener("click", function() {
+        var destino = iframe.getAttribute("data-url"); // Obtém a URL de destino
+        if (destino) {
+            window.open(destino, "_blank"); // Abre a página ao clicar no gráfico
         }
     });
 });
+
 
 
 /*Download */
