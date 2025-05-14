@@ -22,6 +22,9 @@ document.querySelectorAll("iframe").forEach(function(iframe) {
     });
 });
 
+window.onload = function() {
+    alert("Página carregada com sucesso!");
+};
 
 
 /*Download */
