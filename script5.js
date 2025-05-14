@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (this.checked) {
             document.body.style.zoom = '0.2';
         } else {
-            document.body.style.zoom = '1.0';
+            document.body.style.zoom = '0.34';
         }
     });
 });
