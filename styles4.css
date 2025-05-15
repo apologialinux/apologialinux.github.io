@@ -15,12 +15,12 @@ h2 {
   text-align: center;
   font-size: 60px;
 }
-
+/* 1-4
 iframe {
     transition: transform 0.4s ease-in-out; /* Efeito suave */
     /*position: relative;*/
     margin: 0;
-    padding: 0;
+/* 2   padding: 0;
     z-index: 100; 
 }
 
@@ -28,14 +28,14 @@ iframe:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
 }
 
-iframe.alerta1x:hover {
+/* 3 iframe.alerta1x:hover {
     transform: none; /* Impede o efeito de escala */
 }
 
-iframe.tempmediopagISPB03:hover {
+/* 4 iframe.tempmediopagISPB03:hover {
     transform: none; 
 }
-
+*/
 #botao {
   margin: 0 auto;
   text-align: center;
