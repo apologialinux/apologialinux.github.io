@@ -412,14 +412,14 @@ button.M365:hover {
 }
    
 #APIalerta02 {
-  z-index: 1; 
+  z-index: 70; 
   width: 4250;
   height: 4000;
   border: 0px;
 }
 #APIalerta02 {
   zoom: 1.00;
-    z-index: -3;
+    z-index: 70;
   -moz-transform: scale(0.0);
   -moz-transform-origin: 0 0;
   -o-transform: scale(0.0);
