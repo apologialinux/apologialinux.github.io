@@ -429,15 +429,15 @@ button.M365:hover {
 }
  @media screen and (-webkit-min-device-pixel-ratio:0) {
 #APIalerta02 {
-	z-index: 70;
+	z-index: -3;
 	position:flex; 
     zoom: 1;
     }
  }
 
-#APIalerta02:hover {
+/* #APIalerta02:hover {
 	transform: scale(4.0);
-}
+}*/
 
 #passagemT{
   position:fixed; 
