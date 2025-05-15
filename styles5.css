@@ -27,7 +27,7 @@ iframe {
 
 iframe:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
-     z-index: 1;
+    
 }
 
 iframe.alerta1x:hover {
@@ -412,7 +412,7 @@ button.M365:hover {
 }
    
 #APIalerta02 {
-  z-index: -3; 
+  z-index: 1; 
   width: 4250;
   height: 4000;
   border: 0px;
