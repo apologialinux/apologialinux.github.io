@@ -33,6 +33,10 @@ iframe.alerta1x:hover {
     transform: none; /* Impede o efeito de escala */
 }
 
+iframe.tempmediopagISPB02:hover {
+    transform: none; /* Impede o efeito de escala */
+}
+
 
 
 #botao {
