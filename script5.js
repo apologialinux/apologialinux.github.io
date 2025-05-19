@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.getElementById("floating-btn").addEventListener("click", function() {
+  let iframe = document.getElementById("MC00010102");
+  iframe.contentWindow.postMessage("botaoClicado", "*");
+});
+
+
 /*
 document.querySelectorAll("iframe").forEach(function(iframe) {
     iframe.addEventListener("click", function() {
