@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+	top: 50%;
 }
 
 #container {
@@ -15,7 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 50%;
+  
 }
 
 #h3 {
