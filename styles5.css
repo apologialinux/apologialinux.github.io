@@ -8,7 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  vertical-aling: 50%;
+  
 }
 
 #container {
@@ -16,6 +16,8 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+	    top: 0;
+    left: 0;
   
 }
 
