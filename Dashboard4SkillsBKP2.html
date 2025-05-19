@@ -203,7 +203,14 @@ dragElement(document.getElementById("divbutton2"));
 			</table>
 			
  <script>
- 
+document.querySelectorAll("iframe").forEach(iframe => {
+    let cssLink = document.createElement("link");
+    cssLink.rel = "stylesheet";
+    cssLink.href = "https://ltp4.corp.banrisul.com.br/brb/monitora_brb.css";
+    iframe.contentWindow.document.head.appendChild(cssLink);
+});
+
+	 
 // Get the modal
 var modal = document.getElementById("myModal");
 
