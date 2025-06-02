@@ -325,16 +325,10 @@ table.tabela, td.tabela {
   border-collapse: collapse;
 } 
 
-table, th, {
+table, th, td, {
   border: 1px solid black;
   border-spacing: collapse;
   border-collapse: collapse;
-  text-align: center;
-  padding: 0px;
-}
-
-td {
-  vertical-align: top;
   text-align: center;
   padding: 0px;
 }
