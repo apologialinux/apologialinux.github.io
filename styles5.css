@@ -334,7 +334,7 @@ table, th, {
 }
 
 td {
-  vertical-align: bottom;
+  vertical-align: center;
   text-align: center;
   padding: 0px;
 }
