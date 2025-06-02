@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     zoomControl.addEventListener('change', function() {
         if (this.checked) {
-            document.body.style.zoom = '0.2';
-        } else {
             document.body.style.zoom = '0.34';
+        } else {
+            document.body.style.zoom = '1.0';
         }
     });
 });
