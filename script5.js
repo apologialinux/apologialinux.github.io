@@ -830,7 +830,7 @@ function dragElement(elmnt) {
 					}
 			}
 			
-			/*function REFB() {
+			function REFB() {
 				document.getElementById('APIalerta02').src += '';
 				document.getElementById('tempmediopagISPB02').src += ''; 
 				document.getElementById('acesso02').src += '';
@@ -853,7 +853,7 @@ function dragElement(elmnt) {
 				document.getElementById('OBpagtitulban02').src += '';
 				document.getElementById('pxu1l02').src += '';			
 			}
-			*/
+			
 			 function EscB0() {
 			var x = document.getElementById('pixincluchave');
 			var tag=document.getElementById("clicado40");
@@ -1189,7 +1189,7 @@ function dragElement(elmnt) {
 					}
 			}
 			
-			/*function REFA() {
+			function REFA() {
 				document.getElementById('MC00010102').src += '';
 				document.getElementById('OB00010102').src += '';
 				document.getElementById('OM00010102').src += '';
@@ -1226,7 +1226,7 @@ function dragElement(elmnt) {
 				document.getElementById('HB00010102').src += '';	
 				document.getElementById('OM41220102').src += '';				
 			}
-			*/
+			
 			 function EscA0() {
 			var x = document.getElementById('MC0001');
 			var tag=document.getElementById("clicado41");
