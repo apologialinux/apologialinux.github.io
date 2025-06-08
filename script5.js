@@ -266,7 +266,7 @@ function definirDataAtual() {
     let hoje = new Date().toISOString().split('T')[0];
     document.getElementById("dataInicial").value = hoje;
     document.getElementById("dataFinal").value = hoje;
-	document.getElementById("botaoCopy2").style.display = 'none';
+	document.getElementById("botaoCopy").style.display = 'none';
 }
 
 	// FIM CALCULADORA
@@ -360,7 +360,7 @@ País: ${response.country || 'INDISPONÍVEL'}
 
         // Função para copiar o resultado da pesquisa
         function copiarResultado() {
-            const resultDiv =  document.getElementById('result');
+            const resultDiv = document.getElementById('resultado') + document.getElementById('result');
             const textToCopy = resultDiv.innerText || resultDiv.textContent;
 
             if (textToCopy) {
@@ -377,7 +377,6 @@ País: ${response.country || 'INDISPONÍVEL'}
 			
         }
 /* FIM CALCULA E BINS */
-
 
 	
 		function sendMail() {
