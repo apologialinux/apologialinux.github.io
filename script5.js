@@ -360,7 +360,7 @@ País: ${response.country || 'INDISPONÍVEL'}
 
         // Função para copiar o resultado da pesquisa
         function copiarResultado() {
-            const resultDiv = document.getElementById('resultado') + document.getElementById('result');
+            const resultDiv = document.getElementById('result') + document.getElementById('result');
             const textToCopy = resultDiv.innerText || resultDiv.textContent;
 
             if (textToCopy) {
