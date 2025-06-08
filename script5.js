@@ -183,6 +183,202 @@ function desmarcar() {
 
 /*Fim Take Action*/
 
+/* CALCULA E BINS */
+function calcularDiferenca() {
+    let dataInicial = document.getElementById("dataInicial").value;
+    let horaInicial = document.getElementById("horaInicial").value;
+    let dataFinal = document.getElementById("dataFinal").value;
+    let horaFinal = document.getElementById("horaFinal").value;
+	
+    
+    let inicio = new Date(`${dataInicial}T${horaInicial}`);
+    let fim = new Date(`${dataFinal}T${horaFinal}`);
+		let anoI = inicio.getFullYear();
+    	let DayI = inicio.getDate();
+		let MesI = inicio.getMonth() + 1;
+		let DayF = fim.getDate();
+		let MesF = fim.getMonth() + 1;
+		let anoF = fim.getFullYear();
+		
+    if (isNaN(inicio) || isNaN(fim)) {
+        //document.getElementById("resultado").innerText = "Dados incompletos!";
+		alert("Data/Hora incompletos!");
+        return;
+    }
+    
+    let diferencaMs = fim - inicio;
+    if (diferencaMs < 0) {
+        //document.getElementById("resultado").innerText = "A data final deve ser maior que a data inicial.";
+		alert("A data final deve ser maior que a data inicial.");
+        return;
+    }
+    
+    let totalMinutos = Math.floor(diferencaMs / (1000 * 60));
+    let horas = Math.floor(totalMinutos / 60);
+    let minutos = totalMinutos % 60;
+		if ( horas < 10 ) {
+		horas = ('0' + horas).slice(-2);
+	} else {
+		horas = horas + '';
+	}
+	if ( minutos < 10) { // or min = min < 10 ? '0' + min : min; 
+		minutos = ('0' + minutos).slice(-2);
+	} else {
+		minutos = minutos + '';
+	}
+    
+    let resultado = `${horas}:${minutos}`;
+
+	if ( DayI < 10) { // or min = min < 10 ? '0' + min : min; 
+		DayI = ('0' + DayI).slice(-2);
+	} else {
+		DayI = DayI + '';
+	}
+	if ( MesI < 10) { // or min = min < 10 ? '0' + min : min; 
+		MesI = ('0' + MesI).slice(-2);
+	}
+	if ( DayF < 10) { // or min = min < 10 ? '0' + min : min; 
+		DayF = ('0' + DayF).slice(-2);
+	} else {
+		DayF = DayF + '';
+	}
+	if ( MesF < 10) { // or min = min < 10 ? '0' + min : min; 
+		MesF = ('0' + MesF).slice(-2);
+	}
+	if (dataInicial == dataFinal) {
+	document.getElementById("resultado").innerText = "Início: " + horaInicial + "\nFim: " + horaFinal + "\nTempo total: " + resultado;
+	document.getElementById("botaoCopy2").style.display = 'block';
+	} else {
+	document.getElementById("resultado").innerText = "Início: " + DayI + "/" + MesI + "/" + anoI + " às " + horaInicial + "\nFim: " + DayF + "/" + MesF + "/" + anoF + " às " + horaFinal + "\nTempo total: " + resultado;
+	document.getElementById("botaoCopy2").style.display = 'block';
+
+	}
+}
+function copiarResultado2() {
+    let resultado = document.getElementById("resultado").innerText;
+    navigator.clipboard.writeText(resultado).then(() => {
+        //document.getElementById("resultado").innerText = "Copiado!";
+		alert("Data/Hora copiado com sucesso!");
+    });
+
+}
+function definirDataAtual() {
+    let hoje = new Date().toISOString().split('T')[0];
+    document.getElementById("dataInicial").value = hoje;
+    document.getElementById("dataFinal").value = hoje;
+	document.getElementById("botaoCopy2").style.display = 'none';
+}
+
+	// FIM CALCULADORA
+	
+        const data = null;
+
+        // Carregar a chave da API do arquivo config.json
+        function carregarConfig() {
+            return fetch('config.json')
+                .then(response => response.json())
+                .then(config => {
+                    return config.apiKey; // Retorna a chave da API
+                })
+                .catch(error => {
+                    console.error("Erro ao carregar a configuração:", error);
+                    return null;
+                });
+        }
+
+        // Função para consultar a API
+        async function consultarApi() {
+            const binInput = document.getElementById('binInput').value;
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = ''; // Limpar resultados anteriores
+			document.getElementById("botaoCopy").style.display = 'block';
+
+            // Filtra e extrai apenas números de 6 dígitos da string de entrada
+            const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
+
+            if (!bins || bins.length === 0) {
+                resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
+                return;
+            }
+
+            // Carrega a chave da API
+            const apiKey = await carregarConfig();
+
+            if (!apiKey) {
+                resultDiv.innerHTML = '<span class="error">Erro ao carregar a chave da API.</span>';
+                return;
+            }
+
+            // Processa cada BIN com delay
+            for (const bin of bins) {
+                // Espera 300ms antes de fazer a próxima consulta
+                await new Promise(resolve => setTimeout(resolve, 300));
+
+                const xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
+
+                xhr.addEventListener('readystatechange', function () {
+                    if (this.readyState === this.DONE) {
+                        try {
+                            const response = JSON.parse(this.responseText);
+
+                            if (response.message) {
+                                resultDiv.innerHTML += `<span class="error">Erro no BIN ${bin}: ${response.message}</span><br>`;
+                            } else {
+                                // Formatar os dados retornados
+                                const output = `
+BIN: ${response.bin || 'INDISPONÍVEL'}
+Marca: ${response.brand || 'INDISPONÍVEL'}
+Tipo: ${response.type || 'INDISPONÍVEL'}
+Categoria: ${response.category || 'INDISPONÍVEL'}
+Banco: ${response.issuer || 'INDISPONÍVEL'}
+País: ${response.country || 'INDISPONÍVEL'}
+<br>`;
+
+                                resultDiv.innerHTML += output;
+
+                                // Verificar se o Banco requer boletim
+                                const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
+                                if (alertBanco.includes(response.issuer)) {
+                                    const alertMessage = `Necessário boletim para o ${response.issuer}.`;
+                                    // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
+                                    alert(alertMessage);
+                                }
+                            }
+                        } catch (e) {
+                            resultDiv.innerHTML += `<span class="error">Erro ao processar a resposta da API para o BIN ${bin}.</span><br>`;
+                        }
+                    }
+                });
+
+                xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
+                xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
+                xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
+                xhr.send(data);
+            }
+        }
+
+        // Função para copiar o resultado da pesquisa
+        function copiarResultado() {
+            const resultDiv = document.getElementById('resultado') + document.getElementById('result');
+            const textToCopy = resultDiv.innerText || resultDiv.textContent;
+
+            if (textToCopy) {
+                navigator.clipboard.writeText(textToCopy)
+                    .then(() => { 
+                        alert("Dados copiados com sucesso!");
+                    })
+                    .catch(err => {
+                        alert("Erro ao copiar o resultado Bins: " + err);
+                    });
+            } else {
+                alert("Não há Bins para copiar.");
+            }
+			
+        }
+/* FIM CALCULA E BINS */
+
+
 	
 		function sendMail() {
 			var link = "mailto:Daniel Ramos Santos EXT <T06035@bergs.br>; Denis Pereira EXT <Denis_Pereira_EXT@banrisul.com.br>; Higor Anhaia EXT <Higor_Anhaia_EXT@banrisul.com.br>; Hiuri Anhaia EXT <T07512@bergs.br>; Jonathan Rocha EXT <T06361@bergs.br>; Lucas Berneira EXT <T06665@bergs.br>; Luis Silva EXT <T03252@bergs.br>; Pedro Oliveira EXT <T06385@bergs.br>; Renan Tavares EXT <T07264@bergs.br>; Rubens Godoi EXT <T07672@bergs.br>; Sergio Filho EXT <T06505@bergs.br>; Wagner Souza Silva EXT <t06215@bergs.br>; Rodrigo Teixeira EXT <T07230@bergs.br>"
