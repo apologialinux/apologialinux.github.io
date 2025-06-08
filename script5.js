@@ -290,7 +290,7 @@ function definirDataAtual() {
         async function consultarApi() {
             const binInput = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = 'teste'; // Limpar resultados anteriores
+            resultDiv.innerHTML = ''; // Limpar resultados anteriores
 			document.getElementById("botaoCopy").style.display = 'block';
 
             // Filtra e extrai apenas números de 6 dígitos da string de entrada
