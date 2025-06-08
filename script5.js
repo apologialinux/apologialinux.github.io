@@ -270,6 +270,7 @@ function definirDataAtual() {
 }
 
 	// FIM CALCULADORA
+
 	
         const data = null;
 
@@ -291,7 +292,6 @@ function definirDataAtual() {
             const binInput = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
-			document.getElementById("botaoCopy").style.display = 'block';
 
             // Filtra e extrai apenas números de 6 dígitos da string de entrada
             const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
@@ -360,21 +360,20 @@ País: ${response.country || 'INDISPONÍVEL'}
 
         // Função para copiar o resultado da pesquisa
         function copiarResultado() {
-            const resultDiv = document.getElementById('resultado') + document.getElementById('result');
+            const resultDiv = document.getElementById('result');
             const textToCopy = resultDiv.innerText || resultDiv.textContent;
 
             if (textToCopy) {
                 navigator.clipboard.writeText(textToCopy)
                     .then(() => { 
-                        alert("Dados copiados com sucesso!");
+                        alert("Resultado copiado com sucesso!");
                     })
                     .catch(err => {
-                        alert("Erro ao copiar o resultado Bins: " + err);
+                        alert("Erro ao copiar o resultado: " + err);
                     });
             } else {
-                alert("Não há Bins para copiar.");
+                alert("Não há resultados para copiar.");
             }
-			
         }
 /* FIM CALCULA E BINS */
 
