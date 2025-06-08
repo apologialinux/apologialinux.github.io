@@ -227,7 +227,7 @@ function calcularDiferenca() {
 		minutos = minutos + '';
 	}
     
-    let resultado = `${horas}:${minutos}`;
+    let resultadoTK = `${horas}:${minutos}`;
 
 	if ( DayI < 10) { // or min = min < 10 ? '0' + min : min; 
 		DayI = ('0' + DayI).slice(-2);
@@ -246,18 +246,18 @@ function calcularDiferenca() {
 		MesF = ('0' + MesF).slice(-2);
 	}
 	if (dataInicial == dataFinal) {
-	document.getElementById("resultado").innerText = "Início: " + horaInicial + "\nFim: " + horaFinal + "\nTempo total: " + resultado;
+	document.getElementById("resultadoTK").innerText = "Início: " + horaInicial + "\nFim: " + horaFinal + "\nTempo total: " + resultadoTK;
 	document.getElementById("botaoCopy2").style.display = 'block';
 	} else {
-	document.getElementById("resultado").innerText = "Início: " + DayI + "/" + MesI + "/" + anoI + " às " + horaInicial + "\nFim: " + DayF + "/" + MesF + "/" + anoF + " às " + horaFinal + "\nTempo total: " + resultado;
+	document.getElementById("resultadoTK").innerText = "Início: " + DayI + "/" + MesI + "/" + anoI + " às " + horaInicial + "\nFim: " + DayF + "/" + MesF + "/" + anoF + " às " + horaFinal + "\nTempo total: " + resultadoTK;
 	document.getElementById("botaoCopy2").style.display = 'block';
 
 	}
 }
 function copiarResultado2() {
-    let resultado = document.getElementById("resultado").innerText;
-    navigator.clipboard.writeText(resultado).then(() => {
-        //document.getElementById("resultado").innerText = "Copiado!";
+    let resultado = document.getElementById("resultadoTK").innerText;
+    navigator.clipboard.writeText(resultadoTK).then(() => {
+        //document.getElementById("resultadoTK").innerText = "Copiado!";
 		alert("Data/Hora copiado com sucesso!");
     });
 
