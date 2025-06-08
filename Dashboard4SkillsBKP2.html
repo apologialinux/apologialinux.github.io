@@ -11,6 +11,62 @@ body {
     zoom: 1.0;
 }
 
+textarea {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 60px;
+            resize: none;
+           
+}
+        .error {
+            color: red;
+        }
+        .alert {
+            color: orange;
+            font-weight: bold;
+        }
+                h1 {
+            text-align: center;
+        }
+        p {
+            font-size: 60px;
+			text-align: center;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 0px solid #fefefe;
+            background-color: #FFFFFF;
+            white-space: pre-wrap;
+            /* font-size: 40px;  Aumenta o tamanho da fonte do resultado */
+        }
+
+#result {
+	background-color: black;
+	width: 95%;
+	border: 0px;
+}
+
+input[type=date] {
+    transform: scale(4.7);
+	padding-left: 0px;
+	text-align: center;
+	margin: 0.4rem 0;
+	border: 0px;
+	outline: none;
+}
+
+input[type=time] {
+    transform: scale(5);
+	padding-left: 0px;
+	text-align: center;
+	margin: 0.4rem 0;
+	border: 0px;
+	outline: none;
+	
+} 
+
 #container {
   display: flex;
   justify-content: center;
@@ -130,6 +186,45 @@ iframe.tempmediopagISPB03:hover {
     transform: none; /* Impede o efeito de escala */
 }
 
+#botaoCopy2 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 60px;
+  color: black;
+  border: 3px solid white;
+  padding: 16px 32px;
+  text-decoration: none;
+  font-size: 45px;
+  margin: 4px 2px;
+  transition-duration: 0.8s;
+  cursor: pointer;
+   
+}
+
+#botaoCopy2:hover {
+  background-color: Green;
+  color: white;
+}
+
+#botaoCopy {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 60px;
+  color: black;
+  border: 3px solid white;
+  padding: 16px 32px;
+  text-decoration: none;
+  font-size: 45px;
+  margin: 4px 2px;
+  transition-duration: 0.8s;
+  cursor: pointer;
+   
+}
+
+#botaoCopy:hover {
+  background-color: Green;
+  color: white;
+}
 
 
 #botao {
@@ -607,9 +702,9 @@ button.M365:hover {
   position: fixed; 
   z-index: 1; 
   left: 37%;
-  top: 35%;
+  top: 15%;
   width: 30%; 
-  height: 44%; 
+  height: 90%; 
   overflow: hidden;  
   background-color: rgb(0,0,0);  
   background-color: rgba(0,0,0,0.0);  
@@ -832,11 +927,12 @@ dragElement(document.getElementById("divbutton2"));
 			
 			<div id="myModal" class="modal2">
 			
-  <!-- Modal content -->
+ <!-- Modal content -->
   <div class="modal-content" style="background-color:#000000">
     <div class="modal-header" align="center">
 	  <!-- span class="close">&times;</span -->
 	  	<br>
+		<p align="center">Take Action</p>
       <input  placeholder="Nome" id="name"><input  placeholder="Número do incidente" id="numb"><br>
       <button id="botao" type="button" onclick="myFunction()">Gerar</button> <button id="botao3"  onclick="document.getElementById('myModal').style.display='none'; corbotao();"> Sair </button>
 
@@ -850,9 +946,28 @@ dragElement(document.getElementById("divbutton2"));
       <p id="demo"></p>
     </div>
     <div class="modal-footer">
+	</div>
+	<div align="center">
       <button id="botao2" type="button" onclick="myCopy()" style="display:none">Copiar</button><br>
-    </div>
-  </div>
+ 
+    <p align="center">Calculadora de Data/Horas</p>
+
+	<p align="center">Data/Hora Inicial:</p>
+	<p align="center"><input type="date" id="dataInicial"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaInicial">  </p>
+
+    <p align="center">Data/Hora Final:</p>
+	<p align="center"><input type="date" id="dataFinal"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaFinal"></p>
+    <br>
+    <button onclick="calcularDiferenca()" type="button" id="botao" >Calcular</button><button onclick="copiarResultado2()" type="button"  id="botaoCopy2" style="display:none">Copiar Resultado</button>
+	<p id="resultado"></p>
+	
+        <p align="center">Consulta de BIN</p>
+        <!-- Alterando o campo de input para textarea -->
+        <textarea id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ..." rows="4"></textarea><br>
+        <button onclick="consultarApi()" id="botao" type="button" >Consultar</button><button onclick="copiarResultado();copiarResultado2()" id="botaoCopy" type="button">Copiar os Resultados</button>
+        <div id="result"></div>
+        <!-- Botão para copiar o resultado --></div>
+        <br>
 			</table>
 			
  <script>
