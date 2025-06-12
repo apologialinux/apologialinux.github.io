@@ -11,6 +11,15 @@ input[type=checkbox] {
 	
 } 
 
+textarea {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 45px;
+            resize: none;
+           
+}
+
 h2 {
   text-align: center;
   font-size: 60px;
@@ -510,9 +519,9 @@ button.M365:hover {
   position: fixed; 
   z-index: 1; 
   left: 37%;
-  top: 35%;
+  top: 15%;
   width: 30%; 
-  height: 44%; 
+  height: 88%; 
   overflow: hidden;  
   background-color: rgb(0,0,0);  
   background-color: rgba(0,0,0,0.0);  
