@@ -206,7 +206,7 @@ Row: 1; Column: 4
 Alert
 Row: 27; Column: 5
 O Tempo Médio de Resposta(TMR) do BTO, /open-..." rows="8"></textarea>
-  <button onclick="processarDados()" id="botao">Formatar</button><button id="botao2" type="button" onclick="myCopy2()" >Copiar API</button><br>
+  <button onclick="processarDados()" id="botao">Formatar</button><button id="botao03" type="button" onclick="myCopy2()" >Copiar API</button><br>
   <textarea id="outputData" rows="6" placeholder="Resultado" readonly></textarea>
    <!-- p id="outputData2"></p -->
   
@@ -220,7 +220,7 @@ O Tempo Médio de Resposta(TMR) do BTO, /open-..." rows="8"></textarea>
       const linhas = input.split('\n');
       const resultado = [];
       let blocoAtual = '';
-	  document.getElementById("botao2").style.display = 'block';
+	  document.getElementById("botao03").style.display = 'block';
 
       const regexData = /^[A-Z][a-z]{2} \d{1,2}, \d{4} @ \d{2}:\d{2}:\d{2}\.\d{3}$/;
       const regexIgnorar = /^(Row:|[-]$|Time|rule|monitoring|kibana|\d+$)/;
