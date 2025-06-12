@@ -9,6 +9,7 @@
 </head>
 <body onLoad="Loading()" id="bg">
  <script src="https://apologialinux.github.io/script4.js">
+	 
 //Make the DIV element draggagle:
 dragElement(document.getElementById("divbutton2"));
 
@@ -91,7 +92,7 @@ dragElement(document.getElementById("divbutton2"));
 			<button type="button" class="corP" id="clicado50" onclick="REF();FP1();FP2();FP3();Fpix1();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();" title="Escala Payware">Payware↑ ↓</button>
 			</td>
 			<td>
-			<button type="button" class="corP" id="myBtn" onclick="corbotao();" title="Para a aba Information no Spectrum">Take Action</button>
+			<button type="button" class="corP" id="myBtn" onclick="corbotao();" title="Formatação de dados para Ctrl + V">CTRL+C</button>
 			</td>	
 			<td>
 			<button type="button" class="corS" id="clicado33" onclick="REF();REFB();REFA();Backg();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscMBA2002();EscMCL0063();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();Aackg()" title="Inverter tudo">↑ ↓</button>
@@ -180,8 +181,9 @@ dragElement(document.getElementById("divbutton2"));
     <div class="modal-header" align="center">
 	  <!-- span class="close">&times;</span -->
 	  	<br>
+		<p align="center">Take Action</p>
       <input  placeholder="Nome" id="name"><input  placeholder="Número do incidente" id="numb"><br>
-      <button id="botao" type="button" onclick="myFunction()">Gerar</button> <button id="botao3"  onclick="document.getElementById('myModal').style.display='none'; corbotao();"> Sair </button>
+      <button id="botao" type="button" onclick="myFunction()">Gerar</button> 
 
    
    <br>
@@ -194,7 +196,53 @@ dragElement(document.getElementById("divbutton2"));
     </div>
     <div class="modal-footer">
       <button id="botao2" type="button" onclick="myCopy()" style="display:none">Copiar</button><br>
-    </div>
+    
+  <div align="center">
+  <p>Alertas API</p>
+  <textarea id="inputData" placeholder="Jun 12, 2025 @ 01:05:41.186
+Row: 1; Column: 3
+API Accounts Erro Banrisul API
+Row: 1; Column: 4
+Alert
+Row: 27; Column: 5
+O Tempo Médio de Resposta(TMR) do BTO, /open-..." rows="8"></textarea>
+  <button onclick="processarDados()" id="botao">Formatar</button><button id="botao2" type="button" onclick="myCopy2()" >Copiar API</button><br>
+  <textarea id="outputData" rows="6" placeholder="Resultado" readonly></textarea>
+   <!-- p id="outputData2"></p -->
+  
+</div>
+
+  </div>
+  <button id="botao3"  onclick="document.getElementById('myModal').style.display='none'; corbotao();"> Sair </button>
+  <script>
+    function processarDados() {
+      const input = document.getElementById('inputData').value;
+      const linhas = input.split('\n');
+      const resultado = [];
+      let blocoAtual = '';
+	  document.getElementById("botao2").style.display = 'block';
+
+      const regexData = /^[A-Z][a-z]{2} \d{1,2}, \d{4} @ \d{2}:\d{2}:\d{2}\.\d{3}$/;
+      const regexIgnorar = /^(Row:|[-]$|Time|rule|monitoring|kibana|\d+$)/;
+
+      for (let linha of linhas) {
+        linha = linha.trim();
+        if (linha === '') continue;
+
+        if (regexData.test(linha)) {
+          if (blocoAtual) resultado.push(blocoAtual.trim());
+          blocoAtual = linha + '\n';
+        } else if (!regexIgnorar.test(linha)) {
+          blocoAtual += linha + ' ';
+        }
+      }
+
+      if (blocoAtual) resultado.push(blocoAtual.trim());
+	
+      document.getElementById('outputData').value = resultado.join('\n\n');
+	  // document.getElementById("outputData2").innerHTML = resultado.join('\n\n');
+    }
+  </script>
   </div>
 			</table>
 			
