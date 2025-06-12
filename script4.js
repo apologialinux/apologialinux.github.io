@@ -153,7 +153,7 @@ function myCopy() {
 function myCopy2() {
       const result = document.getElementById('outputData');
       navigator.clipboard.writeText(result.value);
-	  //document.getElementById("botao02").style.display = 'none';
+	document.getElementById("botao03").style.display = 'none';
 }
 
 function zerar() {
