@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const zoomControl = document.getElementById('zoomControl');
-
+	
     // Atualiza o estado do checkbox conforme o zoom inicial
     zoomControl.checked = document.body.style.zoom === '1.0';
 
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.zoom = '0.34';
         }
     });
+	
 });
 
 /*Download */
@@ -153,8 +154,8 @@ function myCopy() {
 function myCopy2() {
       const result = document.getElementById('outputData');
       navigator.clipboard.writeText(result.value);
-	document.getElementById("botao03").style.display = 'none';
-	alert("Resultado copiado com sucesso!");
+	  document.getElementById("botao03").style.display = 'none';
+	  alert("Resultado copiado com sucesso!");
 }
 
 function zerar() {
@@ -391,8 +392,9 @@ function dragElement(elmnt) {
 		
 			 function Loading() {	
 			corbotao();REF();REFB();REFA();Backg();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscMBA2002();EscMCL0063();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();Aackg();
-			 
-			 }
+			document.getElementById("clicadoBOPTake").style.background="black"; document.getElementById("clicadoBOPAPI").style.background="black";
+			
+			}
             function Fbanri1() {
 			var x = document.getElementById('banri1');
 			var tag=document.getElementById("clicado5");
@@ -1188,38 +1190,39 @@ function dragElement(elmnt) {
 				document.getElementById('OB20150102').src += '';
 				document.getElementById('MC41220102').src += ''; 
 				document.getElementById('HB00010102').src += '';	
-				document.getElementById('OM41220102').src += '';	
-						
+				document.getElementById('OM41220102').src += '';				
+			}
+			
 			function BOPTake() {
 			var x = document.getElementById('OPTake');
-			//var tag = document.getElementById("clicadoBOPTake");
+			var tag = document.getElementById("clicadoBOPTake");
 			if (x.style.display === 'none') {
 				x.style.display = 'block';
-			//	tag.style.background = "#04AA6D";
-			//	tag.style.color = "white";
+				tag.style.background = "#04AA6D";
+				tag.style.color = "white";
 			} else {
 				x.style.display = 'none';
-			//	tag.style.background = "black";
+				tag.style.background = "black";
 				 
 					}
 			}
 			
 			function BOPAPI() {
 			var x = document.getElementById('OPAPI');
-			//var tag = document.getElementById("clicadoBOPAPI");
+			var tag = document.getElementById("clicadoBOPAPI");
 			if (x.style.display === 'none') {
 				x.style.display = 'block';
-			//	tag.style.background = "#04AA6D";
-			//	tag.style.color = "white";
+				tag.style.background = "#04AA6D";
+				tag.style.color = "white";
 			
 			} else {
 				x.style.display = 'none';
-			//	tag.style.background = "black";
+				tag.style.background = "black";
 				 
 					}
 			}
-				
-			function EscA0() {
+			
+			 function EscA0() {
 			var x = document.getElementById('MC0001');
 			var tag=document.getElementById("clicado41");
 			if (x.style.display === 'none') {
