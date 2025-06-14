@@ -154,6 +154,7 @@ function myCopy2() {
       const result = document.getElementById('outputData');
       navigator.clipboard.writeText(result.value);
 	document.getElementById("botao03").style.display = 'none';
+	alert("Resultado copiado com sucesso!");
 }
 
 function zerar() {
