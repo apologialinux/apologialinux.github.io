@@ -1219,8 +1219,7 @@ function dragElement(elmnt) {
 					}
 			}
 				
-			}
-			 function EscA0() {
+			function EscA0() {
 			var x = document.getElementById('MC0001');
 			var tag=document.getElementById("clicado41");
 			if (x.style.display === 'none') {
