@@ -176,12 +176,13 @@ dragElement(document.getElementById("divbutton2"));
 			
 			<div id="myModal" class="modal2">
 			
-  <!-- Modal content -->
+    <!-- Modal content -->
   <div class="modal-content" style="background-color:#000000">
-    <div class="modal-header" align="center">
+    
 	  <!-- span class="close">&times;</span -->
-	  	<br>
-		<p align="center">Take Action</p>
+	  	
+		<button type="button" class="verD" id="clicadoBOPTake"  onclick="BOPTake()"  title="Opções Take Action">Take Action</button><button type="button" onclick="BOPAPI()"  class="verD" id="clicadoBOPAPI"  title="Opções Api-Gateway] - Alertas">Api-Gateway] - Alertas</button><button id="botao3"  onclick="document.getElementById('myModal').style.display='none'; corbotao();"> Sair </button>
+		<div id="OPTake" class="modal-header" align="center" style="display:none"><br>
       <input  placeholder="Nome" id="name"><input  placeholder="Número do incidente" id="numb"><br>
       <button id="botao" type="button" onclick="myFunction()">Gerar</button> 
 
@@ -190,15 +191,13 @@ dragElement(document.getElementById("divbutton2"));
   <input type="radio" name="escolha" id="AGencia" onclick="myFunction()">&nbsp  Agência &nbsp &nbsp
   <input type="radio" name="escolha" id="MAssiva" onclick="myFunction()">&nbsp Massiva
 
-    </div>
-    <div class="modal-body" align="center">
+     
       <p id="demo"></p>
+     
+     
+     <button id="botao2" type="button" onclick="myCopy()" style="display:none">Copiar</button><br>
     </div>
-    <div class="modal-footer">
-      <button id="botao2" type="button" onclick="myCopy()" style="display:none">Copiar</button><br>
-    
-  <div align="center">
-  <p>[Api-Gateway] - Alertas</p>
+    <div id="OPAPI" align="center" style="display:none"><br>
   <textarea id="inputData" placeholder="Jun 12, 2025 @ 01:05:41.186
 Row: 1; Column: 3
 API Accounts Erro Banrisul API
@@ -206,7 +205,7 @@ Row: 1; Column: 4
 Alert
 Row: 27; Column: 5
 O Tempo Médio de Resposta(TMR) do BTO, /open-..." rows="8"></textarea>
-  <button onclick="processarDados()" id="botao">Formatar</button><button id="botao" type="button" onclick="LimparprocessarDados()">Limpar</button><br><button id="botao03" type="button" onclick="myCopy2()" >Copiar API</button>
+  <button onclick="processarDados()" id="botao">Formatar</button><button id="botao" type="button" onclick="LimparprocessarDados()">Limpar</button><br><button id="botao03" type="button" onclick="myCopy2()" style="display:none">Copiar API</button>
   <textarea id="outputData" rows="6" placeholder="Resultado" readonly></textarea>
    <!-- p id="outputData2"></p -->
   
