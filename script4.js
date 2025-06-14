@@ -1192,29 +1192,29 @@ function dragElement(elmnt) {
 						
 			function BOPTake() {
 			var x = document.getElementById('OPTake');
-			var tag = document.getElementById("clicadoBOPTake");
+			//var tag = document.getElementById("clicadoBOPTake");
 			if (x.style.display === 'none') {
 				x.style.display = 'block';
-				tag.style.background = "#04AA6D";
-				tag.style.color = "white";
+			//	tag.style.background = "#04AA6D";
+			//	tag.style.color = "white";
 			} else {
 				x.style.display = 'none';
-				tag.style.background = "black";
+			//	tag.style.background = "black";
 				 
 					}
 			}
 			
 			function BOPAPI() {
 			var x = document.getElementById('OPAPI');
-			var tag = document.getElementById("clicadoBOPAPI");
+			//var tag = document.getElementById("clicadoBOPAPI");
 			if (x.style.display === 'none') {
 				x.style.display = 'block';
-				tag.style.background = "#04AA6D";
-				tag.style.color = "white";
+			//	tag.style.background = "#04AA6D";
+			//	tag.style.color = "white";
 			
 			} else {
 				x.style.display = 'none';
-				tag.style.background = "black";
+			//	tag.style.background = "black";
 				 
 					}
 			}
