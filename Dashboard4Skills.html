@@ -206,7 +206,7 @@ Row: 1; Column: 4
 Alert
 Row: 27; Column: 5
 O Tempo Médio de Resposta(TMR) do BTO, /open-..." rows="8"></textarea>
-  <button onclick="processarDados()" id="botao">Formatar</button><button id="botao03" type="button" onclick="myCopy2()" >Copiar API</button><br>
+  <button onclick="processarDados()" id="botao">Formatar</button><button id="botao" type="button" onclick="LimparprocessarDados()">Limpar</button><br><button id="botao03" type="button" onclick="myCopy2()" >Copiar API</button><br>
   <textarea id="outputData" rows="6" placeholder="Resultado" readonly></textarea>
    <!-- p id="outputData2"></p -->
   
@@ -215,6 +215,9 @@ O Tempo Médio de Resposta(TMR) do BTO, /open-..." rows="8"></textarea>
   </div>
   <button id="botao3"  onclick="document.getElementById('myModal').style.display='none'; corbotao();"> Sair </button>
   <script>
+   function LimparprocessarDados() {
+      document.getElementById('inputData').value = '';
+	 } 
     function processarDados() {
       const input = document.getElementById('inputData').value;
       const linhas = input.split('\n');
