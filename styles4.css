@@ -11,25 +11,6 @@ input[type=checkbox] {
 	
 } 
 
-input[type=date] {
-    transform: scale(4.7);
-	padding-left: 0px;
-	text-align: center;
-	margin: 0.4rem 0;
-	border: 0px;
-	outline: none;
- 
-}
-
-input[type=time] {
-    transform: scale(5);
-	padding-left: 0px;
-	text-align: center;
-	margin: 0.4rem 0;
-	border: 0px;
-	outline: none;
-} 
-
 textarea {
             width: 95%;
             padding: 10px;
