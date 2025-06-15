@@ -180,7 +180,7 @@ dragElement(document.getElementById("divbutton2"));
     
 	  <!-- span class="close">&times;</span -->
 	  	
-		<button type="button" class="verD" id="clicadoBOPTake"  onclick="BOPTake()"  title="Opções Take Action">Take Action</button><button type="button" onclick="BOPAPI()"  class="verD" id="clicadoBOPAPI"  title="[Opções Api-Gateway] - Alertas">[Api-Gateway] - Alertas</button><button id="botao3"  onclick="document.getElementById('myModal').style.display='none'; corbotao();"> Sair </button>
+		<button type="button" class="verD" id="clicadoBOPTake"  onclick="BOPTake()"  title="Opções Take Action">Take Action</button><button type="button" class="verD" id="clicadoBCALC"  onclick="BCALC()"  title="Opções Take Action">Calc. Data/Horas</button><button type="button" onclick="BOPAPI()"  class="verD" id="clicadoBOPAPI"  title="[Opções Api-Gateway] - Alertas">[Api-Gateway] - Alertas</button><button id="botao3" onclick="document.getElementById('myModal').style.display='none'; corbotao();"> Sair </button>
 		<div id="OPTake" class="modal-header" align="center" style="display:none"><br>
       <input  placeholder="Nome" id="name"><input  placeholder="Número do incidente" id="numb"><br>
       <button id="botao" type="button" onclick="myFunction()">Gerar</button> 
@@ -196,6 +196,16 @@ dragElement(document.getElementById("divbutton2"));
      
      <button id="botao2" type="button" onclick="myCopy()" style="display:none">Copiar</button><br>
     </div>
+	<div id="BCALC" align="center" style="display:none"><br>
+	<p align="center">Data/Hora Inicial:</p>
+	<p align="center"><input type="date" id="dataInicial"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaInicial">  </p>
+
+    <p align="center">Data/Hora Final:</p>
+	<p align="center"><input type="date" id="dataFinal"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaFinal"></p>
+    <br>
+    <button onclick="calcularDiferenca()" type="button" id="botao" >Calcular</button><button class="verD" onclick="copiarResultado2()" type="button"  id="botaoCopy2" style="display:none">Copiar Resultado</button>
+	<p id="resultado"></p>
+	</div>
     <div id="OPAPI" align="center" style="display:none"><br>
   <textarea id="inputData" placeholder="Jun 12, 2025 @ 01:05:41.186
 Row: 1; Column: 3
