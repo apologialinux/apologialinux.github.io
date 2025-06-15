@@ -11,6 +11,37 @@ input[type=checkbox] {
 	
 } 
 
+input[type=date] {
+    transform: scale(4.7);
+	padding-left: 0px;
+	text-align: center;
+	margin: 0.4rem 0;
+	border: 0px;
+	outline: none;
+ 
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type=time] {
+    transform: scale(5);
+	padding-left: 0px;
+	text-align: center;
+	margin: 0.4rem 0;
+	border: 0px;
+	outline: none;
+} 
+
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
 textarea {
             width: 95%;
             padding: 10px;
@@ -95,23 +126,6 @@ iframe.APIalerta03:hover {
   color: white;
 }
 
-
-#botao2 {
-  margin: 0 auto;
-  color: black;
-  text-align: center;
-  font-size: 60px;
-  border: 3px solid white;
-  text-decoration: none;
-  font-size: 45px;
-  transition-duration: 0.8s;
-  cursor: pointer;
-}
-
-#botao2:hover {
-  background-color: Green;
-  color: white;
-}
 #botao03 {
   margin: 0 auto;
   text-align: center;
@@ -128,6 +142,24 @@ iframe.APIalerta03:hover {
 }
 
 #botao03:hover {
+  background-color: Green;
+  color: white;
+}
+
+
+#botao2 {
+  margin: 0 auto;
+  color: black;
+  text-align: center;
+  font-size: 60px;
+  border: 3px solid white;
+  text-decoration: none;
+  font-size: 45px;
+  transition-duration: 0.8s;
+  cursor: pointer;
+}
+
+#botao2:hover {
   background-color: Green;
   color: white;
 }
