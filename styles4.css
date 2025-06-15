@@ -21,12 +21,6 @@ input[type=date] {
  
 }
 
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
-  -webkit-appearance: none;
-}
-
 input[type=time] {
     transform: scale(5);
 	padding-left: 0px;
@@ -35,12 +29,6 @@ input[type=time] {
 	border: 0px;
 	outline: none;
 } 
-
-input[type="time"]::-webkit-inner-spin-button,
-input[type="time"]::-webkit-calendar-picker-indicator {
-  display: none;
-  -webkit-appearance: none;
-}
 
 textarea {
             width: 95%;
