@@ -74,6 +74,99 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 */
 /* Fim Download */
+// CALCULADORA
+	function calcularDiferenca() {
+    let dataInicial = document.getElementById("dataInicial").value;
+    let horaInicial = document.getElementById("horaInicial").value;
+    let dataFinal = document.getElementById("dataFinal").value;
+    let horaFinal = document.getElementById("horaFinal").value;
+    
+	
+    
+    let inicio = new Date(`${dataInicial}T${horaInicial}`);
+    let fim = new Date(`${dataFinal}T${horaFinal}`);
+		let anoI = inicio.getFullYear();
+    	let DayI = inicio.getDate();
+		let MesI = inicio.getMonth() + 1;
+		let DayF = fim.getDate();
+		let MesF = fim.getMonth() + 1;
+		let anoF = fim.getFullYear();
+		
+    if (isNaN(inicio) || isNaN(fim)) {
+        //document.getElementById("resultado").innerText = "Dados incompletos!";
+		//alert("Dados incompletos!");
+		document.getElementById("resultado").innerHTML = "Dados incompletos!";
+        return;
+    }
+    
+    let diferencaMs = fim - inicio;
+    if (diferencaMs < 0) {
+        //document.getElementById("resultado").innerText = "A data final deve ser maior que a data inicial.";
+		//alert("A data final deve ser maior que a data inicial.");
+		document.getElementById("resultado").innerHTML = "A data final deve ser maior que a data inicial.";
+        return;
+    }
+    
+    let totalMinutos = Math.floor(diferencaMs / (1000 * 60));
+    let horas = Math.floor(totalMinutos / 60);
+    let minutos = totalMinutos % 60;
+		if ( horas < 10 ) {
+		horas = ('0' + horas).slice(-2);
+	} else {
+		horas = horas + '';
+	}
+	if ( minutos < 10) { // or min = min < 10 ? '0' + min : min; 
+		minutos = ('0' + minutos).slice(-2);
+	} else {
+		minutos = minutos + '';
+	}
+    
+    let resultado = `${horas}:${minutos}`;
+
+	if ( DayI < 10) { // or min = min < 10 ? '0' + min : min; 
+		DayI = ('0' + DayI).slice(-2);
+	} else {
+		DayI = DayI + '';
+	}
+	if ( MesI < 10) { // or min = min < 10 ? '0' + min : min; 
+		MesI = ('0' + MesI).slice(-2);
+	}
+	if ( DayF < 10) { // or min = min < 10 ? '0' + min : min; 
+		DayF = ('0' + DayF).slice(-2);
+	} else {
+		DayF = DayF + '';
+	}
+	if ( MesF < 10) { // or min = min < 10 ? '0' + min : min; 
+		MesF = ('0' + MesF).slice(-2);
+	}
+	if (dataInicial == dataFinal) {
+	document.getElementById("resultado").innerText = "Início: " + horaInicial + "\nFim: " + horaFinal + "\nTotal: " + resultado;
+		document.getElementById("botaoCopy2").style.display = 'block';
+	} else {
+	document.getElementById("resultado").innerText = "Início: " + DayI + "/" + MesI + "/" + anoI + " às " + horaInicial + "\nFim: " + DayF + "/" + MesF + "/" + anoF + " às " + horaFinal + "\nTotal: " + resultado;
+		document.getElementById("botaoCopy2").style.display = 'block';
+
+	}
+}
+function copiarResultado2() {
+    let resultado = document.getElementById("resultado").innerText;
+    navigator.clipboard.writeText(resultado).then(() => {
+        //document.getElementById("resultado").innerText = "Copiado!";
+		document.getElementById("botaoCopy2").style.display = 'none';
+		alert("Resultado copiado com sucesso!");
+	    
+    });
+
+}
+function definirDataAtual() {
+    let hoje = new Date().toISOString().split('T')[0];
+    document.getElementById("dataInicial").value = hoje;
+    document.getElementById("dataFinal").value = hoje;
+    //document.getElementById("botaoCopy2").style.display = 'none';
+}
+
+	// FIM CALCULADORA
+
 
 /*Take Action */
 function myFunction() {
@@ -129,7 +222,7 @@ function myFunction() {
 	document.getElementById("demo").innerHTML = Day + "/" + Mes + "/" + d.getFullYear() + " " + Dhor + ":" + Dmin +  " - " +  text;
 	document.getElementById("botao2").style.display = 'block';
   } else {
-	document.getElementById("demo").innerHTML = "Dados incompletos";
+	document.getElementById("demo").innerHTML = "Dados incompletos!";
 	document.getElementById("botao2").style.display = 'none';
 	 
   }
@@ -392,7 +485,7 @@ function dragElement(elmnt) {
 		
 			 function Loading() {	
 			corbotao();REF();REFB();REFA();Backg();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscMBA2002();EscMCL0063();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();Aackg();
-			document.getElementById("clicadoBOPTake").style.background="black"; document.getElementById("clicadoBOPAPI").style.background="black"; document.getElementById("myBtn").style.background="black";
+			document.getElementById("clicadoBCALC").style.background="black"; document.getElementById("clicadoBOPTake").style.background="black"; document.getElementById("clicadoBOPAPI").style.background="black"; document.getElementById("myBtn").style.background="black";
 			
 			}
             function Fbanri1() {
@@ -1214,10 +1307,28 @@ function dragElement(elmnt) {
 				x.style.display = 'block';
 				tag.style.background = "#04AA6D";
 				tag.style.color = "white";
+				document.getElementById("botao03").style.display = 'none';
 			
 			} else {
 				x.style.display = 'none';
 				tag.style.background = "black";
+				 
+					}
+			}
+			
+			function BCALC() {
+			var x = document.getElementById('BCALC');
+			var tag = document.getElementById("clicadoBCALC");
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+				tag.style.background = "#04AA6D";
+				tag.style.color = "white";
+			
+			} else {
+				x.style.display = 'none';
+				tag.style.background = "black";
+				document.getElementById("resultado").innerHTML = "";
+				document.getElementById("botaoCopy2").style.display = 'none';
 				 
 					}
 			}
