@@ -6,6 +6,28 @@
 <link rel="stylesheet" type="text/css" href="https://apologialinux.github.io/styles4.css"> 
 
 <title>Dashboard Escalas</title>
+<style>
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type=time] {
+    transform: scale(5);
+	padding-left: 0px;
+	text-align: center;
+	margin: 0.4rem 0;
+	border: 0px;
+	outline: none;
+} 
+
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+</style>
 </head>
 <body onLoad="Loading(); definirDataAtual();" id="bg">
  <script src="https://apologialinux.github.io/script4.js">
