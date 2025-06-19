@@ -1,0 +1,728 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletim de Eventos</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+            background-color: #ffffff;
+			
+        }
+        .container {
+            width: 100%;
+            max-width: 1045px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
+			position: absolute;			
+			left: 5%;
+		 
+			 
+        }
+		.container2 {
+            width: 100%;
+            max-width: 1040px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
+			position: absolute;
+            top: 5%;
+			left: 5%;
+			justify-content: center;
+        }
+        .stepper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .step {
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background-color: #ccc;
+            z-index: -1;
+        }
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            background-color: #ccc;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .step.active .step-number {
+            background-color: #007bff;
+        }
+        .step-title {
+            font-size: 14px;
+            color: #666;
+        }
+        .step.active .step-title {
+            color: #007bff;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .buttons { 
+            display: flex;
+            justify-content: space-between;
+        }
+		h2 {
+			text-align: center;
+		}
+		button {
+			border: 3px solid white;
+			color: white;
+			padding: 8px 16px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			margin: 4px 2px;
+			transition-duration: 0.8s;
+			cursor: pointer;
+			background-color: #ccc;
+		}
+		button:hover {
+			background-color: Green;
+			color: white;
+		}
+		input[type=checkbox] {
+			transform: scale(2);
+			outline: none;
+		}	 
+		input[type=date] {
+			transform: scale(1);
+			outline: none;
+		}	 
+		input[type=time] {
+			transform: scale(1);
+			outline: none;			
+		} 
+		#ok {
+			color: green;
+		}
+		li {
+			color: red;
+		}	
+		#resultadoInc {
+			color: red;
+		}
+select {
+            width: 357px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            font-size: 16px;
+			outline: none;
+			
+        }
+
+#dropzinho {
+            width: 110px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            font-size: 16px;
+			outline: none;
+			
+        }
+textarea {
+			width: 30%;
+            padding: 10px;
+            margin: 0px 0;
+            font-size: 10px;
+			resize: none;
+                     
+        }
+	        
+		.container3 {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
+			position: absolute;
+            top: 5%;
+			left: 50%;
+			justify-content: center;
+        }
+		
+#link {
+	width: 600px;
+	outline: none;
+}	
+#numero {
+	width: 70px;
+	outline: none;
+}	
+#CorLetra {
+	color: white;
+}
+	
+textarea {
+            width: 30%;
+            padding: 10px;
+            margin: 0px ;
+            resize: none;
+			font-size: 16px;
+        }	
+	
+    </style>
+</head>
+<body onload="definirDataAtual()">
+
+    <div class="container">
+		<!-- h2>GERADOR DE BOLETIM</h2 -->
+		
+        <div class="stepper">
+            <div class="step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-title">BOLETIM</div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-title">ENVIO</div>
+            </div>
+
+        </div>
+		
+        <div class="content active" data-content="1">
+                   <label>Canais:&nbsp </label>
+			<div>
+			
+			<tr>
+			<td id="MC0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Minha Conta"><input type="checkbox" name="primeiro" id="Teste" onclick="graficMC00010102()"><label id="CorLetra"  style="background-color:Gray;">&nbsp MC-Acesso</label></a>
+			</td>
+			<td id="OB0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Office Banking"><input type="checkbox" name="primeiro" id="Teste" onclick="graficOB0001()"><label id="CorLetra"  style="background-color:Gray;">&nbsp OB-Acesso</label></a>
+			</td>
+			<td id="OM0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Office Mobile "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp OM-Acesso</label></a>
+			</td>
+			<td id="HB0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=20&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Home Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp HB-Acesso</label></a>
+			</td>
+			<td id="MCard0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=95&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Meus Cartões "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp MCard-Acesso</label></a>
+			</td>
+			<td id="MC1001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Minha Conta "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MC-Extrato C. Corrente</label></a>
+			</td>
+			<td id="OB1001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Office Banking "> <input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp OB-Extrato C. Corrente</label></a>
+			</td>
+			</tr>
+			
+			</div><br><br>
+	<label for="numero">Incidente: </label>
+    <input  id="numero" align="left"  placeholder="12345678"> 	
+    <label for="link">URL do Incidente:</label>
+    <textarea id="link" placeholder="http://servicedesk/CAisd/pdmweb.exe?OP=SEARCH+FACTORY=cr+SKIPLIST=1+QBE.EQ.id=11223344" rows="2"></textarea>
+	<br><br>
+   	<label>INICÍO:&nbsp <input type="date" id="dataInicial"></label> &nbsp<input type="time" id="horaInicial"></label>
+ 
+    <label>FIM:&nbsp <input type="date" id="dataFinal"></label> &nbsp <input type="time" id="horaFinal"></label>
+	       <br><br>
+		   <label>Falha:&nbsp </label> 
+			<input type="radio" name="radiofalha" id="falhaInt" onclick="myRadiofalha()">&nbsp  Interna &nbsp &nbsp
+			<input type="radio" name="radiofalha" id="falhaExt" onclick="myRadiofalha()">&nbsp  Externa &nbsp &nbsp
+		<br><br>
+		<label>Impacto:&nbsp </label>
+			<input type="radio" name="radiofalha2" id="falhaDeg" onclick="myImpacto()">&nbsp  Degradado &nbsp &nbsp
+			<input type="radio" name="radiofalha2" id="falhaSevDeg" onclick="myImpacto()">&nbsp  Severamente Degradado &nbsp &nbsp
+			<input type="radio" name="radiofalha2" id="falhaIndisp" onclick="myImpacto()">&nbsp  Indisponível &nbsp &nbsp
+		<br><br>
+			<select id="dropdown">
+		<option value="opcao1">Defina uma causa:</option>
+		<option value="opcao1">Falha externa</option>
+		<option value="opcao1">PDM XXXXX</option>
+		<option value="opcao1">Em análise</option>
+		<option value="opcao1">Em análise pela CSU</option>
+		<option value="opcao1">Em análise pela PROCERGS</option>
+        <option value="opcao1">Em análise pela Dock</option>
+		<option value="opcao1">Negada pela Operadora</option>
+		<option value="opcao3">Recargas indisponíveis</option>
+        <option value="opcao3">006 – Erro Genérico</option>
+		<option value="opcao2">068 – Timeout no Autorizador</option>
+        <option value="opcao4">090 - Falha Comunicação com o Autorizador</option>
+		<option value="opcao3">091 – Timeout no Emissor</option>
+		<option value="opcao3">Monitor_Erro_TB</option>
+		<option value="opcao3">Monitor_Erro_63</option>
+		<option value="opcao3">Monitor_Erro_91</option>
+		<option value="opcao3">Monitor_Erro_90</option>
+		<option value="opcao3">Monitor_Erro_96</option>
+    </select>
+<br><br>
+
+ 
+        </div>
+        <div class="content" data-content="2">
+            <h2>Revisão</h2>
+            <p>
+				<li id="ok">Mostar boletim de exemplo preenchido.✔</li>
+				<li>Orientar: revisar TEMPO TOTAL, assunto "INÍCIO/FIM" e URL do incidente.</li>
+				<li>Controle de erro e enfatizar responsabilidades.</li>
+				<li>Indicar modelo de e-mail compatível.</li>
+				<li>Botões para copiar ASSUNTO e CONTEÚDO.</li>
+				<li>Verificar se o REMETENTE é "Logistica TI Monitoracao".</li>
+			</p>
+        </div>
+        <div class="buttons">
+            <button id="prevBtn" onclick="changeStep(-1)">Anterior</button>
+            <button id="nextBtn" onclick="changeStep(1)">Próximo</button>
+        </div>
+ 
+    </div>
+<div class="container2" id="container2">
+<table>
+		
+<label align="center"><b>Boletim de Eventos -</b></label><label id="assunt"> Serviço </label> <!-- select id="dropzinho">
+		<option value="opcao1">PARCIAL</option>
+		<option value="opcao1">ATUALIZAÇÃO</option>
+		<option value="opcao1">ERRATA</option>
+		</select -->
+</table>
+
+ 
+<br>
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=1041
+ style='width:781.0pt;border-collapse:collapse;mso-yfti-tbllook:1184;
+ mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:23.0pt'>
+  <td width=157 colspan=2 style='width:118.0pt;border:solid windowtext 1.0pt;
+  border-right:solid black 1.0pt;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;
+  height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Início<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=157 colspan=2 style='width:118.0pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid black 1.0pt;
+  background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Fim<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=64 rowspan=3 style='width:48.0pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#A9D08E;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Tempo total<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=205 style='width:154.0pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Causa<o:p></o:p></span></b></p>
+  </td>
+  <td width=229 style='width:172.0pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Impacto<o:p></o:p></span></b></p>
+  </td>
+  <td width=131 style='width:98.0pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Canais<o:p></o:p></span></b></p>
+  </td>
+  <td width=97 style='width:73.0pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Falha<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:23.0pt'>
+  <td width=93 rowspan=2 style='width:70.0pt;border-top:none;border-left:solid windowtext 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#A8D08D;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Data<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=64 rowspan=2 style='width:48.0pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#A8D08D;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Hora<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=93 rowspan=2 style='width:70.0pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#A8D08D;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Data<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=64 rowspan=2 style='width:48.0pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#A8D08D;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'>Hora<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=205 rowspan=3 style='width:154.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'><o:p><label id="colunaCausa"> </label></o:p></span></p>
+  </td>
+  <td width=229 style='width:172.0pt;border:none;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'><o:p>(<label id="impactDeg"> </label>) <b>Degradado</b></o:p></span></p>
+  </td>
+  <td width=131 rowspan=3 style='width:98.0pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'><o:p><label id="canaisStatus"> </label></o:p></span></p>
+  </td>
+  <td width=97 style='width:73.0pt;border:none;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'><o:p>(<label id="erroInt"> </label>) Interna</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:23.0pt'>
+  <td width=229 style='width:197pt;border:none;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'><o:p>(<label id="impactSevDeg"> </label>) <b>Severamente
+  Degradado</b></o:p></span></p>
+  </td>
+  <td width=97 style='width:73.0pt;border:none;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'>&nbsp;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes;height:23.0pt'>
+  <td width=93 nowrap style='width:70.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'><o:p><label id="datainicio"> </label></o:p></span></p>
+  </td>
+  <td width=64 nowrap style='width:48.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'><o:p><label id="horainicio"></label></o:p></span></p>
+  </td>
+  <td width=93 nowrap style='width:70.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'><o:p><label id="datafim"> </label></o:p></span></p>
+  </td>
+  <td width=64 nowrap style='width:48.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'><o:p><label id="horafim"></label></o:p></span></p>
+  </td>
+  <td width=64 nowrap style='width:48.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
+  mso-fareast-language:PT-BR'><o:p><label id="tempototal"> </label></o:p></span></p>
+  </td>
+  <td width=229 style='width:172.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'><o:p>(<label id="impactIndisp"> </label>)<b> Indisponível</b></o:p></span></p>
+  </td>
+  <td width=97 style='width:73.0pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:white;
+  padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  <p class=MsoNormal><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+  color:black;mso-fareast-language:PT-BR'><o:p>(<label id="erroExt"> </label>) Externa</o:p></span></p>
+  </td>
+ </tr>
+</table><br>
+<b><label id="resultadoInc">Incidente e URL</label></b><br>
+<button id="copiar">Copiar Conteúdo</button>
+		</div>
+ <div class="container3"> 
+	<iframe src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=17&servico=1&tipo=1&graf=2" width="980" height="580"  id="graficMC00010102" style="display:none"></iframe> <!--  Acesso 0001 / Minha Conta -->
+	<iframe src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=10&servico=1&tipo=1&graf=2" width="980" height="580"  id="graficOB0001" style="display:none"></iframe> <!--  OB-Acesso 0001 -->
+ 
+ </div>
+		
+    <script>  
+	// SERVICOS 2 ESCALA A
+	function graficMC00010102() {
+		
+		var x = document.getElementById('graficMC00010102');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "Internet Banking";
+			document.getElementById('assunt').innerText += " 0001 (Acesso)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficMC00010102').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('assunt').innerText = "";
+				
+				
+			}
+	}
+graficOB0001	
+	function graficOB0001() {
+		
+		var x = document.getElementById('graficOB0001');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "Internet Banking";
+			document.getElementById('assunt').innerText += " 0001 (Acesso)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficOB0001').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('assunt').innerText = "";
+				
+			}
+	}
+
+	// FIM SERVICOS 2 ESCALA A
+		// INCIDENTE
+		// Adiciona eventos de entrada aos campos
+        const campoLink = document.getElementById('link');
+        const campoNumero = document.getElementById('numero');
+        const resultadoInc = document.getElementById('resultadoInc');
+
+        function atualizarLabel() {
+            const link = campoLink.value;
+            const numero = campoNumero.value;
+
+            if (link && numero) {
+                // Cria a label com hiperlink
+                resultadoInc.innerHTML = `Mais informações no incidente: <a href="${link}" target="_blank">${numero}</a>`;
+            } else {
+                //resultadoInc.innerText = 'Dados incompletos!';
+				//alert("Dados incompletos!");
+            }  
+        }
+
+
+        // Ouvintes para atualizar a label em tempo real
+		
+        campoLink.addEventListener('input', atualizarLabel);
+        campoNumero.addEventListener('input', atualizarLabel);
+		// FIM INCIDENTE
+		
+		// ANTERIOR PROXIMO
+		
+		document.getElementById("prevBtn").style.color = "#ccc";
+        let currentStep = 1;
+        function changeStep(step) {
+            const steps = document.querySelectorAll('.step');
+            const contents = document.querySelectorAll('.content');
+			document.getElementById("prevBtn").style.color = "#ffffff";
+			document.getElementById("nextBtn").style.color = "#ffffff";
+            steps[currentStep - 1].classList.remove('active');
+            contents[currentStep - 1].classList.remove('active');
+			
+            currentStep += step;
+
+            if (currentStep < 1) {
+				document.getElementById("prevBtn").style.color = "#ccc";
+				
+                currentStep = 1;
+				
+            } else if (currentStep > steps.length) {
+                currentStep = steps.length;
+				document.getElementById("nextBtn").style.color = "#ccc";
+            }
+
+            steps[currentStep - 1].classList.add('active');
+            contents[currentStep - 1].classList.add('active');
+        }
+		
+		// FIM ANTERIOR PROXIMO
+		
+
+       // Data Início
+			document.getElementById('dataInicial').addEventListener('input', function() {
+            const valorEntrada = this.value; // Valor no formato yyyy-mm-dd (padrão)
+
+            if (valorEntrada) {
+                 
+                const [ano, mes, dia] = valorEntrada.split('-');
+
+                const dataFormatada = `${dia}/${mes}/${ano}`;
+
+                 
+                document.getElementById('datainicio').innerText = `${dataFormatada}`;
+				document.getElementById('assunt').innerText = " Serviços - INÍCIO";
+            } else {
+                document.getElementById('datainicio').innerText = '';
+            }
+        });
+				// Hora Inicial
+			document.getElementById('horaInicial').addEventListener('input', function() {
+            const valorEntradaH1 = this.value; // Valor no formato yyyy-mm-dd (padrão)
+
+            if (valorEntradaH1) {
+                // Separa o ano, mês e dia
+                const [hora, minutos] = valorEntradaH1.split(':');
+
+                // Formata no estilo dd/mm/yyyy
+                const dataFormatadaH1 = `${hora}:${minutos}`;
+
+                // Atualiza o conteúdo da label
+
+                document.getElementById('horainicio').innerText = `${dataFormatadaH1}`;
+				
+            } else {
+                document.getElementById('horainicio').innerText = '';
+            }
+        });
+		// Data Fim
+        document.getElementById('dataFinal').addEventListener('input', function() {
+            const valorEntrada2 = this.value; // Valor no formato yyyy-mm-dd (padrão)
+
+            if (valorEntrada2) {
+                // Separa o ano, mês e dia
+                const [ano, mes, dia] = valorEntrada2.split('-');
+
+                // Formata no estilo dd/mm/yyyy
+                const dataFormatada2 = `${dia}/${mes}/${ano}`;
+
+                // Atualiza o conteúdo da label
+                document.getElementById('datafim').innerText = `${dataFormatada2}`;
+				document.getElementById('assunt').innerText = " Serviços - INÍCIO/FIM";
+            } else {
+                document.getElementById('datafim').innerText = '';
+            }
+        });				
+		// Hora Final
+		
+        document.getElementById('horaFinal').addEventListener('input', function() {
+            const valorEntradaH2 = this.value; // Valor no formato yyyy-mm-dd (padrão)
+
+            if (valorEntradaH2) {
+                // Separa o ano, mês e dia
+                const [hora, minutos] = valorEntradaH2.split(':');
+
+                // Formata no estilo dd/mm/yyyy
+                const dataFormatadaH2 = `${hora}:${minutos}`;
+
+                // Atualiza o conteúdo da label
+				
+                document.getElementById('horafim').innerText = `${dataFormatadaH2}`;
+            } else {
+                document.getElementById('horafim').innerText = '';
+            }
+        });
+		
+		
+
+		// CAUSA
+		// Adiciona um ouvinte de evento ao dropdown
+        document.getElementById('dropdown').addEventListener('change', function() {
+            // Captura o valor selecionado
+            const valorSelecionado = this.options[this.selectedIndex].text;
+
+            // Atualiza a label com o conteúdo selecionado
+            document.getElementById('colunaCausa').innerText = `${valorSelecionado}`;
+        }); 
+function myRadiofalha() {
+			let testeint = document.getElementById("falhaInt").checked;
+			let testeext = document.getElementById("falhaExt").checked;
+			
+			if ( testeint === true ) {
+				document.getElementById('erroInt').innerText = "X";
+				document.getElementById('erroExt').innerText = "  ";
+			} else if ( testeext === true ) {
+				document.getElementById('erroExt').innerText = "X";
+				document.getElementById('erroInt').innerText = "  ";
+			}  
+			}
+			
+			
+			// IMPACTO
+function myImpacto() {
+			let testedeg = document.getElementById("falhaDeg").checked;
+			let testesevdeg = document.getElementById("falhaSevDeg").checked;
+			let testeindisp = document.getElementById("falhaIndisp").checked;
+		
+			
+			if ( testedeg === true ) {
+				document.getElementById('impactDeg').innerText = "X";
+				document.getElementById('impactIndisp').innerText = "  ";
+				document.getElementById('impactSevDeg').innerText = "  ";
+			} else if ( testeindisp === true ) {
+				document.getElementById('impactDeg').innerText = "  ";
+				document.getElementById('impactIndisp').innerText = "X";
+				document.getElementById('impactSevDeg').innerText = "  ";
+			} else {
+				document.getElementById('impactDeg').innerText = "  ";
+				document.getElementById('impactIndisp').innerText = "  ";
+				document.getElementById('impactSevDeg').innerText = "X";
+			} 
+			
+			}
+    </script>
+	<script>
+        document.getElementById('copiar').addEventListener('click', function() {
+            // Seleciona o container2
+            const containercopy = document.getElementById('container2');
+
+            // Cria um range para selecionar o conteúdo do container
+            const range = document.createRange();
+            range.selectNode(containercopy);
+
+            // Copia o conteúdo selecionado
+            const sel = window.getSelection();
+            sel.removeAllRanges(); // Remove seleções anteriores
+            sel.addRange(range); // Adiciona a seleção ao range
+            document.execCommand('copy'); // Comando para copiar o conteúdo
+
+            // Limpa a seleção
+            sel.removeAllRanges();
+
+            alert('Conteúdo copiado com formatação! Cole no seu e-mail.');
+        });
+		 //FONTE ARIAL
+    </script>
+			
+</body>
+</html>
