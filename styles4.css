@@ -42,6 +42,10 @@ iframe.alerta1x:hover {
     transform: none; /* Impede o efeito de escala */
 }
 
+iframe.alerta1b:hover {
+    transform: none; /* Impede o efeito de escala */
+}
+
 /*iframe.tempmediopagISPB03:hover {
     transform: none; 
 }*/
