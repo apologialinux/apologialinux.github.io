@@ -913,7 +913,8 @@ dragElement(document.getElementById("divbutton2"));
     <div class="modal-header" align="center">
 	  <!-- span class="close">&times;</span -->
 	  	<br>
-		<p align="center">Take Action</p>
+		<p align="center">Take Action &nbsp &nbsp <input type="checkbox" id="primeiroTKF"></p> 
+		<div id="TKTake" style="display:none">
       <input  placeholder="Nome" id="name"><input  placeholder="Número do incidente" id="numb"><br>
       <button id="botao" type="button" onclick="myFunction()">Gerar</button> <button id="botao3"  onclick="document.getElementById('myModal').style.display='none'; corbotao();"> Sair </button>
 
@@ -930,8 +931,9 @@ dragElement(document.getElementById("divbutton2"));
 	</div>
 	<div align="center">
       <button id="botao2" type="button" onclick="myCopy()" style="display:none">Copiar</button><br>
- 
-    <p align="center">Calculadora de Data/Horas</p>
+	</div>
+    <p align="center">Calculadora de Data/Horas &nbsp &nbsp <input type="checkbox"   id="segundoTKF"></p>
+	<div id="TKHora" style="display:none">
 
 	<p align="center">Data/Hora Inicial:</p>
 	<p align="center"><input type="date" id="dataInicial"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaInicial">  </p>
@@ -942,7 +944,8 @@ dragElement(document.getElementById("divbutton2"));
     <button onclick="calcularDiferenca()" type="button" id="botao" >Calcular</button><button onclick="copiarResultado2()" type="button"  id="botaoCopy2" style="display:none">Copiar Resultado</button>
 	<p id="resultado"></p>
 	
-        <p align="center">Consulta de BIN</p>
+        </div>
+        <p align="center">Consulta de BIN &nbsp &nbsp <input type="checkbox"  id="terceiroTKF"></p>
         <!-- Alterando o campo de input para textarea -->
         <textarea id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ..." rows="4"></textarea><br>
         <button onclick="consultarApi()" id="botao" type="button" >Consultar</button><button onclick="copiarResultado();copiarResultado2()" id="botaoCopy" type="button">Copiar os Resultados</button>
