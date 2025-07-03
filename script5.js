@@ -11,6 +11,31 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.zoom = '1.0';
         }
     });
+	var x = document.getElementById('TKTake');
+	primeiroTKF.addEventListener('change', function() {
+        if (this.checked) {		
+			x.style.display = 'block';
+		} else {
+				x.style.display = 'none';
+			}
+	
+	});
+	var y = document.getElementById('TKHora');
+	segundoTKF.addEventListener('change', function() {
+        if (this.checked) {		
+			y.style.display = 'block';
+		} else {
+			y.style.display = 'none';
+		}
+		});
+		var z = document.getElementById('TKBins');
+	terceiroTKF.addEventListener('change', function() {
+        if (this.checked) {		
+			z.style.display = 'block';
+		} else {
+			z.style.display = 'none';
+		}
+	});		
 });
 
 document.getElementById("floating-btn").addEventListener("click", function() {
