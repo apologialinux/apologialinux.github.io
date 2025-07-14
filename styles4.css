@@ -566,17 +566,18 @@ button.M365:hover {
 .close {
  margin: auto;
   position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 55px;
+  right: 1px;
+  top: 1;
+  color: white;
+  background-color: red;  
+  font-size: 49px;
   font-weight: bold;
 
 }
 
 .close:hover,
 .close:focus {
-  color: red;
+  color: white;
   cursor: pointer;
 }
 
