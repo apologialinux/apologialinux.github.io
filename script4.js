@@ -1282,6 +1282,8 @@ function dragElement(elmnt) {
 				document.getElementById('BCALC').style.display = 'none';
 				tag.style.background = "#04AA6D";
 				tag.style.color = "white";
+				document.getElementById("clicadoBOPAPI").style.background = "black";
+				document.getElementById("clicadoBCALC").style.background = "black";
 			} else {
 				x.style.display = 'none';
 				tag.style.background = "black";
@@ -1298,13 +1300,15 @@ function dragElement(elmnt) {
 				document.getElementById('BCALC').style.display = 'none';
 				tag.style.background = "#04AA6D";
 				tag.style.color = "white";
-				document.getElementById("botao03").style.display = 'none';
+				
+				document.getElementById("clicadoBOPTake").style.background = "black";
+				document.getElementById("clicadoBCALC").style.background = "black";
 			
 			} else {
 				x.style.display = 'none';
 				tag.style.background = "black";
-				// document.getElementById("clicadoBOPTake").style.background = "black";
-				 // document.getElementById("clicadoBCALC").style.background = "black";
+				document.getElementById("botao03").style.display = 'none';
+				
 					}
 			}
 			
@@ -1317,6 +1321,8 @@ function dragElement(elmnt) {
 				document.getElementById('OPAPI').style.display = 'none';
 				tag.style.background = "#04AA6D";
 				tag.style.color = "white";
+				document.getElementById("clicadoBOPAPI").style.background = "black";
+				document.getElementById("clicadoBOPTake").style.background = "black";
 			
 			} else {
 				x.style.display = 'none';
