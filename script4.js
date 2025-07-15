@@ -1271,12 +1271,15 @@ function dragElement(elmnt) {
 				document.getElementById('HB00010102').src += '';	
 				document.getElementById('OM41220102').src += '';				
 			}
-			
+
+
 			function BOPTake() {
 			var x = document.getElementById('OPTake');
 			var tag = document.getElementById("clicadoBOPTake");
 			if (x.style.display === 'none') {
 				x.style.display = 'block';
+				document.getElementById('OPAPI').style.display = 'none';
+				document.getElementById('BCALC').style.display = 'none';
 				tag.style.background = "#04AA6D";
 				tag.style.color = "white";
 			} else {
@@ -1291,6 +1294,8 @@ function dragElement(elmnt) {
 			var tag = document.getElementById("clicadoBOPAPI");
 			if (x.style.display === 'none') {
 				x.style.display = 'block';
+				document.getElementById('OPTake').style.display = 'none';
+				document.getElementById('BCALC').style.display = 'none';
 				tag.style.background = "#04AA6D";
 				tag.style.color = "white";
 				document.getElementById("botao03").style.display = 'none';
@@ -1298,7 +1303,8 @@ function dragElement(elmnt) {
 			} else {
 				x.style.display = 'none';
 				tag.style.background = "black";
-				 
+				// document.getElementById("clicadoBOPTake").style.background = "black";
+				 // document.getElementById("clicadoBCALC").style.background = "black";
 					}
 			}
 			
@@ -1307,6 +1313,8 @@ function dragElement(elmnt) {
 			var tag = document.getElementById("clicadoBCALC");
 			if (x.style.display === 'none') {
 				x.style.display = 'block';
+				document.getElementById('OPTake').style.display = 'none';
+				document.getElementById('OPAPI').style.display = 'none';
 				tag.style.background = "#04AA6D";
 				tag.style.color = "white";
 			
