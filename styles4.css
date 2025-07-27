@@ -36,7 +36,7 @@ iframe {
 iframe:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
-    transform-origin: bottom right; 
+	transform-origin: bottom right; 
 }
 
 iframe.alerta1x:hover {
@@ -73,6 +73,22 @@ iframe.APIalerta03:hover {
   margin: 4px 2px;
   transition-duration: 0.8s;
   cursor: pointer;
+}
+
+#redondo {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  border: 3px solid white;
+  padding: 16px 32px;
+  text-decoration: none;
+  font-size: 45px;
+  margin: 4px 2px;
+  transition-duration: 0.8s;
+  cursor: pointer;
+  border-radius: 50px
+   
 }
 
 #botao:hover {
@@ -154,16 +170,19 @@ iframe.APIalerta03:hover {
     position: fixed;
 	z-index: 2; 
 	background-color: rgb(0,0,0);  
-	background-color: rgba(0,0,0,0.5);  
+	background-color: rgba(0,0,0,0.0);  
+	border-radius: 0px  80px;
 }
+
 #divbutton2 {
     position: fixed; <!--  position: flex; fixed, absolute -->
 	top: 20%;
 	z-index: 1; 
 	overflow: hidden;  
     background-color: rgb(0,0,0);  
-    background-color: rgba(0,0,0,0.4);  }
-
+    background-color: rgba(0,0,0,0.4);  
+	border-radius: 50px  0px;
+}
 
 #divbutton2header {
   cursor: move;
@@ -224,20 +243,20 @@ iframe.APIalerta03:hover {
     display: flex;
 }
 
-#grafic3 {
-    display: flex;
-	width: 6850;
-    height: 2000;
-	overflow: hidden;
-	padding: 0px;
-}
-
 #grafic4 {
     display: flex;
 }
 
 #grafic5 {
     display: flex;
+}
+
+#grafic3 {
+    display: flex;
+	width: 6850;
+    height: 2000;
+	overflow: hidden;
+	padding: 0px;
 }
 
 body {
@@ -300,6 +319,7 @@ button {
   margin: 4px 2px;
   transition-duration: 0.8s;
   cursor: pointer;
+  border-radius: 0px 80px 0px;
 }
 
 .searchInput {
@@ -546,7 +566,7 @@ button.M365:hover {
   left: 37%;
   top: 30%;
   width: 30%; 
-  height: 88%; 
+  height: 58%; 
   overflow: hidden;  
   background-color: rgb(0,0,0);  
   background-color: rgba(0,0,0,0.0);  
