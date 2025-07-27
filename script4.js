@@ -383,8 +383,12 @@ function dragElement(elmnt) {
 			tag2.style.background="#6495ED";
 			tag2.style.color="white";
 			/* window.location.href='#cerquilha'; */
-			document.getElementById('divbutton2').style.display='block';
 			}
+			
+			function buttonPYW() {
+				document.getElementById('divbutton2').style.display='block';
+			}
+			
 			function PP2() {
 			var tag2=document.getElementById("clicado50");
 			tag2.style.background="black";
@@ -484,7 +488,7 @@ function dragElement(elmnt) {
 			}
 		
 			 function Loading() {	
-			corbotao();REF();REFB();REFA();Backg();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscMBA2002();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();Aackg();
+			corbotao();REF();REFB();REFA();Backg();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscMBA2002();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();Aackg();PixD0X();
 			document.getElementById("clicadoBCALC").style.background="black"; document.getElementById("clicadoBOPTake").style.background="black"; document.getElementById("clicadoBOPAPI").style.background="black"; document.getElementById("myBtn").style.background="black";
 			
 			}
@@ -879,7 +883,9 @@ function dragElement(elmnt) {
 				document.getElementById('OMpagtitulban02').src += '';
 				document.getElementById('OBpagtitulban02').src += '';
 				document.getElementById('MBA200202').src += '';
-			
+				document.getElementById('pixDOX20102').src += '';
+				document.getElementById('endpoints02').src += '';
+				document.getElementById('endpoints03').src += '';
 				document.getElementById('pxu1l02').src += '';			
 			}
 			
@@ -1042,6 +1048,7 @@ function dragElement(elmnt) {
 				tag.style.background="black";
 					}
 			}
+
 			function EscB9() {
 			var x = document.getElementById('pxu1l');
 			var tag=document.getElementById("clicado40");
@@ -1197,6 +1204,24 @@ function dragElement(elmnt) {
 					}
 			}
 			
+			function PixD0X() {
+				
+			var x = document.getElementById('pixDOX2');
+			var tag=document.getElementById("clicado40");
+			if (x.style.display === 'none') {
+			x.style.display = 'block'; 
+			document.getElementById('pixDOX201').style.display='block';
+			document.getElementById('endpoints').style.display='block';			<!--  Gráfico -->
+			tag.style.background="#6495ED";
+			tag.style.color="white";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('pixDOX201').style.display='none'; <!--  Gráfico -->
+				document.getElementById('endpoints').style.display='none';
+				tag.style.background="black";
+					}
+			}
+			
 			 function Backg() { <!--  Background Escala B -->
 			if (grafic3.style.backgroundColor === "black") {
 				grafic3.style.transition = "background-color 3s";
@@ -1207,6 +1232,8 @@ function dragElement(elmnt) {
 				div5.style.backgroundColor = "ivory";
 				div6.style.transition = "background-color 6s";
 				div6.style.backgroundColor = "ivory";
+				div7.style.transition = "background-color 7s";
+				div7.style.backgroundColor = "ivory";
 			} else {
 				grafic3.style.transition = "background-color 1s";
 				grafic3.style.backgroundColor = "black";
@@ -1216,6 +1243,8 @@ function dragElement(elmnt) {
 				div5.style.backgroundColor = "black";
 				div6.style.transition = "background-color 1s";
 				div6.style.backgroundColor = "black";
+				div7.style.transition = "background-color 1s";
+				div7.style.backgroundColor = "black";
 					}
 			}
 			
