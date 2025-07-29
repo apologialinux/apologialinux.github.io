@@ -648,6 +648,7 @@ graficOB0001
                 // Atualiza o conteúdo da label
 				
                 document.getElementById('horafim').innerText = `${dataFormatadaH2}`;
+		document.getElementById('tempototal').innerText = `${campoTempoTotal}`;
             } else {
                 document.getElementById('horafim').innerText = '';
             }
@@ -747,12 +748,6 @@ function myImpacto() {
     campoTempoTotal.value = "";
   }
 }
-	// Atualiza automaticamente quando os campos são modificados
-document.getElementById("dataInicial").addEventListener("input", calcularTempoTotal);
-document.getElementById("horaInicial").addEventListener("input", calcularTempoTotal);
-document.getElementById("dataFinal").addEventListener("input", calcularTempoTotal);
-document.getElementById("horaFinal").addEventListener("input", calcularTempoTotal);
-	
     </script>
 			
 </body>
