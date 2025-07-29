@@ -209,114 +209,12 @@ function desmarcar() {
 /*Fim Take Action*/
 
 /* CALCULA E BINS */
-function calcularDiferenca() {
-    let dataInicial = document.getElementById("dataInicial").value;
-    let horaInicial = document.getElementById("horaInicial").value;
-    let dataFinal = document.getElementById("dataFinal").value;
-    let horaFinal = document.getElementById("horaFinal").value;
-	
-    
-    let inicio = new Date(`${dataInicial}T${horaInicial}`);
-    let fim = new Date(`${dataFinal}T${horaFinal}`);
-		let anoI = inicio.getFullYear();
-    	let DayI = inicio.getDate();
-		let MesI = inicio.getMonth() + 1;
-		let DayF = fim.getDate();
-		let MesF = fim.getMonth() + 1;
-		let anoF = fim.getFullYear();
-		
-    if (isNaN(inicio) || isNaN(fim)) {
-        //document.getElementById("resultado").innerText = "Dados incompletos!";
-		alert("Data/Hora incompletos!");
-        return;
-    }
-    
-    let diferencaMs = fim - inicio;
-    if (diferencaMs < 0) {
-        //document.getElementById("resultado").innerText = "A data final deve ser maior que a data inicial.";
-		alert("A data final deve ser maior que a data inicial.");
-        return;
-    }
-    
-    let totalMinutos = Math.floor(diferencaMs / (1000 * 60));
-    let horas = Math.floor(totalMinutos / 60);
-    let minutos = totalMinutos % 60;
-		if ( horas < 10 ) {
-		horas = ('0' + horas).slice(-2);
-	} else {
-		horas = horas + '';
-	}
-	if ( minutos < 10) { // or min = min < 10 ? '0' + min : min; 
-		minutos = ('0' + minutos).slice(-2);
-	} else {
-		minutos = minutos + '';
-	}
-    
-    let resultado = `${horas}:${minutos}`;
-
-	if ( DayI < 10) { // or min = min < 10 ? '0' + min : min; 
-		DayI = ('0' + DayI).slice(-2);
-	} else {
-		DayI = DayI + '';
-	}
-	if ( MesI < 10) { // or min = min < 10 ? '0' + min : min; 
-		MesI = ('0' + MesI).slice(-2);
-	}
-	if ( DayF < 10) { // or min = min < 10 ? '0' + min : min; 
-		DayF = ('0' + DayF).slice(-2);
-	} else {
-		DayF = DayF + '';
-	}
-	if ( MesF < 10) { // or min = min < 10 ? '0' + min : min; 
-		MesF = ('0' + MesF).slice(-2);
-	}
-	if (dataInicial == dataFinal) {
-	document.getElementById("resultado").innerText = "Início: " + horaInicial + "\nFim: " + horaFinal + "\nTempo total: " + resultado;
-	document.getElementById("botaoCopy2").style.display = 'block';
-	} else {
-	document.getElementById("resultado").innerText = "Início: " + DayI + "/" + MesI + "/" + anoI + " às " + horaInicial + "\nFim: " + DayF + "/" + MesF + "/" + anoF + " às " + horaFinal + "\nTempo total: " + resultado;
-	document.getElementById("botaoCopy2").style.display = 'block';
-
-	}
-}
-function copiarResultado2() {
-    let resultado = document.getElementById("resultado").innerText;
-    navigator.clipboard.writeText(resultado).then(() => {
-        //document.getElementById("resultado").innerText = "Copiado!";
-		alert("Data/Hora copiado com sucesso!");
-    });
-
-}
-function definirDataAtual() {
-    let hoje = new Date().toISOString().split('T')[0];
-    document.getElementById("dataInicial").value = hoje;
-    document.getElementById("dataFinal").value = hoje;
-	document.getElementById("botaoCopy").style.display = 'none';
-}
-
-	// FIM CALCULADORA
-
-	
-        const data = null;
-
-        // Carregar a chave da API do arquivo config.json
-        function carregarConfig() {
-            return fetch('config.json')
-                .then(response => response.json())
-                .then(config => {
-                    return config.apiKey; // Retorna a chave da API
-                })
-                .catch(error => {
-                    console.error("Erro ao carregar a configuração:", error);
-                    return null;
-                });
-        }
-
-        // Função para consultar a API
+// Função para consultar a API
         async function consultarApi() {
             const binInput = document.getElementById('binInput').value;
-            const resultDiv = document.getElementById('resultAPI');
+            const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
+			document.getElementById("botaoCopy").style.display = 'block';
 
             // Filtra e extrai apenas números de 6 dígitos da string de entrada
             const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
@@ -385,20 +283,21 @@ País: ${response.country || 'INDISPONÍVEL'}
 
         // Função para copiar o resultado da pesquisa
         function copiarResultado() {
-            const resultDiv = document.getElementById('resultAPI');
+            const resultDiv = document.getElementById('resultado') + document.getElementById('result');
             const textToCopy = resultDiv.innerText || resultDiv.textContent;
 
             if (textToCopy) {
                 navigator.clipboard.writeText(textToCopy)
                     .then(() => { 
-                        alert("Resultado copiado com sucesso!");
+                        alert("Dados copiados com sucesso!");
                     })
                     .catch(err => {
-                        alert("Erro ao copiar o resultado: " + err);
+                        alert("Erro ao copiar o resultado Bins: " + err);
                     });
             } else {
-                alert("Não há resultados para copiar.");
+                alert("Não há Bins para copiar.");
             }
+			
         }
 /* FIM CALCULA E BINS */
 
