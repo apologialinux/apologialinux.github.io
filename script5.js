@@ -315,7 +315,7 @@ function definirDataAtual() {
         // Função para consultar a API
         async function consultarApi() {
             const binInput = document.getElementById('binInput').value;
-            const resultDiv = document.getElementById('result');
+            const resultDiv = document.getElementById('resultAPI');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
 
             // Filtra e extrai apenas números de 6 dígitos da string de entrada
@@ -385,7 +385,7 @@ País: ${response.country || 'INDISPONÍVEL'}
 
         // Função para copiar o resultado da pesquisa
         function copiarResultado() {
-            const resultDiv = document.getElementById('result');
+            const resultDiv = document.getElementById('resultAPI');
             const textToCopy = resultDiv.innerText || resultDiv.textContent;
 
             if (textToCopy) {
