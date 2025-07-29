@@ -648,6 +648,7 @@ graficOB0001
                 // Atualiza o conteúdo da label
 				
                 document.getElementById('horafim').innerText = `${dataFormatadaH2}`;
+		document.getElementById('tempototal').innerText = `${campoTempoTotal}`;    
             } else {
                 document.getElementById('horafim').innerText = '';
             }
@@ -739,7 +740,7 @@ function calcularTempoTotal() {
       const diffMin = Math.floor(diffMs / 60000);
       const horas = Math.floor(diffMin / 60);
       const minutos = diffMin % 60;
-      document.getElementById('tempototal').innerText = `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}`;
+      campoTempoTotal.value = `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}`;
     } else {
       campoTempoTotal.value = "00:00";
 	
