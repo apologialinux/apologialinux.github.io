@@ -794,23 +794,34 @@ function sendFullPageEmail() {
 </style>
 
 <!-- Script -->
+<!-- Biblioteca -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<!-- Estilo opcional para visualização -->
+<style>
+  #previewGrafico {
+    margin-top: 20px;
+    border: 2px dashed #28a745;
+    padding: 10px;
+    text-align: center;
+  }
+</style>
+
+<!-- Script -->
 <script>
-function gerarPrintBoletim() {
-  const container = document.getElementById("container3");
+function gerarPrintGrafico() {
+  const container = document.querySelector(".container3");
   html2canvas(container).then(canvas => {
-    // Mostra preview da imagem gerada
     const preview = document.createElement('div');
-    preview.id = "previewImagemBoletim";
+    preview.id = "previewGrafico";
     preview.appendChild(canvas);
 
-    // Cria botão de download
     const botaoDownload = document.createElement('a');
-    botaoDownload.innerText = "⬇️ Baixar Imagem";
-    botaoDownload.download = "Grafico.png";
+    botaoDownload.innerText = "⬇️ Baixar Imagem do Gráfico";
+    botaoDownload.download = "Grafico_Payware.png";
     botaoDownload.href = canvas.toDataURL("image/png");
     botaoDownload.style.display = "block";
     botaoDownload.style.marginTop = "10px";
-    botaoDownload.style.textDecoration = "none";
 
     preview.appendChild(botaoDownload);
     container.appendChild(preview);
@@ -818,8 +829,9 @@ function gerarPrintBoletim() {
 }
 </script>
 
-<!-- Botão -->
-<button onclick="gerarPrintBoletim()">📸 Gerar Print</button>
+<!-- Botão para gerar -->
+<button onclick="gerarPrintGrafico()">📈 Gerar Print do Gráfico</button>
+
 
 			
 </body>
