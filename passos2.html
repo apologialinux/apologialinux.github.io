@@ -277,7 +277,6 @@ textarea {
 		<option value="opcao3">Monitor_Erro_96</option>
     </select>
 <br><br>
-<button id="tempototale" onclick="calcularTempoTotal()">Tempo</button>
  
         </div>
         <div class="content" data-content="2">
@@ -724,14 +723,13 @@ function myImpacto() {
             alert('Conteúdo copiado com formatação! Cole no seu e-mail.');
         });
 		 //FONTE ARIAL
-	<script>
 function calcularTempoTotal() {
   const dataInicio = document.getElementById("dataInicial").value;
   const horaInicio = document.getElementById("horaInicial").value;
   const dataFim = document.getElementById("dataFinal").value;
   const horaFim = document.getElementById("horaFinal").value;
-  const campoTempoTotal = document.getElementById("tempototal"); // elemento HTML
 
+  // Valida preenchimento
   if ((dataFim || horaFim) && dataInicio && horaInicio) {
     const inicio = new Date(`${dataInicio}T${horaInicio}`);
     const fim = new Date(`${dataFim || dataInicio}T${horaFim || horaInicio}`);
@@ -742,23 +740,22 @@ function calcularTempoTotal() {
       const horas = Math.floor(diffMin / 60);
       const minutos = diffMin % 60;
       const tempoFormatado = `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}`;
-      
-      // Mostra em alerta
-      alert(`⏱️ Tempo decorrido: ${tempoFormatado}`);
 
-      // Também pode preencher o campo (opcional)
-      campoTempoTotal.value = tempoFormatado;
+      // 🟢 Exibe no campo correto (label)
+      document.getElementById("tempototal").innerText = tempoFormatado;
+
+      // Opcional: alerta
+      alert(`⏱️ Tempo decorrido: ${tempoFormatado}`);
     } else {
       alert("⚠️ Hora final é anterior à inicial.");
-      campoTempoTotal.value = "00:00";
+      document.getElementById("tempototal").innerText = "00:00";
     }
   } else {
     alert("🕒 Preencha todos os campos corretamente.");
-    campoTempoTotal.value = "";
+    document.getElementById("tempototal").innerText = "";
   }
 }
 
-</script>
 
     </script>
 			
