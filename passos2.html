@@ -192,7 +192,7 @@ textarea {
 	
     </style>
 </head>
-<body onload="definirDataAtual();calcularTempoTotal();">
+<body onload="definirDataAtual()">
 
     <div class="container">
 		<!-- h2>GERADOR DE BOLETIM</h2 -->
@@ -747,6 +747,12 @@ function myImpacto() {
     campoTempoTotal.value = "";
   }
 }
+	// Atualiza automaticamente quando os campos são modificados
+document.getElementById("dataInicial").addEventListener("input", calcularTempoTotal);
+document.getElementById("horaInicial").addEventListener("input", calcularTempoTotal);
+document.getElementById("dataFinal").addEventListener("input", calcularTempoTotal);
+document.getElementById("horaFinal").addEventListener("input", calcularTempoTotal);
+	
     </script>
 			
 </body>
