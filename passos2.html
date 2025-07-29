@@ -648,7 +648,6 @@ graficOB0001
                 // Atualiza o conteúdo da label
 				
                 document.getElementById('horafim').innerText = `${dataFormatadaH2}`;
-		document.getElementById('tempototal').innerText = `${calcularTempoTotal}`;
             } else {
                 document.getElementById('horafim').innerText = '';
             }
@@ -723,21 +722,21 @@ function myImpacto() {
             alert('Conteúdo copiado com formatação! Cole no seu e-mail.');
         });
 		 //FONTE ARIAL
-	function calcularTempoTotal() {
+	<script>
+function calcularTempoTotal() {
   const dataInicio = document.getElementById("dataInicial").value;
   const horaInicio = document.getElementById("horaInicial").value;
   const dataFim = document.getElementById("dataFinal").value;
   const horaFim = document.getElementById("horaFinal").value;
   const campoTempoTotal = document.getElementById("tempototal");
 
-  // Só calcula se dataFim ou horaFim estiverem preenchidos
   if ((dataFim || horaFim) && dataInicio && horaInicio) {
     const inicio = new Date(`${dataInicio}T${horaInicio}`);
     const fim = new Date(`${dataFim || dataInicio}T${horaFim || horaInicio}`);
 
     if (fim > inicio) {
       const diffMs = fim - inicio;
-      const diffMin = Math.floor(diffMs / (1000 * 60));
+      const diffMin = Math.floor(diffMs / 60000);
       const horas = Math.floor(diffMin / 60);
       const minutos = diffMin % 60;
       campoTempoTotal.value = `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}`;
@@ -748,6 +747,14 @@ function myImpacto() {
     campoTempoTotal.value = "";
   }
 }
+
+// ⏱️ Atualiza o tempo total em tempo real conforme o usuário seleciona os campos
+document.getElementById("dataInicial").addEventListener("input", calcularTempoTotal);
+document.getElementById("horaInicial").addEventListener("input", calcularTempoTotal);
+document.getElementById("dataFinal").addEventListener("input", calcularTempoTotal);
+document.getElementById("horaFinal").addEventListener("input", calcularTempoTotal);
+</script>
+
     </script>
 			
 </body>
