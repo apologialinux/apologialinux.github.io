@@ -730,6 +730,7 @@ function calcularTempoTotal() {
   const horaInicio = document.getElementById("horaInicial").value;
   const dataFim = document.getElementById("dataFinal").value;
   const horaFim = document.getElementById("horaFinal").value;
+  const campoTempoTotal = document.getElementById("tempototal"); // elemento HTML
 
   if ((dataFim || horaFim) && dataInicio && horaInicio) {
     const inicio = new Date(`${dataInicio}T${horaInicio}`);
@@ -740,18 +741,22 @@ function calcularTempoTotal() {
       const diffMin = Math.floor(diffMs / 60000);
       const horas = Math.floor(diffMin / 60);
       const minutos = diffMin % 60;
-
       const tempoFormatado = `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}`;
       
+      // Mostra em alerta
       alert(`⏱️ Tempo decorrido: ${tempoFormatado}`);
+
+      // Também pode preencher o campo (opcional)
+      campoTempoTotal.value = tempoFormatado;
     } else {
       alert("⚠️ Hora final é anterior à inicial.");
+      campoTempoTotal.value = "00:00";
     }
   } else {
-    alert("🕒 Preencha os campos de data e hora corretamente.");
+    alert("🕒 Preencha todos os campos corretamente.");
+    campoTempoTotal.value = "";
   }
 }
-
 
 </script>
 
