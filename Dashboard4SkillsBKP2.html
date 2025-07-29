@@ -842,7 +842,7 @@ dragElement(document.getElementById("divbutton2"));
 			<button type="button" class="corP" id="myBtn" onclick="corbotao();" title="Para a aba Information no Spectrum">Take Action</button>
 			</td>	
 			<td>
-			<button type="button" class="corP" id="BinsB" onclick="BinsF();">Calc/BINS</button>
+			<button type="button" class="corP" id="BinsB" onclick="BinsF();">Calc/BINs</button>
 			</td>
 			<td>
 			<button type="button" class="corPQ" id="clicado50" onclick="REF();REFB();REFA()" title="Refresh nos Gráficos">Refresh</button>
@@ -936,13 +936,12 @@ dragElement(document.getElementById("divbutton2"));
 	<p id="resultado"></p>
 	
         </div>
-        <p align="center">Consulta de BIN &nbsp &nbsp <input type="checkbox"  id="terceiroTKF"></p>
+        <p align="center">Consulta de BINs &nbsp &nbsp <input type="checkbox"  id="terceiroTKF"></p>
 	<div id="TKBins" style="display:none">
         <!-- Alterando o campo de input para textarea -->
         <textarea id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ..." rows="4"></textarea><br>
-        <button onclick="consultarApi()" id="botao" type="button" >Consultar</button><button onclick="copiarResultado()" id="botaoCopy" type="button">Copiar os Resultados</button>
-        <!-- p id="result">RESULTADO</p -->
-	<textarea id="result" placeholder="RESULTADO" rows="4"></textarea><br>
+        <button onclick="consultarApi()" >Consultar</button><button onclick="copiarResultado()" id="botaoCopy" type="button">Copiar os Resultados</button>
+        <p id="result">RESULTADO</p>
         <!-- Botão para copiar o resultado --></div>
         <br>
 	    <button id="botao3"  onclick="document.getElementById('myModal').style.display='none'; corbotao();"> Sair </button>
