@@ -745,14 +745,14 @@ function calcularTempoTotal() {
       document.getElementById("tempototal").innerText = tempoFormatado;
 
       // Opcional: alerta
-      alert(`⏱️ Tempo decorrido: ${tempoFormatado}`);
+      // alert(`⏱️ Tempo decorrido: ${tempoFormatado}`);
     } else {
       alert("⚠️ Hora final é anterior à inicial.");
-      document.getElementById("tempototal").innerText = "00:00";
+       // document.getElementById("tempototal").innerText = "";
     }
   } else {
     alert("🕒 Preencha todos os campos corretamente.");
-    document.getElementById("tempototal").innerText = "";
+     // document.getElementById("tempototal").innerText = "";
   }
 }
 
