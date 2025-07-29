@@ -729,7 +729,6 @@ function calcularTempoTotal() {
   const horaInicio = document.getElementById("horaInicial").value;
   const dataFim = document.getElementById("dataFinal").value;
   const horaFim = document.getElementById("horaFinal").value;
-  
 
   if ((dataFim || horaFim) && dataInicio && horaInicio) {
     const inicio = new Date(`${dataInicio}T${horaInicio}`);
@@ -740,17 +739,18 @@ function calcularTempoTotal() {
       const diffMin = Math.floor(diffMs / 60000);
       const horas = Math.floor(diffMin / 60);
       const minutos = diffMin % 60;
-      const campoTempoTotal = `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}`;
+
+      const tempoFormatado = `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}`;
+      
+      alert(`⏱️ Tempo decorrido: ${tempoFormatado}`);
     } else {
-      document.getElementById('tempototal').innerText = "00:00";
-	
+      alert("⚠️ Hora final é anterior à inicial.");
     }
   } else {
-    campoTempoTotal.value = "";
+    alert("🕒 Preencha os campos de data e hora corretamente.");
   }
 }
 
-// ⏱️ Atualiza o tempo total em tempo real conforme o usuário seleciona os campos
 
 </script>
 
