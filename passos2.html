@@ -779,6 +779,48 @@ function sendFullPageEmail() {
 
 		
     </script>
+
+	<!-- Biblioteca -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<!-- Estilos visuais opcionais -->
+<style>
+  #previewImagemBoletim {
+    margin-top: 20px;
+    border: 2px dashed #007bff;
+    padding: 10px;
+    text-align: center;
+  }
+</style>
+
+<!-- Script -->
+<script>
+function gerarPrintBoletim() {
+  const container = document.getElementById("container2");
+  html2canvas(container).then(canvas => {
+    // Mostra preview da imagem gerada
+    const preview = document.createElement('div');
+    preview.id = "previewImagemBoletim";
+    preview.appendChild(canvas);
+
+    // Cria botão de download
+    const botaoDownload = document.createElement('a');
+    botaoDownload.innerText = "⬇️ Baixar Imagem";
+    botaoDownload.download = "Boletim_Payware.png";
+    botaoDownload.href = canvas.toDataURL("image/png");
+    botaoDownload.style.display = "block";
+    botaoDownload.style.marginTop = "10px";
+    botaoDownload.style.textDecoration = "none";
+
+    preview.appendChild(botaoDownload);
+    container.appendChild(preview);
+  });
+}
+</script>
+
+<!-- Botão -->
+<button onclick="gerarPrintBoletim()">📸 Gerar Print do Boletim</button>
+
 			
 </body>
 </html>
