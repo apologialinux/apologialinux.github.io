@@ -212,7 +212,7 @@ function desmarcar() {
 // Função para consultar a API
         async function consultarApi() {
             const binInput = document.getElementById('binInput').value;
-            const resultDiv = document.getElementById('binInput');
+            const resultDiv = document.getElementById('resultAPI');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
 			document.getElementById("botaoCopy").style.display = 'block';
 
