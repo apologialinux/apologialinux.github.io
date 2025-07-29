@@ -476,7 +476,7 @@ textarea {
  </tr>
 </table><br>
 <b><label id="resultadoInc">Incidente e URL</label></b><br>
-<button id="copiar">Copiar Conteúdo</button><button onclick="exportarTabelaComoXML()">Enviar Tabela como XML</button>
+<button id="copiar">Copiar Conteúdo</button><button id="sendFullPageEmail()">Copiar Conteúdo</button>
 
 
 
@@ -758,35 +758,25 @@ function calcularTempoTotal() {
      // document.getElementById("tempototal").innerText = "";
   }
 }
-		
 
-function exportarTabelaComoXML() {
-  const causa = document.getElementById("colunaCausa").innerText.trim();
-  const impacto = document.getElementById("impactIndisp").innerText.trim() || 
-                  document.getElementById("impactDeg").innerText.trim() || 
-                  document.getElementById("impactSevDeg").innerText.trim();
-  const canais = document.getElementById("canaisStatus").innerText.trim();
-  const falha = document.getElementById("erroExt")?.innerText.trim() || 
-                document.getElementById("erroInt")?.innerText.trim();
-  const tempoTotal = document.getElementById("tempototal").innerText.trim();
+function sendFullPageEmail() {
+  // Seleciona todo o conteúdo da página
+  const conteudoHTML = document.documentElement.outerHTML;
 
-  const xml = `
-<boletim>
-  <causa>${causa}</causa>
-  <impacto>${impacto}</impacto>
-  <canais>${canais}</canais>
-  <falha>${falha}</falha>
-  <tempoTotal>${tempoTotal}</tempoTotal>
-</boletim>`;
+  // Insere o conteúdo no corpo do e-mail como texto puro
+  const assunto = "Passagem de Turno Payware – Turno Noite – XXXX/02/2024";
+  const destinatarios = "Daniel Ramos Santos EXT <T06035@bergs.br>; Denis Pereira EXT <Denis_Pereira_EXT@banrisul.com.br>; ..."; // abreviado para espaço
+  const copia = "Cesar Olaves EXT <cesar_olaves_ext@banrisul.com.br>";
+  const corpoEmail = `Segue conteúdo completo da página:\n\n${conteudoHTML}\n\nAt.te: Luís Fernando Adão`;
 
-  const assunto = `Boletim Técnico em XML`;
-  const corpo = `Prezado,\n\nSegue abaixo boletim estruturado em XML:\n\n${xml}\n\nAtt,\nEquipe de Monitoramento`;
+  // Cria o link mailto
+  const mailtoLink = `mailto:${encodeURIComponent(destinatarios)}?cc=${encodeURIComponent(copia)}&subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpoEmail)}`;
 
-  window.location.href = `mailto:?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+  // Abre o cliente de e-mail
+  window.location.href = mailtoLink;
 }
 
-
-
+		
     </script>
 			
 </body>
