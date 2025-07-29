@@ -192,7 +192,7 @@ textarea {
 	
     </style>
 </head>
-<body onload="definirDataAtual()">
+<body onload="definirDataAtual();calcularTempoTotal();">
 
     <div class="container">
 		<!-- h2>GERADOR DE BOLETIM</h2 -->
@@ -722,6 +722,31 @@ function myImpacto() {
             alert('Conteúdo copiado com formatação! Cole no seu e-mail.');
         });
 		 //FONTE ARIAL
+	function calcularTempoTotal() {
+  const dataInicio = document.getElementById("dataInicial").value;
+  const horaInicio = document.getElementById("horaInicial").value;
+  const dataFim = document.getElementById("dataFinal").value;
+  const horaFim = document.getElementById("horaFinal").value;
+  const campoTempoTotal = document.getElementById("tempototal");
+
+  // Só calcula se dataFim ou horaFim estiverem preenchidos
+  if ((dataFim || horaFim) && dataInicio && horaInicio) {
+    const inicio = new Date(`${dataInicio}T${horaInicio}`);
+    const fim = new Date(`${dataFim || dataInicio}T${horaFim || horaInicio}`);
+
+    if (fim > inicio) {
+      const diffMs = fim - inicio;
+      const diffMin = Math.floor(diffMs / (1000 * 60));
+      const horas = Math.floor(diffMin / 60);
+      const minutos = diffMin % 60;
+      campoTempoTotal.value = `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}`;
+    } else {
+      campoTempoTotal.value = "00:00";
+    }
+  } else {
+    campoTempoTotal.value = "";
+  }
+}
     </script>
 			
 </body>
