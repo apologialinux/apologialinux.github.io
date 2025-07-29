@@ -766,16 +766,12 @@ function gerarEmail() {
   const canais = document.getElementById("canaisStatus").innerText.trim();
   const falha = document.getElementById("erroExt").innerText.trim();
 
-  // 🔧 Monta o texto da mensagem
   const assunto = `Boletim ${numero} - ${canais}`;
   const corpo = `Prezado,\n\nSegue boletim do incidente ${numero}:\n\n🔗 Link: ${link}\n🕒 Tempo Total: ${tempo}\n🛠️ Causa: ${causa}\n🚦 Impacto: ${impacto}\n📡 Canais: ${canais}\n❗ Falha: ${falha}\n\nAtt,\nEquipe de Monitoramento`;
 
-  // Cria o link mailto com codificação correta
-  const mailtoLink = `mailto:destinatario@empresa.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
-
-  // Abre o email
-  window.location.href = mailtoLink;
+  window.location.href = `mailto:destinatario@empresa.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
 }
+
 
 
     </script>
