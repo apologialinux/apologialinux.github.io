@@ -212,7 +212,7 @@ function desmarcar() {
 // Função para consultar a API
         async function consultarApi() {
             const binInput = document.getElementById('binInput').value;
-            const resultDiv = document.getElementById('result');
+            const resultDiv = document.getElementById('resultAPI');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
 			document.getElementById("botaoCopy").style.display = 'block';
 
@@ -283,7 +283,7 @@ País: ${response.country || 'INDISPONÍVEL'}
 
         // Função para copiar o resultado da pesquisa
         function copiarResultado() {
-            const resultDiv = document.getElementById('resultado') + document.getElementById('result');
+            const resultDiv = document.getElementById('resultado') + document.getElementById('resultAPI');
             const textToCopy = resultDiv.innerText || resultDiv.textContent;
 
             if (textToCopy) {
