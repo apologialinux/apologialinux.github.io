@@ -476,7 +476,7 @@ textarea {
  </tr>
 </table><br>
 <b><label id="resultadoInc">Incidente e URL</label></b><br>
-<button id="copiar">Copiar Conteúdo</button><button onclick="enviarEmail()">Enviar por E-mail</button>
+<button id="copiar">Copiar Conteúdo</button><button onclick="gerarEmail()">Enviar por E-mail</button>
 
 		</div>
  <div class="container3"> 
@@ -757,20 +757,23 @@ function calcularTempoTotal() {
   }
 }
 		
-function enviarEmail() {
-  const incidente = document.getElementById("numero").value;
+function gerarEmail() {
+  const numero = document.getElementById("numero").value;
   const link = document.getElementById("link").value;
-  const tempo = document.getElementById("tempototal").innerText;
-  const causa = document.getElementById("colunaCausa").innerText;
+  const tempo = document.getElementById("tempototal").innerText.trim();
+  const causa = document.getElementById("colunaCausa").innerText.trim();
+  const impacto = document.getElementById("impactIndisp").innerText.trim();
+  const canais = document.getElementById("canaisStatus").innerText.trim();
+  const falha = document.getElementById("erroExt").innerText.trim();
 
-  // 🔧 Monte seu texto de e-mail
-  const assunto = `Boletim de Evento ${incidente}`;
-  const corpo = `Prezado,\n\nSegue boletim do incidente ${incidente}:\n\n🔗 Link: ${link}\n🕒 Tempo Total: ${tempo}\n🛠️ Causa: ${causa}\n\nAtt,\nEquipe Monitoramento`;
+  // 🔧 Monta o texto da mensagem
+  const assunto = `Boletim ${numero} - ${canais}`;
+  const corpo = `Prezado,\n\nSegue boletim do incidente ${numero}:\n\n🔗 Link: ${link}\n🕒 Tempo Total: ${tempo}\n🛠️ Causa: ${causa}\n🚦 Impacto: ${impacto}\n📡 Canais: ${canais}\n❗ Falha: ${falha}\n\nAtt,\nEquipe de Monitoramento`;
 
-  // 🔗 Cria link mailto com encode
+  // Cria o link mailto com codificação correta
   const mailtoLink = `mailto:destinatario@empresa.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
 
-  // Abre cliente de e-mail
+  // Abre o email
   window.location.href = mailtoLink;
 }
 
