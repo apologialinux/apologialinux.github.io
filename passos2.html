@@ -796,7 +796,7 @@ function sendFullPageEmail() {
 <!-- Script -->
 <script>
 function gerarPrintBoletim() {
-  const container = document.getElementById("container2");
+  const container = document.getElementById("container3");
   html2canvas(container).then(canvas => {
     // Mostra preview da imagem gerada
     const preview = document.createElement('div');
@@ -806,7 +806,7 @@ function gerarPrintBoletim() {
     // Cria botão de download
     const botaoDownload = document.createElement('a');
     botaoDownload.innerText = "⬇️ Baixar Imagem";
-    botaoDownload.download = "Boletim_Payware.png";
+    botaoDownload.download = "Grafico.png";
     botaoDownload.href = canvas.toDataURL("image/png");
     botaoDownload.style.display = "block";
     botaoDownload.style.marginTop = "10px";
