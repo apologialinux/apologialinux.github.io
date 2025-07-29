@@ -294,6 +294,7 @@ textarea {
         <div class="buttons">
             <button id="prevBtn" onclick="changeStep(-1)">Anterior</button>
             <button id="nextBtn" onclick="changeStep(1)">Próximo</button>
+	<button id="tempototale" onclick="calcularTempoTotal( )">Tempo</button>
         </div>
  
     </div>
@@ -628,7 +629,7 @@ graficOB0001
 
                 // Atualiza o conteúdo da label
                 document.getElementById('datafim').innerText = `${dataFormatada2}`;
-				document.getElementById('assunt').innerText = " Serviços - INÍCIO/FIM";
+		document.getElementById('assunt').innerText = " Serviços - INÍCIO/FIM";
             } else {
                 document.getElementById('datafim').innerText = '';
             }
