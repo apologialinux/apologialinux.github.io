@@ -212,7 +212,7 @@ function desmarcar() {
 // Função para consultar a API
         async function consultarApi() {
             const binInput = document.getElementById('binInput').value;
-            const resultDiv = document.getElementById('resultAPI');
+            const resultDiv = document.getElementById('binInput');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
 			document.getElementById("botaoCopy").style.display = 'block';
 
@@ -258,7 +258,7 @@ Banco: ${response.issuer || 'INDISPONÍVEL'}
 País: ${response.country || 'INDISPONÍVEL'}
 <br>`;
 
-                                document.getElementById('binInput').value += output;
+                                resultDiv.innerHTML += output;
 
                                 // Verificar se o Banco requer boletim
                                 const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
