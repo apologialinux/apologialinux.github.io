@@ -476,7 +476,8 @@ textarea {
  </tr>
 </table><br>
 <b><label id="resultadoInc">Incidente e URL</label></b><br>
-<button id="copiar">Copiar Conteúdo</button>
+<button id="copiar">Copiar Conteúdo</button><button onclick="enviarEmail()">Enviar por E-mail</button>
+
 		</div>
  <div class="container3"> 
 	<iframe src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=17&servico=1&tipo=1&graf=2" width="980" height="580"  id="graficMC00010102" style="display:none"></iframe> <!--  Acesso 0001 / Minha Conta -->
@@ -754,6 +755,23 @@ function calcularTempoTotal() {
     alert("🕒 Preencha todos os campos corretamente.");
      // document.getElementById("tempototal").innerText = "";
   }
+}
+		
+function enviarEmail() {
+  const incidente = document.getElementById("numero").value;
+  const link = document.getElementById("link").value;
+  const tempo = document.getElementById("tempototal").innerText;
+  const causa = document.getElementById("colunaCausa").innerText;
+
+  // 🔧 Monte seu texto de e-mail
+  const assunto = `Boletim de Evento ${incidente}`;
+  const corpo = `Prezado,\n\nSegue boletim do incidente ${incidente}:\n\n🔗 Link: ${link}\n🕒 Tempo Total: ${tempo}\n🛠️ Causa: ${causa}\n\nAtt,\nEquipe Monitoramento`;
+
+  // 🔗 Cria link mailto com encode
+  const mailtoLink = `mailto:destinatario@empresa.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+
+  // Abre cliente de e-mail
+  window.location.href = mailtoLink;
 }
 
 
