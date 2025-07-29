@@ -476,7 +476,8 @@ textarea {
  </tr>
 </table><br>
 <b><label id="resultadoInc">Incidente e URL</label></b><br>
-<button id="copiar">Copiar Conteúdo</button><button onclick="enviarEmailBoletim()">Enviar por E-mail</button>
+<button id="copiar">Copiar Conteúdo</button><button onclick="exportarTabelaComoXML()">Enviar Tabela como XML</button>
+
 
 
 		</div>
@@ -759,11 +760,7 @@ function calcularTempoTotal() {
 }
 		
 
-function enviarEmailBoletim() {
-  // 📌 Captura dos valores
-  const numero = document.getElementById("numero").value.trim();
-  const link = document.getElementById("link").value.trim();
-  const tempo = document.getElementById("tempototal").innerText.trim();
+function exportarTabelaComoXML() {
   const causa = document.getElementById("colunaCausa").innerText.trim();
   const impacto = document.getElementById("impactIndisp").innerText.trim() || 
                   document.getElementById("impactDeg").innerText.trim() || 
@@ -771,16 +768,22 @@ function enviarEmailBoletim() {
   const canais = document.getElementById("canaisStatus").innerText.trim();
   const falha = document.getElementById("erroExt")?.innerText.trim() || 
                 document.getElementById("erroInt")?.innerText.trim();
+  const tempoTotal = document.getElementById("tempototal").innerText.trim();
 
-  // 📋 Montagem do assunto e corpo
-  const assunto = `Boletim ${numero} - ${canais}`;
-  const corpo = `Prezado,\n\nSegue boletim do incidente ${numero}:\n\n🔗 Link: ${link}\n🕒 Tempo Total: ${tempo}\n🛠️ Causa: ${causa}\n🚦 Impacto: ${impacto}\n📡 Canais: ${canais}\n❗ Falha: ${falha}\n\nAtt,\nEquipe de Monitoramento`;
+  const xml = `
+<boletim>
+  <causa>${causa}</causa>
+  <impacto>${impacto}</impacto>
+  <canais>${canais}</canais>
+  <falha>${falha}</falha>
+  <tempoTotal>${tempoTotal}</tempoTotal>
+</boletim>`;
 
-  // ✉️ Codifica e abre o e-mail
-  const mailto = `mailto:?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
-  window.location.href = mailto;
+  const assunto = `Boletim Técnico em XML`;
+  const corpo = `Prezado,\n\nSegue abaixo boletim estruturado em XML:\n\n${xml}\n\nAtt,\nEquipe de Monitoramento`;
+
+  window.location.href = `mailto:?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
 }
-
 
 
 
