@@ -4,6 +4,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="https://ltp4.corp.banrisul.com.br/brb/monitora_brb.css"> 
+	<!-- Dragula CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.css" />
+
+<!-- Dragula JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js"></script>
+
 
 <title>Dashboard Escalas</title>
 <style>
@@ -750,6 +756,25 @@ button.M365:hover {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
+/* Dragula */
+  .drag-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 8px;
+  }
+
+  .drag-item {
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    cursor: move;
+    border-radius: 4px;
+  }
+	
 </style>
 </head>
 <body onLoad="Loading();DivisA();Aackg();DivisB();Backg();" id="bg">
@@ -766,8 +791,17 @@ dragElement(document.getElementById("divbutton2"));
   transform: translate(-50%, -50%);
 }
 */
-
+/* Dragula */
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.drag-container');
+    if (container) {
+      dragula([container]);
+    }
+  });
 </script>
+
+
+	
 			<div id="divbutton"> <!--  Botões fixos -->
 			<tr  class="botones">
 			<td>
