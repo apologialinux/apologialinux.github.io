@@ -1,0 +1,52 @@
+<div class="admin-box">
+  <div class="admin-content">
+    Escala A
+  </div>
+  <button class="admin-edit-btn" title="Editar">
+    <i class="fa fa-pencil"></i>
+  </button>
+</div>
+
+
+.admin-box {
+  position: relative;
+  background: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+
+.admin-edit-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: none; /* Oculto por padrão */
+}
+
+.admin-box:hover .admin-edit-btn {
+  display: block; /* Mostra ao passar o mouse */
+}
+
+.admin-edit-btn i {
+  font-size: 16px;
+}
+
+<script>
+  const isAdmin = true; // ou false, dependendo do usuário
+
+  document.querySelectorAll('.admin-edit-btn').forEach(btn => {
+    if (!isAdmin) {
+      btn.style.display = 'none';
+    }
+  });
+</script>
+
+
