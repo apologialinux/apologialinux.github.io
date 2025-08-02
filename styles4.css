@@ -527,12 +527,14 @@ button.M365:hover {
   padding: 2px 16px;
   background-color: black; /*2a422a*/
   color: white;
+border: 0px;	
 	
 }
 
 .imgcontainer {
   text-align: center;
   position: relative;
+	border: 0px;
 }
 
 .container {
@@ -558,7 +560,7 @@ button.M365:hover {
   padding-top: 0px;
   font-size: 55px;
   color: black;
-  border: 16px;
+  border: 0px;
 }
 
 /* Modal (background) */
@@ -620,6 +622,7 @@ button.M365:hover {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
 
 
 
