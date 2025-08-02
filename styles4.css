@@ -539,7 +539,7 @@ border: 0px;
 
 .container {
   padding: 0px;
-  border: 0px;
+  border: 16px;
  
 }
 
@@ -622,6 +622,7 @@ border: 0px;
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
 
 
 
