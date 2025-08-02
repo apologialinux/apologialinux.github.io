@@ -536,6 +536,8 @@ button.M365:hover {
 
 .container {
   padding: 16px;
+color: white;
+	background-color: black;
 }
 
 
@@ -617,4 +619,5 @@ button.M365:hover {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
 
