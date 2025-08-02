@@ -129,7 +129,7 @@ h2 {
         <!-- Alterando o campo de input para textarea -->
         <textarea id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ..." rows="4"></textarea>
         <button onclick="consultarApi()">Consultar</button>
-        <button onclick="copiarResultado()">Copiar Consulta</button>
+        <button onclick="copiarResultado()" id="x23" style="display:none">Copiar Consulta</button>
         <p id="result"></p>
         <!-- Botão para copiar o resultado -->
         
@@ -243,6 +243,7 @@ function definirDataAtual() {
 
         // Função para consultar a API
         async function consultarApi() {
+		document.getElementById("x23").style.display = 'block';
             const binInput = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
@@ -316,6 +317,7 @@ País: ${response.country || 'INDISPONÍVEL'}
         function copiarResultado() {
             const resultDiv = document.getElementById('result');
             const textToCopy = resultDiv.innerText || resultDiv.textContent;
+		document.getElementById("x23").style.display = 'none';
 
             if (textToCopy) {
                 navigator.clipboard.writeText(textToCopy)
