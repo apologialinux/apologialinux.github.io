@@ -526,7 +526,7 @@ button.M365:hover {
 .modal-header {
   padding: 2px 16px;
   background-color: black; /*2a422a*/
-  color: white;
+  color: black;
 }
 
 .imgcontainer {
@@ -617,6 +617,7 @@ button.M365:hover {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
 
 
 
