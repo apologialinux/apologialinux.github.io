@@ -210,10 +210,10 @@ h2 {
 }
 function copiarResultado2() {
     let resultado = document.getElementById("resultado").innerText;
-    navigator.clipboard.writeText(resultado).then(() => {
+    navigator.clipboard.writeText(resultado).then(() => { 
         //document.getElementById("resultado").innerText = "Copiado!";
 		alert("Resultado copiado com sucesso!");
-	    
+	    	    document.getElementById("botaoCopy2").style.display = 'none';
     });
 
 }
