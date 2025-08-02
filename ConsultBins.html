@@ -243,7 +243,6 @@ function definirDataAtual() {
 
         // Função para consultar a API
         async function consultarApi() {
-		document.getElementById("x23").style.display = 'block';
             const binInput = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
@@ -310,7 +309,7 @@ País: ${response.country || 'INDISPONÍVEL'}
                 xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
                 xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
                 xhr.send(data);
-            }
+            } document.getElementById("x23").style.display = 'block';
         }
 
         // Função para copiar o resultado da pesquisa
