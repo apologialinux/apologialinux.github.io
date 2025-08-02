@@ -251,7 +251,8 @@ function definirDataAtual() {
             const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
 
             if (!bins || bins.length === 0) {
-                resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
+                //resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
+		alert("Por favor, insira BINs válidos de 6 dígitos.");
                 return;
             }
 
