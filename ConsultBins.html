@@ -296,8 +296,8 @@ País: ${response.country || 'INDISPONÍVEL'}
                                 const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA', 'BANCO DO BRASIL, S.A.', 'CAIXA ECONOMICA FEDERAL'];
                                 if (alertBanco.includes(response.issuer)) {
                                     const alertMessage = `Necessário boletim para o ${response.issuer}.`;
-                                    resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
-                                    //alert(alertMessage);
+                                    // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
+                                    alert(alertMessage);
                                 }
                             }
                         } catch (e) {
