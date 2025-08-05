@@ -209,78 +209,66 @@ function desmarcar() {
 /*Fim Take Action*/
 
 /* CALCULA E BINS */
-// Função para consultar a API
-        async function consultarApi() {
-            const binInput = document.getElementById('binInput').value;
-            const resultDiv = document.getElementById('resultAPI');
-            resultDiv.innerHTML = ''; // Limpar resultados anteriores
-			document.getElementById("botaoCopy").style.display = 'block';
+async function consultarApi() {
+  const binInput = document.getElementById('binInput').value;
+  const resultDiv = document.getElementById('resultAPI');
+  resultDiv.innerHTML = ''; // Limpa resultados anteriores
 
-            // Filtra e extrai apenas números de 6 dígitos da string de entrada
-            const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
+  document.getElementById("botaoCopy").style.display = 'block';
 
-            if (!bins || bins.length === 0) {
-                resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
-                return;
+  const bins = binInput.match(/\d{6}/g);
+  if (!bins || bins.length === 0) {
+    resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
+    return;
+  }
+
+  const apiKey = await carregarConfig();
+  if (!apiKey) {
+    resultDiv.innerHTML = '<span class="error">Erro ao carregar a chave da API.</span>';
+    return;
+  }
+
+  for (const bin of bins) {
+    await new Promise(resolve => setTimeout(resolve, 300));
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener('readystatechange', function () {
+      if (this.readyState === this.DONE) {
+        try {
+          const response = JSON.parse(this.responseText);
+          if (response.message) {
+            resultDiv.innerHTML += `<span class="error">Erro no BIN ${bin}: ${response.message}</span><br>`;
+          } else {
+            const output = `
+              BIN: ${response.bin || 'INDISPONÍVEL'}<br>
+              Marca: ${response.brand || 'INDISPONÍVEL'}<br>
+              Tipo: ${response.type || 'INDISPONÍVEL'}<br>
+              Categoria: ${response.category || 'INDISPONÍVEL'}<br>
+              Banco: ${response.issuer || 'INDISPONÍVEL'}<br>
+              País: ${response.country || 'INDISPONÍVEL'}<br><br>
+            `;
+            resultDiv.innerHTML += output;
+
+            const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
+            if (alertBanco.includes(response.issuer)) {
+              alert(`Necessário boletim para o ${response.issuer}.`);
             }
-
-            // Carrega a chave da API
-            const apiKey = await carregarConfig();
-
-            if (!apiKey) {
-                resultDiv.innerHTML = '<span class="error">Erro ao carregar a chave da API.</span>';
-                return;
-            }
-
-            // Processa cada BIN com delay
-            for (const bin of bins) {
-                // Espera 300ms antes de fazer a próxima consulta
-                await new Promise(resolve => setTimeout(resolve, 300));
-
-                const xhr = new XMLHttpRequest();
-                xhr.withCredentials = true;
-
-                xhr.addEventListener('readystatechange', function () {
-                    if (this.readyState === this.DONE) {
-                        try {
-                            const response = JSON.parse(this.responseText);
-
-                            if (response.message) {
-                                resultDiv.innerHTML += `<span class="error">Erro no BIN ${bin}: ${response.message}</span><br>`;
-                            } else {
-                                // Formatar os dados retornados
-                                const output = `
-BIN: ${response.bin || 'INDISPONÍVEL'}
-Marca: ${response.brand || 'INDISPONÍVEL'}
-Tipo: ${response.type || 'INDISPONÍVEL'}
-Categoria: ${response.category || 'INDISPONÍVEL'}
-Banco: ${response.issuer || 'INDISPONÍVEL'}
-País: ${response.country || 'INDISPONÍVEL'}
-<br>`;
-
-                                resultDiv.innerHTML += output;
-				    
-				
-                                // Verificar se o Banco requer boletim
-                                const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
-                                if (alertBanco.includes(response.issuer)) {
-                                    const alertMessage = `Necessário boletim para o ${response.issuer}.`;
-                                    // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
-                                    alert(alertMessage);
-                                }
-                            }
-                        } catch (e) {
-                            resultDiv.innerHTML += `<span class="error">Erro ao processar a resposta da API para o BIN ${bin}.</span><br>`;
-                        }
-                    }
-                });
-
-                xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
-                xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
-                xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
-                xhr.send(data);
-            }
+          }
+        } catch (e) {
+          resultDiv.innerHTML += `<span class="error">Erro ao processar a resposta da API para o BIN ${bin}.</span><br>`;
         }
+      }
+    });
+
+    xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
+    xhr.setRequestHeader('x-rapidapi-key', apiKey);
+    xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
+    xhr.send();
+  }
+}
+
+/
 
         // Função para copiar o resultado da pesquisa
         function copiarResultado() {
