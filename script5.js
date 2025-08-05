@@ -283,7 +283,7 @@ País: ${response.country || 'INDISPONÍVEL'}
 
         // Função para copiar o resultado da pesquisa
         function copiarResultado() {
-            const resultDiv = document.getElementById('resultado') + document.getElementById('resultAPI');
+            const resultDiv = document.getElementById('resultAPI');
             const textToCopy = resultDiv.innerText || resultDiv.textContent;
 
             if (textToCopy) {
