@@ -258,7 +258,8 @@ Banco: ${response.issuer || 'INDISPONÍVEL'}
 País: ${response.country || 'INDISPONÍVEL'}
 <br>`;
 
-                                resultDiv.innerHTML += output;
+                                //resultDiv.innerHTML += output;
+				resultDiv.innerHTML = 'Teste de exibição';
 
                                 // Verificar se o Banco requer boletim
                                 const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
