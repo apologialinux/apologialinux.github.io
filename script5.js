@@ -259,8 +259,8 @@ País: ${response.country || 'INDISPONÍVEL'}
 <br>`;
 
                                 //resultDiv.innerHTML += output;
-				resultDiv.innerHTML = 'Teste de exibição';
-
+				    document.getElementById('resultAPI').innerHTML += output; 
+				
                                 // Verificar se o Banco requer boletim
                                 const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
                                 if (alertBanco.includes(response.issuer)) {
