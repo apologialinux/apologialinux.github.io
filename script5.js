@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		} else {
 			y.style.display = 'none';
 		}
-		});
-		var z = document.getElementById('TKBins');
+	});
+	var z = document.getElementById('TKBins');
 	terceiroTKF.addEventListener('change', function() {
         if (this.checked) {		
 			z.style.display = 'block';
