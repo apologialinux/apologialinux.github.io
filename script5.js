@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		} else {
 			y.style.display = 'none';
 		}
-	});
-	var z = document.getElementById('TKBins');
+		});
+		var z = document.getElementById('TKBins');
 	terceiroTKF.addEventListener('change', function() {
         if (this.checked) {		
 			z.style.display = 'block';
@@ -209,7 +209,7 @@ function desmarcar() {
 /*Fim Take Action*/
 
 /* CALCULA E BINS */
-/ Função para consultar a API
+// Função para consultar a API
         async function consultarApi() {
             const binInput = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('resultAPI');
@@ -259,8 +259,7 @@ País: ${response.country || 'INDISPONÍVEL'}
 <br>`;
 
                                 resultDiv.innerHTML += output;
-				    
-				
+
                                 // Verificar se o Banco requer boletim
                                 const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
                                 if (alertBanco.includes(response.issuer)) {
@@ -284,7 +283,7 @@ País: ${response.country || 'INDISPONÍVEL'}
 
         // Função para copiar o resultado da pesquisa
         function copiarResultado() {
-            const resultDiv = document.getElementById('resultAPI');
+            const resultDiv = document.getElementById('resultado') + document.getElementById('resultAPI');
             const textToCopy = resultDiv.innerText || resultDiv.textContent;
 
             if (textToCopy) {
