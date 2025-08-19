@@ -220,61 +220,10 @@ iframe.tempmediopagISPB03:hover {
   cursor: move;
 }
 
-
-#div1 {
-    display:flex;
-	
-}
-
-#div2 {
-    display:flex;
-	
-}
-
-#div3 {
-    display: flex;
-}
-
-#div4 {
-    display: flex;
-}
-
-#div5 {
-    display: flex;
-}
-
-#div6 {
-    display: flex;
-}
-
-#div7 {
-    display: flex;
-}
-
-#div8 {
-    display: flex;
-}
-
-#div9 {
-    display: flex;
-}
-
-#div10 {
-    display: flex;
-}
-
-#div007 {
-    display: flex;
-}
-
-
-#grafic {
-    display: flex;
-
-}
-
-#grafic2 {
-    display: flex;
+div {
+	display: flex;	
+	margin: 0;
+padding: 0;}
 }
 
 #grafic3 {
