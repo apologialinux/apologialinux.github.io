@@ -2,6 +2,12 @@ body {
     zoom: 0.34;
 }
 
+* {
+margin:0;
+padding:0;
+list-style:none;
+vertical-align:baseline;
+}
 
 /* From Uiverse.io by Vazafirst */ 
 #page {
