@@ -61,22 +61,6 @@ iframe.APIalerta03:hover {
  }
 */
 
-.danger {
-  background-color: #ffffcc;
-  border-left: 25px solid #ffeb3b;
-  margin-bottom: 5px;
-
-  
-}
-
-p.aviso {
-  color: black;
-  font-size: 100px;
-  padding: 100px 100px;
-  margin: 0;
-  text-align: left;
-}
-
 #botao {
   margin: 0 auto;
   text-align: center;
@@ -638,6 +622,7 @@ border: 0px;
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
 
 
 
