@@ -226,20 +226,15 @@ div {
 padding: 0;
 }
 
+
+
+
 #grafic3 {
     display: flex;
 	width: 6850;
     height: 2000;
 	overflow: hidden;
 	padding: 0px;
-}
-
-#grafic4 {
-    display: flex;
-}
-
-#grafic5 {
-    display: flex;
 }
 
 body {
