@@ -286,6 +286,7 @@ body {
 
 a { 
  color: black;
+ text-decoration: none;
 
 }
 
@@ -643,6 +644,7 @@ border: 0px;
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
 
 
 
