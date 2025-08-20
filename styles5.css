@@ -9,97 +9,6 @@ list-style:none;
 vertical-align:baseline;
 }
 
-/* From Uiverse.io by Vazafirst */ 
-#page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-#container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  align-items: center;
-  top: 0;
-  left: 0;
-  
-}
-
-#h3 {
-  color: rgb(82, 79, 79);
-}
-
-#ring {
-  width: 280px;
-  height: 280px;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  position: absolute;
-}
-
-#ring:nth-child(1) {
-  border-bottom: 8px solid rgb(240, 42, 230);
-  animation: rotate1 2s linear infinite;
-}
-
-@keyframes rotate1 {
-  from {
-    transform: rotateX(50deg) rotateZ(110deg);
-  }
-
-  to {
-    transform: rotateX(50deg) rotateZ(470deg);
-  }
-}
-
-#ring:nth-child(2) {
-  border-bottom: 8px solid rgb(240, 19, 67);
-  animation: rotate2 2s linear infinite;
-}
-
-@keyframes rotate2 {
-  from {
-    transform: rotateX(20deg) rotateY(50deg) rotateZ(20deg);
-  }
-
-  to {
-    transform: rotateX(20deg) rotateY(50deg) rotateZ(380deg);
-  }
-}
-
-#ring:nth-child(3) {
-  border-bottom: 8px solid rgb(3, 170, 170);
-  animation: rotate3 2s linear infinite;
-}
-
-@keyframes rotate3 {
-  from {
-    transform: rotateX(40deg) rotateY(130deg) rotateZ(450deg);
-  }
-
-  to {
-    transform: rotateX(40deg) rotateY(130deg) rotateZ(90deg);
-  }
-}
-
-#ring:nth-child(4) {
-  border-bottom: 8px solid rgb(207, 135, 1);
-  animation: rotate4 2s linear infinite;
-}
-
-@keyframes rotate4 {
-  from {
-    transform: rotateX(70deg) rotateZ(270deg);
-  }
-
-  to {
-    transform: rotateX(70deg) rotateZ(630deg);
-  }
-}
-/* Improving visualization in light mode */
 input[type=radio] {
     transform: scale(5);
 	
@@ -108,6 +17,15 @@ input[type=checkbox] {
     transform: scale(5);
 	
 } 
+
+textarea {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 45px;
+            resize: none;
+           
+}
 
 h2 {
   text-align: center;
@@ -120,23 +38,51 @@ iframe {
     margin: 0;
     padding: 0;
     z-index: 100; 
-	
 }
 
 iframe:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
-    
+    transition-delay: 3s;
+	transform-origin: bottom right; 
 }
 
 iframe.alerta1x:hover {
     transform: none; /* Impede o efeito de escala */
 }
 
-iframe.tempmediopagISPB03:hover {
+iframe.alerta1b:hover {
     transform: none; /* Impede o efeito de escala */
 }
 
+/*iframe.tempmediopagISPB03:hover {
+    transform: none; 
+}*/
 
+	
+/*
+iframe.APIalerta03:hover {
+ transform: scale(4.0);
+ position: fixed;
+ transition-delay: 3s;
+ 
+ }
+*/
+
+.danger {
+  background-color: #ffffcc;
+  border-left: 25px solid #ffeb3b;
+  margin-bottom: 5px;
+
+  
+}
+
+p.aviso {
+  color: black;
+  font-size: 100px;
+  padding: 100px 100px;
+  margin: 0;
+  text-align: left;
+}
 
 #botao {
   margin: 0 auto;
@@ -150,6 +96,22 @@ iframe.tempmediopagISPB03:hover {
   margin: 4px 2px;
   transition-duration: 0.8s;
   cursor: pointer;
+}
+
+#redondo {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  border: 3px solid white;
+  padding: 16px 32px;
+  text-decoration: none;
+  font-size: 45px;
+  margin: 4px 2px;
+  transition-duration: 0.8s;
+  cursor: pointer;
+  border-radius: 50px
+   
 }
 
 #botao:hover {
@@ -173,6 +135,26 @@ iframe.tempmediopagISPB03:hover {
 }
 
 #botao3:hover {
+  background-color: Green;
+  color: white;
+}
+
+#botao03 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 60px;
+  color: black;
+  border: 3px solid white;
+  padding: 16px 32px;
+  text-decoration: none;
+  font-size: 45px;
+  margin: 4px 2px;
+  transition-duration: 0.8s;
+  cursor: pointer;
+
+}
+
+#botao03:hover {
   background-color: Green;
   color: white;
 }
@@ -210,30 +192,85 @@ iframe.tempmediopagISPB03:hover {
 #divbutton {
     position: fixed;
 	z-index: 2; 
-	background-color: rgb(0,0,0);  
-	background-color: rgba(0,0,0,0.5);  
+	background-color: rgba(0,0,0,0.3);  
+	border-radius: 0px  80px;
 }
+
 #divbutton2 {
     position: fixed; <!--  position: flex; fixed, absolute -->
 	top: 20%;
 	z-index: 1; 
 	overflow: hidden;  
-    background-color: rgb(0,0,0);  
-    background-color: rgba(0,0,0,0.4);  }
-
+    background-color: rgba(0,0,0,0.4);  
+	border-radius: 50px  0px;
+}
 
 #divbutton2header {
   cursor: move;
 }
 
-div {
-	display: flex;	
-	margin: 0;
-padding: 0;
+#div1 {
+    display: flex;
+}
+
+#div2 {
+    display: flex;
+}
+
+#div3 {
+    display: flex;
+}
+
+#div4 {
+    display: flex;
 }
 
 
+#div5 {
+    display: flex;
+}
 
+#div6 {
+    display: flex;
+}
+
+#div7 {
+    display: flex;
+}
+
+#div8 {
+    display: flex;
+}
+
+#div9 {
+    display: flex;
+}
+
+#div10 {
+    display: flex;
+}
+
+#div007 {
+    display: flex;
+}
+
+
+#grafic {
+    display: flex;
+
+}
+
+#grafic2 {
+    display: flex;
+}
+
+#grafic4 {
+    display: flex;
+}
+
+#grafic5 {
+    display: flex;
+}
 
 #grafic3 {
     display: flex;
@@ -249,6 +286,7 @@ body {
 
 a { 
  color: black;
+ text-decoration: none;
 
 }
 
@@ -303,6 +341,7 @@ button {
   margin: 4px 2px;
   transition-duration: 0.8s;
   cursor: pointer;
+  border-radius: 0px 80px 0px;
 }
 
 .searchInput {
@@ -398,7 +437,7 @@ button.corS {
 button.corS:hover {
   background-color: Green;
   color: white;
-  /*transform: rotateY(150deg); */
+  /* transform: rotateY(150deg); */
 }
 
 button.verD {
@@ -471,10 +510,6 @@ button.M365:hover {
     }
  }
 
-/* #APIalerta02:hover {
-	transform: scale(4.0);
-}*/
-
 #passagemT{
   position:fixed; 
   top:95%;
@@ -512,17 +547,22 @@ button.M365:hover {
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #000000; /*2a422a*/
+  background-color: black; /*2a422a*/
   color: white;
+border: 0px;	
+	
 }
 
 .imgcontainer {
   text-align: center;
   position: relative;
+	border: 0px;
 }
 
 .container {
-  padding: 16px;
+  padding: 0px;
+  border: 16px;
+ 
 }
 
 
@@ -551,9 +591,9 @@ button.M365:hover {
   position: fixed; 
   z-index: 1; 
   left: 37%;
-  top: 35%;
+  top: 30%;
   width: 30%; 
-  height: 44%; 
+  height: 58%; 
   overflow: hidden;  
   background-color: rgb(0,0,0);  
   background-color: rgba(0,0,0,0.0);  
@@ -574,17 +614,18 @@ button.M365:hover {
 .close {
  margin: auto;
   position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 55px;
+  right: 1px;
+  top: 1;
+  color: white;
+  background-color: red;  
+  font-size: 49px;
   font-weight: bold;
 
 }
 
 .close:hover,
 .close:focus {
-  color: red;
+  color: white;
   cursor: pointer;
 }
 
@@ -603,3 +644,20 @@ button.M365:hover {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
