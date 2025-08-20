@@ -2,6 +2,13 @@ body {
     zoom: 0.34;
 }
 
+* {
+margin:0;
+padding:0;
+list-style:none;
+vertical-align:baseline;
+}
+
 input[type=radio] {
     transform: scale(5);
 	
@@ -638,6 +645,7 @@ border: 0px;
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
 
 
 
