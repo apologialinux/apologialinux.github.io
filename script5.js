@@ -1,65 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     const zoomControl = document.getElementById('zoomControl');
-
+	
     // Atualiza o estado do checkbox conforme o zoom inicial
     zoomControl.checked = document.body.style.zoom === '1.0';
 
     zoomControl.addEventListener('change', function() {
         if (this.checked) {
-            document.body.style.zoom = '0.34';
-        } else {
             document.body.style.zoom = '1.0';
+        } else {
+            document.body.style.zoom = '0.34';
         }
     });
-	var x = document.getElementById('TKTake');
-	primeiroTKF.addEventListener('change', function() {
-        if (this.checked) {		
-			x.style.display = 'block';
-		} else {
-				x.style.display = 'none';
-			}
 	
-	});
-	var y = document.getElementById('TKHora');
-	segundoTKF.addEventListener('change', function() {
-        if (this.checked) {		
-			y.style.display = 'block';
-		} else {
-			y.style.display = 'none';
-		}
-		});
-		var z = document.getElementById('TKBins');
-	terceiroTKF.addEventListener('change', function() {
-        if (this.checked) {		
-			z.style.display = 'block';
-		} else {
-			z.style.display = 'none';
-		}
-	});		
 });
-
-document.getElementById("floating-btn").addEventListener("click", function() {
-  let iframe = document.getElementById("MC00010102");
-  iframe.contentWindow.postMessage("botaoClicado", "*");
-});
-
-
-/*
-document.querySelectorAll("iframe").forEach(function(iframe) {
-    iframe.addEventListener("click", function() {
-        var destino = iframe.getAttribute("data-url"); // Obtém a URL de destino
-        if (destino) {
-            window.open(destino, "_blank"); // Abre a página ao clicar no gráfico
-        }
-    });
-});
-*/
-
-/*
-window.onload = function() {
-    alert("Página carregada com sucesso!");
-};
-*/
 
 /*Download */
 /*
@@ -121,6 +74,99 @@ window.onload = function() {
 });
 */
 /* Fim Download */
+// CALCULADORA
+	function calcularDiferenca() {
+    let dataInicial = document.getElementById("dataInicial").value;
+    let horaInicial = document.getElementById("horaInicial").value;
+    let dataFinal = document.getElementById("dataFinal").value;
+    let horaFinal = document.getElementById("horaFinal").value;
+    
+	
+    
+    let inicio = new Date(`${dataInicial}T${horaInicial}`);
+    let fim = new Date(`${dataFinal}T${horaFinal}`);
+		let anoI = inicio.getFullYear();
+    	let DayI = inicio.getDate();
+		let MesI = inicio.getMonth() + 1;
+		let DayF = fim.getDate();
+		let MesF = fim.getMonth() + 1;
+		let anoF = fim.getFullYear();
+		
+    if (isNaN(inicio) || isNaN(fim)) {
+        //document.getElementById("resultado").innerText = "Dados incompletos!";
+		//alert("Dados incompletos!");
+		document.getElementById("resultado").innerHTML = "Dados incompletos!";
+        return;
+    }
+    
+    let diferencaMs = fim - inicio;
+    if (diferencaMs < 0) {
+        //document.getElementById("resultado").innerText = "A data final deve ser maior que a data inicial.";
+		//alert("A data final deve ser maior que a data inicial.");
+		document.getElementById("resultado").innerHTML = "A data final deve ser maior que a data inicial.";
+        return;
+    }
+    
+    let totalMinutos = Math.floor(diferencaMs / (1000 * 60));
+    let horas = Math.floor(totalMinutos / 60);
+    let minutos = totalMinutos % 60;
+		if ( horas < 10 ) {
+		horas = ('0' + horas).slice(-2);
+	} else {
+		horas = horas + '';
+	}
+	if ( minutos < 10) { // or min = min < 10 ? '0' + min : min; 
+		minutos = ('0' + minutos).slice(-2);
+	} else {
+		minutos = minutos + '';
+	}
+    
+    let resultado = `${horas}:${minutos}`;
+
+	if ( DayI < 10) { // or min = min < 10 ? '0' + min : min; 
+		DayI = ('0' + DayI).slice(-2);
+	} else {
+		DayI = DayI + '';
+	}
+	if ( MesI < 10) { // or min = min < 10 ? '0' + min : min; 
+		MesI = ('0' + MesI).slice(-2);
+	}
+	if ( DayF < 10) { // or min = min < 10 ? '0' + min : min; 
+		DayF = ('0' + DayF).slice(-2);
+	} else {
+		DayF = DayF + '';
+	}
+	if ( MesF < 10) { // or min = min < 10 ? '0' + min : min; 
+		MesF = ('0' + MesF).slice(-2);
+	}
+	if (dataInicial == dataFinal) {
+	document.getElementById("resultado").innerText = "Início: " + horaInicial + "\nFim: " + horaFinal + "\nTotal: " + resultado;
+		document.getElementById("botaoCopy2").style.display = 'block';
+	} else {
+	document.getElementById("resultado").innerText = "Início: " + DayI + "/" + MesI + "/" + anoI + " às " + horaInicial + "\nFim: " + DayF + "/" + MesF + "/" + anoF + " às " + horaFinal + "\nTotal: " + resultado;
+		document.getElementById("botaoCopy2").style.display = 'block';
+
+	}
+}
+function copiarResultado2() {
+    let resultado = document.getElementById("resultado").innerText;
+    navigator.clipboard.writeText(resultado).then(() => {
+        //document.getElementById("resultado").innerText = "Copiado!";
+		document.getElementById("botaoCopy2").style.display = 'none';
+		alert("Resultado copiado com sucesso!");
+	    
+    });
+
+}
+function definirDataAtual() {
+    let hoje = new Date().toISOString().split('T')[0];
+    document.getElementById("dataInicial").value = hoje;
+    document.getElementById("dataFinal").value = hoje;
+    //document.getElementById("botaoCopy2").style.display = 'none';
+}
+
+	// FIM CALCULADORA
+
 
 /*Take Action */
 function myFunction() {
@@ -176,7 +222,7 @@ function myFunction() {
 	document.getElementById("demo").innerHTML = Day + "/" + Mes + "/" + d.getFullYear() + " " + Dhor + ":" + Dmin +  " - " +  text;
 	document.getElementById("botao2").style.display = 'block';
   } else {
-	document.getElementById("demo").innerHTML = "Dados incompletos";
+	document.getElementById("demo").innerHTML = "Dados incompletos!";
 	document.getElementById("botao2").style.display = 'none';
 	 
   }
@@ -196,6 +242,15 @@ function myCopy() {
 	  desmarcar();
 	  document.getElementById("botao2").style.display = 'none';
 }
+
+
+function myCopy2() {
+      const result = document.getElementById('outputData');
+      navigator.clipboard.writeText(result.value);
+	  document.getElementById("botao03").style.display = 'none';
+	  alert("Resultado copiado com sucesso!");
+}
+
 function zerar() {
 	document.getElementById('numb').value='';
 }
@@ -207,100 +262,83 @@ function desmarcar() {
 
 
 /*Fim Take Action*/
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
 
-/* CALCULA E BINS */
-// Função para consultar a API
-        async function consultarApi() {
-            const binInput = document.getElementById('binInput').value;
-            const resultDiv = document.getElementById('resultAPI');
-            resultDiv.innerHTML = ''; // Limpar resultados anteriores
-			document.getElementById("botaoCopy").style.display = 'block';
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
 
-            // Filtra e extrai apenas números de 6 dígitos da string de entrada
-            const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
 
-            if (!bins || bins.length === 0) {
-                resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
-                return;
-            }
-
-            // Carrega a chave da API
-            const apiKey = await carregarConfig();
-
-            if (!apiKey) {
-                resultDiv.innerHTML = '<span class="error">Erro ao carregar a chave da API.</span>';
-                return;
-            }
-
-            // Processa cada BIN com delay
-            for (const bin of bins) {
-                // Espera 300ms antes de fazer a próxima consulta
-                await new Promise(resolve => setTimeout(resolve, 300));
-
-                const xhr = new XMLHttpRequest();
-                xhr.withCredentials = true;
-
-                xhr.addEventListener('readystatechange', function () {
-                    if (this.readyState === this.DONE) {
-                        try {
-                            const response = JSON.parse(this.responseText);
-
-                            if (response.message) {
-                                resultDiv.innerHTML += `<span class="error">Erro no BIN ${bin}: ${response.message}</span><br>`;
-                            } else {
-                                // Formatar os dados retornados
-                                const output = `
-BIN: ${response.bin || 'INDISPONÍVEL'}
-Marca: ${response.brand || 'INDISPONÍVEL'}
-Tipo: ${response.type || 'INDISPONÍVEL'}
-Categoria: ${response.category || 'INDISPONÍVEL'}
-Banco: ${response.issuer || 'INDISPONÍVEL'}
-País: ${response.country || 'INDISPONÍVEL'}
-<br>`;
-
-                                resultDiv.innerHTML += output;
-
-                                // Verificar se o Banco requer boletim
-                                const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
-                                if (alertBanco.includes(response.issuer)) {
-                                    const alertMessage = `Necessário boletim para o ${response.issuer}.`;
-                                    // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
-                                    alert(alertMessage);
-                                }
-                            }
-                        } catch (e) {
-                            resultDiv.innerHTML += `<span class="error">Erro ao processar a resposta da API para o BIN ${bin}.</span><br>`;
-                        }
-                    }
-                });
-
-                xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
-                xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
-                xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
-                xhr.send(data);
-            }
-        }
-
-        // Função para copiar o resultado da pesquisa
-        function copiarResultado() {
-            const resultDiv = document.getElementById('resultado') + document.getElementById('resultAPI');
-            const textToCopy = resultDiv.innerText || resultDiv.textContent;
-
-            if (textToCopy) {
-                navigator.clipboard.writeText(textToCopy)
-                    .then(() => { 
-                        alert("Dados copiados com sucesso!");
-                    })
-                    .catch(err => {
-                        alert("Erro ao copiar o resultado Bins: " + err);
-                    });
-            } else {
-                alert("Não há Bins para copiar.");
-            }
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
 			
-        }
-/* FIM CALCULA E BINS */
+    const data = {
+	//CONSULTA DOS BINS
+   }
 
+    function search() {
+      const inputElement = document.getElementById('searchInput');
+      const result = document.getElementById('searchResult');
+      const copyButton = document.getElementById('copyButton');
+      let resultsFound = false;
+
+      // Limpar resultados anteriores
+      result.innerHTML = '';
+
+      // Extrair todos os números da entrada atual
+      const inputValue = inputElement.value;
+      const numbers = inputValue.match(/\d+/g);
+
+      if (numbers && numbers.length > 0) {
+        numbers.forEach(number => {
+          if (data[number]) {
+            resultsFound = true;
+            const div = document.createElement('div');
+            div.classList.add('result');
+            div.textContent = data[number];
+            result.appendChild(div);
+          }
+        });
+      }
+
+      copyButton.style.display = resultsFound ? 'block' : 'none';
+    }
+
+    function copyResults() {
+      const result = document.getElementById('searchResult');
+      navigator.clipboard.writeText(result.innerText);
+    }
 	
 		function sendMail() {
 			var link = "mailto:Daniel Ramos Santos EXT <T06035@bergs.br>; Denis Pereira EXT <Denis_Pereira_EXT@banrisul.com.br>; Higor Anhaia EXT <Higor_Anhaia_EXT@banrisul.com.br>; Hiuri Anhaia EXT <T07512@bergs.br>; Jonathan Rocha EXT <T06361@bergs.br>; Lucas Berneira EXT <T06665@bergs.br>; Luis Silva EXT <T03252@bergs.br>; Pedro Oliveira EXT <T06385@bergs.br>; Renan Tavares EXT <T07264@bergs.br>; Rubens Godoi EXT <T07672@bergs.br>; Sergio Filho EXT <T06505@bergs.br>; Wagner Souza Silva EXT <t06215@bergs.br>; Rodrigo Teixeira EXT <T07230@bergs.br>"
@@ -345,8 +383,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			tag2.style.background="#6495ED";
 			tag2.style.color="white";
 			/* window.location.href='#cerquilha'; */
-			document.getElementById('divbutton2').style.display='block';
 			}
+			
+			function buttonPYW() {
+				document.getElementById('divbutton2').style.display='block';
+			}
+			
 			function PP2() {
 			var tag2=document.getElementById("clicado50");
 			tag2.style.background="black";
@@ -361,17 +403,16 @@ País: ${response.country || 'INDISPONÍVEL'}
 			var tag=document.getElementById("clicado1");
 			document.getElementById('master01').src += '';
 			if (x.style.display === 'none') {
-			
 			x.style.display = 'block';
 			document.getElementById('P01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-		
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('P01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-						
+				PP2();			
 					}
 			}
 			
@@ -385,59 +426,13 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('P02').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-
+			PP1();
 			} else {
 				y.style.display = 'none';
 				document.getElementById('P02').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
-			}
-			
-			function Divis() {
-			var z = document.getElementById('todasPayware');
-			if (z.style.display === 'none') {
-			z.style.display = 'block';
-			document.getElementById('todasPayware').style.display='block'; <!--  Gráfico -->
-			document.getElementById("clicado50").style.background="#6495ED";
-			document.getElementById('divbutton2').style.display='block';
-			} else {
-				z.style.display = 'none';
-				document.getElementById('todasPayware').style.display='none'; <!--  Gráfico -->
-				document.getElementById("clicado50").style.background="black";
-				document.getElementById('divbutton2').style.display='none';
-					}
-
-			}
-			function DivisB() {
-			var z = document.getElementById('todasB');
-			if (z.style.display === 'none') {
-			z.style.display = 'block';
-			document.getElementById('todasB').style.display='block'; <!--  Gráfico -->
-			document.getElementById("clicado40").style.background="#6495ED";
-			} else {
-				z.style.display = 'none';
-				document.getElementById('todasB').style.display='none'; <!--  Gráfico -->
-				document.getElementById("clicado40").style.background="black";
-
-
-					}
-
-			}
-			
-			function DivisA() {
-			var z = document.getElementById('todasA');
-			if (z.style.display === 'none') {
-			z.style.display = 'block';
-			document.getElementById('todasA').style.display='block'; <!--  Gráfico -->
-			document.getElementById("clicado41").style.background="#6495ED";
-			} else {
-				z.style.display = 'none';
-				document.getElementById('todasA').style.display='none'; <!--  Gráfico -->
-				document.getElementById("clicado41").style.background="black";
-
-					}
-
 			}
 			
 			function FP3() {
@@ -449,12 +444,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('P03').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				z.style.display = 'none';
 				document.getElementById('P03').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 
 			}
@@ -471,14 +466,14 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('autband01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				z.style.display = 'none';
 				document.getElementById('autband01').style.display='none'; <!--  Gráfico -->
 				document.getElementById('autband3').style.display='none';
 				document.getElementById('autband03').style.display='none';
 				tag.style.background="black";
-				
+				PP2();
 				
 					}
 			}
@@ -486,24 +481,17 @@ País: ${response.country || 'INDISPONÍVEL'}
 			function BinsF() {
 			if (document.getElementById('bins01').style.display === 'block') {
 				document.getElementById('bins01').style.display = 'none';
-				document.getElementById("BinsB").style.background="black";
 			} else {
 				document.getElementById('bins01').style.display='block';
-				document.getElementById("BinsB").style.background="#6495ED";
 
 					}
 			}
 		
-			function Loading() {	
-			FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();
-			Backg();Aackg();
-			Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();
-			document.getElementById("clicado40").style.background="black";
-			document.getElementById("clicado41").style.background="black";
-			document.getElementById("clicado50").style.background="black";
-			document.getElementById("myBtn").style.background="black";
-			document.getElementById("BinsB").style.background="black";
-			} 
+			 function Loading() {	
+			corbotao();REF();REFB();REFA();Backg();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscMBA2002();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();Aackg();PixD0X();
+			document.getElementById("clicadoBCALC").style.background="black"; document.getElementById("clicadoBOPTake").style.background="black"; document.getElementById("clicadoBOPAPI").style.background="black"; document.getElementById("myBtn").style.background="black";
+			
+			}
             function Fbanri1() {
 			var x = document.getElementById('banri1');
 			var tag=document.getElementById("clicado5");
@@ -513,13 +501,13 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('banri01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#6495ED";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('banri01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
 				tag.style.color="white";
-				
+				PP2();
 					}
 			}
 			
@@ -532,12 +520,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('verdec01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('verdec01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			
@@ -550,12 +538,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('banricard01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('banricard01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-			
+				PP2();
 					}
 			}
 			
@@ -568,12 +556,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('cabal01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-		
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('cabal01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-			
+				PP2();
 					}
 			}
 			
@@ -586,12 +574,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('bok01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('bok01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			
@@ -604,12 +592,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('bph01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('bph01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			
@@ -622,12 +610,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('pix01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#DAA520";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('pix01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			
@@ -640,11 +628,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('vrbene01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('vrbene01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
             function Fcabalv1() {
@@ -656,12 +645,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('cabalv01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('cabalv01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			            
@@ -674,12 +663,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('pluxee01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('pluxee01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			
@@ -692,12 +681,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('alelo01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('alelo01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			
@@ -710,12 +699,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('ticket01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('ticket01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			
@@ -728,12 +717,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('greencard01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('greencard01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}	
 			
@@ -746,12 +735,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('senff01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#04AA6D";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('senff01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}	
 			
@@ -764,12 +753,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('tcp01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('tcp01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			            
@@ -782,12 +771,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('conduct01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('conduct01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			
@@ -800,12 +789,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('payw01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('payw01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-			
+				PP2();
 					}
 			}
 			
@@ -818,12 +807,12 @@ País: ${response.country || 'INDISPONÍVEL'}
 			document.getElementById('total01').style.display='block'; <!--  Gráfico -->
 			tag.style.background="#808080";
 			tag.style.color="white";
-			
+			PP1();
 			} else {
 				x.style.display = 'none';
 				document.getElementById('total01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			
@@ -893,6 +882,10 @@ País: ${response.country || 'INDISPONÍVEL'}
 				document.getElementById('MCpagtituloutros02').src += '';
 				document.getElementById('OMpagtitulban02').src += '';
 				document.getElementById('OBpagtitulban02').src += '';
+				document.getElementById('MBA200202').src += '';
+				document.getElementById('pixDOX20102').src += '';
+				document.getElementById('endpoints02').src += '';
+				document.getElementById('endpoints03').src += '';
 				document.getElementById('pxu1l02').src += '';			
 			}
 			
@@ -995,6 +988,22 @@ País: ${response.country || 'INDISPONÍVEL'}
 					}
 			
 			}
+						function EscMBA2002() { 
+			var x = document.getElementById('MBA2002');
+			var tag=document.getElementById("clicado40");
+			if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('MBA200201').style.display='block'; <!--  Gráfico -->
+			tag.style.background="#6495ED";
+			tag.style.color="white";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('MBA200201').style.display='none'; <!--  Gráfico -->
+				tag.style.background="black";
+					}
+			
+			}
+
 				
 				
 			function EscB6() {
@@ -1039,6 +1048,7 @@ País: ${response.country || 'INDISPONÍVEL'}
 				tag.style.background="black";
 					}
 			}
+
 			function EscB9() {
 			var x = document.getElementById('pxu1l');
 			var tag=document.getElementById("clicado40");
@@ -1194,6 +1204,24 @@ País: ${response.country || 'INDISPONÍVEL'}
 					}
 			}
 			
+			function PixD0X() {
+				
+			var x = document.getElementById('pixDOX2');
+			var tag=document.getElementById("clicado40");
+			if (x.style.display === 'none') {
+			x.style.display = 'block'; 
+			document.getElementById('pixDOX201').style.display='block';
+			document.getElementById('endpoints').style.display='block';			<!--  Gráfico -->
+			tag.style.background="#6495ED";
+			tag.style.color="white";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('pixDOX201').style.display='none'; <!--  Gráfico -->
+				document.getElementById('endpoints').style.display='none';
+				tag.style.background="black";
+					}
+			}
+			
 			 function Backg() { <!--  Background Escala B -->
 			if (grafic3.style.backgroundColor === "black") {
 				grafic3.style.transition = "background-color 3s";
@@ -1204,6 +1232,8 @@ País: ${response.country || 'INDISPONÍVEL'}
 				div5.style.backgroundColor = "ivory";
 				div6.style.transition = "background-color 6s";
 				div6.style.backgroundColor = "ivory";
+				div7.style.transition = "background-color 7s";
+				div7.style.backgroundColor = "ivory";
 			} else {
 				grafic3.style.transition = "background-color 1s";
 				grafic3.style.backgroundColor = "black";
@@ -1213,6 +1243,8 @@ País: ${response.country || 'INDISPONÍVEL'}
 				div5.style.backgroundColor = "black";
 				div6.style.transition = "background-color 1s";
 				div6.style.backgroundColor = "black";
+				div7.style.transition = "background-color 1s";
+				div7.style.backgroundColor = "black";
 					}
 			}
 			
@@ -1223,11 +1255,11 @@ País: ${response.country || 'INDISPONÍVEL'}
 			x.style.display = 'block';
 			tag.style.background="#808080";
 			tag.style.color="white";
-		
+			PP1();
 			} else {
 				x.style.display = 'none';
 				tag.style.background="black";
-				
+				PP2();
 					}
 			}
 			
@@ -1267,6 +1299,67 @@ País: ${response.country || 'INDISPONÍVEL'}
 				document.getElementById('MC41220102').src += ''; 
 				document.getElementById('HB00010102').src += '';	
 				document.getElementById('OM41220102').src += '';				
+			}
+
+
+			function BOPTake() {
+			var x = document.getElementById('OPTake');
+			var tag = document.getElementById("clicadoBOPTake");
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+				document.getElementById('OPAPI').style.display = 'none';
+				document.getElementById('BCALC').style.display = 'none';
+				tag.style.background = "#04AA6D";
+				tag.style.color = "white";
+				document.getElementById("clicadoBOPAPI").style.background = "black";
+				document.getElementById("clicadoBCALC").style.background = "black";
+			} else {
+				x.style.display = 'none';
+				tag.style.background = "black";
+				 
+					}
+			}
+			
+			function BOPAPI() {
+			var x = document.getElementById('OPAPI');
+			var tag = document.getElementById("clicadoBOPAPI");
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+				document.getElementById('OPTake').style.display = 'none';
+				document.getElementById('BCALC').style.display = 'none';
+				tag.style.background = "#04AA6D";
+				tag.style.color = "white";
+				
+				document.getElementById("clicadoBOPTake").style.background = "black";
+				document.getElementById("clicadoBCALC").style.background = "black";
+			
+			} else {
+				x.style.display = 'none';
+				tag.style.background = "black";
+				document.getElementById("botao03").style.display = 'none';
+				
+					}
+			}
+			
+			function BCALC() {
+			var x = document.getElementById('BCALC');
+			var tag = document.getElementById("clicadoBCALC");
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+				document.getElementById('OPTake').style.display = 'none';
+				document.getElementById('OPAPI').style.display = 'none';
+				tag.style.background = "#04AA6D";
+				tag.style.color = "white";
+				document.getElementById("clicadoBOPAPI").style.background = "black";
+				document.getElementById("clicadoBOPTake").style.background = "black";
+			
+			} else {
+				x.style.display = 'none';
+				tag.style.background = "black";
+				document.getElementById("resultado").innerHTML = "";
+				document.getElementById("botaoCopy2").style.display = 'none';
+				 
+					}
 			}
 			
 			 function EscA0() {
