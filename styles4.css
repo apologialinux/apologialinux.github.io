@@ -212,21 +212,7 @@ p.aviso {
 }
 
 
-#div1 {
-    display: flex;
-}
 
-#div2 {
-    display: flex;
-}
-
-#div3 {
-    display: flex;
-}
-
-#div4 {
-    display: flex;
-}
 
 #div5 {
     display: flex;
@@ -645,6 +631,7 @@ border: 0px;
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
 
 
 
