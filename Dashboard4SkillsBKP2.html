@@ -3,61 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="https://ltp4.corp.banrisul.com.br/brb/monitora_brb.css"> 
-	<!-- Dragula CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.css" />
-
-<!-- Dragula JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js"></script>
-
+<link rel="stylesheet" type="text/css" href="https://apologialinux.github.io/styles5.css"> 
 
 <title>Dashboard Escalas</title>
 <style>
-body {
-    zoom: 1.0;
-}
-
-* {
-margin:0;
-padding:0;
-list-style:none;
-vertical-align:baseline;
-}
-
-	
-textarea {
-            width: 95%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 60px;
-            resize: none;
-           
-}
-        .error {
-            color: red;
-        }
-        .alert {
-            color: orange;
-            font-weight: bold;
-        }
-                h1 {
-            text-align: center;
-        }
-        p {
-            font-size: 60px;
-			text-align: center;
-        }
-        #resultAPI {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #FFFFFF;
-            white-space: pre-wrap;
-            /* font-size: 40px;  Aumenta o tamanho da fonte do resultado */
-	background-color: black;
-	width: 95%;
-	border: 0px;
-}
-
 input[type=date] {
     transform: scale(4.7);
 	padding-left: 0px;
@@ -65,6 +14,13 @@ input[type=date] {
 	margin: 0.4rem 0;
 	border: 0px;
 	outline: none;
+ 
+}
+	
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }
 
 input[type=time] {
@@ -74,667 +30,17 @@ input[type=time] {
 	margin: 0.4rem 0;
 	border: 0px;
 	outline: none;
-	
 } 
 
-#container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  align-items: center;
-  top: 0;
-  left: 0;
-  
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }
-
-#h3 {
-  color: rgb(82, 79, 79);
-}
-
-#ring {
-  width: 280px;
-  height: 280px;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  position: absolute;
-}
-
-#ring:nth-child(1) {
-  border-bottom: 8px solid rgb(240, 42, 230);
-  animation: rotate1 2s linear infinite;
-}
-
-@keyframes rotate1 {
-  from {
-    transform: rotateX(50deg) rotateZ(110deg);
-  }
-
-  to {
-    transform: rotateX(50deg) rotateZ(470deg);
-  }
-}
-
-#ring:nth-child(2) {
-  border-bottom: 8px solid rgb(240, 19, 67);
-  animation: rotate2 2s linear infinite;
-}
-
-@keyframes rotate2 {
-  from {
-    transform: rotateX(20deg) rotateY(50deg) rotateZ(20deg);
-  }
-
-  to {
-    transform: rotateX(20deg) rotateY(50deg) rotateZ(380deg);
-  }
-}
-
-#ring:nth-child(3) {
-  border-bottom: 8px solid rgb(3, 170, 170);
-  animation: rotate3 2s linear infinite;
-}
-
-@keyframes rotate3 {
-  from {
-    transform: rotateX(40deg) rotateY(130deg) rotateZ(450deg);
-  }
-
-  to {
-    transform: rotateX(40deg) rotateY(130deg) rotateZ(90deg);
-  }
-}
-
-#ring:nth-child(4) {
-  border-bottom: 8px solid rgb(207, 135, 1);
-  animation: rotate4 2s linear infinite;
-}
-
-@keyframes rotate4 {
-  from {
-    transform: rotateX(70deg) rotateZ(270deg);
-  }
-
-  to {
-    transform: rotateX(70deg) rotateZ(630deg);
-  }
-}
-/* Improving visualization in light mode */
-input[type=radio] {
-    transform: scale(5);
-	
-} 
-input[type=checkbox] {
-    transform: scale(5);
-	
-} 
-
-h2 {
-  text-align: center;
-  font-size: 60px;
-}
-
-iframe {
-    transition: transform 0.4s ease-in-out; /* Efeito suave */
-    /*position: relative;*/
-    margin: 0;
-    padding: 0;
-    z-index: 100; 
-	
-}
-
-iframe:hover {
-    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
-transition-delay: 3s;
-    
-}
-
-iframe.alerta1x:hover {
-    transform: none; /* Impede o efeito de escala */
-}
-
-iframe.tempmediopagISPB03:hover {
-    transform: none; /* Impede o efeito de escala */
-}
-
-#botaoCopy2 {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 60px;
-  color: black;
-  border: 3px solid white;
-  padding: 16px 32px;
-  text-decoration: none;
-  font-size: 45px;
-  margin: 4px 2px;
-  transition-duration: 0.8s;
-  cursor: pointer;
-   
-}
-
-#botaoCopy2:hover {
-  background-color: Green;
-  color: white;
-}
-
-#botaoCopy {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 60px;
-  color: black;
-  border: 3px solid white;
-  padding: 16px 32px;
-  text-decoration: none;
-  font-size: 45px;
-  margin: 4px 2px;
-  transition-duration: 0.8s;
-  cursor: pointer;
-   
-}
-
-#botaoCopy:hover {
-  background-color: Green;
-  color: white;
-}
-
-
-#botao {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 60px;
-  color: black;
-  border: 3px solid white;
-  padding: 16px 32px;
-  text-decoration: none;
-  font-size: 45px;
-  margin: 4px 2px;
-  transition-duration: 0.8s;
-  cursor: pointer;
-}
-
-#botao:hover {
-  background-color: Green;
-  color: white;
-}
-
-#botao3 {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 60px;
-  color: white;
-    border: 3px solid white;
-  padding: 16px 32px;
-  text-decoration: none;
-  font-size: 45px;
-  margin: 4px 2px;
-  transition-duration: 0.8s;
-  cursor: pointer;
-  background-color: Red;
-}
-
-#botao3:hover {
-  background-color: Green;
-  color: white;
-}
-
-
-#botao2 {
-  margin: 0 auto;
-  color: black;
-  text-align: center;
-  font-size: 60px;
-  border: 3px solid white;
-  text-decoration: none;
-  font-size: 45px;
-  transition-duration: 0.8s;
-  cursor: pointer;
-}
-
-#botao2:hover {
-  background-color: Green;
-  color: white;
-}
-
-#name {
-  text-align: center;
-  font-size: 60px;
-}
-
-#numb {
-  text-align: center;
-  font-size: 60px;
-}
-
-
-
-#divbutton {
-    position: fixed;
-	z-index: 2; 
-	background-color: rgb(0,0,0);  
-	background-color: rgba(0,0,0,0.5);  
-}
-#divbutton2 {
-    position: fixed; <!--  position: flex; fixed, absolute -->
-	top: 20%;
-	z-index: 1; 
-	overflow: hidden;  
-    background-color: rgb(0,0,0);  
-    background-color: rgba(0,0,0,0.4);  }
-
-
-#divbutton2header {
-  cursor: move;
-}
-
-
-div {
-	display: flex;	
-	margin: 0;
-padding: 0;
-}
-
-
- 
-
-#grafic3 {
-    display: flex;
-	width: 6850;
-    height: 2000;
-	overflow: hidden;
-	padding: 0px;
-}
-
- 
-
-body {
-  background-color: black; 
-}
-
-a { 
- color: black;
-
-}
-
-h4 {
-  color: black;
-  text-align: center;
-  padding: 0px;
-}
-
-h3 {
-  color: black;
-  text-align: center;
-}
-
-
-p {
-  color: white;
-  font-size: 60px;
-  padding: 0px;
-}
- 
-table.tabela, td.tabela {
-  border: 1px solid black;
-  border-collapse: collapse;
-} 
-
-table, th, {
-  border: 1px solid black;
-  border-spacing: collapse;
-  border-collapse: collapse;
-  text-align: center;
-  padding: 0px;
-}
-
-td {
-  vertical-align: bottom;
-  text-align: center;
-  padding: 0px;
-}
-
-
-tr.tabela:nth-child(even) {
-  background-color: DarkGoldenRod;
-}
-
-.botones {
-  text-align: center;
-}
-
-button {
-  border: 3px solid white;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 45px;
-  margin: 4px 2px;
-  transition-duration: 0.8s;
-  cursor: pointer;
-}
-
-.searchInput {
-  border: 3px solid white;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 65px;
-  margin: 4px 2px;
-}
-
-button:hover {
-  background-color: Green;
-  color: white;
-}
-
-button.corX {
-  background-color: Black;
-  color: white;
-}
-
-button.corX:hover {
-  background-color: Green;
-  color: white;
-}
-
-button.corX1 {
-  background-color: Black;
-  color: white;
-}
-
-button.corX1:hover {
-  background-color: #DAA520;
-  color: white;
-}
-
-button.corX2 {
-  background-color: Black;
-  color: white;
-}
-
-button.corX2:hover {
-  background-color: #DAA520;
-  color: white;
-}
-
-button.corX3 {
-  background-color: Black;
-  color: white;
-}
-
-button.corX3:hover {
-  background-color: Green;
-  color: white;
-}
-
-button.corR {
-  background-color: #FF0000; <!-- Vermelho -->
-  color: white;
-}
-
-button.corR:hover {
-  background-color: Green;
-  color: white;
-}
-
-button.corB {
-  background-color: #DAA520; <!-- Dourado -->
-  color: white;
-}
-
-button.corB:hover {
-  background-color: Green;
-  color: white;
-}
-
-button.corPQ {
-  background-color: #808080; <!-- Cinza -->
-  color: white;
-}
-
-button.corPQ:hover {
-  background-color: Green;
-  color: white;
-}
-
-button.corS {
-  background-color: Violet;
-  color: #010101; <!-- Preto -->
-}
-
-button.corS:hover {
-  background-color: Green;
-  color: white;
-  /*transform: rotateY(150deg); */
-}
-
-button.verD {
-  background-color: #04AA6D;
-  color: white;
-}
-
-button.verD:hover {
-  background-color: Green;
-  color: white;
-}
-
-button.corP {
-  background-color: #6495ED; <!-- Azul -->
-  color: white;
-}
-
-button.corP:hover {
-  background-color: Green;
-  color: white;
-}
-
-button.Indic {
-  background-color: #808080; <!-- Cinza -->
-  color: white;
-}
-
-button.Indic:hover {
-  background-color: Green;
-  color: white;
-}
-
-button.M365 {
-  background-color: #934DD8; 
-  color: white;
-}
-
-button.M365:hover {
-  background-color: Green;
-  color: white;
-}
-
-
-#sair2 {
-  margin: 0 auto;
-  text-align: left;
-}
-   
-#APIalerta02 {
-  z-index: -3; 
-  width: 4250;
-  height: 4000;
-  border: 0px;
-}
-#APIalerta02 {
-  zoom: 1.00;
-    z-index: -3;
-  -moz-transform: scale(0.0);
-  -moz-transform-origin: 0 0;
-  -o-transform: scale(0.0);
-  -o-transform-origin: 0 0;
-  -webkit-transform: scale(2.2);
-  -webkit-transform-origin: 0 0;
-}
- @media screen and (-webkit-min-device-pixel-ratio:0) {
-#APIalerta02 {
-	z-index: -3;
-	position:flex; 
-    zoom: 1;
-    }
- }
-
-/* #APIalerta02:hover {
-	transform: scale(4.0);
-}*/
-
-#passagemT{
-  position:fixed; 
-  top:95%;
-  left:84%;
-  transform: translate(-50%, -50%);
-}
-
-.ribbon {
-  width: 200px;
-  font-size: 40px;
-  padding: 4px;
-  position: absolute;
-  right: -30px;
-  top: -40px;
-  text-align: center;
-  border-radius: 25px;
-  transform: rotate(10deg);
-  background-color: #ff9800;
-  color: white;
-}
-
-.ribbon2 {
-  width: 100px;
-  font-size: 40px;
-  padding: 4px;
-  position: absolute;
-  right: -50px;
-  top: -50px;
-  text-align: center;
-  border-radius: 25px;
-  transform: rotate(10deg);
-  background-color: #2E8B57;
-  color: white;
-}
-
-.modal-header {
-  padding: 2px 16px;
-  background-color: #000000; /*2a422a*/
-  color: white;
-}
-
-.imgcontainer {
-  text-align: center;
-  position: relative;
-}
-
-.container {
-  padding: 16px;
-}
-
-
-
-/* Modal (background) */
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  left: 42%;
-  top: 20%;
-  width: 20.8%; 
-  height: 80%; 
-  overflow: hidden;  
-  background-color: rgb(0,0,0);  
-  background-color: rgba(0,0,0,0.0);  
-  padding-top: 0px;
-  font-size: 55px;
-  color: black;
-  border: 0px;
-}
-
-/* Modal (background) */
-.modal2 {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  left: 37%;
-  top: 15%;
-  width: 30%; 
-  height: 90%; 
-  overflow: hidden;  
-  background-color: rgb(0,0,0);  
-  background-color: rgba(0,0,0,0.0);  
-  padding-top: 0px;
-  font-size: 55px;
-  color: black;
-}
-
-/* Modal Box */
-.modal-content {
-  background-color: #000000;
-  margin: 5% auto 5% auto;  
-  border: 0px solid black;
-  width: 100%;  
-}
-
-/* Botão (x) */
-.close {
- margin: auto;
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 55px;
-  font-weight: bold;
-
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-/* Zoom Animação */
-.animate {
-  -webkit-animation: animatezoom 1.6s;
-  animation: animatezoom 1.6s
-}
-
-@-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0} 
-  to {top:0; opacity:1}
-}
-  
-@keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
-}
-
-/* Dragula */
-  .drag-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 10px;
-    background: #f0f0f0;
-    border-radius: 8px;
-  }
-
-  .drag-item {
-    padding: 10px;
-    background: #ffffff;
-    border: 1px solid #ccc;
-    cursor: move;
-    border-radius: 4px;
-  }
-	
 </style>
 </head>
-<body onLoad="Loading();DivisA();Aackg();DivisB();Backg();" id="bg">
-<script src="https://apologialinux.github.io/script5.js">
+<body onLoad="Loading(); definirDataAtual();" id="bg">
+ <script src="https://apologialinux.github.io/script5.js">
 //Make the DIV element draggagle:
 dragElement(document.getElementById("divbutton2"));
 
@@ -747,24 +53,15 @@ dragElement(document.getElementById("divbutton2"));
   transform: translate(-50%, -50%);
 }
 */
-/* Dragula */
-  document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('.drag-container');
-    if (container) {
-      dragula([container]);
-    }
-  });
+
 </script>
-
-
-	
 			<div id="divbutton"> <!--  Botões fixos -->
 			<tr  class="botones">
 			<td>
-			&nbsp &nbsp &nbsp &nbsp <input type="checkbox" id="zoomControl" title="Zoom alternativo"> <!-- label for="zoomControl"><p>Zoom padrão</p></label> </td -->
-			<td>&nbsp &nbsp &nbsp &nbsp </td>
-			<td>
 			<button type="button" class="Indic" id="clicado25" onclick="window.open('https://app2.pontomais.com.br/registrar-ponto')" title="Ponto Mais Web">PONTO</button>
+			</td>
+			<td>
+			<button type="button" class="Indic" id="clicado25" onclick="window.open('https://wiki.corp.banrisul.com.br/Categoria:Monitora%C3%A7%C3%A3o')" title="Banripédia - Monitoração">WIKI</button>
 			</td>
 			<!-- td>
 			<button type="button" class="Indic" id="clicado25" onclick="window.open('https://intranet.corp.banrisul.com.br/')" title="Intranet">INTRANET</button>
@@ -783,6 +80,9 @@ dragElement(document.getElementById("divbutton2"));
 			</td>
 			<td>
 			<button type="button" class="corB" id="clicado25" onclick="window.open('https://sharepoint/sites/bfju23/g01/a06/SitePages/Plant%C3%B5es.aspx?web=1')" title="PLANTÕES ULOTI e UDS"> PLANTÕES </button>
+			</td>
+			<td>
+			<button type="button" class="Indic" id="clicado25" onclick="window.open('https://uim/operatorconsole_portlet/standalone_login.jsp')" title="Acesso ao UIM">UIM</button>
 			</td>
 			<td>
 			<button type="button" class="Indic" id="clicado25" onclick="window.open('http:\\soi:7070')" title="Instalação e monitoramento do SOI via web">SOI</button>
@@ -805,11 +105,14 @@ dragElement(document.getElementById("divbutton2"));
 			<button type="button" class="Indic" id="clicado25" onclick="window.open('http://b2bsfgclusterprod.corp.banrisul.com.br:8080/filegateway/home.do#login')" title="IBM Sterling File Gateway">STERLING</button>
 			</td>
 			<td>
-			<button type="button" class="corR" id="clicado25" onclick="window.open('http://planomudanca/planomudanca/')" title="Plano de Mudança">ADC</button>
+			<button type="button" class="corP" id="clicado25" onclick="window.open('https://axa.dxi-na1.saas.broadcom.com/sppclient/#/login?cn=BANCODOESTADODORIOGRANDEDOSU-2')" title="DX SaaS">DXO2</button>
 			</td>
 			<td>
-			<button type="button" class="Indic" id="clicado25" onclick="window.open('http://mail16.corp.banrisul.com.br/owa/login.html')" title="Web Mail">WEBMAIL</button>
+			<button type="button" class="corR" id="clicado25" onclick="window.open('http://planomudanca/planomudanca/')" title="Plano de Mudança">ADC</button>
 			</td>
+			<!-- td>
+			<button type="button" class="Indic" id="clicado25" onclick="window.open('http://mail16.corp.banrisul.com.br/owa/login.html')" title="Web Mail">WEBMAIL</button>
+			</td -->
 			<td>
 			<button type="button" class="Indic" id="clicado25" onclick="window.open('https://chromewebstore.google.com/detail/hiframe-the-hyper-iframe/joibipdfkleencgfgbbncoheaekffdfn')" title="Extensão HiFrame">HIFRAME</button>
 			</td>
@@ -820,31 +123,31 @@ dragElement(document.getElementById("divbutton2"));
 			<button type="button" class="Indic" id="clicado25" onclick="window.open('https://www.microsip.org/downloads')" title="Download Microsip">MICROSIP</button>
 			</td>
 			<td>
-			<button type="button" class="corP" id="clicado41" onclick="DivisA();REFA();PP3();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();" title="Gráfios escala A"> Escala A↑ ↓</button>  
+			<button type="button" class="corP" id="clicado41" onclick="REFA();PP3();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();Aackg()" title="Gráfios escala A"> Escala A↑ ↓</button>  
 			</td>
 			<td>
-			<button type="button" class="corP" id="clicado40" onclick="DivisB();REFB();PP3();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();" title="Gráfios escala B">Escala B↑ ↓</button>  
+			<button type="button" class="corP" id="clicado40" onclick="REFB();PP3();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscMBA2002();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();Backg();PixD0X();" title="Gráfios escala B">Escala B↑ ↓</button>  
 			</td>
 			<td>
-			<button type="button" class="corP" id="clicado50" onclick="Divis();REF();FP1();FP2();FP3();Fpix1();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();" title="Escala Payware">Payware↑ ↓</button>
+			<button type="button" class="corP" id="clicado50" onclick="REF();FP1();FP2();FP3();Fpix1();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();" title="Escala Payware">Payware↑ ↓</button>				
 			</td>
 			<td>
-			<button type="button" class="corP" id="myBtn" onclick="corbotao();" title="Para a aba Information no Spectrum">Take Action</button>
+			<button type="button" class="corP" id="redondo" onclick="PP1();buttonPYW();" title="Botões Monitoração Payware">+</button>
 			</td>	
 			<td>
-			<button type="button" class="corP" id="BinsB" onclick="BinsF();">Calc/BINs</button>
-			</td>
+			<button type="button" class="corP" id="myBtn" onclick="corbotao();" title="Formatação de dados para Ctrl + V">CTRL+C</button>
+			</td>	
 			<td>
-			<button type="button" class="corPQ" id="clicado50" onclick="REF();REFB();REFA()" title="Refresh nos Gráficos">Refresh</button>
-			</td>
-			<!--td>
-			< button type="button" class="corS" id="clicado33" onclick="REF();REFB();REFA();Backg();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025(); EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();Aackg()" title="Inverter tudo">↑ ↓</button>
+			<button type="button" class="corS" id="redondo" onclick="REF();REFB();REFA();Backg();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();Fpxu1();Fbmq1();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscMBA2002();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();Aackg();PixD0X();" title="Inverter tudo">↑ ↓</button>
 			</td>
 			</tr>
 			<td>
-			<button type="button" class="corP" id="clicado50" onclick="PP1()" title="Botões Monitoração Payware">+</button>
-			</td -->
-			<td><button type="button" class="M365" id="clicado25" onclick="window.open('https://portal.office.com')" title="Portal Microsoft 365">Portal M365</button></td>
+			<button type="button" class="corPQ" id="clicado50" onclick="REF();REFB();REFA()" title="Refresh nos Gráficos">Refresh</button>
+			</td>
+			<!-- td>
+			&nbsp &nbsp &nbsp &nbsp <input type="checkbox" id="zoomControl" title="Zoom alternativo"> <!-- label for="zoomControl"><p>Zoom padrão</p></label> </td -->
+			<!-- td>&nbsp &nbsp &nbsp &nbsp </td -->
+			<td><button type="button" class="M365" id="clicado25" onclick="window.open('https://m365.cloud.microsoft/apps/?from=PortalHome')" title="Portal Microsoft 365">Portal M365</button></td>
   		   </table>
 		   </tr>
 		   </div>
@@ -856,7 +159,7 @@ dragElement(document.getElementById("divbutton2"));
 			<br>
 			<br>
 			<tr  class="botones">
-			<button type="button" class="corX1" id="clicado30" onclick="FP1();FP2();FP3();" title=" Autorizadores no Payware">PYW ↑ ↓</button>
+			<!-- button type="button" class="corX1" id="clicado30" onclick="FP1();FP2();FP3();" title=" Autorizadores no Payware">PYW ↑ ↓</button -->
 			<button type="button" class="corX2" id="clicado31" onclick="Fverdec1();Fbanricard1();Fcabal1();FP1();FP2();FP3();Fpix1();" title="Bandeiras autenticadas pelo Banrisul">BAND.↑ ↓</button>
 			<button type="button" class="corX3" id="clicado32" onclick="Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();" title="Bandeiras se autenticam nas máquinas do Banrisul">BAND. VANS↑ ↓</button>
 			<button type="button" class="corP" id="clicado5" onclick="Fbanri1()">Banricompras</button>
@@ -884,8 +187,8 @@ dragElement(document.getElementById("divbutton2"));
 			<button type="button" class="corPQ" id="clicado23" onclick="Fpxu1()">BDA-PXU</button>
 			<button type="button" class="corPQ" id="clicado24" onclick="Fbmq1()">BMQ</button>
 			<button type="button" class="corX" id="clicado26" onclick="Tabela()" title="Tabela do BOK">TAB BOK</button>
-			<!-- button type="button" class="corP" id="BinsB" onclick="BinsF()">BINS<span class="ribbon2">API</span></button -->
-			<button type="button" class="corP" id="clicado50" onclick="PP3()" title="Ocultar estes botões">-</button>
+			<button type="button" class="corP" id="BinsB" onclick="BinsF()">BINS<span class="ribbon2">API</span></button>
+			<button type="button" class="corP" id="redondo" onclick="PP3()" title="Ocultar estes botões">-</button>
 			<!-- button onclick="dark()" type="button" >Tema Dark</button>
 			<button onclick="light()" type="button" >Tema Light</button -->
 
@@ -893,63 +196,112 @@ dragElement(document.getElementById("divbutton2"));
 			<!-- button type="button" class="corP" id="passagemT" onclick="sendMail(); return false">Passagem Turno </button -->
 			</tr>
 			</div>
+			<table id="BinsT" style="display:none">
+			<div id="bins01" class="modal">
+  			<!-- form class="modal-content animate" action="/action_page.php" method="post" -->
+
+			<div class="container" style="background-color: black">
+			<button id="copyButton" style="display: none;" class="verD" onclick="copyResults()">Copiar Resultados</button>
+			<iframe src="https://apologialinux.github.io/ConsultBins.html"  class="alerta1b" align="center" width="1500" height="2450" id="frame" allow="clipboard-read; clipboard-write" ></iframe><br> <!-- AUTORIZADORES -->
+			<label style="color: white">Sites alternativos: </label><a style="color: white" href='https://bincheck.io/pt' target="_blank" align="left">Bin Check</a> <label style="color: white">  e /ou </label>
+			<a style="color: white" href='https://www.freebinchecker.com/' target="_blank" align="left">Free Bin Checker</a> &nbsp &nbsp &nbsp &nbsp 
+			<button id="redondo"  class="corR" onclick="document.getElementById('bins01').style.display='none'"> Sair </button><br>
+
+			</div>
+			<!-- /form -->
+			
+			</div>
+			</table>
 			<table>
 			
 			<div id="myModal" class="modal2">
 			
- <!-- Modal content -->
- <div class="modal-content" style="background-color:#000000">
-    <div class="modal-header" align="center">
+  <!-- Modal content -->
+  <div class="modal-content" style="background-color:#000000">
+    
 	  <!-- span class="close">&times;</span -->
-	  	<br>
-		<p align="center">Take Action &nbsp &nbsp <input type="checkbox" id="primeiroTKF"></p> 
-		<div id="TKTake" style="display:none">
-      <input  placeholder="Nome" id="name"><input  placeholder="Número do incidente" id="numb"><br>
+	  	
+		<button type="button" class="verD" id="clicadoBOPTake"  onclick="BOPTake()"  title="Opções Take Action">Take Action</button><button type="button" class="verD" id="clicadoBCALC"  onclick="BCALC()"  title="Opções Take Action">Calc. Data/Horas</button><button type="button" onclick="BOPAPI()"  class="verD" id="clicadoBOPAPI"  title="[Opções Api-Gateway] - Alertas">[Api-Gateway] - Alertas</button><button id="redondo" class="close" onclick="document.getElementById('myModal').style.display='none'; corbotao();"> X </button>
+		<div id="OPTake" class="modal-header" align="center" style="display:none"><br>
+      <input  placeholder="Nome" id="name"><input  placeholder="Número do incidente" id="numb"><br><br>
       <button id="botao" type="button" onclick="myFunction()">Gerar</button> 
+
    
-   <br>
+   <br><br>
   <input type="radio" name="escolha" id="AGencia" onclick="myFunction()">&nbsp  Agência &nbsp &nbsp
   <input type="radio" name="escolha" id="MAssiva" onclick="myFunction()">&nbsp Massiva
+
+   <br>  <br>
       <p id="demo"></p>
-      <button id="botao2" type="button" onclick="myCopy()" style="display:none">Copiar</button><br>
-	</div>
-    <p align="center">Calculadora de Data/Horas &nbsp &nbsp <input type="checkbox"   id="segundoTKF"></p>
-	<div id="TKHora" style="display:none">
-
+     
+     <br>
+     <button id="botao2" type="button" onclick="myCopy()" style="display:none">Copiar</button><br>
+    </div>
+	<div id="BCALC" align="center" style="display:none"><br>
 	<p align="center">Data/Hora Inicial:</p>
-	<p align="center"><input type="date" id="dataInicial"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaInicial">  </p>
-
+	<p align="center"><input type="date" id="dataInicial"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaInicial">  </p> 
+	 
+	<br>
     <p align="center">Data/Hora Final:</p>
 	<p align="center"><input type="date" id="dataFinal"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaFinal"></p>
     <br>
-    <button onclick="calcularDiferenca()" type="button" id="botao" >Calcular</button><button onclick="copiarResultado2()" type="button"  id="botaoCopy2" style="display:none">Copiar Resultado</button>
-	<p id="resultado"></p>
-	
-            <button onclick="calcularDiferenca()">Calcular</button>
-    <!-- button onclick="copiarResultado2()" id="botaoCopy2">Copiar Resultado</button -->
-	<p id="resultado"></p>
-	</div>	
-	 <p align="center">Consulta de BINs &nbsp &nbsp <input type="checkbox"  id="terceiroTKF"></p>
-	<div id="TKBins" style="display:none">
-        <!-- Alterando o campo de input para textarea -->
-        <textarea id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ..." rows="4"></textarea><br>
-        <button onclick="consultarApi()" id="botao" type="button">Consultar</button><button onclick="copiarResultado()" id="botaoCopy" type="button">Copiar os Resultados</button>
-        <p id="resultAPI">RESULTADO</p>
-        <!-- Botão para copiar o resultado --></div>
-        <br>
-	    <button id="botao3"  onclick="document.getElementById('myModal').style.display='none'; corbotao();"> Sair </button>
+    <button onclick="calcularDiferenca()" type="button" id="botao" >Calcular</button><button class="verD" onclick="copiarResultado2()" type="button"  id="botaoCopy2" style="display:none">Copiar Resultado</button>
+	<p id="resultado"></p><br>
 	</div>
+    <div id="OPAPI" align="center" style="display:none"><br>
+  <textarea id="inputData" placeholder="Jun 12, 2025 @ 01:05:41.186
+Row: 1; Column: 3
+API Accounts Erro Banrisul API
+Row: 1; Column: 4
+Alert
+Row: 27; Column: 5
+O Tempo Médio de Resposta(TMR) do BTO, /open-..." rows="8"></textarea>
+  <button onclick="processarDados()" id="botao">Formatar</button><button id="botao" type="button" onclick="LimparprocessarDados()">Limpar</button><br><button id="botao03" type="button" onclick="myCopy2()" style="display:none">Copiar API</button>
+  <textarea id="outputData" rows="6" placeholder="Resultado" readonly></textarea>
+   <!-- p id="outputData2"></p -->
+  
+</div>
+
+  </div>
+  
+  <script>
+    function LimparprocessarDados() {
+      document.getElementById('inputData').value = '';
+	document.getElementById('outputData').value = '';
+	 } 
+    function processarDados() {
+      const input = document.getElementById('inputData').value;
+      const linhas = input.split('\n');
+      const resultado = [];
+      let blocoAtual = '';
+	  document.getElementById("botao03").style.display = 'block';
+
+      const regexData = /^[A-Z][a-z]{2} \d{1,2}, \d{4} @ \d{2}:\d{2}:\d{2}\.\d{3}$/;
+      const regexIgnorar = /^(Row:|[-]$|Time|rule|monitoring|kibana|\d+$)/;
+
+      for (let linha of linhas) {
+        linha = linha.trim();
+        if (linha === '') continue;
+
+        if (regexData.test(linha)) {
+          if (blocoAtual) resultado.push(blocoAtual.trim());
+          blocoAtual = linha + '\n';
+        } else if (!regexIgnorar.test(linha)) {
+          blocoAtual += linha + ' ';
+        }
+      }
+
+      if (blocoAtual) resultado.push(blocoAtual.trim());
+	
+      document.getElementById('outputData').value = resultado.join('\n\n');
+	  // document.getElementById("outputData2").innerHTML = resultado.join('\n\n');
+    }
+  </script>
+  </div>
 			</table>
 			
  <script>
-document.querySelectorAll("iframe").forEach(iframe => {
-    let cssLink = document.createElement("link");
-    cssLink.rel = "stylesheet";
-    cssLink.href = "https://ltp4.corp.banrisul.com.br/brb/monitora_brb.css";
-    iframe.contentWindow.document.head.appendChild(cssLink);
-});
-
-	 
+ 
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -980,6 +332,7 @@ btn.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+  corbotao();
   desmarcar();
   
 }
@@ -992,15 +345,16 @@ span.onclick = function() {
 	
   }
 } */
-
- 		
 </script>
  
 			<table>
 			</table>
 			<br>
 			<br>
-			<div id="todasPayware" style="display:none">
+			<br>
+			<br>
+			<br>
+			<br>
 			<div id="div2">
 			<table>
 			<tr>
@@ -1310,25 +664,24 @@ span.onclick = function() {
 			</tr>
 			</table>
 			</div>
-			</div>
 			<table>
 
 			<!-- br -->
 			</table>
-			<div id="todasB" style="display:none">
 			<div id="grafic3"> <!--  Escala B -->
 			<table>  
 			<tr>
-			<td id="tempmediopagISPB"> 
-			<a href="https://kibana.apps.prod.banrisul.com.br/s/monitoracao/app/dashboards#/view/6fb10bb0-48bf-11ec-a454-052757557239?_g=(filters:!(),refreshInterval:(pause:!f,value:60000),time:(from:now-1h,to:now))" target="_blank" title="Tempo Médio de Resposta por ISPB - Pagamentos [TIMESTAMP 30min]" ><h4 style="background-color:Gray;"><p>Pagamentos - TMR por ISPB</p></h4></a>
+			<td id="pxu1l">
+			<a href="https://opmon10/grafana/d/pDg27Wlik/dashboard-bda-nova-cobranca-pxu?orgId=1&refresh=1m&theme=light" target="_blank" title="BDA NOVA COBRANÇA - PXU"><h4 style="background-color:Gray;"><p>BDA - PXU</p></h4></a>
 			</td>
 			</tr>
 			<tr>
-			<td id="tempmediopagISPB01"> <!--  Gráficos Escala B -->
-			<iframe width="3200" height="1000" id="tempmediopagISPB02" class="tempmediopagISPB03" src="https://kibana.apps.prod.banrisul.com.br/s/monitoracao/app/dashboards#/view/6fb10bb0-48bf-11ec-a454-052757557239?embed=true&_g=(filters:!(),refreshInterval:(pause:!f,value:10000),time:(from:now-30m,to:now))&_a=(description:'Pagamento%20engloba%20D%C3%A9bitos(envio%20externo)%20e%20movimenta%C3%A7%C3%A3o%20Interna',expandedPanelId:'51478f61-2952-45e6-b760-ab9242a13eca',filters:!(),fullScreenMode:!t,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customBucket:(enabled:!t,id:'1-bucket',params:(filters:!((input:(language:kuery,query:'(labels.tipo_deb_cred%20:%20%22D%C3%A9bito%22%20or%20labels.tipo_deb_cred%20:%20%22Interno%22)%20%20and%20labels.motivo_recusa%20:%20%22null%22%20'),label:''))),type:filters),customLabel:Sucesso,customMetric:(enabled:!t,id:'1-metric',params:(customLabel:'',field:count),type:sum)),schema:metric,type:sum_bucket),(enabled:!t,id:'2',params:(customLabel:'',drop_partials:!t,extended_bounds:(),field:'@timestamp',interval:m,min_doc_count:1,scaleMetricValues:!f,timeRange:(from:now-1h,to:now),useNormalizedEsInterval:!t,used_interval:'1m'),schema:segment,type:date_histogram),(enabled:!t,id:'3',params:(customBucket:(enabled:!t,id:'3-bucket',params:(filters:!((input:(language:kuery,query:'(labels.tipo_deb_cred%20:%20%22D%C3%A9bito%22%20or%20labels.tipo_deb_cred%20:%20%22Interno%22)%20and%20(not%20labels.motivo_recusa%20:%20%22null%22%20)'),label:''))),type:filters),customLabel:Recusa,customMetric:(enabled:!t,id:'3-metric',params:(customLabel:'',field:count),type:sum)),schema:metric,type:sum_bucket)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:'PIX%20Completo',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'Gr%C3%A1fico%20apresenta%20a%20evolu%C3%A7%C3%A3o%20dos%20da%20opera%C3%A7%C3%A3o%20de%20Pagamentos',params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(filter:!t,show:!t,truncate:100),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),detailedTooltip:!t,fittingFunction:zero,grid:(categoryLines:!f),isVislibVis:!t,labels:(),legendPosition:right,maxLegendLines:1,palette:(name:kibana_palette,type:palette),radiusRatio:50,seriesParams:!((data:(id:'1',label:Sucesso),drawLinesBetweenPoints:!t,interpolate:linear,lineWidth:4,mode:normal,show:!t,showCircles:!t,type:line,valueAxis:ValueAxis-1),(data:(id:'3',label:Recusa),drawLinesBetweenPoints:!t,interpolate:linear,lineWidth:2,mode:normal,show:!t,showCircles:!t,type:line,valueAxis:ValueAxis-1)),thresholdLine:(color:%23E7664C,show:!t,style:dot-dashed,value:20,width:1),times:!(),truncateLegend:!t,type:line,valueAxes:!((id:ValueAxis-1,labels:(filter:!f,rotate:0,show:!t,truncate:100),name:LeftAxis-1,position:left,scale:(mode:normal,setYExtents:!t,type:linear),show:!t,style:(),title:(text:'Quantidade%20de%20Pagamentos'),type:value))),title:'%5BBPX%5D%20Sucesso%20e%20Recusa%20-%20Pagamento%20%5BLinear%5D',type:line,uiState:())),gridData:(h:17,i:'720355fa-1fc2-4f0a-93e8-bc72ac9f5293',w:24,x:0,y:0),panelIndex:'720355fa-1fc2-4f0a-93e8-bc72ac9f5293',type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customLabel:'TMR%20(95%25%20Percentile)',field:mean,percents:!(95)),schema:metric,type:percentiles),(enabled:!t,id:'2',params:(drop_partials:!t,extended_bounds:(),field:'@timestamp',interval:m,min_doc_count:1,scaleMetricValues:!f,timeRange:(from:now-1h,to:now),useNormalizedEsInterval:!t,used_interval:'1m'),schema:segment,type:date_histogram),(enabled:!t,id:'3',params:(filters:!((input:(language:kuery,query:'labels.tipo_deb_cred%20:%20%22D%C3%A9bito%22%20and%20not%20%20labels.descr_situacao%20:%20%22RECUSADA_PELO_BACEN%22'),label:D%C3%A9bito),(input:(language:kuery,query:'labels.tipo_deb_cred%20:%20%22Interno%22%20'),label:Interno))),schema:group,type:filters)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:'PIX%20Completo',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo))),('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:count,negate:!f,params:(gte:1,lt:!n),type:range),query:(range:(count:(gte:1,lt:!n))))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'',params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(filter:!t,show:!t,truncate:100),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),detailedTooltip:!t,fittingFunction:zero,grid:(categoryLines:!f,valueAxis:''),isVislibVis:!t,labels:(),legendPosition:right,maxLegendLines:1,palette:(name:kibana_palette,type:palette),radiusRatio:9,seriesParams:!((data:(id:'1',label:'TMR%20(95%25%20Percentile)'),drawLinesBetweenPoints:!t,interpolate:cardinal,lineWidth:4,mode:normal,show:!t,showCircles:!t,type:line,valueAxis:ValueAxis-1)),thresholdLine:(color:%23E7664C,show:!t,style:dashed,value:10000,width:1),times:!(),truncateLegend:!t,type:line,valueAxes:!((id:ValueAxis-1,labels:(filter:!t,rotate:0,show:!t,truncate:100),name:LeftAxis-1,position:left,scale:(mode:normal,type:linear),show:!t,style:(),title:(text:'TMR%20(95%25%20Percentile)'),type:value))),title:'%5BBPX%5D%20Tempo%20M%C3%A9dio%20de%20Resposta%20-%20Pagamento',type:line,uiState:(table:!n,vis:(legendOpen:!f)))),gridData:(h:17,i:c838494a-d7be-473e-bfd7-83d3852b7a69,w:24,x:24,y:0),panelIndex:c838494a-d7be-473e-bfd7-83d3852b7a69,type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(field:mean),schema:metric,type:max),(enabled:!t,id:'3',params:(customLabel:ISPB,exclude:'',field:labels.ispb_creditado_nome,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!t,otherBucketLabel:Outros,size:10),schema:group,type:terms),(enabled:!t,id:'2',params:(customLabel:'',drop_partials:!t,extended_bounds:(),field:'@timestamp',interval:auto,min_doc_count:1,scaleMetricValues:!f,timeRange:(from:now-15m,to:now),useNormalizedEsInterval:!t,used_interval:'30s'),schema:segment,type:date_histogram)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:'Experi%C3%AAncia%20final%20do%20Cliente',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo))),('$state':(store:appState),meta:(alias:'Internos%20e%20D%C3%A9bito',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.tipo_deb_cred,negate:!f,params:!(D%C3%A9bito,Interno),type:phrases,value:'D%C3%A9bito,%20Interno'),query:(bool:(minimum_should_match:1,should:!((match_phrase:(labels.tipo_deb_cred:D%C3%A9bito)),(match_phrase:(labels.tipo_deb_cred:Interno)))))),('$state':(store:appState),meta:(alias:'N%C3%A3o%20Efetivadas',disabled:!t,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.descr_situacao,negate:!t,params:(query:EFETIVADA),type:phrase),query:(match_phrase:(labels.descr_situacao:EFETIVADA)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'',params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(filter:!t,rotate:0,show:!t,truncate:10),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),detailedTooltip:!t,fittingFunction:zero,grid:(categoryLines:!t,valueAxis:ValueAxis-1),isVislibVis:!t,labels:(show:!t),legendPosition:right,maxLegendLines:1,palette:(name:kibana_palette,type:palette),radiusRatio:50,row:!t,seriesParams:!((data:(id:'1',label:'Max%20mean'),drawLinesBetweenPoints:!t,interpolate:linear,lineWidth:3,mode:normal,show:!t,showCircles:!t,type:histogram,valueAxis:ValueAxis-1)),thresholdLine:(color:%23f3350e,show:!t,style:full,value:10000,width:1),times:!(),truncateLegend:!t,type:line,valueAxes:!((id:ValueAxis-1,labels:(filter:!t,rotate:0,show:!t,truncate:5),name:LeftAxis-1,position:left,scale:(mode:normal,type:linear),show:!t,style:(),title:(text:'Tempo%20M%C3%A9dio%20de%20Resposta'),type:value))),title:'%5BBPX%5D%20Tempo%20M%C3%A9dio%20de%20Resposta%20por%20ISPB%20-%20Pagamentos',type:histogram,uiState:(table:!n,vis:(colors:('18236120':%23E5A8E2),legendOpen:!t))),table:!n,vis:(colors:('18236120':%23E5A8E2),legendOpen:!t)),gridData:(h:14,i:'51478f61-2952-45e6-b760-ab9242a13eca',w:48,x:0,y:17),panelIndex:'51478f61-2952-45e6-b760-ab9242a13eca',type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customLabel:Quantidade,field:count),schema:metric,type:sum),(enabled:!t,id:'3',params:(customLabel:'%20',exclude:Cr%C3%A9dito,field:labels.tipo_deb_cred,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:_key,otherBucket:!f,otherBucketLabel:Other,size:5),schema:split,type:terms),(enabled:!t,id:'2',params:(filters:!((input:(language:kuery,query:'labels.motivo_recusa%20:%20%22null%22%20'),label:Sucesso),(input:(language:kuery,query:'not%20labels.motivo_recusa%20:%20%22null%22'),label:Recusa))),schema:segment,type:filters)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:!n,disabled:!t,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.tipo_deb_cred,negate:!f,params:(query:Interno),type:phrase),query:(match_phrase:(labels.tipo_deb_cred:Interno))),('$state':(store:appState),meta:(alias:'PIX%20Completo',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'Gr%C3%A1fico%20cont%C3%A9m%20Transa%C3%A7%C3%B5es%20PIX%20D%C3%A9bito%20e%20Interno%20em%20formato%20de%20Pizza',params:(addLegend:!t,addTooltip:!t,distinctColors:!t,isDonut:!f,labels:(last_level:!t,show:!t,truncate:100,values:!t),legendPosition:bottom,palette:(name:kibana_palette,type:palette),row:!f,type:pie),title:'%5BBPX%5D%20Pagamentos%20com%20sucesso%20e%20recusa%20-%20Pizza',type:pie,uiState:(vis:(colors:('Pagamento%20sucesso':%23508642,'Pagamentos%20com%20recusa':%23BF1B00,Recusa:%23BF1B00,Sucesso:%233F6833),legendOpen:!f))),vis:(colors:('Pagamento%20sucesso':%23508642,'Pagamentos%20com%20recusa':%23BF1B00,Recusa:%23BF1B00,Sucesso:%233F6833),legendOpen:!t)),gridData:(h:15,i:'232f7cea-e1a1-4e3d-b036-b21913a8af1b',w:16,x:0,y:31),panelIndex:'232f7cea-e1a1-4e3d-b036-b21913a8af1b',type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customLabel:Total,field:count),schema:metric,type:sum),(enabled:!t,id:'7',params:(customLabel:'%20',field:labels.descr_situacao,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!t,otherBucketLabel:Other,size:5),schema:split,type:terms),(enabled:!t,id:'4',params:(customLabel:ISPB,field:labels.ispb_creditado_nome,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!t,otherBucketLabel:Other,size:20),schema:bucket,type:terms),(enabled:!t,id:'8',params:(customLabel:Motivo,field:labels.motivo_recusa,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!t,otherBucketLabel:Other,size:20),schema:bucket,type:terms)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:'Experi%C3%AAncia%20final%20do%20Cliente',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo))),('$state':(store:appState),meta:(alias:'Remove%20as%20Opera%C3%A7%C3%A3o%20com%20Sucesso',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.motivo_recusa,negate:!t,params:(query:null),type:phrase),query:(match_phrase:(labels.motivo_recusa:null))),('$state':(store:appState),meta:(alias:Pagamentos,disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.tipo_deb_cred,negate:!f,params:!(D%C3%A9bito,Interno),type:phrases,value:'D%C3%A9bito,%20Interno'),query:(bool:(minimum_should_match:1,should:!((match_phrase:(labels.tipo_deb_cred:D%C3%A9bito)),(match_phrase:(labels.tipo_deb_cred:Interno)))))),('$state':(store:appState),meta:(alias:'M%C3%ADnimo%201%20ocorr%C3%AAncia',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:count,negate:!f,params:(gte:1,lt:!n),type:range),range:(count:(gte:1,lt:!n)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'',params:(perPage:'',percentageCol:'',row:!t,showMetricsAtAllLevels:!f,showPartialRows:!f,showToolbar:!t,showTotal:!t,sort:(columnIndex:!n,direction:!n),totalFunc:sum),title:'%5BBPX%5D%20Opera%C3%A7%C3%B5es%20Recusadas%20-%20Pagamento',type:table,uiState:(vis:(params:(sort:(columnIndex:!n,direction:!n)))))),gridData:(h:15,i:'90b36616-78a9-4dff-9934-ef75d0245335',w:16,x:16,y:31),panelIndex:'90b36616-78a9-4dff-9934-ef75d0245335',type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customLabel:Quantidade,field:count),schema:metric,type:sum),(enabled:!t,id:'3',params:(customLabel:'%20',field:labels.tipo_deb_cred,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:_key,otherBucket:!f,otherBucketLabel:Other,size:5),schema:split,type:terms),(enabled:!t,id:'2',params:(customLabel:'',field:labels.motivo_recusa,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!t,otherBucketLabel:Outros,size:4),schema:segment,type:terms)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.motivo_recusa,negate:!t,params:(query:null),type:phrase),query:(match_phrase:(labels.motivo_recusa:null))),('$state':(store:appState),meta:(alias:!n,disabled:!t,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.motivo_recusa,negate:!t,params:(query:AC03),type:phrase),query:(match_phrase:(labels.motivo_recusa:AC03))),('$state':(store:appState),meta:(alias:'Exclui%20Cr%C3%A9dito(Recebimento)',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.tipo_deb_cred,negate:!t,params:(query:Cr%C3%A9dito),type:phrase),query:(match_phrase:(labels.tipo_deb_cred:Cr%C3%A9dito))),('$state':(store:appState),meta:(alias:'PIX%20Completo',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:'name%20:%20%22spi_pix_situacao_final_tempo%22'))),description:'',params:(addLegend:!t,addTooltip:!t,distinctColors:!t,isDonut:!f,labels:(last_level:!t,show:!t,truncate:100,values:!t),legendPosition:bottom,palette:(name:kibana_palette,type:palette),row:!f,type:pie),title:'%5BBPX%5D%20Pagamentos%20com%20recusa%20-%205%20maiores%20erros',type:pie,uiState:(vis:(colors:('Pagamento%20sucesso':%23508642,'Pagamentos%20com%20recusa':%23BF1B00,Recusa:%23BF1B00,Sucesso:%233F6833),legendOpen:!f))),vis:(colors:('Pagamento%20sucesso':%23508642,'Pagamentos%20com%20recusa':%23BF1B00,Recusa:%23BF1B00,Sucesso:%233F6833),legendOpen:!t)),gridData:(h:15,i:e0e1d6ca-6360-4619-8f6b-aec82888ff3b,w:16,x:32,y:31),panelIndex:e0e1d6ca-6360-4619-8f6b-aec82888ff3b,type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customBucket:(enabled:!t,id:'1-bucket',params:(filters:!((input:(language:kuery,query:'labels.http_status%20%3E%3D%20200'),label:''),(input:(language:kuery,query:'labels.http_status%20%3C%20300'),label:''))),type:filters),customLabel:Sucessos,customMetric:(enabled:!t,id:'1-metric',params:(customLabel:Sucessos,field:count),type:sum)),schema:metric,type:sum_bucket),(enabled:!t,id:'2',params:(customBucket:(enabled:!t,id:'2-bucket',params:(filters:!((input:(language:kuery,query:'labels.http_status%20%3E%3D%20500'),label:''))),type:filters),customLabel:'ERRO%20Bacen',customMetric:(enabled:!t,id:'2-metric',params:(customLabel:'ERRO%20Bacen',field:count),type:sum)),schema:metric,type:sum_bucket),(enabled:!t,id:'4',params:(customBucket:(enabled:!t,id:'4-bucket',params:(filters:!((input:(language:kuery,query:'labels.status_code%20%3E%3D%20400'),label:''),(input:(language:kuery,query:'labels.status_code%20%3C%20500'),label:''))),type:filters),customLabel:'ERRO%20Banrisul',customMetric:(enabled:!t,id:'4-metric',params:(customLabel:'ERRO%20Banrisul',field:count),type:sum)),schema:metric,type:sum_bucket),(enabled:!t,id:'5',params:(customLabel:Horario,drop_partials:!t,extended_bounds:(),field:'@timestamp',interval:m,min_doc_count:1,scaleMetricValues:!f,timeRange:(from:now-1h,to:now),useNormalizedEsInterval:!t),schema:segment,type:date_histogram)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:'Retorno%20do%20GET',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_icom_get_retorno),type:phrase),query:(match_phrase:(name:spi_icom_get_retorno)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'',params:(addLegend:!t,addTimeMarker:!t,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(filter:!t,rotate:0,show:!t,truncate:100),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),detailedTooltip:!t,grid:(categoryLines:!f,valueAxis:ValueAxis-1),isVislibVis:!t,labels:(show:!f),legendPosition:right,palette:(name:kibana_palette,type:palette),radiusRatio:50,row:!f,seriesParams:!((data:(id:'1',label:Sucessos),drawLinesBetweenPoints:!t,interpolate:step-after,lineWidth:2,mode:stacked,show:!t,showCircles:!t,type:histogram,valueAxis:ValueAxis-1),(data:(id:'2',label:'ERRO%20Bacen'),drawLinesBetweenPoints:!t,lineWidth:2,mode:stacked,show:!t,showCircles:!t,type:histogram,valueAxis:ValueAxis-1),(data:(id:'4',label:'ERRO%20Banrisul'),drawLinesBetweenPoints:!t,lineWidth:2,mode:stacked,show:!t,showCircles:!t,type:histogram,valueAxis:ValueAxis-1)),thresholdLine:(color:%23E7664C,show:!f,style:full,value:10,width:1),times:!(),type:histogram,valueAxes:!((id:ValueAxis-1,labels:(filter:!f,rotate:0,show:!t,truncate:100),name:LeftAxis-1,position:left,scale:(defaultYExtents:!f,mode:normal,setYExtents:!f,type:linear),show:!t,style:(),title:(text:Quantidade),type:value))),title:'%5BBPX%5D%20M%C3%A9tricas%20(numero%20requisi%C3%A7%C3%B5es%2Ferros%204xx%2Ferros%205xx)',type:histogram,uiState:(vis:(colors:('ERRO%20Bacen':%23E0752D,'ERRO%20Banrisul':%23BF1B00,Sucessos:%233F6833))))),gridData:(h:17,i:a6db2f99-c337-400e-ba78-51e367f322ed,w:48,x:0,y:46),panelIndex:a6db2f99-c337-400e-ba78-51e367f322ed,type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:()),gridData:(h:10,i:'7b06f354-1167-430b-9f90-fb570084e701',w:8,x:0,y:63),id:fc3c2e80-fb75-11eb-9afa-89258b63e02c,panelIndex:'7b06f354-1167-430b-9f90-fb570084e701',type:visualization,version:'7.17.1')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:'%5BBPX%5D%20-%20PIX%20Pagamentos',viewMode:view)&show-top-menu=true&show-query-input=true&show-time-filter=true"></iframe> <!--  Tempo Médio de Resposta por ISPB - Pagamentos -->
+			<td id="pxu01l">
+			<iframe src="https://opmon/grafana/d/pDg27Wlik/dashboard-bda-nova-cobranca-pxu?refresh=1m&orgId=1&theme=light&kiosk" width="3200" height="1000" class="alerta1x align="center" id="pxu1l02"></iframe> <!-- BDA NOVA COBRANÇA - PXU -->
 			</td>
 			</tr>
 			</table>
+			
 			<table>  
 			<tr>
 			<td id="APIalerta"> <!--  Gráficos Escala B -->
@@ -1346,7 +699,7 @@ span.onclick = function() {
 			<table>  
 			<tr>
 			<td id="acesso">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=1&tipo=1#" target="_blank" title="ACESSO "><h4 style="background-color:Gray;"><p>ACESSO </p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=1&tipo=1#" target="_blank" title="ACESSO "><h4 style="background-color:Gray;"><p>PIX-ACESSO 0001</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1358,7 +711,7 @@ span.onclick = function() {
 			<table>
 			<tr>
 			<td id="pixincluchave">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2707&tipo=1#" target="_blank" title="INCLUSÃO DE CHAVE"><h4 style="background-color:Gray;"><p>INCLUSÃO DE CHAVE</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2707&tipo=1#" target="_blank" title="INCLUSÃO DE CHAVE"><h4 style="background-color:Gray;"><p>PIX-INCLUSÃO DE CHAVE 2707</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1370,7 +723,7 @@ span.onclick = function() {
 			<table>
 			<tr>
 			<td id="pixextrato">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2704&tipo=1#" target="_blank" title="EXTRATO PIX"><h4 style="background-color:Gray;"><p>EXTRATO PIX</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2704&tipo=1#" target="_blank" title="EXTRATO PIX"><h4 style="background-color:Gray;"><p>PIX-EXTRATO 2704</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1382,7 +735,7 @@ span.onclick = function() {
 			<table>
 			<tr>
 			<td id="pixpag">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2702&tipo=1#" target="_blank" title="PAGAMENTO PIX"><h4 style="background-color:Gray;"><p>PAGAMENTO PIX</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2702&tipo=1#" target="_blank" title="PAGAMENTO PIX"><h4 style="background-color:Gray;"><p>PIX-PAGAMENTO 2702</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1394,7 +747,7 @@ span.onclick = function() {
 			<table>
 			<tr>
 			<td id="pixreceb">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2703&tipo=1#" target="_blank" title="RECEBIMENTO PIX"><h4 style="background-color:Gray;"><p>RECEBIMENTO PIX</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2703&tipo=1#" target="_blank" title="RECEBIMENTO PIX"><h4 style="background-color:Gray;"><p>PIX-RECEBIMENTO 2703</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1406,7 +759,7 @@ span.onclick = function() {
 			<table>
 			<tr>
 			<td id="pixdevol">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2711&tipo=1#" target="_blank" title="DEVOLUÇÃO PIX"><h4 style="background-color:Gray;"><p>DEVOLUÇÃO PIX</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2711&tipo=1#" target="_blank" title="DEVOLUÇÃO PIX"><h4 style="background-color:Gray;"><p>PIX-DEVOLUÇÃO 2711</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1518,16 +871,17 @@ span.onclick = function() {
 			<div id="grafic">
 			<table>  
 			<tr>
-			<td id="bmq1l">
-			<a href="https://opmon10/grafana/d/UtG-XCQik/dashboard-monitoracao-bmq?orgId=1&refresh=1m&theme=light" target="_blank" title="DASHBOARD - BMQ MONITOR"><h4 style="background-color:Gray;"><p>BMQ MONITOR</p></h4></a>
+			<td id="tempmediopagISPB"> 
+			<a href="https://kibana.apps.prod.banrisul.com.br/s/monitoracao/app/dashboards#/view/6fb10bb0-48bf-11ec-a454-052757557239?_g=(filters:!(),refreshInterval:(pause:!f,value:60000),time:(from:now-1h,to:now))" target="_blank" title="Tempo Médio de Resposta por ISPB - Pagamentos [TIMESTAMP 30min]" ><h4 style="background-color:Gray;"><p>Pagamentos - TMR por ISPB</p></h4></a>
 			</td>
 			</tr>
 			<tr>
-			<td id="bmq01l">
-			<iframe src="https://opmon10/grafana/d/UtG-XCQik/dashboard-monitoracao-bmq?orgId=1&refresh=1m&theme=light&kiosk" width="2110" height="850" class="alerta1" align="center" id="bmq1l02"></iframe> <!-- DASHBOARD - BMQ MONITOR -->
+			<td id="tempmediopagISPB01"> <!--  Gráficos Escala B -->
+			<iframe  width="1055" height="750" id="tempmediopagISPB02" class="tempmediopagISPB03" src="https://kibana.apps.prod.banrisul.com.br/s/monitoracao/app/dashboards#/view/6fb10bb0-48bf-11ec-a454-052757557239?embed=true&_g=(filters:!(),refreshInterval:(pause:!f,value:10000),time:(from:now-30m,to:now))&_a=(description:'Pagamento%20engloba%20D%C3%A9bitos(envio%20externo)%20e%20movimenta%C3%A7%C3%A3o%20Interna',expandedPanelId:'51478f61-2952-45e6-b760-ab9242a13eca',filters:!(),fullScreenMode:!t,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customBucket:(enabled:!t,id:'1-bucket',params:(filters:!((input:(language:kuery,query:'(labels.tipo_deb_cred%20:%20%22D%C3%A9bito%22%20or%20labels.tipo_deb_cred%20:%20%22Interno%22)%20%20and%20labels.motivo_recusa%20:%20%22null%22%20'),label:''))),type:filters),customLabel:Sucesso,customMetric:(enabled:!t,id:'1-metric',params:(customLabel:'',field:count),type:sum)),schema:metric,type:sum_bucket),(enabled:!t,id:'2',params:(customLabel:'',drop_partials:!t,extended_bounds:(),field:'@timestamp',interval:m,min_doc_count:1,scaleMetricValues:!f,timeRange:(from:now-1h,to:now),useNormalizedEsInterval:!t,used_interval:'1m'),schema:segment,type:date_histogram),(enabled:!t,id:'3',params:(customBucket:(enabled:!t,id:'3-bucket',params:(filters:!((input:(language:kuery,query:'(labels.tipo_deb_cred%20:%20%22D%C3%A9bito%22%20or%20labels.tipo_deb_cred%20:%20%22Interno%22)%20and%20(not%20labels.motivo_recusa%20:%20%22null%22%20)'),label:''))),type:filters),customLabel:Recusa,customMetric:(enabled:!t,id:'3-metric',params:(customLabel:'',field:count),type:sum)),schema:metric,type:sum_bucket)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:'PIX%20Completo',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'Gr%C3%A1fico%20apresenta%20a%20evolu%C3%A7%C3%A3o%20dos%20da%20opera%C3%A7%C3%A3o%20de%20Pagamentos',params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(filter:!t,show:!t,truncate:100),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),detailedTooltip:!t,fittingFunction:zero,grid:(categoryLines:!f),isVislibVis:!t,labels:(),legendPosition:right,maxLegendLines:1,palette:(name:kibana_palette,type:palette),radiusRatio:50,seriesParams:!((data:(id:'1',label:Sucesso),drawLinesBetweenPoints:!t,interpolate:linear,lineWidth:4,mode:normal,show:!t,showCircles:!t,type:line,valueAxis:ValueAxis-1),(data:(id:'3',label:Recusa),drawLinesBetweenPoints:!t,interpolate:linear,lineWidth:2,mode:normal,show:!t,showCircles:!t,type:line,valueAxis:ValueAxis-1)),thresholdLine:(color:%23E7664C,show:!t,style:dot-dashed,value:20,width:1),times:!(),truncateLegend:!t,type:line,valueAxes:!((id:ValueAxis-1,labels:(filter:!f,rotate:0,show:!t,truncate:100),name:LeftAxis-1,position:left,scale:(mode:normal,setYExtents:!t,type:linear),show:!t,style:(),title:(text:'Quantidade%20de%20Pagamentos'),type:value))),title:'%5BBPX%5D%20Sucesso%20e%20Recusa%20-%20Pagamento%20%5BLinear%5D',type:line,uiState:())),gridData:(h:17,i:'720355fa-1fc2-4f0a-93e8-bc72ac9f5293',w:24,x:0,y:0),panelIndex:'720355fa-1fc2-4f0a-93e8-bc72ac9f5293',type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customLabel:'TMR%20(95%25%20Percentile)',field:mean,percents:!(95)),schema:metric,type:percentiles),(enabled:!t,id:'2',params:(drop_partials:!t,extended_bounds:(),field:'@timestamp',interval:m,min_doc_count:1,scaleMetricValues:!f,timeRange:(from:now-1h,to:now),useNormalizedEsInterval:!t,used_interval:'1m'),schema:segment,type:date_histogram),(enabled:!t,id:'3',params:(filters:!((input:(language:kuery,query:'labels.tipo_deb_cred%20:%20%22D%C3%A9bito%22%20and%20not%20%20labels.descr_situacao%20:%20%22RECUSADA_PELO_BACEN%22'),label:D%C3%A9bito),(input:(language:kuery,query:'labels.tipo_deb_cred%20:%20%22Interno%22%20'),label:Interno))),schema:group,type:filters)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:'PIX%20Completo',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo))),('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:count,negate:!f,params:(gte:1,lt:!n),type:range),query:(range:(count:(gte:1,lt:!n))))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'',params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(filter:!t,show:!t,truncate:100),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),detailedTooltip:!t,fittingFunction:zero,grid:(categoryLines:!f,valueAxis:''),isVislibVis:!t,labels:(),legendPosition:right,maxLegendLines:1,palette:(name:kibana_palette,type:palette),radiusRatio:9,seriesParams:!((data:(id:'1',label:'TMR%20(95%25%20Percentile)'),drawLinesBetweenPoints:!t,interpolate:cardinal,lineWidth:4,mode:normal,show:!t,showCircles:!t,type:line,valueAxis:ValueAxis-1)),thresholdLine:(color:%23E7664C,show:!t,style:dashed,value:10000,width:1),times:!(),truncateLegend:!t,type:line,valueAxes:!((id:ValueAxis-1,labels:(filter:!t,rotate:0,show:!t,truncate:100),name:LeftAxis-1,position:left,scale:(mode:normal,type:linear),show:!t,style:(),title:(text:'TMR%20(95%25%20Percentile)'),type:value))),title:'%5BBPX%5D%20Tempo%20M%C3%A9dio%20de%20Resposta%20-%20Pagamento',type:line,uiState:(table:!n,vis:(legendOpen:!f)))),gridData:(h:17,i:c838494a-d7be-473e-bfd7-83d3852b7a69,w:24,x:24,y:0),panelIndex:c838494a-d7be-473e-bfd7-83d3852b7a69,type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(field:mean),schema:metric,type:max),(enabled:!t,id:'3',params:(customLabel:ISPB,exclude:'',field:labels.ispb_creditado_nome,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!t,otherBucketLabel:Outros,size:10),schema:group,type:terms),(enabled:!t,id:'2',params:(customLabel:'',drop_partials:!t,extended_bounds:(),field:'@timestamp',interval:auto,min_doc_count:1,scaleMetricValues:!f,timeRange:(from:now-15m,to:now),useNormalizedEsInterval:!t,used_interval:'30s'),schema:segment,type:date_histogram)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:'Experi%C3%AAncia%20final%20do%20Cliente',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo))),('$state':(store:appState),meta:(alias:'Internos%20e%20D%C3%A9bito',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.tipo_deb_cred,negate:!f,params:!(D%C3%A9bito,Interno),type:phrases,value:'D%C3%A9bito,%20Interno'),query:(bool:(minimum_should_match:1,should:!((match_phrase:(labels.tipo_deb_cred:D%C3%A9bito)),(match_phrase:(labels.tipo_deb_cred:Interno)))))),('$state':(store:appState),meta:(alias:'N%C3%A3o%20Efetivadas',disabled:!t,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.descr_situacao,negate:!t,params:(query:EFETIVADA),type:phrase),query:(match_phrase:(labels.descr_situacao:EFETIVADA)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'',params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(filter:!t,rotate:0,show:!t,truncate:10),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),detailedTooltip:!t,fittingFunction:zero,grid:(categoryLines:!t,valueAxis:ValueAxis-1),isVislibVis:!t,labels:(show:!t),legendPosition:right,maxLegendLines:1,palette:(name:kibana_palette,type:palette),radiusRatio:50,row:!t,seriesParams:!((data:(id:'1',label:'Max%20mean'),drawLinesBetweenPoints:!t,interpolate:linear,lineWidth:3,mode:normal,show:!t,showCircles:!t,type:histogram,valueAxis:ValueAxis-1)),thresholdLine:(color:%23f3350e,show:!t,style:full,value:10000,width:1),times:!(),truncateLegend:!t,type:line,valueAxes:!((id:ValueAxis-1,labels:(filter:!t,rotate:0,show:!t,truncate:5),name:LeftAxis-1,position:left,scale:(mode:normal,type:linear),show:!t,style:(),title:(text:'Tempo%20M%C3%A9dio%20de%20Resposta'),type:value))),title:'%5BBPX%5D%20Tempo%20M%C3%A9dio%20de%20Resposta%20por%20ISPB%20-%20Pagamentos',type:histogram,uiState:(table:!n,vis:(colors:('18236120':%23E5A8E2),legendOpen:!t))),table:!n,vis:(colors:('18236120':%23E5A8E2),legendOpen:!t)),gridData:(h:14,i:'51478f61-2952-45e6-b760-ab9242a13eca',w:48,x:0,y:17),panelIndex:'51478f61-2952-45e6-b760-ab9242a13eca',type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customLabel:Quantidade,field:count),schema:metric,type:sum),(enabled:!t,id:'3',params:(customLabel:'%20',exclude:Cr%C3%A9dito,field:labels.tipo_deb_cred,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:_key,otherBucket:!f,otherBucketLabel:Other,size:5),schema:split,type:terms),(enabled:!t,id:'2',params:(filters:!((input:(language:kuery,query:'labels.motivo_recusa%20:%20%22null%22%20'),label:Sucesso),(input:(language:kuery,query:'not%20labels.motivo_recusa%20:%20%22null%22'),label:Recusa))),schema:segment,type:filters)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:!n,disabled:!t,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.tipo_deb_cred,negate:!f,params:(query:Interno),type:phrase),query:(match_phrase:(labels.tipo_deb_cred:Interno))),('$state':(store:appState),meta:(alias:'PIX%20Completo',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'Gr%C3%A1fico%20cont%C3%A9m%20Transa%C3%A7%C3%B5es%20PIX%20D%C3%A9bito%20e%20Interno%20em%20formato%20de%20Pizza',params:(addLegend:!t,addTooltip:!t,distinctColors:!t,isDonut:!f,labels:(last_level:!t,show:!t,truncate:100,values:!t),legendPosition:bottom,palette:(name:kibana_palette,type:palette),row:!f,type:pie),title:'%5BBPX%5D%20Pagamentos%20com%20sucesso%20e%20recusa%20-%20Pizza',type:pie,uiState:(vis:(colors:('Pagamento%20sucesso':%23508642,'Pagamentos%20com%20recusa':%23BF1B00,Recusa:%23BF1B00,Sucesso:%233F6833),legendOpen:!f))),vis:(colors:('Pagamento%20sucesso':%23508642,'Pagamentos%20com%20recusa':%23BF1B00,Recusa:%23BF1B00,Sucesso:%233F6833),legendOpen:!t)),gridData:(h:15,i:'232f7cea-e1a1-4e3d-b036-b21913a8af1b',w:16,x:0,y:31),panelIndex:'232f7cea-e1a1-4e3d-b036-b21913a8af1b',type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customLabel:Total,field:count),schema:metric,type:sum),(enabled:!t,id:'7',params:(customLabel:'%20',field:labels.descr_situacao,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!t,otherBucketLabel:Other,size:5),schema:split,type:terms),(enabled:!t,id:'4',params:(customLabel:ISPB,field:labels.ispb_creditado_nome,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!t,otherBucketLabel:Other,size:20),schema:bucket,type:terms),(enabled:!t,id:'8',params:(customLabel:Motivo,field:labels.motivo_recusa,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!t,otherBucketLabel:Other,size:20),schema:bucket,type:terms)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:'Experi%C3%AAncia%20final%20do%20Cliente',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo))),('$state':(store:appState),meta:(alias:'Remove%20as%20Opera%C3%A7%C3%A3o%20com%20Sucesso',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.motivo_recusa,negate:!t,params:(query:null),type:phrase),query:(match_phrase:(labels.motivo_recusa:null))),('$state':(store:appState),meta:(alias:Pagamentos,disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.tipo_deb_cred,negate:!f,params:!(D%C3%A9bito,Interno),type:phrases,value:'D%C3%A9bito,%20Interno'),query:(bool:(minimum_should_match:1,should:!((match_phrase:(labels.tipo_deb_cred:D%C3%A9bito)),(match_phrase:(labels.tipo_deb_cred:Interno)))))),('$state':(store:appState),meta:(alias:'M%C3%ADnimo%201%20ocorr%C3%AAncia',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:count,negate:!f,params:(gte:1,lt:!n),type:range),range:(count:(gte:1,lt:!n)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'',params:(perPage:'',percentageCol:'',row:!t,showMetricsAtAllLevels:!f,showPartialRows:!f,showToolbar:!t,showTotal:!t,sort:(columnIndex:!n,direction:!n),totalFunc:sum),title:'%5BBPX%5D%20Opera%C3%A7%C3%B5es%20Recusadas%20-%20Pagamento',type:table,uiState:(vis:(params:(sort:(columnIndex:!n,direction:!n)))))),gridData:(h:15,i:'90b36616-78a9-4dff-9934-ef75d0245335',w:16,x:16,y:31),panelIndex:'90b36616-78a9-4dff-9934-ef75d0245335',type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customLabel:Quantidade,field:count),schema:metric,type:sum),(enabled:!t,id:'3',params:(customLabel:'%20',field:labels.tipo_deb_cred,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:_key,otherBucket:!f,otherBucketLabel:Other,size:5),schema:split,type:terms),(enabled:!t,id:'2',params:(customLabel:'',field:labels.motivo_recusa,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!t,otherBucketLabel:Outros,size:4),schema:segment,type:terms)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.motivo_recusa,negate:!t,params:(query:null),type:phrase),query:(match_phrase:(labels.motivo_recusa:null))),('$state':(store:appState),meta:(alias:!n,disabled:!t,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.motivo_recusa,negate:!t,params:(query:AC03),type:phrase),query:(match_phrase:(labels.motivo_recusa:AC03))),('$state':(store:appState),meta:(alias:'Exclui%20Cr%C3%A9dito(Recebimento)',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:labels.tipo_deb_cred,negate:!t,params:(query:Cr%C3%A9dito),type:phrase),query:(match_phrase:(labels.tipo_deb_cred:Cr%C3%A9dito))),('$state':(store:appState),meta:(alias:'PIX%20Completo',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_pix_situacao_final_tempo),type:phrase),query:(match_phrase:(name:spi_pix_situacao_final_tempo)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:'name%20:%20%22spi_pix_situacao_final_tempo%22'))),description:'',params:(addLegend:!t,addTooltip:!t,distinctColors:!t,isDonut:!f,labels:(last_level:!t,show:!t,truncate:100,values:!t),legendPosition:bottom,palette:(name:kibana_palette,type:palette),row:!f,type:pie),title:'%5BBPX%5D%20Pagamentos%20com%20recusa%20-%205%20maiores%20erros',type:pie,uiState:(vis:(colors:('Pagamento%20sucesso':%23508642,'Pagamentos%20com%20recusa':%23BF1B00,Recusa:%23BF1B00,Sucesso:%233F6833),legendOpen:!f))),vis:(colors:('Pagamento%20sucesso':%23508642,'Pagamentos%20com%20recusa':%23BF1B00,Recusa:%23BF1B00,Sucesso:%233F6833),legendOpen:!t)),gridData:(h:15,i:e0e1d6ca-6360-4619-8f6b-aec82888ff3b,w:16,x:32,y:31),panelIndex:e0e1d6ca-6360-4619-8f6b-aec82888ff3b,type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:(),savedVis:(data:(aggs:!((enabled:!t,id:'1',params:(customBucket:(enabled:!t,id:'1-bucket',params:(filters:!((input:(language:kuery,query:'labels.http_status%20%3E%3D%20200'),label:''),(input:(language:kuery,query:'labels.http_status%20%3C%20300'),label:''))),type:filters),customLabel:Sucessos,customMetric:(enabled:!t,id:'1-metric',params:(customLabel:Sucessos,field:count),type:sum)),schema:metric,type:sum_bucket),(enabled:!t,id:'2',params:(customBucket:(enabled:!t,id:'2-bucket',params:(filters:!((input:(language:kuery,query:'labels.http_status%20%3E%3D%20500'),label:''))),type:filters),customLabel:'ERRO%20Bacen',customMetric:(enabled:!t,id:'2-metric',params:(customLabel:'ERRO%20Bacen',field:count),type:sum)),schema:metric,type:sum_bucket),(enabled:!t,id:'4',params:(customBucket:(enabled:!t,id:'4-bucket',params:(filters:!((input:(language:kuery,query:'labels.status_code%20%3E%3D%20400'),label:''),(input:(language:kuery,query:'labels.status_code%20%3C%20500'),label:''))),type:filters),customLabel:'ERRO%20Banrisul',customMetric:(enabled:!t,id:'4-metric',params:(customLabel:'ERRO%20Banrisul',field:count),type:sum)),schema:metric,type:sum_bucket),(enabled:!t,id:'5',params:(customLabel:Horario,drop_partials:!t,extended_bounds:(),field:'@timestamp',interval:m,min_doc_count:1,scaleMetricValues:!f,timeRange:(from:now-1h,to:now),useNormalizedEsInterval:!t),schema:segment,type:date_histogram)),searchSource:(filter:!(('$state':(store:appState),meta:(alias:'Retorno%20do%20GET',disabled:!f,index:'476259e0-48ae-11ec-a454-052757557239',key:name,negate:!f,params:(query:spi_icom_get_retorno),type:phrase),query:(match_phrase:(name:spi_icom_get_retorno)))),index:'476259e0-48ae-11ec-a454-052757557239',query:(language:kuery,query:''))),description:'',params:(addLegend:!t,addTimeMarker:!t,addTooltip:!t,categoryAxes:!((id:CategoryAxis-1,labels:(filter:!t,rotate:0,show:!t,truncate:100),position:bottom,scale:(type:linear),show:!t,style:(),title:(),type:category)),detailedTooltip:!t,grid:(categoryLines:!f,valueAxis:ValueAxis-1),isVislibVis:!t,labels:(show:!f),legendPosition:right,palette:(name:kibana_palette,type:palette),radiusRatio:50,row:!f,seriesParams:!((data:(id:'1',label:Sucessos),drawLinesBetweenPoints:!t,interpolate:step-after,lineWidth:2,mode:stacked,show:!t,showCircles:!t,type:histogram,valueAxis:ValueAxis-1),(data:(id:'2',label:'ERRO%20Bacen'),drawLinesBetweenPoints:!t,lineWidth:2,mode:stacked,show:!t,showCircles:!t,type:histogram,valueAxis:ValueAxis-1),(data:(id:'4',label:'ERRO%20Banrisul'),drawLinesBetweenPoints:!t,lineWidth:2,mode:stacked,show:!t,showCircles:!t,type:histogram,valueAxis:ValueAxis-1)),thresholdLine:(color:%23E7664C,show:!f,style:full,value:10,width:1),times:!(),type:histogram,valueAxes:!((id:ValueAxis-1,labels:(filter:!f,rotate:0,show:!t,truncate:100),name:LeftAxis-1,position:left,scale:(defaultYExtents:!f,mode:normal,setYExtents:!f,type:linear),show:!t,style:(),title:(text:Quantidade),type:value))),title:'%5BBPX%5D%20M%C3%A9tricas%20(numero%20requisi%C3%A7%C3%B5es%2Ferros%204xx%2Ferros%205xx)',type:histogram,uiState:(vis:(colors:('ERRO%20Bacen':%23E0752D,'ERRO%20Banrisul':%23BF1B00,Sucessos:%233F6833))))),gridData:(h:17,i:a6db2f99-c337-400e-ba78-51e367f322ed,w:48,x:0,y:46),panelIndex:a6db2f99-c337-400e-ba78-51e367f322ed,type:visualization,version:'7.17.1'),(embeddableConfig:(enhancements:()),gridData:(h:10,i:'7b06f354-1167-430b-9f90-fb570084e701',w:8,x:0,y:63),id:fc3c2e80-fb75-11eb-9afa-89258b63e02c,panelIndex:'7b06f354-1167-430b-9f90-fb570084e701',type:visualization,version:'7.17.1')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:'%5BBPX%5D%20-%20PIX%20Pagamentos',viewMode:view)&show-top-menu=true&show-query-input=true&show-time-filter=true"></iframe> <!--  Tempo Médio de Resposta por ISPB - Pagamentos -->
 			</td>
 			</tr>
 			</table>
+			
 			<table>
 			<tr>
 			<td id="MCpagtituloutros">
@@ -1564,23 +918,54 @@ span.onclick = function() {
 			</td>
 			</tr>
 			</table>
-			
-			<table>  
+	'		<table>  
 			<tr>
-			<td id="pxu1l">
-			<a href="https://opmon10/grafana/d/pDg27Wlik/dashboard-bda-nova-cobranca-pxu?orgId=1&refresh=1m&theme=light" target="_blank" title="BDA NOVA COBRANÇA - PXU"><h4 style="background-color:Gray;"><p>BDA - PXU</p></h4></a>
+			<td id="MBA2002">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=18&servico=2002&tipo=1#" target="_blank" title="Pagto Títulos Outros Bancos 2002 / Mob. Banking Afinidade"><h4 style="background-color:Gray;"><p>MBAfinidade-Acesso 2002</p></h4></a>
 			</td>
 			</tr>
 			<tr>
-			<td id="pxu01l">
-			<iframe src="https://opmon/grafana/d/pDg27Wlik/dashboard-bda-nova-cobranca-pxu?refresh=1m&orgId=1&theme=light&kiosk" width="2110" height="850" class="alerta1" align="center" id="pxu1l02"></iframe> <!-- BDA NOVA COBRANÇA - PXU -->
+			<td id="MBA200201">
+			<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=18&servico=2002&tipo=1&graf=2" width="1055" height="580" class="alerta1" align="center" id="MBA200202"></iframe> <!-- Pagto Títulos Outros Bancos 2002 / Mob. Banking Afinidade -->
+			</td>
+			</tr>
+			</table>
+			<table>  
+			<tr>
+			<td id="bmq1l">
+			<a href="https://opmon10/grafana/d/UtG-XCQik/dashboard-monitoracao-bmq?orgId=1&refresh=1m&theme=light" target="_blank" title="DASHBOARD - BMQ MONITOR"><h4 style="background-color:Gray;"><p>BMQ MONITOR</p></h4></a>
+			</td>
+			</tr>
+			<tr>
+			<td id="bmq01l">
+			<iframe src="http://opmon/grafana/d/UtG-XCQik/dashboard-monitoracao-bmq?refresh=1m&orgId=1&theme=light&kiosk" width="2110" height="750" class="alerta1" align="center" id="bmq1l02"></iframe> <!--  width="2110" height="850" DASHBOARD - BMQ MONITOR -->
 			</td>
 			</tr>
 			</table>
 			</div>
+			<div id="div7">
+			<table>  
+			<td id="pixDOX2">
+			<a href="https://apmgw.dxi-na1.saas.broadcom.com/27b65fc74db74d0f8b8dc022db47b775/dxd/?layout=folders" target="_blank" title="DX02 - IOPS"><h4 style="background-color:Gray;"><p>DX02</p></h4></a>
+			</td>
+			</tr>
+			<tr>
+			<td id="pixDOX201">
+			<iframe  sandbox="allow-forms allow-scripts allow-same-origin" allow="clipboard-read; clipboard-write" src="https://apmgw.dxi-na1.saas.broadcom.com/27b65fc74db74d0f8b8dc022db47b775/dxd/d/YWnT2y-Hz/bpx-pix-monitoracao?orgId=1642&refresh=1m&kiosk&theme=white" width="7445" height="1200" class="alerta1x" align="center" id="pixDOX20102"></iframe> <!--  DX02 IOPS -->
+			</td>
+			</tr>
+			<tr>
+			<td id="endpoints">
+			<iframe  sandbox="allow-forms allow-scripts allow-same-origin" allow="clipboard-read; clipboard-write" src="https://dxi-dashboard.dxi-na1.saas.broadcom.com/d-solo/ZIBUV6YHk/bpi-apis-endpoints-videowall?orgId=1642&refresh=1m&tenant=BANCODOESTADODORIOGRANDEDOSU-2&from=1750877420262&to=1750880840262&universe=UNsaasProd&panelId=25" width="3715" height="520" class="alerta1x" align="center" id="endpoints02"></iframe> <!--  DX02 IOPS -->
+			<iframe  sandbox="allow-forms allow-scripts allow-same-origin" allow="clipboard-read; clipboard-write" src="https://dxi-dashboard.dxi-na1.saas.broadcom.com/d-solo/ZIBUV6YHk/bpi-apis-endpoints-videowall?orgId=1642&refresh=1m&tenant=BANCODOESTADODORIOGRANDEDOSU-2&from=1750877420262&to=1750880840262&universe=UNsaasProd&panelId=26" width="3715" height="520" class="alerta1x" align="center" id="endpoints03"></iframe> <!--  DX02 IOPS -->
+			</td>
+			</tr>
+			</table>
 			</div>
-			<div id="todasA" style="display:none" class="drag-container">
-<!--  Gráficos Escala A --><div id="grafic4" class="drag-item"> 
+			<!-- div class="danger">
+			<p class="aviso"><strong> Aviso!</strong> Gráficos do D0X2 não serão mostrados neste dashboard.</p>
+		   </div -->
+			<div id="grafic4"> <!--  Gráficos Escala A -->
 			<table>  
 			<tr>
 			<td id="MC0001">
@@ -1632,7 +1017,7 @@ span.onclick = function() {
 			<table>
 			<tr>
 			<td id="MBA0001">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=18&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Mobile Banking Afinidade "><h4 style="background-color:Gray;"><p>Mob. Banking Afinidade </p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=18&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Mobile Banking Afinidade "><h4 style="background-color:Gray;"><p>MBAfinidade-Acesso 0001</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1666,7 +1051,7 @@ span.onclick = function() {
 			</tr>
 			</table>
 			</div>
-			<div id="grafic5" class="drag-item">
+			<div id="grafic5">
 			<table>
 			<tr>
 			<td id="MC1001">
@@ -1752,7 +1137,7 @@ span.onclick = function() {
 			</tr>
 			</table>
 			</div>
-			<div id="div8" class="drag-item">
+			<div id="div8">
 			<table>
 			<tr>
 			<td id="HB1004">
@@ -1838,7 +1223,7 @@ span.onclick = function() {
 			</tr>
 			</table>
 			</div>
-			<div id="div9" class="drag-item">
+			<div id="div9">
 			<table>  
 			<tr>
 			<td id="OB2501">
@@ -1924,7 +1309,7 @@ span.onclick = function() {
 			</tr>
 			</table>
 			</div>
-			<div id="div10" class="drag-item">
+			<div id="div10">
 			<table>  
 			<tr>
 			<td id="MC2014">
@@ -1998,7 +1383,7 @@ span.onclick = function() {
 			</tr>
 			</table>
 			</div>
-			</div>
+			
 	
 			<!--  Tabela BOK -->
 			<table id="list" style="display:none">
@@ -2081,10 +1466,20 @@ span.onclick = function() {
 	       <td class="tabela"><h4><p>Toda Organização</p><h4></td>
            </tr>
 		   </table>
-
 		   <!-- footer>
 		   <h1><a href="mailto:T03252@bergs.br"> Luis Silva EXT</a><br>Técnico de Monitoração N2 - Ilha Service</h1>
 		   </footer -->
 		
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
