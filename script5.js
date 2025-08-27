@@ -377,6 +377,26 @@ function dragElement(elmnt) {
 				document.getElementById('pxu02').src += '';
 				document.getElementById('bmq02').src += '';				
 			}
+
+			function PixD0X() {
+				
+			var x = document.getElementById('pixDOX2');
+			var tag=document.getElementById("clicado40");
+			if (x.style.display === 'none') {
+			x.style.display = 'block'; 
+			document.getElementById('pixDOX201').style.display='block';
+			document.getElementById('endpoints').style.display='block';			<!--  Gráfico -->
+			document.getElementById('endpoints01').style.display='block';
+			tag.style.background="#6495ED";
+			tag.style.color="white";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('pixDOX201').style.display='none'; <!--  Gráfico -->
+				document.getElementById('endpoints').style.display='none';
+				document.getElementById('endpoints01').style.display='none';
+				tag.style.background="black";
+					}
+			}
 		   
 		    function PP1() {
 			var tag2=document.getElementById("clicado50");
