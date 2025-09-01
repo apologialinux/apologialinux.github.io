@@ -906,6 +906,7 @@ function dragElement(elmnt) {
 				document.getElementById('pixDOX20102').src += '';
 				document.getElementById('endpoints02').src += '';
 				document.getElementById('endpoints03').src += '';
+				document.getElementById('endpoints04').src += '';
 				document.getElementById('pxu1l02').src += '';			
 			}
 			
@@ -1231,13 +1232,17 @@ function dragElement(elmnt) {
 			if (x.style.display === 'none') {
 			x.style.display = 'block'; 
 			document.getElementById('pixDOX201').style.display='block';
-			document.getElementById('endpoints').style.display='block';			<!--  Gráfico -->
+			document.getElementById('endpoints').style.display='block';
+			document.getElementById('endpoints01').style.display='block';
+			document.getElementById('endpoints4').style.display='block';
 			tag.style.background="#6495ED";
 			tag.style.color="white";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('pixDOX201').style.display='none'; <!--  Gráfico -->
 				document.getElementById('endpoints').style.display='none';
+				document.getElementById('endpoints01').style.display='none';
+				document.getElementById('endpoints4').style.display='none';
 				tag.style.background="black";
 					}
 			}
