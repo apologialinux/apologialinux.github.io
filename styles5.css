@@ -40,16 +40,16 @@ iframe {
     z-index: 100; 
 }
 
-iframe.alertaDX:hover {
-    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
-    transition-delay: 3s;
-	transform-origin: bottom left; 
-}
-
 iframe:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: bottom right; 
+}
+
+iframe.alertaDX:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: bottom left; 
 }
 
 iframe.alerta1x:hover {
@@ -650,6 +650,7 @@ border: 0px;
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
 
 
 
