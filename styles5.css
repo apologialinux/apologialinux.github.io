@@ -240,9 +240,7 @@ p.aviso {
     display: flex;
 }
 
-#div7 {
-    display: flex;
-}
+ 
 
 #div8 {
     display: flex;
@@ -650,7 +648,13 @@ border: 0px;
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
-
+.loader {
+  width: 60px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  --base-color: #263238; /*use your base color*/
+}
 .loader::before {
   content: '';  
   left: 0;
@@ -697,7 +701,6 @@ border: 0px;
     transform: rotate(360deg);
   }
 } 
-
 
 
 
