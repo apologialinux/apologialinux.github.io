@@ -671,10 +671,10 @@ border: 0px;
 }
 
 .loaderes {
-  border: 6px solid #FFF;
+  border: 8px solid yellow;
   width: 80px;
   height: 80px;
-  background: #FF3D00;
+  background: black;
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -688,7 +688,7 @@ border: 0px;
   left: 50%;
   top: 50%;
   border: 40px solid;
-  border-color: transparent #FFF;
+  border-color: transparent yellow;
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
