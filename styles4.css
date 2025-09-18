@@ -671,7 +671,7 @@ border: 0px;
   overflow: hidden;
   background: var(--line-bg);
   /* center */
-  top: 2vh;
+  top: 1.5vh;
   left: 15vw;
   transform: translateX(-50%) translateY(-50%);
 }
@@ -711,6 +711,7 @@ border: 0px;
     left: calc(100% - var(--light-width) / 2);
   }
 }
+
 
 
 
