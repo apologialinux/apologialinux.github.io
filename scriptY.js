@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.zoom = '0.34';
         }
     });
-	
+	 
 });
 
 /*Download */
@@ -1870,5 +1870,6 @@ function dragElement(elmnt) {
 					}
 			}
 			
+
 
 
