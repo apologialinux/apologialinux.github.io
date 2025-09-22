@@ -484,6 +484,16 @@ button.M365:hover {
   color: white;
 }
 
+button.Bolet {
+  background-color: black; 
+  color: white;
+}
+
+button.Bolet:hover {
+  background-color: yellow;
+  color: black;
+}
+
 
 #sair2 {
   margin: 0 auto;
@@ -670,7 +680,6 @@ border: 0px;
   animation: rotationBack 3s linear infinite;
 }
 
-
 :root {
   --line-bg: #111;
   --line-height: 30px;
@@ -679,8 +688,8 @@ border: 0px;
   --light-cell-width: calc(var(--line-height) * 3);
   --light-cell-separator-width: calc(var(--line-height) * 0.1);
   /* red light #ff000 */
-  --light-color-on: rgba(255,0,255,1);
-  --light-color-off: rgba(255,0,255,.25);
+  --light-color-on: rgba(255,0,0,1);
+  --light-color-off: rgba(255,0,0,.25);
   
 }
 
@@ -730,4 +739,36 @@ border: 0px;
   50% {
     left: calc(100% - var(--light-width) / 2);
   }
+}
+
+
+/* Modal (background) */
+.modalB {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0%;
+  top: 20%;
+  width: 90%; 
+  height: 70%; 
+  overflow: hidden;  
+  background-color: rgb(0,0,0);  
+  background-color: rgba(0,0,0,0.0);  
+  padding-top: 0px;
+  font-size: 55px;
+  color: black;
+  border: 0px;
+  zoom: 2.3;
+}
+
+.imgcontainerB {
+  text-align: left;
+  position: relative;
+	border: 0px;
+}
+
+.containerB {
+  padding: 0px;
+  border: 16px;
+ 
 }
