@@ -55,7 +55,9 @@ dragElement(document.getElementById("divbutton2"));
 */
 
 </script>
+			
 			<div id="divbutton"> <!--  Botões fixos -->
+			
 			<tr  class="botones">
 			<td>
 			<button type="button" class="Indic" id="clicado25" onclick="window.open('https://app2.pontomais.com.br/registrar-ponto')" title="Ponto Mais Web">PONTO</button>
@@ -104,8 +106,8 @@ dragElement(document.getElementById("divbutton2"));
 			<td>
 			<button type="button" class="Indic" id="clicado25" onclick="window.open('http://b2bsfgclusterprod.corp.banrisul.com.br:8080/filegateway/home.do#login')" title="IBM Sterling File Gateway">STERLING</button>
 			</td>
-			<td>
-			<button type="button" class="corP" id="clicado25" onclick="window.open('https://axa.dxi-na1.saas.broadcom.com/sppclient/#/login?cn=BANCODOESTADODORIOGRANDEDOSU-2')" title="DX SaaS">DXO2</button>
+			<td>   <a href="#" id="cerquilha"> 
+			<button type="button" class="corP" id="clicado25" onclick="window.open('https://axa.dxi-na1.saas.broadcom.com/sppclient/#/login?cn=BANCODOESTADODORIOGRANDEDOSU-2')" title="DX SaaS">DXO2</button> 
 			</td>
 			<td>
 			<button type="button" class="corR" id="clicado25" onclick="window.open('http://planomudanca/planomudanca/')" title="Plano de Mudança">ADC</button>
@@ -148,11 +150,11 @@ dragElement(document.getElementById("divbutton2"));
 			&nbsp &nbsp &nbsp &nbsp <input type="checkbox" id="zoomControl" title="Zoom alternativo"> <!-- label for="zoomControl"><p>Zoom padrão</p></label> </td -->
 			<!-- td>&nbsp &nbsp &nbsp &nbsp </td -->
 			<td><button type="button" class="M365" id="clicado25" onclick="window.open('https://m365.cloud.microsoft/apps/?from=PortalHome')" title="Portal Microsoft 365">Portal M365</button></td>
-			  <div class="line"><div class="light"></div></div>	
-  		   </table>
+  		   <div class="line"><div class="light"></div></div>
+		   </table>
 		   </tr>
-		   <tr><a href="#" id="cerquilha"> 
 		   </div>
+		   
 		     <div id="divbutton2" style="display:none"> <!--  Botões adicionais -->
 		   	<br>
 			<br>
@@ -215,6 +217,19 @@ dragElement(document.getElementById("divbutton2"));
 			
 			</div>
 			</table>
+			<table id="BoleT" style="display:none">
+			<div id="bolet01" class="modalB">
+  			<!-- form class="modal-content animate" action="/action_page.php" method="post" -->
+
+			<div class="containerB" style="background-color: black">
+			<iframe sandbox="allow-forms allow-scripts allow-same-origin" src="https://apologialinux.github.io/passos2.html" class="alerta1b" align="left" width="2200" height="1000" id="boletim" allow="clipboard-read; clipboard-write" ></iframe>  <!-- AUTORIZADORES -->
+			<button id="redondo"  class="corR" onclick="document.getElementById('bolet01').style.display='none'"> X </button><br>
+
+			</div>
+			<!-- /form -->
+			
+			</div>
+			</table>
 			<table>
 			
 			<div id="myModal" class="modal2">
@@ -224,7 +239,7 @@ dragElement(document.getElementById("divbutton2"));
     
 	  <!-- span class="close">&times;</span -->
 	  	
-		<button type="button" class="verD" id="clicadoBOPTake"  onclick="BOPTake()"  title="Opções Take Action">Take Action</button><button type="button" class="verD" id="clicadoBCALC"  onclick="BCALC()"  title="Opções Take Action">Calc. Data/Horas</button><button type="button" onclick="BOPAPI()"  class="verD" id="clicadoBOPAPI"  title="[Opções Api-Gateway] - Alertas">[Api-Gateway] - Alertas</button><button type="button" class="corP" id="BinsB" onclick="BinsF();document.getElementById('myModal').style.display='none';corbotao();">BINS</button><button id="redondo" class="close" onclick="document.getElementById('myModal').style.display='none'; corbotao();"> X </button>
+		<button type="button" class="verD" id="clicadoBOPTake"  onclick="BOPTake()"  title="Opções Take Action">Take Action</button><button type="button" class="verD" id="clicadoBCALC"  onclick="BCALC()"  title="Opções Take Action">Calc. Data/Horas</button><button type="button" onclick="BOPAPI()"  class="verD" id="clicadoBOPAPI"  title="[Opções Api-Gateway] - Alertas">[Api-Gateway] - Alertas</button><button type="button" class="corP" id="BinsB" onclick="BinsF();document.getElementById('myModal').style.display='none';corbotao();">BINS</button><button type="button" class="Bolet" id="BoletimB" onclick="BoletF();document.getElementById('myModal').style.display='none';corbotao();" title="Não está terminado!">🚧BOLETIM⛔</button><button id="redondo" class="close" onclick="document.getElementById('myModal').style.display='none'; corbotao();"> X </button>
 		<div id="OPTake" class="modal-header" align="center" style="display:none"><br>
       <input  placeholder="Nome" id="name"><input  placeholder="Número do incidente" id="numb"><br><br>
       <button id="botao" type="button" onclick="myFunction()">Gerar</button> 
@@ -719,7 +734,7 @@ span.onclick = function() {
 			</tr>
 			<tr>
 			<td id="pixincluchave01">
-			<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2707&tipo=1&graf=2" width="1055" height="580"  align="center" id="pixincluchave02"></iframe> <!-- INCLUSÃO DE CHAVE -->
+			<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2707&tipo=1&graf=2" width="1055" height="580" class="alerta1" align="center" id="pixincluchave02"></iframe> <!-- INCLUSÃO DE CHAVE -->
 			</td>
 			</tr>
 			</table>
@@ -1368,7 +1383,8 @@ span.onclick = function() {
 			</tr>
 			</table>
 			</div>
-					<div class="watermark">  
+			
+			<div class="watermark">  
            by Luís Silva - T03252  
     </div> 
  
@@ -1381,7 +1397,9 @@ span.onclick = function() {
     color: #808080;
     position: fixed;
     top: 98%;
-    left: 90%;
+    left: 94%;
+	animation: piscar 1s infinite;
+
 }
 </style>
 	
@@ -1472,4 +1490,24 @@ span.onclick = function() {
 		
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
