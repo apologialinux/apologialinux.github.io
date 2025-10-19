@@ -875,7 +875,8 @@ function myESC() {
     </script>
 	<script>
         document.getElementById('copiar').addEventListener('click', function() {
-            // Seleciona o container2
+			
+			// Seleciona o container2
             const containercopy = document.getElementById('container2');
 
             // Cria um range para selecionar o conteúdo do container
@@ -891,8 +892,9 @@ function myESC() {
             // Limpa a seleção
             sel.removeAllRanges();
 
-            alert('Conteúdo copiado com formatação! Cole no seu e-mail.');
-        });
+            alert('✅Conteúdo copiado com formatação! \n✅Cole no modelo de e-mail e centralize o texto. \n⚠Confira o Assunto (INICIO ou INICIO/FIM).\n⚠Certifique-se de que o REMETENTE será "Logistica TI Monitoracao".');
+			
+			});
 		 //FONTE ARIAL
 function calcularTempoTotal() {
   const dataInicio = document.getElementById("dataInicial").value;
@@ -918,8 +920,12 @@ function calcularTempoTotal() {
       // Opcional: alerta
       // alert(`⏱️ Tempo decorrido: ${tempoFormatado}`);
     } else {
-      alert("⚠️ Hora final é anterior à inicial.");
-       // document.getElementById("tempototal").innerText = "";
+      alert("⚠️ Tempo final é anterior ao tempo inicial.");
+	  document.getElementById("datafim").innerText = "";
+	  document.getElementById("horafim").innerText = "";
+	  document.getElementById("horaFinal").value = "";
+	  document.getElementById("dataFinal").value = "";
+	  document.getElementById("tempoTotal").innerText = "";
     }
   } else {
     alert("🕒 Preencha todos os campos corretamente.");
