@@ -52,6 +52,16 @@ iframe.alertaDX:hover {
 	transform-origin: bottom left; 
 }
 
+
+#BoletZoom {
+	
+	zoom: 3;
+}
+iframe.boletim:hover {
+    transform: none; 
+	
+}
+
 iframe.alerta1x:hover {
     transform: none; /* Impede o efeito de escala */
 }
@@ -493,6 +503,10 @@ button.Bolet:hover {
   background-color: yellow;
   color: black;
 }
+button.Bolet:hover::after {
+      content: "Tô fazendo!";
+}
+
 
 
 #sair2 {
@@ -772,5 +786,3 @@ border: 0px;
   border: 16px;
  
 }
-
-
