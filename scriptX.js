@@ -351,6 +351,7 @@ function dragElement(elmnt) {
 			}
 
 			function REF() { 
+			document.getElementById("tudoP").style.display = "block";
 				document.getElementById('aut01').src += '';
 				document.getElementById('band01').src += '';
 				document.getElementById('master01').src += '';
@@ -499,6 +500,8 @@ function dragElement(elmnt) {
 			document.getElementById("clicadoBCALC").style.background="black"; document.getElementById("clicadoBOPTake").style.background="black"; document.getElementById("clicadoBOPAPI").style.background="black"; document.getElementById("myBtn").style.background="black";
 			
 			}
+		 
+			
             function Fbanri1() {
 			var x = document.getElementById('banri1');
 			var tag=document.getElementById("clicado5");
@@ -869,6 +872,7 @@ function dragElement(elmnt) {
 			}
 			
 			function REFB() {
+				document.getElementById("tudoB").style.display = "block";
 				document.getElementById('APIalerta02').src += '';
 				document.getElementById('tempmediopagISPB02').src += ''; 
 				document.getElementById('acesso02').src += '';
@@ -1226,6 +1230,9 @@ function dragElement(elmnt) {
 			}
 			
 			function REFA() {
+				
+				document.getElementById("tudoA").style.display = "block";
+				
 				document.getElementById('MC00010102').src += '';
 				document.getElementById('OB00010102').src += '';
 				document.getElementById('OM00010102').src += '';
