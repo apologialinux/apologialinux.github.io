@@ -434,9 +434,10 @@ textarea {
 				<li>Verificar se o REMETENTE é "Logistica TI Monitoracao".</li>
 			</p>
         </div>
-        <div class="buttons" style="display:none">
-            <button id="prevBtn" onclick="changeStep(-1)">Anterior</button>
-            <button id="nextBtn" onclick="changeStep(1)">Próximo</button>
+        <div class="buttons" style="display:block">
+			<button id="copiar">Copiar Conteúdo</button>
+             <button id="prevBtn" onclick="changeStep(-1)" style="display:none">Anterior</button>
+            <button id="nextBtn" onclick="changeStep(1)" style="display:none">Próximo</button>
 	
         </div>
  
@@ -458,46 +459,46 @@ textarea {
  mso-padding-alt:0cm 0cm 0cm 0cm'>
  <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:23.0pt'>
   <td width=157 colspan=2 style='width:118.0pt;border:solid windowtext 1.0pt;
-  border-right:solid black 1.0pt;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;
-  height:23.0pt'>
+  border-right:solid black 1.0pt;background:#F54927;padding:0cm 3.5pt 0cm 3.5pt;
+  height:23.0pt' id="corinicio">
   <p class=MsoNormal align=center style='text-align:center'><b><i><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Início<o:p></o:p></span></i></b></p>
   </td>
   <td width=157 colspan=2 style='width:118.0pt;border-top:solid windowtext 1.0pt;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid black 1.0pt;
-  background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  background:#F54927;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="corfim">
   <p class=MsoNormal align=center style='text-align:center'><b><i><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Fim<o:p></o:p></span></i></b></p>
   </td>
   <td width=64 rowspan=3 style='width:48.0pt;border-top:solid windowtext 1.0pt;
   border-left:none;border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#A9D08E;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  background:#A9D08E;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="cortempototal">
   <p class=MsoNormal align=center style='text-align:center'><b><i><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Tempo total<o:p></o:p></span></i></b></p>
   </td>
   <td width=205 style='width:154.0pt;border:solid windowtext 1.0pt;border-left:
-  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  none;background:#F54927;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="corcausa">
   <p class=MsoNormal align=center style='text-align:center'><b><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Causa<o:p></o:p></span></b></p>
   </td>
   <td width=229 style='width:172.0pt;border:solid windowtext 1.0pt;border-left:
-  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  none;background:#F54927;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="corimpacto">
   <p class=MsoNormal align=center style='text-align:center'><b><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Impacto<o:p></o:p></span></b></p>
   </td>
   <td width=131 style='width:98.0pt;border:solid windowtext 1.0pt;border-left:
-  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  none;background:#F54927;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="corcanais">
   <p class=MsoNormal align=center style='text-align:center'><b><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Canais<o:p></o:p></span></b></p>
   </td>
   <td width=97 style='width:73.0pt;border:solid windowtext 1.0pt;border-left:
-  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  none;background:#F54927;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="corfalha">
   <p class=MsoNormal align=center style='text-align:center'><b><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Falha<o:p></o:p></span></b></p>
@@ -620,7 +621,7 @@ textarea {
  </tr>
 </table><br>
 <b><label id="resultadoInc">Incidente e URL</label></b><br>
-<button id="copiar">Copiar Conteúdo</button><!-- button onclick="sendFullPageEmail()">📨 Enviar Boletim por E-mail</button -->
+<!-- button onclick="sendFullPageEmail()">📨 Enviar Boletim por E-mail</button -->
 
 
 
@@ -740,6 +741,7 @@ textarea {
                  
                 document.getElementById('datainicio').innerText = `${dataFormatada}`;
 				document.getElementById('assunt').innerText = " Serviços - INÍCIO";
+				 
             } else {
                 document.getElementById('datainicio').innerText = '';
             }
@@ -758,7 +760,7 @@ textarea {
                 // Atualiza o conteúdo da label
 
                 document.getElementById('horainicio').innerText = `${dataFormatadaH1}`;
-				
+				document.getElementById('corinicio').style.background = '#C7EF91';
             } else {
                 document.getElementById('horainicio').innerText = '';
             }
@@ -777,6 +779,7 @@ textarea {
                 // Atualiza o conteúdo da label
                 document.getElementById('datafim').innerText = `${dataFormatada2}`;
 		document.getElementById('assunt').innerText = " Serviços - INÍCIO/FIM";
+		document.getElementById('corfim').style.background = '#F54927'; 
             } else {
                 document.getElementById('datafim').innerText = '';
             }
@@ -797,8 +800,9 @@ textarea {
 				
                 document.getElementById('horafim').innerText = `${dataFormatadaH2}`;
 		calcularTempoTotal();    
+		
             } else {
-                document.getElementById('horafim').innerText = '';
+                document.getElementById('horafim').innerText = ''; 
             }
         });
 		
@@ -808,6 +812,7 @@ textarea {
 		// Adiciona um ouvinte de evento ao dropdown
         document.getElementById('dropdown').addEventListener('change', function() {
             // Captura o valor selecionado
+			document.getElementById('corcausa').style.background = '#C7EF91';
             const valorSelecionado = this.options[this.selectedIndex].text;
 
             // Atualiza a label com o conteúdo selecionado
@@ -824,6 +829,7 @@ function myRadiofalha() {
 				document.getElementById('erroExt').innerText = "X";
 				document.getElementById('erroInt').innerText = "  ";
 			}  
+			document.getElementById('corfalha').style.background = '#C7EF91';
 			}
 			
 			
@@ -847,7 +853,7 @@ function myImpacto() {
 				document.getElementById('impactIndisp').innerText = "  ";
 				document.getElementById('impactSevDeg').innerText = "X";
 			} 
-			
+			document.getElementById('corimpacto').style.background = '#C7EF91';
 			}
 			
 			// CANAIS
@@ -870,7 +876,7 @@ function myESC() {
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='block';
 			} 
-			
+			document.getElementById('corcanais').style.background = '#C7EF91';
 			}
     </script>
 	<script>
@@ -892,7 +898,7 @@ function myESC() {
             // Limpa a seleção
             sel.removeAllRanges();
 
-            alert('✅Conteúdo copiado com formatação! \n✅Cole no modelo de e-mail e centralize o texto. \n⚠Confira o Assunto (INICIO ou INICIO/FIM).\n⚠Certifique-se de que o REMETENTE será "Logistica TI Monitoracao".');
+            alert('✅Conteúdo copiado com formatação! \n✅Cole no modelo de e-mail e edite se necessário. \n⚠Confira o Assunto (INICIO ou INICIO/FIM).\n⚠Certifique-se de que o REMETENTE será "Logistica TI Monitoracao".');
 			
 			});
 		 //FONTE ARIAL
@@ -916,7 +922,7 @@ function calcularTempoTotal() {
 
       // 🟢 Exibe no campo correto (label)
       document.getElementById("tempototal").innerText = tempoFormatado;
-
+		document.getElementById('corfim').style.background = '#C7EF91';
       // Opcional: alerta
       // alert(`⏱️ Tempo decorrido: ${tempoFormatado}`);
     } else {
@@ -925,7 +931,9 @@ function calcularTempoTotal() {
 	  document.getElementById("horafim").innerText = "";
 	  document.getElementById("horaFinal").value = "";
 	  document.getElementById("dataFinal").value = "";
-	  document.getElementById("tempoTotal").innerText = "";
+	  document.getElementById("tempototal").innerText = "";
+	  document.getElementById('corfim').style.background = '#C7EF91';
+	  
     }
   } else {
     alert("🕒 Preencha todos os campos corretamente.");
