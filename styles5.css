@@ -54,8 +54,7 @@ iframe.alertaDX:hover {
 
 
 #BoletZoom {
-	
-	zoom: 3;
+	zoom: 3; 
 }
 iframe.boletim:hover {
     transform: none; 
