@@ -1,3 +1,4 @@
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -12,17 +13,19 @@
             justify-content: center;
             align-items: center;
             height: 95vh;
-            background-color: #ffffff;
+            background-color: rgba(0, 0, 0, 1);
 			
         }
-        .container {
+        .container1 {
             width: 100%;
             max-width: 1045px;
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
 			position: absolute;			
-			left: 5%;
+			left: 1%;
+			top: 2%;
+			 
 		 
 			 
         }
@@ -33,8 +36,8 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
 			position: absolute;
-            top: 5%;
-			left: 5%;
+            top: 2%;
+			left: 50%; /* 20 */
 			justify-content: center;
         }
         .stepper {
@@ -129,7 +132,7 @@
 			color: red;
 		}
 select {
-            width: 600px;
+            width: 357px;
             padding: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -160,13 +163,13 @@ textarea {
 	        
 		.container3 {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1040px;
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
 			position: absolute;
-            top: 5%;
-			left: 50%;
+            top: 30%; /* 18 */
+			left: 50%; /* 20 */
 			justify-content: center;
         }
 		
@@ -194,7 +197,7 @@ textarea {
 </head>
 <body onload="definirDataAtual()">
 
-    <div class="container">
+    <div class="container1">
 		<!-- h2>GERADOR DE BOLETIM</h2 -->
 		
         <div class="stepper">
@@ -202,35 +205,36 @@ textarea {
                 <div class="step-number">1</div>
                 <div class="step-title">BOLETIM</div>
             </div>
-            <div class="step" data-step="2">
+            <div class="step" data-step="2" >
                 <div class="step-number">2</div>
-                <div class="step-title">ENVIO</div>
+                <div class="step-title">Em Desenvolvimento</div>
             </div>
 
         </div>
 		
         <div class="content active" data-content="1">
-          
+                   
+			<br><br>
+			<form onsubmit="verificarCamposVazios(); return false;">
+   
+  
+
 	<label for="numero">Incidente: </label>
     <input  id="numero" align="left"  placeholder="12345678"> 	
     <label for="link">URL do Incidente:</label>
     <textarea id="link" placeholder="http://servicedesk/CAisd/pdmweb.exe?OP=SEARCH+FACTORY=cr+SKIPLIST=1+QBE.EQ.id=11223344" rows="2"></textarea>
+	
 	<br><br>
    	<label>INICÍO:&nbsp <input type="date" id="dataInicial"></label> &nbsp<input type="time" id="horaInicial"></label>
  
     <label>FIM:&nbsp <input type="date" id="dataFinal"></label> &nbsp <input type="time" id="horaFinal"></label>
 	       <br><br>
-			<input type="radio" name="radiofalha" id="falhaInt" onclick="myRadiofalha()">&nbsp  Interna &nbsp &nbsp
-			<input type="radio" name="radiofalha" id="falhaExt" onclick="myRadiofalha()">&nbsp  Externa &nbsp &nbsp
-		<br><br>
-			<input type="radio" name="radiofalha2" id="falhaDeg" onclick="myImpacto()">&nbsp  Degradado &nbsp &nbsp
-			<input type="radio" name="radiofalha2" id="falhaSevDeg" onclick="myImpacto()">&nbsp  Severamente Degradado &nbsp &nbsp
-			<input type="radio" name="radiofalha2" id="falhaIndisp" onclick="myImpacto()">&nbsp  Indisponível &nbsp &nbsp
-		<br><br>
-			<select id="dropdown">
-		<option value="opcao1">Defina uma causa:</option>
+		   <select id="dropdown">
+		<option value="opcao1">CAUSA:</option>
 		<option value="opcao1">Falha externa</option>
+		<option value="opcao1">PDM XXXXX</option>
 		<option value="opcao1">Em análise</option>
+		<option value="opcao1">Em análise pela XXXXX</option>
 		<option value="opcao1">Em análise pela CSU</option>
 		<option value="opcao1">Em análise pela PROCERGS</option>
         <option value="opcao1">Em análise pela Dock</option>
@@ -247,59 +251,207 @@ textarea {
 		<option value="opcao3">Monitor_Erro_96</option>
     </select>
 <br><br>
-         
-			<div>
+		<label>IMPACTO:&nbsp </label>
+			<input type="radio" name="radiofalha2" id="falhaDeg" onclick="myImpacto()">&nbsp  Degradado &nbsp &nbsp
+			<input type="radio" name="radiofalha2" id="falhaSevDeg" onclick="myImpacto()">&nbsp  Severamente Degradado &nbsp &nbsp
+			<input type="radio" name="radiofalha2" id="falhaIndisp" onclick="myImpacto()">&nbsp  Indisponível &nbsp &nbsp
+		<br><br>
+		<label>CANAIS:&nbsp </label>
+			<input type="radio" name="radio3" id="EscalA" onclick="myESC()">&nbsp Escala A &nbsp &nbsp
+			<input type="radio" name="radio3" id="EscalB" onclick="myESC()">&nbsp  Escala B &nbsp &nbsp
+			<input type="radio" name="radio3" id="EscalPyw" onclick="myESC()">&nbsp  Payware &nbsp &nbsp
+		<br><br>
+			
+<label>FALHA:&nbsp </label> 
+			<input type="radio" name="radiofalha" id="falhaInt" onclick="myRadiofalha()">&nbsp  Interna &nbsp &nbsp
+			<input type="radio" name="radiofalha" id="falhaExt" onclick="myRadiofalha()">&nbsp  Externa &nbsp &nbsp
+		<br><br>
+		<label>Opções de canais:&nbsp </label><br><br>
+			<div id="EscolhaA" style="display:none">
+			
 			<tr>
 			<td id="MC0001">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Minha Conta"><input type="checkbox" name="primeiro" id="Teste" onclick="graficMC00010102()"><label id="CorLetra"  style="background-color:Gray;">&nbsp MC-Acesso</label></a>
-			</td>
-			<td id="OB0001">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Office Banking"><input type="checkbox" name="primeiro" id="Teste" onclick="graficOB0001()"><label id="CorLetra"  style="background-color:Gray;">&nbsp OB-Acesso</label></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Minha Conta"><input type="checkbox" name="primeiro" id="Teste" onclick="graficMC00010102()"><label id="CorLetra"  style="background-color:Gray;">&nbsp MC-Acesso 0001</label></a>
 			</td>
 			<td id="OM0001">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Office Mobile "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp OM-Acesso</label></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Office Mobile "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp OM-Acesso 0001</label></a>
+			</td>
+			<td id="OB0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Office Banking"><input type="checkbox" name="primeiro" id="Teste" onclick="graficOB0001()"><label id="CorLetra"  style="background-color:Gray;">&nbsp OB-Acesso 0001</label></a>
 			</td>
 			<td id="HB0001">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=20&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Home Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp HB-Acesso</label></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=20&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Home Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp HB-Acesso 0001</label></a>
 			</td>
+			<td id="OM0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Office Mobile "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp OM-Acesso 0001 </label></a>
+			</td>
+			<td id="MBA0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=18&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Mobile Banking Afinidade "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp MBAfinidade-Acesso 0001</label></a>
+			</td><br><br>
+			</tr>
+			<tr>
+			<td id="BanriF0001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=30&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Banrifone"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbspBanrifone </label></a>
 			<td id="MCard0001">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=95&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Meus Cartões "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp MCard-Acesso</label></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=95&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Meus Cartões "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp MCard-Acesso 0001</label></a>
 			</td>
 			<td id="MC1001">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Minha Conta "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MC-Extrato C. Corrente</label></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Minha Conta "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MC-Extrato C. Corrente 0001</label></a>
 			</td>
 			<td id="OB1001">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Office Banking "> <input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra"  style="background-color:Gray;">&nbsp OB-Extrato C. Corrente</label></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Office Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OB-Extrato C. Corrente 1001 </label></a>
+			</td>
+			<td id="OM1001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Office Mobile "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OM-Extrato C. Corrente 1001</label></a>
+			</td><br><br>
+			</tr><tr>
+			<td id="HB1001">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=20&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Home Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp HB-Extrato C. Corrente 1001</label></a>
+			</td>
+			<td id="LT0063">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=95&servico=63&tipo=1#" target="_blank" title="Extrato de Cartão de Crédito 0063 / Linha do Tempo"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp LT-Extrato C. de Crédito 0063</label></a>
+			</td>
+			<td id="OB1004">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=1004&tipo=1#" target="_blank" title=" Extrato de Cartão de Crédito 1004 / Office Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OB-Extrato C. de Crédito 1004</label></a>
+			</td>
+			<td id="OM1004">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=1004&tipo=1#" target="_blank" title=" Extrato de Cartão de Crédito 1004 / Office Mobile "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OM-Extrato C. de Crédito 1004</label></a>
+			</td>
+			</tr><br><br>
+			<tr>
+			<td id="HB1004">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=20&servico=1004&tipo=1#" target="_blank" title="Extrato de Cartão de Crédito 1004 / Home Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp HB-Extrato C. de Crédito 1004</label></a>
+			</td>
+			<td id="MCard1004">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=95&servico=1004&tipo=1#" target="_blank" title="Extrato de Cartão de Crédito 1004 / Meus Cartões "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MCard-Extrato C. de Crédito 1004 </label></a>
+			</td>
+			<td id="MC1014">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1014&tipo=1#" target="_blank" title="Saldo de Conta Corrente 1014 / Minha Conta "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MC-Saldo de Conta Corrente 1014</label></a>
+			</td>
+			<td id="OM1014">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=1014&tipo=1#" target="_blank" title="Saldo de Conta Corrente 1014 / Office Mobile"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OM-Saldo de Conta Corrente 1014 </label></a>
+			</td>
+			</tr><br><br>
+			<tr>
+			<td id="MC4050">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=4050&tipo=1#" target="_blank" title="Cons. Tit. Pagador 4050 / Minha Conta"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MC-Cons. Tit. Pagador 4050</label></a>
+			</td>
+			<td id="OB4050">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=4050&tipo=1#" target="_blank" title="Cons. Tit. Pagador 4050 / Office Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OB-Cons. Tit. Pagador 4050</label></a>
+			</td>
+			<td id="MC2501">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Minha Conta "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MC-Transf. Entre Cont. Banrisul 2501</label></a>
+			</td>
+			<td id="OB2501">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Office Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OB-Transf. Entre Cont. Banrisul 2501</label></a>
+			</td>
+			</tr><br><br>
+			<tr>
+			<td id="OM2501">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Office Mobile"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OM-Transf. Entre Cont. Banrisul 2501</label></a>
+			</td>
+			<td id="HB2501">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=20&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Home Banking  "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp HB-Transf. Entre Cont. Banrisul 2501</label></a>
+			</td>
+			<td id="MC2503">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=2503&tipo=1#" target="_blank" title=" TED E 2503 / Minha Conta "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MC-TED E 2503</label></a>
+			</td>
+			<td id="OB2503">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=2503&tipo=1#" target="_blank" title="TED E 2503 / Office Banking"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OB-TED E 2503</label></a>
+			</td>
+			</tr><br><br>
+			<tr>
+			<td id="OM2503">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=2503&tipo=1#" target="_blank" title="TED E 2503 / Office Mobile"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OM-TED E 2503</label></a>
+			</td>
+			<td id="HB2503">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=20&servico=2503&tipo=1#" target="_blank" title="TED E 2503 / Home Banking"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp HB-TED E 2503</label></a>
+			</td>
+			<td id="MC2014">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=2014&tipo=1#" target="_blank" title="ICMS - RS 2014 / Minha Conta"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MC-ICMS - RS 2014</label></a>
+			</td>
+			<td id="OB2014">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=2014&tipo=1#" target="_blank" title="ICMS - RS 2014 / Office Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OB-ICMS - RS 2014</label></a>
+			</td>
+			<td id="MC2015">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=2015&tipo=1#" target="_blank" title="IPVA - RS 2015 / Minha Conta "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MC-IPVA - RS 2015</label></a>
+			</td>
+			</tr><br><br>
+			<tr>
+			<td id="OB2015">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=2015&tipo=1#" target="_blank" title="IPVA - RS 2015 / Office Banking "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OB-IPVA - RS 2015</label></a>
+			</td>
+			<td id="MC4122">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=4122&tipo=1#" target="_blank" title="Depósito de Cheques 4122 / Minha Conta"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp MC- Depós. de Cheques 4122</label></a>
+			</td>
+			<td id="OM4122">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=4122&tipo=1#" target="_blank" title="Depósito de Cheques 4122 / Office Mobile "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp OM-Depós. de Cheques 4122</label></a>
 			</td>
 			</tr>
-			
- 	'		
- 
-
+			<br><br>
 			</div>
- 
+			<div id="EscolhaB" style="display:none">
+			<tr>
+			<td id="pxu1l">
+			<a href="https://opmon10/grafana/d/pDg27Wlik/dashboard-bda-nova-cobranca-pxu?orgId=1&refresh=1m&theme=light" target="_blank" title="BDA NOVA COBRANÇA - PXU"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp BDA - PXU</label></a>
+			</td>
+			<td id="acesso">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=1&tipo=1#" target="_blank" title="ACESSO "><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp PIX-ACESSO 0001</label></a>
+			</td>
+			<td id="pixincluchave">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2707&tipo=1#" target="_blank" title="INCLUSÃO DE CHAVE"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp PIX-INCLUSÃO DE CHAVE 2707</label></a>
+			</td>
+			<td id="pixextrato">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2704&tipo=1#" target="_blank" title="EXTRATO PIX"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp PIX-EXTRATO 2704</label></a>
+			</td>
+			<td id="pixpag">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2702&tipo=1#" target="_blank" title="PAGAMENTO PIX"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp PIX-PAGAMENTO 2702</label></a>
+			</td>
+			</tr><br><br>
+			<tr>
+			<td id="pixreceb">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2703&tipo=1#" target="_blank" title="RECEBIMENTO PIX"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp PIX-RECEBIMENTO 2703</label></a>
+			</td>
+			<td id="pixdevol">
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2711&tipo=1#" target="_blank" title="DEVOLUÇÃO PIX"><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:Gray;">&nbsp PIX-DEVOLUÇÃO 2711</label></a>
+			</td>
+			</tr>
+			<br><br>
+			</div>
+			<div id="EscolhaPyw" style="display:none">
+			<tr>
+			<td id="VERO">
+			<a href="https://opmon10/grafana/d/Kxu960Qmz/dashboard-log-operacional?orgId=1&shareduid=_TtroGr05FC-mRKSfGwNhCpBhhAy8bzNVJHxbgJ9HlQPSRDSikhwuGwEMS-3JE9iXh7u&refresh=1m" target="_blank" ><input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:#6495ED;">&nbsp Rede Vero</label></a>
+			</td>
+			<td id="RECARGA">
+			<input type="checkbox" name="primeiro" id="Teste" onclick=""><label id="CorLetra" style="background-color:#6495ED;">&nbsp Recargas</label></a>
+			</td>
+			</div>
+			<!-- button type="submit">Checar</button -->
+	</form>
         </div>
         <div class="content" data-content="2">
             <h2>Revisão</h2>
             <p>
 				<li id="ok">Mostar boletim de exemplo preenchido.✔</li>
-				<li>Orientar: revisar TEMPO TOTAL, assunto "INÍCIO/FIM" e URL do incidente.</li>
-				<li>Controle de erro e enfatizar responsabilidades.</li>
-				<li>Indicar modelo de e-mail compatível.</li>
+				<li id="ok">Orientar: revisar TEMPO TOTAL, assunto "INÍCIO/FIM" e URL do incidente.✔</li>
+				<li id="ok">Controle de erro e enfatizar responsabilidades.✔</li>
+				<li id="ok">Indicar modelo de e-mail compatível.✔</li>
 				<li>Botões para copiar ASSUNTO e CONTEÚDO.</li>
 				<li>Verificar se o REMETENTE é "Logistica TI Monitoracao".</li>
 			</p>
         </div>
-        <div class="buttons">
-            <button id="prevBtn" onclick="changeStep(-1)">Anterior</button>
-            <button id="nextBtn" onclick="changeStep(1)">Próximo</button>
+        <div class="buttons" style="display:block">
+			<button id="copiar">Copiar Boletim</button>
+             <button id="prevBtn" onclick="changeStep(-1)" style="display:none">Anterior</button>
+            <button id="nextBtn" onclick="changeStep(1)" style="display:none">Próximo</button>
         </div>
  
     </div>
 <div class="container2" id="container2">
 <table>
 		
-<label align="center"><b>Boletim de Eventos -</b></label><label id="assunt">Serviço </label> <!-- select id="dropzinho">
+<label align="center"><b>Boletim de Eventos -</b></label><label id="assunt"> Serviço </label> <!-- select id="dropzinho">
 		<option value="opcao1">PARCIAL</option>
 		<option value="opcao1">ATUALIZAÇÃO</option>
 		<option value="opcao1">ERRATA</option>
@@ -313,46 +465,46 @@ textarea {
  mso-padding-alt:0cm 0cm 0cm 0cm'>
  <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:23.0pt'>
   <td width=157 colspan=2 style='width:118.0pt;border:solid windowtext 1.0pt;
-  border-right:solid black 1.0pt;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;
-  height:23.0pt'>
+  border-right:solid black 1.0pt;background:#F54927;padding:0cm 3.5pt 0cm 3.5pt;
+  height:23.0pt' id="corinicio">
   <p class=MsoNormal align=center style='text-align:center'><b><i><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Início<o:p></o:p></span></i></b></p>
   </td>
   <td width=157 colspan=2 style='width:118.0pt;border-top:solid windowtext 1.0pt;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid black 1.0pt;
-  background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="corfim">
   <p class=MsoNormal align=center style='text-align:center'><b><i><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Fim<o:p></o:p></span></i></b></p>
   </td>
   <td width=64 rowspan=3 style='width:48.0pt;border-top:solid windowtext 1.0pt;
   border-left:none;border-bottom:solid black 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#A9D08E;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  background:#A9D08E;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="cortempototal">
   <p class=MsoNormal align=center style='text-align:center'><b><i><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Tempo total<o:p></o:p></span></i></b></p>
   </td>
   <td width=205 style='width:154.0pt;border:solid windowtext 1.0pt;border-left:
-  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  none;background:#F54927;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="corcausa">
   <p class=MsoNormal align=center style='text-align:center'><b><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Causa<o:p></o:p></span></b></p>
   </td>
   <td width=229 style='width:172.0pt;border:solid windowtext 1.0pt;border-left:
-  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  none;background:#F54927;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="corimpacto">
   <p class=MsoNormal align=center style='text-align:center'><b><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Impacto<o:p></o:p></span></b></p>
   </td>
   <td width=131 style='width:98.0pt;border:solid windowtext 1.0pt;border-left:
-  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  none;background:#F54927;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="corcanais">
   <p class=MsoNormal align=center style='text-align:center'><b><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Canais<o:p></o:p></span></b></p>
   </td>
   <td width=97 style='width:73.0pt;border:solid windowtext 1.0pt;border-left:
-  none;background:#C7EF91;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt'>
+  none;background:#F54927;padding:0cm 3.5pt 0cm 3.5pt;height:23.0pt' id="corfalha">
   <p class=MsoNormal align=center style='text-align:center'><b><span
   style='font-size:12.0pt;font-family:"Arial",sans-serif;color:black;
   mso-fareast-language:PT-BR'>Falha<o:p></o:p></span></b></p>
@@ -475,15 +627,46 @@ textarea {
  </tr>
 </table><br>
 <b><label id="resultadoInc">Incidente e URL</label></b><br>
-<button id="copiar">Copiar Conteúdo</button>
+<!-- button onclick="sendFullPageEmail()">📨 Enviar Boletim por E-mail</button -->
+
+
+
+
 		</div>
- <div class="container3"> 
+ <div class="container3" style="display:block"> 
 	<iframe src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=17&servico=1&tipo=1&graf=2" width="980" height="580"  id="graficMC00010102" style="display:none"></iframe> <!--  Acesso 0001 / Minha Conta -->
 	<iframe src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=10&servico=1&tipo=1&graf=2" width="980" height="580"  id="graficOB0001" style="display:none"></iframe> <!--  OB-Acesso 0001 -->
  
  </div>
 		
     <script>  
+	//REMOVER TIRAR
+	document.addEventListener('DOMContentLoaded', function() {
+    const zoomControl = document.getElementById('zoomControl');
+	document.body.style.zoom = '3.0';
+	
+});
+	//REMOVER TIRAR FIM
+		function verificarCamposVazios() {
+  // Seleciona todos os inputs e textareas
+  const campos = document.querySelectorAll('input, textarea');
+  let algumVazio = false;
+
+  campos.forEach(campo => {
+    if (campo.value.trim() === '') {
+      algumVazio = true;
+      campo.style.border = '2px solid red'; // Destaca o campo vazio
+    } else {
+      campo.style.border = ''; // Remove o destaque se preenchido
+    }
+  });
+
+  if (algumVazio) {
+    alert('Por favor, preencha todos os campos obrigatórios.');
+  } else {
+    alert('Todos os campos estão preenchidos!');
+  }
+}
 	// SERVICOS 2 ESCALA A
 	function graficMC00010102() {
 		
@@ -502,7 +685,7 @@ textarea {
 				
 			}
 	}
-graficOB0001	
+	
 	function graficOB0001() {
 		
 		var x = document.getElementById('graficOB0001');
@@ -510,7 +693,7 @@ graficOB0001
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Internet Banking";
-			document.getElementById('assunt').innerText += "0001 (Acesso)";
+			document.getElementById('assunt').innerText += " 0001 (Acesso)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB0001').style.display='none'; <!--  Gráfico -->
@@ -591,6 +774,7 @@ graficOB0001
                  
                 document.getElementById('datainicio').innerText = `${dataFormatada}`;
 				document.getElementById('assunt').innerText = " Serviços - INÍCIO";
+				 
             } else {
                 document.getElementById('datainicio').innerText = '';
             }
@@ -609,7 +793,7 @@ graficOB0001
                 // Atualiza o conteúdo da label
 
                 document.getElementById('horainicio').innerText = `${dataFormatadaH1}`;
-				
+				document.getElementById('corinicio').style.background = '#C7EF91';
             } else {
                 document.getElementById('horainicio').innerText = '';
             }
@@ -627,7 +811,8 @@ graficOB0001
 
                 // Atualiza o conteúdo da label
                 document.getElementById('datafim').innerText = `${dataFormatada2}`;
-				document.getElementById('assunt').innerText = " Serviços - INÍCIO/FIM";
+		document.getElementById('assunt').innerText = " Serviços - INÍCIO/FIM";
+		document.getElementById('corfim').style.background = '#F54927'; 
             } else {
                 document.getElementById('datafim').innerText = '';
             }
@@ -647,8 +832,10 @@ graficOB0001
                 // Atualiza o conteúdo da label
 				
                 document.getElementById('horafim').innerText = `${dataFormatadaH2}`;
+		calcularTempoTotal();    
+		
             } else {
-                document.getElementById('horafim').innerText = '';
+                document.getElementById('horafim').innerText = ''; 
             }
         });
 		
@@ -658,6 +845,7 @@ graficOB0001
 		// Adiciona um ouvinte de evento ao dropdown
         document.getElementById('dropdown').addEventListener('change', function() {
             // Captura o valor selecionado
+			document.getElementById('corcausa').style.background = '#C7EF91';
             const valorSelecionado = this.options[this.selectedIndex].text;
 
             // Atualiza a label com o conteúdo selecionado
@@ -674,6 +862,7 @@ function myRadiofalha() {
 				document.getElementById('erroExt').innerText = "X";
 				document.getElementById('erroInt').innerText = "  ";
 			}  
+			document.getElementById('corfalha').style.background = '#C7EF91';
 			}
 			
 			
@@ -697,12 +886,36 @@ function myImpacto() {
 				document.getElementById('impactIndisp').innerText = "  ";
 				document.getElementById('impactSevDeg').innerText = "X";
 			} 
+			document.getElementById('corimpacto').style.background = '#C7EF91';
+			}
 			
+			// CANAIS
+function myESC() {
+			let testeA = document.getElementById("EscalA").checked;
+			let testeB = document.getElementById("EscalB").checked;
+			let testePYW = document.getElementById("EscalPyw").checked;
+		
+			
+			if ( testeA === true ) {
+				 document.getElementById('EscolhaA').style.display='block';
+				 document.getElementById('EscolhaB').style.display='none';
+				 document.getElementById('EscolhaPyw').style.display='none';
+			} else if ( testeB === true ) {
+				document.getElementById('EscolhaA').style.display='none';
+				 document.getElementById('EscolhaB').style.display='block';
+				 document.getElementById('EscolhaPyw').style.display='none';
+			} else {
+				document.getElementById('EscolhaA').style.display='none';
+				 document.getElementById('EscolhaB').style.display='none';
+				 document.getElementById('EscolhaPyw').style.display='block';
+			} 
+			document.getElementById('corcanais').style.background = '#C7EF91';
 			}
     </script>
 	<script>
         document.getElementById('copiar').addEventListener('click', function() {
-            // Seleciona o container2
+			
+			// Seleciona o container2
             const containercopy = document.getElementById('container2');
 
             // Cria um range para selecionar o conteúdo do container
@@ -718,10 +931,81 @@ function myImpacto() {
             // Limpa a seleção
             sel.removeAllRanges();
 
-            alert('Conteúdo copiado com formatação! Cole no seu e-mail.');
-        });
+            alert('✅Conteúdo copiado com formatação! \n✅Cole no modelo de e-mail e edite o necessário. \n⚠Confira o Assunto (INICIO ou INICIO/FIM).\n⚠Certifique-se de que o REMETENTE será "Logistica TI Monitoracao".');
+			
+			});
 		 //FONTE ARIAL
+function calcularTempoTotal() {
+  const dataInicio = document.getElementById("dataInicial").value;
+  const horaInicio = document.getElementById("horaInicial").value;
+  const dataFim = document.getElementById("dataFinal").value;
+  const horaFim = document.getElementById("horaFinal").value;
+
+  // Valida preenchimento
+  if ((dataFim || horaFim) && dataInicio && horaInicio) {
+    const inicio = new Date(`${dataInicio}T${horaInicio}`);
+    const fim = new Date(`${dataFim || dataInicio}T${horaFim || horaInicio}`);
+
+    if (fim > inicio) {
+      const diffMs = fim - inicio;
+      const diffMin = Math.floor(diffMs / 60000);
+      const horas = Math.floor(diffMin / 60);
+      const minutos = diffMin % 60;
+      const tempoFormatado = `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}`;
+
+      // 🟢 Exibe no campo correto (label)
+      document.getElementById("tempototal").innerText = tempoFormatado;
+		document.getElementById('corfim').style.background = '#C7EF91';
+      // Opcional: alerta
+      // alert(`⏱️ Tempo decorrido: ${tempoFormatado}`);
+    } else {
+      alert("⚠️ Tempo final é anterior ao tempo inicial.");
+	  document.getElementById("datafim").innerText = "";
+	  document.getElementById("horafim").innerText = "";
+	  document.getElementById("horaFinal").value = "";
+	  document.getElementById("dataFinal").value = "";
+	  document.getElementById("tempototal").innerText = "";
+	  document.getElementById('corfim').style.background = '#C7EF91';
+	  
+    }
+  } else {
+    alert("🕒 Preencha todos os campos corretamente.");
+     // document.getElementById("tempototal").innerText = "";
+  }
+}
+
+function sendFullPageEmail() {
+  // Seleciona todo o conteúdo da página
+  const conteudoHTML = document.documentElement.outerHTML;
+
+  // Insere o conteúdo no corpo do e-mail como texto puro
+  const assunto = "Passagem de Turno Payware – Turno Noite – XXXX/02/2024";
+  const destinatarios = "Cesar Olaves EXT <cesar_olaves_ext@banrisul.com.br>"; // abreviado para espaço
+  const copia = "Cesar Olaves EXT <cesar_olaves_ext@banrisul.com.br>";
+  const corpoEmail = `Segue conteúdo completo da página:\n\n${conteudoHTML}\n\nAt.te: Luís Fernando Adão`;
+
+  // Cria o link mailto
+  const mailtoLink = `mailto:${encodeURIComponent(destinatarios)}?cc=${encodeURIComponent(copia)}&subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpoEmail)}`;
+
+  // Abre o cliente de e-mail
+  window.location.href = mailtoLink;
+} 
+/*
+		function sendFullPageEmail() {
+			var link = "mailto:Wagner Souza Silva EXT <t06215@bergs.br>; Rodrigo Teixeira EXT <T07230@bergs.br>"
+             + "?cc=Cesar Olaves EXT <cesar_olaves_ext@banrisul.com.br>"
+             + "&subject=" + encodeURIComponent("Passagem de Turno Payware – Turno Noite – XXXX/02/2024")
+             + "&body=" + encodeURIComponent("Bom dia a todos! \n\nPDM:\nNada a relatar\n\nPENDÊNCIAS e ORIENTAÇÕES:\nNada a relatar\n\nOcorreram os seguintes INCIDENTES e ALERTAS:\n\nIncidentes PAYWARE\nNada a relatar\n\nIncidentes VERO\nNada a relatar\n\nAlertas PAYWARE\nNada a relatar\n\nAlertas VERO\nNada a relatar \n\n\n\At.te: \nLuís Fernando Adão\nTécnico de Monitoração N2B - Ilha Service\nA Serviço do BANRISUL\n(51) 3215 2345 \nE-mail: logisticati_monitoracao@banrisul.com.br")
+			;
+
+			window.location.href = link;
+			} */
+
+		
+
     </script>
+
+
 			
 </body>
 </html>
