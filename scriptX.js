@@ -374,8 +374,7 @@ function dragElement(elmnt) {
 				document.getElementById("tudoP21").style.display = "block";
 				document.getElementById("tudoP22").style.display = "block";
 		  		document.getElementById("tudoP23").style.display = "block";
-				document.getElementById("tudoP24").style.display = "block";
-		  
+						  
 				document.getElementById('aut01').src += '';
 				document.getElementById('band01').src += '';
 				document.getElementById('master01').src += '';
