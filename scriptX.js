@@ -1231,7 +1231,40 @@ function dragElement(elmnt) {
 			
 			function REFA() {
 				
-				document.getElementById("tudoA").style.display = "block";
+				document.getElementById("tudoA1").style.display = "block";
+				document.getElementById("tudoA2").style.display = "block";
+				document.getElementById("tudoA3").style.display = "block";
+				document.getElementById("tudoA4").style.display = "block";
+				document.getElementById("tudoA5").style.display = "block";
+				document.getElementById("tudoA6").style.display = "block";
+				document.getElementById("tudoA7").style.display = "block";
+				document.getElementById("tudoA8").style.display = "block";
+				document.getElementById("tudoA9").style.display = "block";
+				document.getElementById("tudoA10").style.display = "block";
+				document.getElementById("tudoA11").style.display = "block";
+				document.getElementById("tudoA12").style.display = "block";
+				document.getElementById("tudoA13").style.display = "block";
+				document.getElementById("tudoA14").style.display = "block";
+				document.getElementById("tudoA15").style.display = "block";
+				document.getElementById("tudoA16").style.display = "block";
+				document.getElementById("tudoA17").style.display = "block";
+				document.getElementById("tudoA18").style.display = "block";
+				document.getElementById("tudoA19").style.display = "block";
+				document.getElementById("tudoA20").style.display = "block";
+				document.getElementById("tudoA21").style.display = "block";
+				document.getElementById("tudoA22").style.display = "block";
+				document.getElementById("tudoA23").style.display = "block";
+				document.getElementById("tudoA24").style.display = "block";
+				document.getElementById("tudoA25").style.display = "block";
+				document.getElementById("tudoA26").style.display = "block";
+				document.getElementById("tudoA27").style.display = "block";
+				document.getElementById("tudoA28").style.display = "block";
+				document.getElementById("tudoA29").style.display = "block";
+				document.getElementById("tudoA30").style.display = "block";
+				document.getElementById("tudoA31").style.display = "block";
+				document.getElementById("tudoA32").style.display = "block";
+				document.getElementById("tudoA33").style.display = "block";
+				document.getElementById("tudoA34").style.display = "block";
 				
 				document.getElementById('MC00010102').src += '';
 				document.getElementById('OB00010102').src += '';
