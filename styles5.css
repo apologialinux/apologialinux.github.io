@@ -91,6 +91,10 @@ iframe.APIalerta03:hover {
   
 }
 
+button.corP:hover::after {
+      content: "Refresh";
+}
+
 p.aviso {
   color: black;
   font-size: 100px;
