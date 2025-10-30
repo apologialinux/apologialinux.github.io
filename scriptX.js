@@ -350,32 +350,6 @@ function dragElement(elmnt) {
 			window.location.href = link;
 			}
 
-			function REF() { 
-			document.getElementById("tudoP").style.display = "block";
-				document.getElementById('aut01').src += '';
-				document.getElementById('band01').src += '';
-				document.getElementById('master01').src += '';
-				document.getElementById('visa01').src += '';
-				document.getElementById('elo01').src += '';
-				document.getElementById('banricom01').src += '';
-				document.getElementById('verdeca01').src += '';
-				document.getElementById('banric01').src += '';
-				document.getElementById('caba01').src += '';
-				document.getElementById('bo01').src += '';
-				document.getElementById('bp01').src += '';
-				document.getElementById('px01').src += '';
-				document.getElementById('vrben01').src += '';
-				document.getElementById('cabv01').src += '';
-				document.getElementById('sodex01').src += '';
-				document.getElementById('alel01').src += '';
-				document.getElementById('tick01').src += '';
-				document.getElementById('greencar01').src += '';
-				document.getElementById('senf01').src += '';
-				document.getElementById('tcp02').src += '';
-				document.getElementById('conduc02').src += '';
-				document.getElementById('payw02').src += '';
-				document.getElementById('total02').src += '';			
-			}
 		   
 		    function PP1() {
 			var tag2=document.getElementById("clicado50");
