@@ -503,9 +503,9 @@ button.Bolet:hover {
   background-color: yellow;
   color: black;
 }
-button.Bolet:hover::after {
+/*button.Bolet:hover::after {
       content: "Tô fazendo!";
-}
+}*/
 
 
 
@@ -786,3 +786,4 @@ border: 0px;
   border: 16px;
  
 }
+
