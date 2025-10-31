@@ -32,6 +32,17 @@ h2 {
   font-size: 60px;
 }
 
+#acesso01,#pixincluchave01,#pixextrato01,#pixpag01,#pixreceb01,#pixdevol01,#MCpagtituloutros01,#OMpagtitulban01,
+#OBpagtitulban01,#MBA200201,#recebimentoTMR01,#pagrecusalinear01,#sucesserroRECEB01,#MC000101,#OB000101,#HB000101,
+#OM000101,#MBA000101,#BanriF000101,#MCard000101,#MC100101,#OB100101,#OM100101,#HB100101,#LT006301,#OB100401,#OM100401,
+#HB100401,#MCard100401,#MC101401,#OM101401,#MC405001,#OB405001,#MC250101,#OB250101,#OM250101,#HB250101,#MC250301,#OB250301,
+#OM250301,#HB250301,#MC201401,#OB201401,#MC201501,#OB201501,#MC201501,#OB201501,#MC412201,#OM412201 {
+      width: 980px; /* Largura reduzida */
+      height: 580px; /* Altura reduzida */
+      overflow: hidden; /* Esconde o conteúdo que ultrapassa */
+      border: 1px solid #ccc; /* Borda para destacar o iframe */
+    }
+
 iframe {
     transition: transform 0.4s ease-in-out; /* Efeito suave */
     /*position: relative;*/
@@ -786,5 +797,6 @@ border: 0px;
   border: 16px;
  
 }
+
 
 
