@@ -274,7 +274,12 @@ O Tempo Médio de Resposta(TMR) do BTO, /open-..." rows="8"></textarea>
   </div>
   
   <script>
-
+			function toggleAvisos() {
+			var div = document.getElementById('iddanger');
+			var disp = div.style.display;
+			div.style.display = disp == 'none' ? 'block' : 'none';
+			}
+			
 	
     function LimparprocessarDados() {
       document.getElementById('inputData').value = '';
@@ -307,6 +312,7 @@ O Tempo Médio de Resposta(TMR) do BTO, /open-..." rows="8"></textarea>
       document.getElementById('outputData').value = resultado.join('\n\n');
 	  // document.getElementById("outputData2").innerHTML = resultado.join('\n\n');
     }
+	  
   </script>
   </div>
 			</table>
@@ -1473,3 +1479,4 @@ span.onclick = function() {
 		
 </body>
 </html>
+
