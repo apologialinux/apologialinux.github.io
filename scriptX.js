@@ -341,10 +341,9 @@ function dragElement(elmnt) {
     }
 	
 		function sendMail() {
-			var link = "mailto:Daniel Ramos Santos EXT <T06035@bergs.br>; Denis Pereira EXT <Denis_Pereira_EXT@banrisul.com.br>; Higor Anhaia EXT <Higor_Anhaia_EXT@banrisul.com.br>; Hiuri Anhaia EXT <T07512@bergs.br>; Jonathan Rocha EXT <T06361@bergs.br>; Lucas Berneira EXT <T06665@bergs.br>; Luis Silva EXT <T03252@bergs.br>; Pedro Oliveira EXT <T06385@bergs.br>; Renan Tavares EXT <T07264@bergs.br>; Rubens Godoi EXT <T07672@bergs.br>; Sergio Filho EXT <T06505@bergs.br>; Wagner Souza Silva EXT <t06215@bergs.br>; Rodrigo Teixeira EXT <T07230@bergs.br>"
-             + "?cc=Cesar Olaves EXT <cesar_olaves_ext@banrisul.com.br>"
-             + "&subject=" + encodeURIComponent("Passagem de Turno Payware – Turno Noite – XXXX/02/2024")
-             + "&body=" + encodeURIComponent("Bom dia a todos! \n\nPDM:\nNada a relatar\n\nPENDÊNCIAS e ORIENTAÇÕES:\nNada a relatar\n\nOcorreram os seguintes INCIDENTES e ALERTAS:\n\nIncidentes PAYWARE\nNada a relatar\n\nIncidentes VERO\nNada a relatar\n\nAlertas PAYWARE\nNada a relatar\n\nAlertas VERO\nNada a relatar \n\n\n\At.te: \nLuís Fernando Adão\nTécnico de Monitoração N2B - Ilha Service\nA Serviço do BANRISUL\n(51) 3215 2345 \nE-mail: logisticati_monitoracao@banrisul.com.br")
+			var link = "mailto:Logistica TI Monitoracao <LogisticaTI_Monitoracao@banrisul.com.br>; Centro de Comando CSU <centrodecomando@csu.com.br>;commandcentercsu@csu.com.br"
+             + "&subject=" + encodeURIComponent("Erro XXXXXX - Incidente XXXXXX")
+             + "&body=" + encodeURIComponent("Bom dia a todos! \n\nEstamos tendo em nossa monitoração o seguinte erro:\n\n\nPoderiam verificar e nos retornar, por favor? \n\n\n\At.te: \nLuís Fernando Adão\nTécnico de Monitoração N2B - Ilha Service\nA Serviço do BANRISUL\n(51) 3215 2345 \nE-mail: logisticati_monitoracao@banrisul.com.br")
 			;
 
 			window.location.href = link;
