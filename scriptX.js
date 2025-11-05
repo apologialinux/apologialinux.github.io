@@ -344,7 +344,7 @@ function dragElement(elmnt) {
 			var link = "mailto:commandcentercsu@csu.com.br; Centro de Comando CSU <centrodecomando@csu.com.br>"
              + "?cc=Logistica TI Monitoracao <LogisticaTI_Monitoracao@banrisul.com.br>"
              + "&subject=" + encodeURIComponent("Erro XXXXXX - Incidente XXXXXX")
-             + "&body=" + encodeURIComponent("Bom dia a todos!\n\n Estamos tendo em nossa monitoração o seguinte erro:\n\n\n Poderiam verificar e nos retornar, por favor? \n\n\n\At.te: \nLuís Fernando Adão\nTécnico de Monitoração N2B - Ilha Service\nA Serviço do BANRISUL\n(51) 3215 2345 \nE-mail: logisticati_monitoracao@banrisul.com.br")
+             + "&body=" + encodeURIComponent("Bom dia a todos!\n\n Estamos tendo em nossa monitoração o seguinte erro:\n\n\n Poderiam verificar e nos retornar, por favor? \n\n\n\At.te: \nLuís Fernando Adão\nTécnico de Monitoração N2B - Ilha Service\nA Serviço do BANRISUL\n(51) 3215 2345 \nE-mail: logisticati_monitoracao@banrisul.com.br" )
 			;
 
 			window.location.href = link;
