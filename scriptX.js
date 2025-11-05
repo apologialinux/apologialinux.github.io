@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*Download */
 /*
- 
+  
  document.addEventListener("DOMContentLoaded", function() {
     // Adicionando o link da biblioteca Font Awesome
     var link = document.createElement('link');
