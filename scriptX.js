@@ -349,7 +349,7 @@ function dragElement(elmnt) {
 
 			window.location.href = link;
 			}
-
+ 
 			function REF() { 
 	  
 				document.getElementById('aut01').src += '';
