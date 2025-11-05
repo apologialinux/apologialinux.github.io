@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 });
 
-/*Download */ 
+/*Download */
 /*
  
  document.addEventListener("DOMContentLoaded", function() {
@@ -350,31 +350,8 @@ function dragElement(elmnt) {
 			window.location.href = link;
 			}
 
-		    function REF() { 
-		 		document.getElementById("tudoP1").style.display = "block";
-				document.getElementById("tudoP2").style.display = "block";
-				document.getElementById("tudoP3").style.display = "block";
-				document.getElementById("tudoP4").style.display = "block";
-				document.getElementById("tudoP5").style.display = "block";
-				document.getElementById("tudoP6").style.display = "block";
-				document.getElementById("tudoP7").style.display = "block";
-				document.getElementById("tudoP8").style.display = "block";
-				document.getElementById("tudoP9").style.display = "block";
-				document.getElementById("tudoP10").style.display = "block";
-				document.getElementById("tudoP11").style.display = "block";
-				document.getElementById("tudoP12").style.display = "block";
-				document.getElementById("tudoP13").style.display = "block";
-				document.getElementById("tudoP14").style.display = "block";
-				document.getElementById("tudoP15").style.display = "block";
-				document.getElementById("tudoP16").style.display = "block";
-				document.getElementById("tudoP17").style.display = "block";
-				document.getElementById("tudoP18").style.display = "block";
-				document.getElementById("tudoP19").style.display = "block";
-				document.getElementById("tudoP20").style.display = "block";
-				document.getElementById("tudoP21").style.display = "block";
-				document.getElementById("tudoP22").style.display = "block";
-		  		document.getElementById("tudoP23").style.display = "block";
-						  
+			function REF() { 
+	  
 				document.getElementById('aut01').src += '';
 				document.getElementById('band01').src += '';
 				document.getElementById('master01').src += '';
@@ -399,6 +376,7 @@ function dragElement(elmnt) {
 				document.getElementById('payw02').src += '';
 				document.getElementById('total02').src += '';					
 			}
+		   
 		    function PP1() {
 			var tag2=document.getElementById("clicado50");
 			tag2.style.background="#6495ED";
@@ -894,29 +872,7 @@ function dragElement(elmnt) {
 			}
 			
 			function REFB() {
-				document.getElementById("tudoB1").style.display = "block";
-				document.getElementById("tudoB2").style.display = "block";
-				document.getElementById("tudoB3").style.display = "block";
-				document.getElementById("tudoB4").style.display = "block";
-				document.getElementById("tudoB5").style.display = "block";
-				document.getElementById("tudoB6").style.display = "block";
-				document.getElementById("tudoB7").style.display = "block";
-				document.getElementById("tudoB8").style.display = "block";
-				document.getElementById("tudoB9").style.display = "block";
-				document.getElementById("tudoB10").style.display = "block";
-				document.getElementById("tudoB11").style.display = "block";
-				document.getElementById("tudoB12").style.display = "block";
-				document.getElementById("tudoB13").style.display = "block";
-				document.getElementById("tudoB14").style.display = "block";
-				document.getElementById("tudoB15").style.display = "block";
-				document.getElementById("tudoB16").style.display = "block";
-				document.getElementById("tudoB17").style.display = "block";
-				document.getElementById("tudoB18").style.display = "block";
-				document.getElementById("tudoB19").style.display = "block";
-				document.getElementById("tudoB20").style.display = "block";
-				document.getElementById("tudoB21").style.display = "block";
-				document.getElementById("tudoB22").style.display = "block";
-				
+ 
 				document.getElementById('APIalerta02').src += '';
 				document.getElementById('tempmediopagISPB02').src += ''; 
 				document.getElementById('acesso02').src += '';
@@ -940,6 +896,13 @@ function dragElement(elmnt) {
 				document.getElementById('MBA200202').src += '';
 				document.getElementById('pxu1l02').src += '';			
 			}
+			
+			function toggleAvisos() {
+			var div = document.getElementById('iddanger');
+			var disp = div.style.display;
+			div.style.display = disp == 'none' ? 'block' : 'none';
+			}
+			
 			
 			 function EscB0() {
 			var x = document.getElementById('pixincluchave');
@@ -1275,40 +1238,6 @@ function dragElement(elmnt) {
 			
 			function REFA() {
 				
-				document.getElementById("tudoA1").style.display = "block";
-				document.getElementById("tudoA2").style.display = "block";
-				document.getElementById("tudoA3").style.display = "block";
-				document.getElementById("tudoA4").style.display = "block";
-				document.getElementById("tudoA5").style.display = "block";
-				document.getElementById("tudoA6").style.display = "block";
-				document.getElementById("tudoA7").style.display = "block";
-				document.getElementById("tudoA8").style.display = "block";
-				document.getElementById("tudoA9").style.display = "block";
-				document.getElementById("tudoA10").style.display = "block";
-				document.getElementById("tudoA11").style.display = "block";
-				document.getElementById("tudoA12").style.display = "block";
-				document.getElementById("tudoA13").style.display = "block";
-				document.getElementById("tudoA14").style.display = "block";
-				document.getElementById("tudoA15").style.display = "block";
-				document.getElementById("tudoA16").style.display = "block";
-				document.getElementById("tudoA17").style.display = "block";
-				document.getElementById("tudoA18").style.display = "block";
-				document.getElementById("tudoA19").style.display = "block";
-				document.getElementById("tudoA20").style.display = "block";
-				document.getElementById("tudoA21").style.display = "block";
-				document.getElementById("tudoA22").style.display = "block";
-				document.getElementById("tudoA23").style.display = "block";
-				document.getElementById("tudoA24").style.display = "block";
-				document.getElementById("tudoA25").style.display = "block";
-				document.getElementById("tudoA26").style.display = "block";
-				document.getElementById("tudoA27").style.display = "block";
-				document.getElementById("tudoA28").style.display = "block";
-				document.getElementById("tudoA29").style.display = "block";
-				document.getElementById("tudoA30").style.display = "block";
-				document.getElementById("tudoA31").style.display = "block";
-				document.getElementById("tudoA32").style.display = "block";
-				document.getElementById("tudoA33").style.display = "block";
-				document.getElementById("tudoA34").style.display = "block";
 				
 				document.getElementById('MC00010102').src += '';
 				document.getElementById('OB00010102').src += '';
