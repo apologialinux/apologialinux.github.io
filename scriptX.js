@@ -897,12 +897,7 @@ function dragElement(elmnt) {
 				document.getElementById('pxu1l02').src += '';			
 			}
 			
-			function toggleAvisos() {
-			var div = document.getElementById('iddanger');
-			var disp = div.style.display;
-			div.style.display = disp == 'none' ? 'block' : 'none';
-			}
-			
+
 			
 			 function EscB0() {
 			var x = document.getElementById('pixincluchave');
