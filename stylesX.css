@@ -431,6 +431,15 @@ button.verD:hover {
   color: white;
 }
 
+button.corForm {
+  background-color: #03787c;
+  color: white;
+}
+button.corForm:hover {
+  background-color: #13a10e;
+  color: white;
+}
+
 button.corP {
   background-color: #6495ED; <!-- Azul -->
   color: white;
@@ -750,4 +759,5 @@ border: 0px;
   border: 16px;
  
 }
+
 
