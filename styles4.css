@@ -605,7 +605,7 @@ border: 0px;
 
 /* Modal Box */
 .modal-content {
-  background-color: #000000;
+  background-color: rgba(0,0,0,0.7);
   margin: 5% auto 5% auto;  
   border: 0px solid #888;
   width: 100%;  
@@ -759,5 +759,6 @@ border: 0px;
   border: 16px;
  
 }
+
 
 
