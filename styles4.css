@@ -548,7 +548,7 @@ button.Bolet:hover::after {
 
 .modal-header {
   padding: 2px 16px;
-  background-color: rgba(0,0,0,0.5); /*2a422a*/
+  background-color: rgba(0,0,0,0.0); /*2a422a*/
   color: white;
 border: 0px;	
 	
@@ -756,6 +756,7 @@ border: 0px;
   border: 16px;
  
 }
+
 
 
 
