@@ -583,7 +583,7 @@ button.Bolet:hover {
 
 .modal-header {
   padding: 2px 16px;
-  background-color: black; /*2a422a*/
+  background-color: rgba(0,0,0,0.7); /*2a422a*/
   color: white;
 border: 0px;	
 	
