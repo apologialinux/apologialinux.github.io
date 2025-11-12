@@ -471,15 +471,16 @@ button.M365:hover {
 }
 
 
-
 button.Bolet:hover {
   background-color: yellow;
   color: black;
 }
+
+/*
 button.Bolet:hover::after {
       content: "Tô fazendo!";
 }
-
+*/
 
 
 #sair2 {
@@ -756,6 +757,7 @@ border: 0px;
   border: 16px;
  
 }
+
 
 
 
