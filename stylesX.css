@@ -487,7 +487,7 @@ button.Bolet:hover::after {
   margin: 0 auto;
   text-align: left;
 }
-   
+  /* 
 #APIalerta02 {
   z-index: -3; 
   width: 4250;
@@ -511,7 +511,7 @@ button.Bolet:hover::after {
     zoom: 1;
     }
  }
-
+*/
 #passagemT{
   position:fixed; 
   top:95%;
