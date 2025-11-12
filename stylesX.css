@@ -1,6 +1,6 @@
-body {
+body {  
     zoom: 0.34;
-}
+} 
 
 * {
 margin:0;
@@ -31,24 +31,30 @@ h2 {
   text-align: center;
   font-size: 60px;
 }
-
+#tempmediopagISPB01 {
+	overflow: hidden
+	
+}/*
 #acesso01,#pixincluchave01,#pixextrato01,#pixpag01,#pixreceb01,#pixdevol01,#MCpagtituloutros01,#OMpagtitulban01,
 #OBpagtitulban01,#MBA200201,#recebimentoTMR01,#pagrecusalinear01,#sucesserroRECEB01,#MC000101,#OB000101,#HB000101,
 #OM000101,#MBA000101,#BanriF000101,#MCard000101,#MC100101,#OB100101,#OM100101,#HB100101,#LT006301,#OB100401,#OM100401,
 #HB100401,#MCard100401,#MC101401,#OM101401,#MC405001,#OB405001,#MC250101,#OB250101,#OM250101,#HB250101,#MC250301,#OB250301,
 #OM250301,#HB250301,#MC201401,#OB201401,#MC201501,#OB201501,#MC201501,#OB201501,#MC412201,#OM412201 {
       width: 980px; /* Largura reduzida */
-      height: 580px; /* Altura reduzida */
-      overflow: hidden; /* Esconde o conteúdo que ultrapassa */
-      border: 1px solid #ccc; /* Borda para destacar o iframe */
-    }
-
+    /*  height: 580px; /* Altura reduzida */
+     /* overflow: hidden; /* Esconde o conteúdo que ultrapassa */
+     /* border: 1px solid #ccc; /* Borda para destacar o iframe */
+   /* }
+*/
 iframe {
     transition: transform 0.4s ease-in-out; /* Efeito suave */
     /*position: relative;*/
     margin: 0;
     padding: 0;
     z-index: 100; 
+	/* overflow: hidden; */
+	
+	 
 }
 
 iframe:hover {
@@ -65,7 +71,8 @@ iframe.alertaDX:hover {
 
 
 #BoletZoom {
-	zoom: 1; 
+	
+	zoom: 1;
 }
 iframe.boletim:hover {
     transform: none; 
@@ -95,21 +102,23 @@ iframe.APIalerta03:hover {
 */
 
 .danger {
-  background-color: #ffffcc;
+  background-color: black;
   border-left: 25px solid #ffeb3b;
   margin-bottom: 5px;
 
   
 }
 
- 
-
 p.aviso {
-  color: black;
-  font-size: 100px;
-  padding: 100px 100px;
+  color: yellow;
+  font-size: 70px;
+  padding: 50px 50px;
   margin: 0;
   text-align: left;
+}
+
+a.corAvisoLink {
+	color: yellow;
 }
 
 #botao {
@@ -162,7 +171,7 @@ p.aviso {
   background-color: Red;
 }
 
-#botao3:hover {
+#botao3:hover,#botao2:hover {
   background-color: Green;
   color: white;
 }
@@ -182,11 +191,6 @@ p.aviso {
 
 }
 
-#botao03:hover {
-  background-color: Green;
-  color: white;
-}
-
 
 #botao2 {
   margin: 0 auto;
@@ -200,10 +204,6 @@ p.aviso {
   cursor: pointer;
 }
 
-#botao2:hover {
-  background-color: Green;
-  color: white;
-}
 
 #name {
   text-align: center;
@@ -237,63 +237,8 @@ p.aviso {
   cursor: move;
 }
 
-#div1 {
-    display: flex;
-}
-
-#div2 {
-    display: flex;
-}
-
-#div3 {
-    display: flex;
-}
-
-#div4 {
-    display: flex;
-}
-
-
-#div5 {
-    display: flex;
-}
-
-#div6 {
-    display: flex;
-}
-
- 
-
-#div8 {
-    display: flex;
-}
-
-#div9 {
-    display: flex;
-}
-
-#div10 {
-    display: flex;
-}
-
-#div007 {
-    display: flex;
-}
-
-
-#grafic {
-    display: flex;
-
-}
-
-#grafic2 {
-    display: flex;
-}
-
-#grafic4 {
-    display: flex;
-}
-
+#div1,#div2,#div3,#div4,#div5,#div6,#div8,#div9,#div10,
+#div007,#grafic,#grafic2,#grafic4,
 #grafic5 {
     display: flex;
 }
@@ -384,14 +329,14 @@ button:hover {
   background-color: Green;
   color: white;
 }
-
-button.corX {
-  background-color: Black;
+button.corX:hover {
+  background-color: Green;
   color: white;
 }
 
-button.corX:hover {
-  background-color: Green;
+
+button.corX {
+  background-color: Black;
   color: white;
 }
 
@@ -400,25 +345,35 @@ button.corX1 {
   color: white;
 }
 
+button.corX2 {
+  background-color: Black;
+  color: white;
+}
+
+
+button.corX3 {
+  background-color: Black;
+  color: white;
+}
+
+button.Bolet {
+  background-color: black; 
+  color: white;
+}
+
 button.corX1:hover {
   background-color: #DAA520;
   color: white;
 }
 
-button.corX2 {
-  background-color: Black;
-  color: white;
-}
+
 
 button.corX2:hover {
   background-color: #DAA520;
   color: white;
 }
 
-button.corX3 {
-  background-color: Black;
-  color: white;
-}
+
 
 button.corX3:hover {
   background-color: Green;
@@ -476,6 +431,15 @@ button.verD:hover {
   color: white;
 }
 
+button.corForm {
+  background-color: #03787c;
+  color: white;
+}
+button.corForm:hover {
+  background-color: #13a10e;
+  color: white;
+}
+
 button.corP {
   background-color: #6495ED; <!-- Azul -->
   color: white;
@@ -506,15 +470,17 @@ button.M365:hover {
   color: white;
 }
 
-button.Bolet {
-  background-color: black; 
-  color: white;
-}
 
 button.Bolet:hover {
   background-color: yellow;
   color: black;
 }
+
+/*
+button.Bolet:hover::after {
+      content: "Tô fazendo!";
+}
+*/
 
 
 #sair2 {
@@ -629,7 +595,7 @@ border: 0px;
   top: 30%;
   width: 30%; 
   height: 58%; 
-  overflow: hidden;   
+  overflow: hidden;  
   background-color: rgba(0,0,0,0.0);  
   padding-top: 0px;
   font-size: 55px;
@@ -638,7 +604,7 @@ border: 0px;
 
 /* Modal Box */
 .modal-content {
-  background-color: rgba(0,0,0,0.7);  
+  background-color: rgba(0,0,0,0.7);
   margin: 5% auto 5% auto;  
   border: 0px solid #888;
   width: 100%;  
@@ -791,3 +757,11 @@ border: 0px;
   border: 16px;
  
 }
+
+
+
+
+
+
+
+
