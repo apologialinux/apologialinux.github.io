@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*Download */
 /*
- 
+  
  document.addEventListener("DOMContentLoaded", function() {
     // Adicionando o link da biblioteca Font Awesome
     var link = document.createElement('link');
@@ -341,16 +341,16 @@ function dragElement(elmnt) {
     }
 	
 		function sendMail() {
-			var link = "mailto:Daniel Ramos Santos EXT <T06035@bergs.br>; Denis Pereira EXT <Denis_Pereira_EXT@banrisul.com.br>; Higor Anhaia EXT <Higor_Anhaia_EXT@banrisul.com.br>; Hiuri Anhaia EXT <T07512@bergs.br>; Jonathan Rocha EXT <T06361@bergs.br>; Lucas Berneira EXT <T06665@bergs.br>; Luis Silva EXT <T03252@bergs.br>; Pedro Oliveira EXT <T06385@bergs.br>; Renan Tavares EXT <T07264@bergs.br>; Rubens Godoi EXT <T07672@bergs.br>; Sergio Filho EXT <T06505@bergs.br>; Wagner Souza Silva EXT <t06215@bergs.br>; Rodrigo Teixeira EXT <T07230@bergs.br>"
-             + "?cc=Cesar Olaves EXT <cesar_olaves_ext@banrisul.com.br>"
-             + "&subject=" + encodeURIComponent("Passagem de Turno Payware – Turno Noite – XXXX/02/2024")
-             + "&body=" + encodeURIComponent("Bom dia a todos! \n\nPDM:\nNada a relatar\n\nPENDÊNCIAS e ORIENTAÇÕES:\nNada a relatar\n\nOcorreram os seguintes INCIDENTES e ALERTAS:\n\nIncidentes PAYWARE\nNada a relatar\n\nIncidentes VERO\nNada a relatar\n\nAlertas PAYWARE\nNada a relatar\n\nAlertas VERO\nNada a relatar \n\n\n\At.te: \nLuís Fernando Adão\nTécnico de Monitoração N2B - Ilha Service\nA Serviço do BANRISUL\n(51) 3215 2345 \nE-mail: logisticati_monitoracao@banrisul.com.br")
+			var link = "mailto:commandcentercsu@csu.com.br; Centro de Comando CSU <centrodecomando@csu.com.br>"
+             + "?cc=Logistica TI Monitoracao <LogisticaTI_Monitoracao@banrisul.com.br>"
+             + "&subject=" + encodeURIComponent("Erro XXXXXX - Incidente XXXXXX")
+             + "&body=" + encodeURIComponent("Bom dia a todos!\n\n Estamos tendo em nossa monitoração o seguinte erro:\n\n\n Poderiam verificar e nos retornar, por favor? \n\n\n\At.te: \nLuís Fernando Adão\nTécnico de Monitoração N2B - Ilha Service\nA Serviço do BANRISUL\n(51) 3215 2345 \nE-mail: logisticati_monitoracao@banrisul.com.br" )
 			;
-
 			window.location.href = link;
 			}
-
+ 
 			function REF() { 
+	  
 				document.getElementById('aut01').src += '';
 				document.getElementById('band01').src += '';
 				document.getElementById('master01').src += '';
@@ -373,7 +373,7 @@ function dragElement(elmnt) {
 				document.getElementById('tcp02').src += '';
 				document.getElementById('conduc02').src += '';
 				document.getElementById('payw02').src += '';
-				document.getElementById('total02').src += '';			
+				document.getElementById('total02').src += '';					
 			}
 		   
 		    function PP1() {
@@ -496,9 +496,11 @@ function dragElement(elmnt) {
 		
 			 function Loading() {	
 			corbotao();REF();REFB();REFA();FP1();FP2();FP3();Fbanri1();Fverdec1();Fbanricard1();Fcabal1();Fvrbene1();Fcabalv1();Fpluxee1();Falelo1();Fticket1();Fgreencard1();Fsenff1();Fautband1();Fbok1();Fbph1();Fpix1();Ftcp1();Fconduct1();Fpayw1();Ftotal1();EscB0();EscB1();EscB2();EscB3();EscB4();EscB5();EscBOB20025();EscMBA2002();EscB6();EscB7();EscB8();EscB9();EscB10();EscB11();EscB12();EscB13();EscB14();EscB15();EscB16();EscB016();EscB17();EscB18();EscA0();EscA1();EscA2();EscA2MBA();EscA2BanriF();EscA3();EscA4();EscA5();EscA6();EscA7();EscA8();EscA9();EscA10();EscA10M();EscA11();EscA12();EscA13();EscA14();EscA15();EscA16();EscA17();EscA18();EscA19();EscA20();EscA21();EscA22();EscA23();EscA24();EscA25();EscA26();EscA27();EscA28();EscA29();EscA30();
-			document.getElementById("clicadoBCALC").style.background="black"; document.getElementById("clicadoBOPTake").style.background="black"; document.getElementById("clicadoBOPAPI").style.background="black"; 
+			document.getElementById("clicadoBCALC").style.background="black"; document.getElementById("clicadoBOPTake").style.background="black"; document.getElementById("clicadoBOPAPI").style.background="black"; document.getElementById("myBtn").style.background="black";  
 			
 			}
+		 
+			
             function Fbanri1() {
 			var x = document.getElementById('banri1');
 			var tag=document.getElementById("clicado5");
@@ -869,6 +871,7 @@ function dragElement(elmnt) {
 			}
 			
 			function REFB() {
+ 
 				document.getElementById('APIalerta02').src += '';
 				document.getElementById('tempmediopagISPB02').src += ''; 
 				document.getElementById('acesso02').src += '';
@@ -892,6 +895,8 @@ function dragElement(elmnt) {
 				document.getElementById('MBA200202').src += '';
 				document.getElementById('pxu1l02').src += '';			
 			}
+			
+
 			
 			 function EscB0() {
 			var x = document.getElementById('pixincluchave');
@@ -1226,6 +1231,8 @@ function dragElement(elmnt) {
 			}
 			
 			function REFA() {
+				
+				
 				document.getElementById('MC00010102').src += '';
 				document.getElementById('OB00010102').src += '';
 				document.getElementById('OM00010102').src += '';
@@ -1672,5 +1679,3 @@ function dragElement(elmnt) {
 						}
  
 			
-
-
