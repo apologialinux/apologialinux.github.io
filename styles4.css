@@ -112,6 +112,18 @@ iframe.centrocentro:hover {
 	transform-origin: center center; 
 } 
 
+iframe.centroesquerda:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: center left; 
+} 
+
+iframe.centrodireita:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: center right; 
+} 
+
 #BoletZoom {
 	
 	zoom: 1;
@@ -799,6 +811,7 @@ border: 0px;
   border: 16px;
  
 }
+
 
 
 
