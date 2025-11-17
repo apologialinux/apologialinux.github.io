@@ -110,7 +110,20 @@ iframe.centrocentro:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: center center; 
-} 
+}
+
+iframe.esquerdacentro:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: left center; 
+}
+
+iframe.direitacentro:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: right center; 
+}
+
 
 iframe.centroesquerda:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
@@ -811,6 +824,7 @@ border: 0px;
   border: 16px;
  
 }
+
 
 
 
