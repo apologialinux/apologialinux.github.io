@@ -69,6 +69,48 @@ iframe.alertaDX:hover {
 	transform-origin: bottom left; 
 }
 
+iframe.baixodireita:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: top left; 
+}
+
+iframe.altodireita:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: bottom left; 
+}
+
+
+iframe.altoesquerda:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: bottom right; 
+}
+
+iframe.baixoesquerda:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: top right; 
+}
+
+iframe.baixocentro:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: top center; 
+}
+
+iframe.altocentro:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: bottom center; 
+}
+
+iframe.centrocentro:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: center center; 
+} 
 
 #BoletZoom {
 	
@@ -757,6 +799,7 @@ border: 0px;
   border: 16px;
  
 }
+
 
 
 
