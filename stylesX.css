@@ -61,8 +61,6 @@ iframe:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: bottom right; 
-	width: 800px;
-    height: 600px;
 }
 
 iframe.alertaDX:hover {
@@ -71,6 +69,73 @@ iframe.alertaDX:hover {
 	transform-origin: bottom left; 
 }
 
+iframe.baixodireita:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: top left; 
+}
+
+iframe.altodireita:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: bottom left; 
+}
+
+
+iframe.altoesquerda:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: bottom right; 
+}
+
+iframe.baixoesquerda:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: top right; 
+}
+
+iframe.baixocentro:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: top center; 
+}
+
+iframe.altocentro:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: bottom center; 
+}
+
+iframe.centrocentro:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: center center; 
+}
+
+iframe.esquerdacentro:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: left center; 
+}
+
+iframe.direitacentro:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: right center; 
+}
+
+
+iframe.centroesquerda:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: center left; 
+} 
+
+iframe.centrodireita:hover {
+    transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
+    transition-delay: 3s;
+	transform-origin: center right; 
+} 
 
 #BoletZoom {
 	
@@ -489,7 +554,7 @@ button.Bolet:hover::after {
   margin: 0 auto;
   text-align: left;
 }
-  /* 
+ /*  
 #APIalerta02 {
   z-index: -3; 
   width: 4250;
@@ -676,8 +741,8 @@ border: 0px;
   --light-cell-width: calc(var(--line-height) * 3);
   --light-cell-separator-width: calc(var(--line-height) * 0.1);
   /* red light #ff000 */
-  --light-color-on: rgba(255,255,0,1);
-  --light-color-off: rgba(255,255,0,.25);
+  --light-color-on: rgba(0,255,0,1);
+  --light-color-off: rgba(0,255,0,.25);
   
 }
 
@@ -759,6 +824,11 @@ border: 0px;
   border: 16px;
  
 }
+
+
+
+
+
 
 
 
