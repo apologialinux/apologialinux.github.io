@@ -230,7 +230,7 @@ function definirDataAtual() {
 
         // Carregar a chave da API do arquivo config.json
         function carregarConfig() {
-            return fetch('config.json')
+            return fetch('../config.json')
                 .then(response => response.json())
                 .then(config => {
                     return config.apiKey; // Retorna a chave da API
