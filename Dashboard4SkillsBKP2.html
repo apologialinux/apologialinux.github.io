@@ -1480,6 +1480,105 @@ Issuer URL: ${response.issuer_url || 'INDISPONÍVEL'}
 ISO2: ${response.iso2 || 'INDISPONÍVEL'}
 ISO3: ${response.iso3 || 'INDISPONÍVEL'} -->
 			</div>
+	
+  <style>
+
+    /* Botão principal */
+    .fab {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #0078D7;
+      color: #fff;
+      font-size: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+      z-index: 9999;
+    }
+
+    /* Container dos botões extras */
+    .fab-options {
+      position: fixed;
+      bottom: 65px;
+      left: 65px;
+      width: 250px;
+      height: 250px;
+      pointer-events: none;
+    }
+
+    /* Botões vindos da <tr class="botones"> */
+    .botones button {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      background: #333;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      transform: scale(0) translateY(20px);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease, background 0.2s ease;
+      z-index: 9998;
+    }
+
+    .fab-options.show .botones button {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    .botones button:hover {
+      background: #555;
+    }
+  </style>
+
+
+<!-- Botão principal -->
+<div class="fab" onclick="toggleFab()">+</div>
+
+<!-- Container dos botões suspensos -->
+<div id="fabOptions" class="fab-options">
+  <table>
+    <tr class="botones">
+      <!-- Seus botões já existentes -->
+      <td><button>📊</button></td>
+      <td><button>⚙️</button></td>
+      <td><button>🔍</button></td>
+      <td><button>📁</button></td>
+    </tr>
+  </table>
+</div>
+
+<script>
+  function toggleFab() {
+    const options = document.getElementById("fabOptions");
+    options.classList.toggle("show");
+
+    if (options.classList.contains("show")) {
+      const botones = document.querySelector(".botones");
+      const buttons = botones.querySelectorAll("button");
+      positionButtons(buttons, buttons.length, 120);
+    }
+  }
+
+  function positionButtons(buttons, count, radius) {
+    const step = Math.PI / (count - 1); // meio círculo
+    buttons.forEach((btn, i) => {
+      const angle = step * i;
+      const x = Math.cos(angle) * radius;
+      const y = Math.sin(angle) * radius;
+      btn.style.left = `${x}px`;
+      btn.style.bottom = `${y}px`;
+    });
+  }
+</script>
 			<div class="watermark">  
            by Luís Silva - T03252  
     </div> 
