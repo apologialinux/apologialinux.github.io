@@ -825,6 +825,22 @@ border: 0px;
  
 }
 
+/* Add Zoom Animation */
+.animate2 {
+  -webkit-animation: animate2zoom 0.6s;
+  animation: animate2zoom 0.6s
+}
+
+@-webkit-keyframes animate2zoom  {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animate2zoom  {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
 
 
 
