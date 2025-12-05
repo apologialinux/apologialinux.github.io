@@ -223,7 +223,7 @@ dragElement(document.getElementById("divbutton2"));
 			</div>
 
 			
-			<div id="myModal" class="modal2">
+			<div id="myModal" class="modal2 animate2">
 			
   <!-- Modal content -->
   <div class="modal-content">
@@ -231,7 +231,7 @@ dragElement(document.getElementById("divbutton2"));
 	  <!-- span class="close">&times;</span -->
 	  	
 		<button type="button" class="verD" id="clicadoBOPTake"  onclick="BOPTake()"  title="Opções Take Action">Take Action</button><button type="button" class="verD" id="clicadoBCALC"  onclick="BCALC()"  title="Opções Take Action">Calc. Data/Horas</button><button type="button" onclick="BOPAPI()"  class="verD" id="clicadoBOPAPI"  title="[Opções Api-Gateway] - Alertas">[Api-Gateway] - Alertas</button><button type="button" class="corP" id="BinsB" onclick="BinsF();document.getElementById('myModal').style.display='none';corbotao();">BINS</button><button type="button" class="Indic" id="Email CSU" onclick="sendMail(); return false">E-mail CSU</button><button id="redondo" class="close" onclick="document.getElementById('myModal').style.display='none'; corbotao();"> X </button>
-		<div id="OPTake" class="modal-header" align="center" style="display:none"><br>
+		<div id="OPTake" class="modal-header" align="center" style="display:block"><br>
       <input  placeholder="Nome" id="name"><input  placeholder="Número do incidente" id="numb"><br><br>
       <button id="botao" type="button" onclick="myFunction()">Gerar</button> 
 
@@ -1469,6 +1469,7 @@ span.onclick = function() {
 		
 </body>
 </html>
+
 
 
 
