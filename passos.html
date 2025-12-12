@@ -392,9 +392,9 @@ textarea {
 			</div>
 			<div id="EscolhaB" style="display:none">
 			<tr>
-			<td id="pxu1l">
+			<!-- td id="pxu1l">
 			<a href="https://opmon10/grafana/d/pDg27Wlik/dashboard-bda-nova-cobranca-pxu?orgId=1&refresh=1m&theme=light" target="_blank" title="BDA NOVA COBRANÇA - PXU"><input type="checkbox" name="primeiro" id="Teste" onclick="graficpxu1l()"><label id="CorLetra" style="background-color:Gray;">&nbsp BDA - PXU</label></a>
-			</td>
+			</td -->
 			<td id="acesso">
 			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=1&tipo=1#" target="_blank" title="ACESSO "><input type="checkbox" name="primeiro" id="Teste" onclick="graficacesso()"><label id="CorLetra" style="background-color:Gray;">&nbsp PIX-ACESSO 0001</label></a>
 			</td>
@@ -668,6 +668,12 @@ textarea {
 	<iframe src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=10&servico=2015&tipo=1&graf=2" width="980" height="580"  id="graficOB2015" style="display:none"></iframe> <!--  IPVA - RS | RPV 2015 / Office Banking  -->
 	<iframe src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=17&servico=4122&tipo=1&graf=2" width="980" height="580"  id="graficMC4122" style="display:none"></iframe> <!--  Depósito de Cheques 4122 / Minha Conta  -->
 	<iframe src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=16&servico=4122&tipo=1&graf=2" width="980" height="580"  id="graficOM4122" style="display:none"></iframe> <!--  Depósito de Cheques 4122 / Office Mobile  -->
+	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=1&tipo=1&graf=2" width="980" height="580"  id="graficacesso" style="display:none"></iframe> <!--  PIX-ACESSO 0001  -->
+	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2707&tipo=1&graf=2" width="980" height="580"  id="graficpixincluchave" style="display:none"></iframe> <!-- INCLUSÃO DE CHAVE -->
+	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2704&tipo=1&graf=2" width="980" height="580"  id="graficpixextrato" style="display:none"></iframe> <!-- <!-- EXTRATO PIX -->
+	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2702&tipo=1&graf=2" width="980" height="580"  id="graficpixpag" style="display:none"></iframe><!-- PAGAMENTO PIX -->
+	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2703&tipo=1&graf=2" width="980" height="580"  id="graficpixreceb" style="display:none"></iframe><!-- RECEBIMENTO PIX -->
+	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2711&tipo=1&graf=2" width="980" height="580"  id="graficpixdevol" style="display:none"></iframe><!-- DEVOLUÇÃO PIX -->
  
  
  </div>
@@ -1247,6 +1253,103 @@ textarea {
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM4122').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('assunt').innerText = "";
+				
+			}
+	}
+	function graficacesso() {
+		
+		var x = document.getElementById('graficacesso');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "PIX";
+			document.getElementById('assunt').innerText += " 0001 (ACESSO)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficacesso').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('assunt').innerText = "";
+				
+			}
+	}
+	
+	function graficpixincluchave() {
+		
+		var x = document.getElementById('graficpixincluchave');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "PIX";
+			document.getElementById('assunt').innerText += " 2707 (INCLUSÃO DE CHAVE)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficpixincluchave').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('assunt').innerText = "";
+				
+			}
+	}
+	function graficpixextrato() {
+		
+		var x = document.getElementById('graficpixextrato');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "PIX";
+			document.getElementById('assunt').innerText += " 2704 (EXTRATO)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficpixextrato').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('assunt').innerText = "";
+				
+			}
+	}
+	function graficpixpag() {
+		
+		var x = document.getElementById('graficpixpag');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "PIX";
+			document.getElementById('assunt').innerText += " 2702 (PAGAMENTO)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficpixpag').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('assunt').innerText = "";
+				
+			}
+	}
+	function graficpixreceb() {
+		
+		var x = document.getElementById('graficpixreceb');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "PIX";
+			document.getElementById('assunt').innerText += " 2703 (RECEBIMENTO)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficpixreceb').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('assunt').innerText = "";
+				
+			}
+	}
+	function graficpixdevol() {
+		
+		var x = document.getElementById('graficpixdevol');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "PIX";
+			document.getElementById('assunt').innerText += " 2711 (DEVOLUÇÃO)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficpixdevol').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('assunt').innerText = "";
 				
