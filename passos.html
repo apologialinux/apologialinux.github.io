@@ -629,6 +629,35 @@ textarea {
 <b><label id="resultadoInc">Incidente e URL</label></b><br>
 <!-- button onclick="sendFullPageEmail()">📨 Enviar Boletim por E-mail</button -->
 
+<p class=MsoNormal style='background:white'><b><span style='font-size:9.5pt;
+font-family:"Trebuchet MS",sans-serif;color:#1F497D'>Atenciosamente,<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='background:white'><b><span style='font-size:9.5pt;
+font-family:"Trebuchet MS",sans-serif;color:#1F497D'>&nbsp;<span
+style='mso-ligatures:standardcontextual'><o:p></o:p></span></span></b></p>
+
+<p class=MsoNormal style='background:white'><b><span style='font-size:9.5pt;
+font-family:"Trebuchet MS",sans-serif;color:#1F497D'><label id="nomezinho"></label><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='background:white'><b><span style='font-size:9.5pt;
+font-family:"Trebuchet MS",sans-serif;color:#1F497D'>Técnico de Monitoração N2B - Ilha Service<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='background:white'><b><span style='font-size:9.5pt;
+font-family:"Trebuchet MS",sans-serif;color:#1F497D'>A Serviço do BANRISUL<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='background:white'><b><span style='font-size:9.5pt;
+font-family:"Trebuchet MS",sans-serif;color:#1F497D'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='background:white'><b><span style='font-size:9.5pt;
+font-family:"Trebuchet MS",sans-serif;color:#1F497D'>(51) 3215 1350 <o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='background:white'><b><span style='font-size:9.5pt;
+font-family:"Trebuchet MS",sans-serif;color:#1F497D'>E-mail: <a
+href="mailto:logisticati_monitoracao@banrisul.com.br">logisticati_monitoracao@banrisul.com.br</a><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
 
 
 
@@ -674,7 +703,7 @@ textarea {
 	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2702&tipo=1&graf=2" width="980" height="580"  id="graficpixpag" style="display:none"></iframe><!-- PAGAMENTO PIX -->
 	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2703&tipo=1&graf=2" width="980" height="580"  id="graficpixreceb" style="display:none"></iframe><!-- RECEBIMENTO PIX -->
 	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2711&tipo=1&graf=2" width="980" height="580"  id="graficpixdevol" style="display:none"></iframe><!-- DEVOLUÇÃO PIX -->
- 
+	<iframe src="https://opmon10/grafana/d/QJAP4wRIk/dashboard-autorizador-payware?shareduid=4TqPME5F2zJlbPhilmI03BaddHuX8rA7Hr75xUzQHJdRehDJ977psgDRwAD6YQtvAa9__NHZwA==&kiosk&" width="1232" height="900" id="graficVERO" style="display:none"></iframe>
  
  </div>
 
@@ -715,7 +744,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta";
-			document.getElementById('assunt').innerText += " 0001 (Acesso)";
+			document.getElementById('assunt').innerText += " Acesso (0001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC00010102').style.display='none'; <!--  Gráfico -->
@@ -733,7 +762,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Banking";
-			document.getElementById('assunt').innerText += " 0001 (Acesso)";
+			document.getElementById('assunt').innerText += " Acesso (0001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB0001').style.display='none'; <!--  Gráfico -->
@@ -749,7 +778,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Mobile";
-			document.getElementById('assunt').innerText += " 0001 (Acesso)";
+			document.getElementById('assunt').innerText += " Acesso (0001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM0001').style.display='none'; <!--  Gráfico -->
@@ -765,7 +794,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Mobile Banking Afinidade";
-			document.getElementById('assunt').innerText += " 0001 (Acesso)";
+			document.getElementById('assunt').innerText += " Acesso (0001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMBA0001').style.display='none'; <!--  Gráfico -->
@@ -781,7 +810,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Home Banking";
-			document.getElementById('assunt').innerText += " 0001 (Acesso)";
+			document.getElementById('assunt').innerText += " Acesso (0001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficHB0001').style.display='none'; <!--  Gráfico -->
@@ -797,7 +826,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Banrifone";
-			document.getElementById('assunt').innerText += " 0001 (Acesso)";
+			document.getElementById('assunt').innerText += " Acesso (0001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficBanriF0001').style.display='none'; <!--  Gráfico -->
@@ -813,7 +842,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Meus Cartões";
-			document.getElementById('assunt').innerText += " 0001 (Acesso)";
+			document.getElementById('assunt').innerText += " Acesso (0001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMCard0001').style.display='none'; <!--  Gráfico -->
@@ -829,7 +858,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta";
-			document.getElementById('assunt').innerText += " 0001 (Extrato de Conta Corrente)";
+			document.getElementById('assunt').innerText += " Extrato de Conta Corrente (0001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC1001').style.display='none'; <!--  Gráfico -->
@@ -845,7 +874,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Banking";
-			document.getElementById('assunt').innerText += " 1001 (Extrato de Conta Corrente)";
+			document.getElementById('assunt').innerText += " Extrato de Conta Corrente (1001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB1001').style.display='none'; <!--  Gráfico -->
@@ -861,7 +890,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Mobile";
-			document.getElementById('assunt').innerText += " 1001 (Extrato de Conta Corrente)";
+			document.getElementById('assunt').innerText += " Extrato de Conta Corrente (1001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM1001').style.display='none'; <!--  Gráfico -->
@@ -878,7 +907,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Home Banking";
-			document.getElementById('assunt').innerText += " 1001 (Extrato de Conta Corrente)";
+			document.getElementById('assunt').innerText += " Extrato de Conta Corrente (1001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficHB1001').style.display='none'; <!--  Gráfico -->
@@ -894,7 +923,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Linha do Tempo";
-			document.getElementById('assunt').innerText += " 0063 (Extrato de Cartão de Crédito)";
+			document.getElementById('assunt').innerText += " Extrato de Cartão de Crédito (0063)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficLT0063').style.display='none'; <!--  Gráfico -->
@@ -911,7 +940,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Banking";
-			document.getElementById('assunt').innerText += " 1004 (Extrato de Cartão de Crédito)";
+			document.getElementById('assunt').innerText += " Extrato de Cartão de Crédito (1004)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB1004').style.display='none'; <!--  Gráfico -->
@@ -928,7 +957,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Mobile";
-			document.getElementById('assunt').innerText += " 1004 (Extrato de Cartão de Crédito)";
+			document.getElementById('assunt').innerText += " Extrato de Cartão de Crédito (1004)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM1004').style.display='none'; <!--  Gráfico -->
@@ -944,7 +973,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Home Banking";
-			document.getElementById('assunt').innerText += " 1004 (Extrato de Cartão de Crédito)";
+			document.getElementById('assunt').innerText += " Extrato de Cartão de Crédito (1004)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficHB1004').style.display='none'; <!--  Gráfico -->
@@ -960,7 +989,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Meus Cartões";
-			document.getElementById('assunt').innerText += " 1004 (Extrato de Cartão de Crédito)";
+			document.getElementById('assunt').innerText += " Extrato de Cartão de Crédito (1004)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMCard1004').style.display='none'; <!--  Gráfico -->
@@ -976,7 +1005,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta";
-			document.getElementById('assunt').innerText += " 1014 (Saldo de Conta Corrente)";
+			document.getElementById('assunt').innerText += " Saldo de Conta Corrente (1014)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC1014').style.display='none'; <!--  Gráfico -->
@@ -992,7 +1021,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Mobile";
-			document.getElementById('assunt').innerText += " 1014 (Saldo de Conta Corrente)";
+			document.getElementById('assunt').innerText += " Saldo de Conta Corrente (1014)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM1014').style.display='none'; <!--  Gráfico -->
@@ -1008,7 +1037,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta";
-			document.getElementById('assunt').innerText += " 4050 (Cons. Dados de Boleto)";
+			document.getElementById('assunt').innerText += " Cons. Dados de Boleto (4050)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC4050').style.display='none'; <!--  Gráfico -->
@@ -1024,7 +1053,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Banking";
-			document.getElementById('assunt').innerText += " 4050 (Cons. Dados de Boleto)";
+			document.getElementById('assunt').innerText += " Cons. Dados de Boleto (4050)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB4050').style.display='none'; <!--  Gráfico -->
@@ -1040,7 +1069,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta";
-			document.getElementById('assunt').innerText += " 2501 (Transf. Entre Contas Banrisul)";
+			document.getElementById('assunt').innerText += " Transf. Entre Contas Banrisul (2501)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC2501').style.display='none'; <!--  Gráfico -->
@@ -1056,7 +1085,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Banking";
-			document.getElementById('assunt').innerText += " 2501 (Transf. Entre Contas Banrisul)";
+			document.getElementById('assunt').innerText += " Transf. Entre Contas Banrisul (2501)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB2501').style.display='none'; <!--  Gráfico -->
@@ -1072,7 +1101,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Mobile";
-			document.getElementById('assunt').innerText += " 2501 (Transf. Entre Contas Banrisul)";
+			document.getElementById('assunt').innerText += " Transf. Entre Contas Banrisul (2501)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM2501').style.display='none'; <!--  Gráfico -->
@@ -1088,7 +1117,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Home Banking";
-			document.getElementById('assunt').innerText += " 2501 (Transf. Entre Contas Banrisul)";
+			document.getElementById('assunt').innerText += " Transf. Entre Contas Banrisul (2501)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficHB2501').style.display='none'; <!--  Gráfico -->
@@ -1104,7 +1133,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta";
-			document.getElementById('assunt').innerText += " 2503 (TED E)";
+			document.getElementById('assunt').innerText += " TED E (2503)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC2503').style.display='none'; <!--  Gráfico -->
@@ -1120,7 +1149,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Banking";
-			document.getElementById('assunt').innerText += " 2503 (TED E)";
+			document.getElementById('assunt').innerText += " TED E (2503)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB2503').style.display='none'; <!--  Gráfico -->
@@ -1136,7 +1165,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Mobile";
-			document.getElementById('assunt').innerText += " 2503 (TED E)";
+			document.getElementById('assunt').innerText += " TED E (2503)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM2503').style.display='none'; <!--  Gráfico -->
@@ -1152,7 +1181,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Home Banking";
-			document.getElementById('assunt').innerText += " 2503 (TED E)";
+			document.getElementById('assunt').innerText += " TED E (2503)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficHB2503').style.display='none'; <!--  Gráfico -->
@@ -1168,7 +1197,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta";
-			document.getElementById('assunt').innerText += " 2014 (ICMS - RS)";
+			document.getElementById('assunt').innerText += " ICMS - RS (2014)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC2014').style.display='none'; <!--  Gráfico -->
@@ -1184,7 +1213,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Banking";
-			document.getElementById('assunt').innerText += " 2014 (ICMS - RS)";
+			document.getElementById('assunt').innerText += " ICMS - RS (2014)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB2014').style.display='none'; <!--  Gráfico -->
@@ -1200,7 +1229,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta";
-			document.getElementById('assunt').innerText += " 2015 (IPVA - RS | RPV)";
+			document.getElementById('assunt').innerText += " IPVA - RS | RPV 2015 (2015)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC2015').style.display='none'; <!--  Gráfico -->
@@ -1217,7 +1246,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Banking";
-			document.getElementById('assunt').innerText += " 2015 (IPVA - RS | RPV 2015)";
+			document.getElementById('assunt').innerText += " IPVA - RS | RPV 2015 (2015)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB2015').style.display='none'; <!--  Gráfico -->
@@ -1233,7 +1262,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta";
-			document.getElementById('assunt').innerText += " 4122 (Depósito de Cheques)";
+			document.getElementById('assunt').innerText += " Depósito de Cheques (4122)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC4122').style.display='none'; <!--  Gráfico -->
@@ -1249,7 +1278,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Office Mobile";
-			document.getElementById('assunt').innerText += " 4122 (Depósito de Cheques)";
+			document.getElementById('assunt').innerText += " Depósito de Cheques (4122)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM4122').style.display='none'; <!--  Gráfico -->
@@ -1265,7 +1294,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "PIX";
-			document.getElementById('assunt').innerText += " 0001 (ACESSO)";
+			document.getElementById('assunt').innerText += " ACESSO (0001)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficacesso').style.display='none'; <!--  Gráfico -->
@@ -1282,7 +1311,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "PIX";
-			document.getElementById('assunt').innerText += " 2707 (INCLUSÃO DE CHAVE)";
+			document.getElementById('assunt').innerText += " INCLUSÃO DE CHAVE (2707)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixincluchave').style.display='none'; <!--  Gráfico -->
@@ -1298,7 +1327,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "PIX";
-			document.getElementById('assunt').innerText += " 2704 (EXTRATO)";
+			document.getElementById('assunt').innerText += " EXTRATO (2704)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixextrato').style.display='none'; <!--  Gráfico -->
@@ -1314,7 +1343,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "PIX";
-			document.getElementById('assunt').innerText += " 2702 (PAGAMENTO)";
+			document.getElementById('assunt').innerText += " PAGAMENTO (2702)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixpag').style.display='none'; <!--  Gráfico -->
@@ -1330,7 +1359,7 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "PIX";
-			document.getElementById('assunt').innerText += " 2703 (RECEBIMENTO)";
+			document.getElementById('assunt').innerText += " RECEBIMENTO (2703)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixreceb').style.display='none'; <!--  Gráfico -->
@@ -1346,10 +1375,27 @@ textarea {
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "PIX";
-			document.getElementById('assunt').innerText += " 2711 (DEVOLUÇÃO)";
+			document.getElementById('assunt').innerText += " DEVOLUÇÃO (2711)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixdevol').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('assunt').innerText = "";
+				
+			}
+	}
+	
+	function graficVERO() {
+		
+		var x = document.getElementById('graficVERO');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "REDE VERO";
+			document.getElementById('assunt').innerText += "DEVOLUÇÃO (2711)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficVERO').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('assunt').innerText = "";
 				
