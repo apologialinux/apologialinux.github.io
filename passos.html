@@ -1665,7 +1665,7 @@ function atualizarAssunto() {
 
                 // Atualiza o conteúdo da label
                 document.getElementById('datafim').innerText = `${dataFormatada2}`;
-		document.getElementById('assunt').innerText += "/FIM";
+		//document.getElementById('assunt').innerText += "/FIM";
 		document.getElementById('corfim').style.background = '#F54927'; 
             } else {
                 document.getElementById('datafim').innerText = '';
@@ -1685,7 +1685,7 @@ function atualizarAssunto() {
                 const dataFormatadaH2 = `${hora}:${minutos}`;
 
                 // Atualiza o conteúdo da label
-				
+				document.getElementById('assunt').innerText += "/FIM";
                 document.getElementById('horafim').innerText = `${dataFormatadaH2}`;
 		calcularTempoTotal();    
 		
@@ -1864,4 +1864,5 @@ function sendFullPageEmail() {
 			
 </body>
 </html>
+
 
