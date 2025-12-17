@@ -749,6 +749,7 @@ href="mailto:logisticati_monitoracao@banrisul.com.br">logisticati_monitoracao@ba
 
 
 function atualizarAssunto() {
+	
     const assunt = document.getElementById('assunt');
     const inputs = document.getElementsByName('primeiro');
 
@@ -1616,6 +1617,7 @@ function atualizarAssunto() {
 		
 
        // Data Início
+			let InicioFim = " INICIO";
 			document.getElementById('dataInicial').addEventListener('input', function() {
             const valorEntrada = this.value; // Valor no formato yyyy-mm-dd (padrão)
 
@@ -1627,7 +1629,8 @@ function atualizarAssunto() {
 
                  
                 document.getElementById('datainicio').innerText = `${dataFormatada}`;
-				document.getElementById('assunt').innerText + " - INÍCIO";
+				document.getElementById('assunt').innerText = InicioFim;
+				
 				 
             } else {
                 document.getElementById('datainicio').innerText = '';
@@ -1653,6 +1656,7 @@ function atualizarAssunto() {
             }
         });
 		// Data Fim
+		
         document.getElementById('dataFinal').addEventListener('input', function() {
             const valorEntrada2 = this.value; // Valor no formato yyyy-mm-dd (padrão)
 
@@ -1665,7 +1669,8 @@ function atualizarAssunto() {
 
                 // Atualiza o conteúdo da label
                 document.getElementById('datafim').innerText = `${dataFormatada2}`;
-		document.getElementById('assunt').innerText += "/FIM";
+				
+		InicioFim += "/FIM";
 		document.getElementById('corfim').style.background = '#F54927'; 
             } else {
                 document.getElementById('datafim').innerText = '';
@@ -1685,12 +1690,13 @@ function atualizarAssunto() {
                 const dataFormatadaH2 = `${hora}:${minutos}`;
 
                 // Atualiza o conteúdo da label
-				//document.getElementById('assunt').innerText += "/FIM";
+				document.getElementById('assunt').innerText += "/FIM";
                 document.getElementById('horafim').innerText = `${dataFormatadaH2}`;
 		calcularTempoTotal();    
 		
             } else {
                 document.getElementById('horafim').innerText = ''; 
+				//document.getElementById('confirm').style.background = '#F54927';
             }
         });
 		
@@ -1821,6 +1827,9 @@ function calcularTempoTotal() {
 	  document.getElementById("dataFinal").value = "";
 	  document.getElementById("tempototal").innerText = "";
 	  document.getElementById('corfim').style.background = '#C7EF91';
+	  document.getElementById('assunt').innerText = " - INÍCIO";  //NECESSÁRIO AJUSTAR
+	  document.getElementById('canaisStatus').innerText = " ";
+      document.getElementById('corcanais').style.background = '#F54927';
 	  
     }
   } else {
@@ -1864,6 +1873,3 @@ function sendFullPageEmail() {
 			
 </body>
 </html>
-
-
-
