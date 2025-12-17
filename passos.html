@@ -146,7 +146,7 @@ select {
 			
         }
 		/*
-iframe.recargas {
+#iframe.recargas {
     		zoom: 3;
 			
 	
@@ -182,6 +182,7 @@ textarea {
             top: 30%; /* 18 */
 			left: 50%; /* 20 */
 			justify-content: center;
+			 
         }
 		
 #link {
@@ -214,11 +215,11 @@ textarea {
         <div class="stepper">
             <div class="step active" data-step="1">
                 <div class="step-number">1</div>
-                <div class="step-title">BOLETIM</div>
+                <div class="step-title">PREENCHIMENTO</div>
             </div>
             <div class="step" data-step="2" >
                 <div class="step-number">2</div>
-                <div class="step-title">Em Desenvolvimento</div>
+                <div class="step-title">CONCLUSÃO</div>
             </div>
 
         </div>
@@ -440,22 +441,24 @@ textarea {
 			</div>
 			<!-- button type="submit">Checar</button -->
 	</form>
+	<button id="nextBtn" onclick="changeStep(1)" style="display:block">Próximo</button>
         </div>
         <div class="content" data-content="2">
             <h2>Revisão</h2>
             <p>
-				<li id="ok">Mostar boletim de exemplo preenchido.✔</li>
-				<li id="ok">Orientar: revisar TEMPO TOTAL, assunto "INÍCIO/FIM" e URL do incidente.✔</li>
-				<li id="ok">Controle de erro e enfatizar responsabilidades.✔</li>
-				<li id="ok">Indicar modelo de e-mail compatível.✔</li>
-				<li>Botões para copiar ASSUNTO e CONTEÚDO.</li>
-				<li>Verificar se o REMETENTE é "Logistica TI Monitoracao".</li>
+				<li id="ok">✅Conteúdo copiado com formatação!</li>
+				<li id="ok">✅Cole no modelo de e-mail e edite o necessário.</li>
+				<li id="ok">⚠Confira o Assunto (INICIO ou INICIO/FIM).</li>
+				<!-- li id="ok">Indicar modelo de e-mail compatível.✔</li -->
+				<li>⚠Certifique-se de que o REMETENTE será "Logistica TI Monitoracao"</li>
 			</p>
+			<button id="copiar" style="display:block">Copiar Boletim</button>
+			<button id="prevBtn" onclick="changeStep(-1)" style="display:block">Anterior</button>
         </div>
         <div class="buttons" style="display:block">
-			<button id="copiar">Copiar Boletim</button>
-             <button id="prevBtn" onclick="changeStep(-1)" style="display:none">Anterior</button>
-            <button id="nextBtn" onclick="changeStep(1)" style="display:none">Próximo</button>
+			
+             
+            
         </div>
  
     </div>
@@ -726,6 +729,7 @@ href="mailto:logisticati_monitoracao@banrisul.com.br">logisticati_monitoracao@ba
     const zoomControl = document.getElementById('zoomControl');
 	document.body.style.zoom = '3.0';
 	
+	
 });
 	//REMOVER TIRAR FIM
 		function verificarCamposVazios() {
@@ -741,12 +745,12 @@ href="mailto:logisticati_monitoracao@banrisul.com.br">logisticati_monitoracao@ba
       campo.style.border = ''; // Remove o destaque se preenchido
     }
   });
-
+/*
   if (algumVazio) {
     alert('Por favor, preencha todos os campos obrigatórios.');
   } else {
-    alert('Todos os campos estão preenchidos!');
-  }
+    //alert('Todos os campos estão preenchidos!');
+  }*/
 }
 
 
@@ -1777,7 +1781,7 @@ function myESC() {
             // Limpa a seleção
             sel.removeAllRanges();
 
-            alert('✅Conteúdo copiado com formatação! \n✅Cole no modelo de e-mail e edite o necessário. \n⚠Confira o Assunto (INICIO ou INICIO/FIM).\n⚠Certifique-se de que o REMETENTE será "Logistica TI Monitoracao".');
+            //alert('✅Conteúdo copiado com formatação! \n✅Cole no modelo de e-mail e edite o necessário. \n⚠Confira o Assunto (INICIO ou INICIO/FIM).\n⚠Certifique-se de que o REMETENTE será "Logistica TI Monitoracao".');
 			
 			});
 		 //FONTE ARIAL
@@ -1874,4 +1878,3 @@ function sendFullPageEmail() {
 			
 </body>
 </html>
-
