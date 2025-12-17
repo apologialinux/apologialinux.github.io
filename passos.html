@@ -305,10 +305,10 @@ textarea {
 			<td id="BanriF0001">
 			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=30&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Banrifone"><input type="checkbox" name="primeiro" id="Teste" value="Acesso (0001)" onclick="graficBanriF0001()"><label id="CorLetra"  style="background-color:Gray;">&nbspBanrifone </label></a>
 			<td id="MCard0001">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=95&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Meus Cartões "><input type="checkbox" name="primeiro" id="Teste" value="Acesso (1001)" onclick="graficMCard0001()"><label id="CorLetra"  style="background-color:Gray;">&nbsp MCard-Acesso 1001</label></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=95&servico=1&tipo=1#" target="_blank" title="Acesso 0001 / Meus Cartões "><input type="checkbox" name="primeiro" id="Teste" value="Acesso (0001)" onclick="graficMCard0001()"><label id="CorLetra"  style="background-color:Gray;">&nbsp MCard-Acesso 0001</label></a>
 			</td>
 			<td id="MC1001">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Minha Conta "><input type="checkbox" name="primeiro" id="Teste" value="Extrato de Conta Corrente (1001)" onclick="graficMC1001()"><label id="CorLetra" style="background-color:Gray;">&nbsp MC-Extrato C. Corrente 1001</label></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Minha Conta "><input type="checkbox" name="primeiro" id="Teste" value="Extrato de Conta Corrente (1001)" onclick="graficMC1001()"><label id="CorLetra" style="background-color:Gray;">&nbsp MC-Extrato C. Corrente 0001</label></a>
 			</td>
 			<td id="OB1001">
 			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=1001&tipo=1#" target="_blank" title="Extrato de Conta Corrente 1001 / Office Banking "><input type="checkbox" name="primeiro" id="Teste" value="Extrato de Conta Corrente (1001)" onclick="graficOB1001()"><label id="CorLetra" style="background-color:Gray;">&nbsp OB-Extrato C. Corrente 1001 </label></a>
@@ -441,16 +441,16 @@ textarea {
 			</div>
 			<!-- button type="submit">Checar</button -->
 	</form>
-	<button id="nextBtn" onclick="changeStep(1)" style="display:block">Próximo</button>
+	<button id="nextBtn" onclick="changeStep(1)" style="display:block">Próximo</button> <p id="sugest" align="center"><strong></strong></p>
         </div>
         <div class="content" data-content="2">
             <h2>Revisão</h2>
             <p>
-				<p id="ok" align="center"><strong>✅Conteúdo será copiado com formatação!</strong></p>
+				<p id="ok" align="center"><strong>✅Conteúdo copiado com formatação!</strong></p>
 				<p id="ok" align="center"><strong>✅Cole no modelo de e-mail e edite o necessário.</strong></p>
 				<p id="ok" align="center"><strong>⚠Confira o Assunto (INICIO ou INICIO/FIM).</strong></p>
 				<!-- li id="ok">Indicar modelo de e-mail compatível.✔</li -->
-				<p id="ok" align="center"><strong>⚠Certifique-se de que o REMETENTE será "Logistica TI Monitoracao"</strong></p><br> 
+				<p id="ok" align="center"><strong>⚠Certifique-se de que o REMETENTE será "Logistica TI Monitoracao"</strong></p>
 				<h1><p id="copOk"  align="center"></p><h1>
 			</p>
 			<button id="copiar" style="display:block">Copiar Boletim</button>
@@ -783,12 +783,14 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Minha Conta\n";
 			//document.getElementById('assunt').innerText += " Acesso (0001)";
 			document.getElementById('corcanais').style.background = '#C7EF91';
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC00010102').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				//document.getElementById('assunt').innerText = InicioFim; Teste
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 				
 				
@@ -805,11 +807,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Acesso (0001)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB0001').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -823,11 +827,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Mobile\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Acesso (0001)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM0001').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -841,11 +847,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Mobile Banking Afinidade\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Acesso (0001)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMBA0001').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -859,11 +867,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Home Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Acesso (0001)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficHB0001').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -882,6 +892,7 @@ function atualizarAssunto() {
 				document.getElementById('graficBanriF0001').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -895,12 +906,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Meus Cartões\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Acesso (0001)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMCard0001').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
-				
+				document.getElementById("sugest").innerHTML = "";
 			}
 		atualizarAssunto();
 	}
@@ -913,11 +925,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Extrato de Conta Corrente (0001)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC1001').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -931,11 +945,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Extrato de Conta Corrente (1001)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB1001').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -949,12 +965,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Mobile\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Extrato de Conta Corrente (1001)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM1001').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
-				
+				document.getElementById("sugest").innerHTML = "";
 			}
 		atualizarAssunto();
 	}
@@ -968,11 +985,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Home Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Extrato de Conta Corrente (1001)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficHB1001').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -986,11 +1005,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Linha do Tempo\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Extrato de Cartão de Crédito (0063)";
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficLT0063').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1005,11 +1026,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Extrato de Cartão de Crédito (1004)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB1004').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1024,11 +1047,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Mobile\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Extrato de Cartão de Crédito (1004)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM1004').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1042,11 +1067,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Home Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Extrato de Cartão de Crédito (1004)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficHB1004').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1060,11 +1087,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Meus Cartões\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Extrato de Cartão de Crédito (1004)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMCard1004').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1078,11 +1107,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Saldo de Conta Corrente (1014)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC1014').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1096,12 +1127,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Mobile\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Saldo de Conta Corrente (1014)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM1014').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
-				
+				document.getElementById("sugest").innerHTML = "";
 			}
 		atualizarAssunto();
 	}
@@ -1114,11 +1146,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Cons. Dados de Boleto (4050)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC4050').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1132,11 +1166,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Cons. Dados de Boleto (4050)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB4050').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1150,11 +1186,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Transf. Entre Contas Banrisul (2501)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC2501').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1168,11 +1206,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Transf. Entre Contas Banrisul (2501)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB2501').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1186,11 +1226,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Mobile\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Transf. Entre Contas Banrisul (2501)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM2501').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1204,11 +1246,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Home Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Transf. Entre Contas Banrisul (2501)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficHB2501').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1223,11 +1267,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " TED E (2503)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC2503').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1241,11 +1287,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " TED E (2503)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB2503').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1259,11 +1307,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Mobile\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " TED E (2503)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM2503').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1277,11 +1327,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Home Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " TED E (2503)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficHB2503').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1295,11 +1347,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " ICMS - RS (2014)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PROCERGS (IPVA-ICMS)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC2014').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1313,6 +1367,7 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " ICMS - RS (2014)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PROCERGS (IPVA-ICMS)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB2014').style.display='none'; <!--  Gráfico -->
@@ -1320,6 +1375,7 @@ function atualizarAssunto() {
 				document.getElementById('assunt').innerText = "";
 				document.getElementById('corcanais').style.background = '#F54927';
 				
+				document.getElementById("sugest").innerHTML = "";
 			}
 		atualizarAssunto();
 	}
@@ -1332,11 +1388,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " IPVA - RS | RPV 2015 (2015)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PROCERGS (IPVA-ICMS)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC2015').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1351,11 +1409,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Banking\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " IPVA - RS | RPV 2015 (2015)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PROCERGS (IPVA-ICMS)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB2015').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1369,11 +1429,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Depósito de Cheques (4122)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC4122').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1387,12 +1449,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText += "Office Mobile\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " Depósito de Cheques (4122)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOM4122').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
-				
+				document.getElementById("sugest").innerHTML = "";
 			}
 		atualizarAssunto();
 	}
@@ -1405,11 +1468,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " ACESSO (0001)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (ACESSO)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficacesso').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1424,11 +1489,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " INCLUSÃO DE CHAVE (2707)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixincluchave').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1442,11 +1509,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " EXTRATO (2704)";
+			
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixextrato').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1460,11 +1529,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " PAGAMENTO (2702)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixpag').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1478,11 +1549,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += " RECEBIMENTO (2703)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixreceb').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1501,6 +1574,7 @@ function atualizarAssunto() {
 				document.getElementById('graficpixdevol').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1520,6 +1594,7 @@ function atualizarAssunto() {
 				document.getElementById('graficVERO').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1534,11 +1609,13 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText = "RECARGA\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += "DEVOLUÇÃO (2711)";
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Recarga de Celular da Operadora (VIVO-TIM-CLARO-OI)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficRECARGA').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
 				
 			}
 		atualizarAssunto();
@@ -1845,6 +1922,14 @@ function calcularTempoTotal() {
   }
 }
 
+function checkIPVA() {
+  document.getElementById("graficMC2014").checked = true;
+  document.getElementById("graficOB2014").checked = true;
+  document.getElementById("graficMC2015").checked = true;
+  document.getElementById("graficOB2015").checked = true;
+  
+}
+
 function sendFullPageEmail() {
   // Seleciona todo o conteúdo da página
   const conteudoHTML = document.documentElement.outerHTML;
@@ -1880,4 +1965,3 @@ function sendFullPageEmail() {
 			
 </body>
 </html>
-
