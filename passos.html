@@ -364,7 +364,7 @@ textarea {
 			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=20&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Home Banking  "><input type="checkbox" name="primeiro" id="Teste"  value="Transf. Entre Contas Banrisul (2501)"  onclick="graficHB2501()"><label id="CorLetra" style="background-color:Gray;">&nbsp HB-Transf. Entre Cont. Banrisul 2501</label></a>
 			</td>
 			<td id="MC2503">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=2503&tipo=1#" target="_blank" title=" TED E 2503 / Minha Conta "><input type="checkbox" name="primeiro" id="Teste"  value="TED E (2503)"  onclick="graficMC2503()"><label id="CorLetra" style="background-color:Gray;">&nbsp MC-TED E 2503</label></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=2503&tipo=1#" target="_blank" title=" TED E 2503 / Minha Conta "><input type="checkbox" value="TED E (2503)" name="primeiro" id="Teste"  onclick="graficMC2503()"><label id="CorLetra" style="background-color:Gray;">&nbsp MC-TED E 2503</label></a>
 			</td>
 			<td id="OB2503">
 			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=2503&tipo=1#" target="_blank" title="TED E 2503 / Office Banking"><input type="checkbox" name="primeiro" id="Teste" value="TED E (2503)" onclick="graficOB2503()"><label id="CorLetra" style="background-color:Gray;">&nbsp OB-TED E 2503</label></a>
@@ -461,7 +461,7 @@ textarea {
 <div class="container2" id="container2">
 <table>
 		
-<label align="center"><b>Boletim de Eventos - </b></label><label id="assunt"> Serviço </label> <!-- select id="dropzinho">
+<label align="center"><b>Boletim de Eventos - </b></label><label id="assunt"> Serviços </label> <!-- select id="dropzinho">
 		<option value="opcao1">PARCIAL</option>
 		<option value="opcao1">ATUALIZAÇÃO</option>
 		<option value="opcao1">ERRATA</option>
@@ -780,7 +780,7 @@ function atualizarAssunto() {
 				x.style.display = 'none';
 				document.getElementById('graficMC00010102').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
-				document.getElementById('assunt').innerText = InicioFim;
+				//document.getElementById('assunt').innerText = InicioFim; Teste
 				document.getElementById('corcanais').style.background = '#F54927';
 				
 				
@@ -1206,6 +1206,7 @@ function atualizarAssunto() {
 			}
 		atualizarAssunto();
 	}
+
 	function graficMC2503() {
 		
 		var x = document.getElementById('graficMC2503');
@@ -1222,6 +1223,7 @@ function atualizarAssunto() {
 				document.getElementById('corcanais').style.background = '#F54927';
 				
 			}
+		atualizarAssunto();
 	}
 	function graficOB2503() {
 		
@@ -1851,4 +1853,3 @@ function sendFullPageEmail() {
 			
 </body>
 </html>
-
