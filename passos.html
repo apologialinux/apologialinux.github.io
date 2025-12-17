@@ -445,12 +445,13 @@ textarea {
         </div>
         <div class="content" data-content="2">
             <h2>Revisão</h2>
-           <p>
-				<p id="ok" align="center"><strong>✅ Conteúdo copiado com formatação!</strong></p>
-				<p id="ok" align="center"><strong>✅ Cole no modelo de e-mail e edite o necessário.</strong></p>
-				<p id="ok" align="center"><strong>⚠ Confira o Assunto (INICIO ou INICIO/FIM).</strong></p>
+            <p>
+				<p id="ok" align="center"><strong>✅Conteúdo copiado com formatação!</strong></p>
+				<p id="ok" align="center"><strong>✅Cole no modelo de e-mail e edite o necessário.</strong></p>
+				<p id="ok" align="center"><strong>⚠Confira o Assunto (INICIO ou INICIO/FIM).</strong></p>
 				<!-- li id="ok">Indicar modelo de e-mail compatível.✔</li -->
-				<p id="ok" align="center"><strong>⚠ Certifique-se de que o REMETENTE será "Logistica TI Monitoracao"</strong></p>
+				<p id="ok" align="center"><strong>⚠Certifique-se de que o REMETENTE será "Logistica TI Monitoracao"</strong></p><br> 
+				<h1><p id="copOk"  align="center"></p><h1>
 			</p>
 			<button id="copiar" style="display:block">Copiar Boletim</button>
 			<button id="prevBtn" onclick="changeStep(-1)" style="display:block">Anterior</button>
@@ -1781,7 +1782,8 @@ function myESC() {
             // Limpa a seleção
             sel.removeAllRanges();
 
-            //alert('✅Conteúdo copiado com formatação! \n✅Cole no modelo de e-mail e edite o necessário. \n⚠Confira o Assunto (INICIO ou INICIO/FIM).\n⚠Certifique-se de que o REMETENTE será "Logistica TI Monitoracao".');
+            //alert('Copiado!');
+			document.getElementById("copOk").innerHTML = "Boletim Copiado!👍";
 			
 			});
 		 //FONTE ARIAL
@@ -1878,4 +1880,3 @@ function sendFullPageEmail() {
 			
 </body>
 </html>
-
