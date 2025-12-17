@@ -764,7 +764,7 @@ function atualizarAssunto() {
 
 
 	
-    assunt.innerText = selecionados.join(', ') + " - INICIO" || "Nenhum selecionado";
+    assunt.innerText = selecionados.join(', ') + InicioFim|| "Nenhum selecionado";
 }	
 	// SERVICOS 2 ESCALA A
 	function graficMC00010102() {
@@ -1657,7 +1657,7 @@ function atualizarAssunto() {
         });
 		// Data Fim
 		
-        document.getElementById('dataFinal').addEventListener('input', function() {
+			document.getElementById('dataFinal').addEventListener('input', function() {
             const valorEntrada2 = this.value; // Valor no formato yyyy-mm-dd (padrão)
 
             if (valorEntrada2) {
@@ -1670,7 +1670,7 @@ function atualizarAssunto() {
                 // Atualiza o conteúdo da label
                 document.getElementById('datafim').innerText = `${dataFormatada2}`;
 				
-		InicioFim += "/FIM";
+		
 		document.getElementById('corfim').style.background = '#F54927'; 
             } else {
                 document.getElementById('datafim').innerText = '';
@@ -1817,6 +1817,7 @@ function calcularTempoTotal() {
       // 🟢 Exibe no campo correto (label)
       document.getElementById("tempototal").innerText = tempoFormatado;
 		document.getElementById('corfim').style.background = '#C7EF91';
+		InicioFim += "/FIM";
       // Opcional: alerta
       // alert(`⏱️ Tempo decorrido: ${tempoFormatado}`);
     } else {
