@@ -57,7 +57,7 @@ dragElement(document.getElementById("divbutton2"));
 
 </script>
 			 
-			<div id="divbutton"> <!--  Botões fixos -->
+			<div id="divbutton" class="animate2"> <!--  Botões fixos -->
 			
 			<tr  class="botones">
 			<td>
@@ -155,14 +155,14 @@ dragElement(document.getElementById("divbutton2"));
 			<!-- td>
 			&nbsp &nbsp &nbsp &nbsp <input type="checkbox" id="zoomControl" title="Zoom alternativo"> <!-- label for="zoomControl"><p>Zoom padrão</p></label> </td -->
 			<!-- td>&nbsp &nbsp &nbsp &nbsp </td -->
-			<td><button type="button" class="M365" id="clicado25" onclick="window.open('https://m365.cloud.microsoft/apps/?from=PortalHome')" title="Portal Microsoft 365">M365</button><button type="button" class="Bolet" id="BoletimB" onclick="BoletF();corbotao();" title="Não vou terminar tão cedo! 🙄">🚧BOLETIM⛔</button></td>
+			<td><button type="button" class="M365" id="clicado25" onclick="window.open('https://m365.cloud.microsoft/apps/?from=PortalHome')" title="Portal Microsoft 365">M365</button><button type="button" class="corPQ" id="BoletimB" onclick="BoletF();corbotao();" title="Preenchimento de boletim">BOLETIM</button></td>
 			
   		   <div class="line"><div class="light"></div></div>
 		   </table>
 		   </tr>
 		   </div>
 		   
-		     <div id="divbutton2" style="display:none"> <!--  Botões adicionais -->
+		     <div id="divbutton2" style="display:none" class="animate2"> <!--  Botões adicionais -->
 		   	<br>
 			<br>
 			<br>
@@ -207,12 +207,12 @@ dragElement(document.getElementById("divbutton2"));
 			</tr>
 			</div>
 			<table id="BinsT" style="display:none">
-			<div id="bins01" class="modal">
+			<div id="bins01" class="modal animate2">
   			<!-- form class="modal-content animate" action="/action_page.php" method="post" -->
 
 			<div class="container">
 			<button id="copyButton" style="display: none;" class="verD" onclick="copyResults()">Copiar Resultados</button>
-			<iframe src="https://apologialinux.github.io/BINS/ConsultBINs.html"  class="alerta1b" align="center" width="1500" height="2450" id="frame" allow="clipboard-read; clipboard-write" ></iframe><br> <!-- AUTORIZADORES -->
+			<iframe src="https://apologialinux.github.io/ConsultBins.html"  class="alerta1b" align="center" width="1500" height="2450" id="frame" allow="clipboard-read; clipboard-write" ></iframe><br> <!-- AUTORIZADORES -->
 			<label style="color: white;background-color: black">Sites alternativos: </label><a style="color: white;background-color: black" href='https://bincheck.io/pt' target="_blank" align="left"><u>Bin Check </u></a> <label style="color: white;background-color: black">e /ou </label>
 			<a style="color: white;background-color: black" href='https://www.freebinchecker.com/' target="_blank" align="left"><u>Free Bin Checker</u></a> &nbsp &nbsp &nbsp &nbsp 
 			<button id="redondo"  class="corR" onclick="document.getElementById('bins01').style.display='none'"> Sair </button><br>
@@ -223,7 +223,7 @@ dragElement(document.getElementById("divbutton2"));
 			</div>
 
 			
-			<div id="myModal" class="modal2">
+			<div id="myModal" class="modal2 animate2">
 			
   <!-- Modal content -->
   <div class="modal-content">
@@ -231,7 +231,7 @@ dragElement(document.getElementById("divbutton2"));
 	  <!-- span class="close">&times;</span -->
 	  	
 		<button type="button" class="verD" id="clicadoBOPTake"  onclick="BOPTake()"  title="Opções Take Action">Take Action</button><button type="button" class="verD" id="clicadoBCALC"  onclick="BCALC()"  title="Opções Take Action">Calc. Data/Horas</button><button type="button" onclick="BOPAPI()"  class="verD" id="clicadoBOPAPI"  title="[Opções Api-Gateway] - Alertas">[Api-Gateway] - Alertas</button><button type="button" class="corP" id="BinsB" onclick="BinsF();document.getElementById('myModal').style.display='none';corbotao();">BINS</button><button type="button" class="Indic" id="Email CSU" onclick="sendMail(); return false">E-mail CSU</button><button id="redondo" class="close" onclick="document.getElementById('myModal').style.display='none'; corbotao();"> X </button>
-		<div id="OPTake" class="modal-header" align="center" style="display:none"><br>
+		<div id="OPTake" class="modal-header" align="center" style="display:block"><br>
       <input  placeholder="Nome" id="name"><input  placeholder="Número do incidente" id="numb"><br><br>
       <button id="botao" type="button" onclick="myFunction()">Gerar</button> 
 
@@ -934,8 +934,8 @@ span.onclick = function() {
 			
 
 			<div class="danger" id="iddanger" style="display:block">
-			<p class="aviso"><strong> ⚠️</strong> <a class="corAvisoLink" href="https://apmgw.dxi-na1.saas.broadcom.com/27b65fc74db74d0f8b8dc022db47b775/dxd/d/YWnT2y-Hz/bpx-pix-monitoracao?orgId=1642&refresh=1m&tenant=BANCODOESTADODORIOGRANDEDOSU-2&theme=light&from=1762323835021&to=1762327435021&universe=VIEWALL" target="_blank"><u>Gráficos</u></a> e <a class="corAvisoLink" href="https://apmgw.dxi-na1.saas.broadcom.com/27b65fc74db74d0f8b8dc022db47b775/digital-oi/alarms-analytics?viewType=allAlarms" target="_blank"><u>APIs Open Finance</u></a>, que são monitorados pelo <a class="corAvisoLink" href="https://axa.dxi-na1.saas.broadcom.com/sppclient/#/login?cn=BANCODOESTADODORIOGRANDEDOSU-2" target="_blank"><u>DXO2</u></a>, não serão mostrados neste dashboard. 👍</p>
-		   </div -->
+			<p class="aviso"><strong> ⚠️</strong> <a class="corAvisoLink" href="https://apmgw.dxi-na1.saas.broadcom.com/27b65fc74db74d0f8b8dc022db47b775/dxd/d/YWnT2y-Hz/bpx-pix-monitoracao?orgId=1642&refresh=1m&tenant=BANCODOESTADODORIOGRANDEDOSU-2&theme=light&from=1762323835021&to=1762327435021&universe=VIEWALL" target="_blank"><u>Gráficos</u></a> e <a class="corAvisoLink" href="https://apmgw.dxi-na1.saas.broadcom.com/27b65fc74db74d0f8b8dc022db47b775/digital-oi/alarms-analytics?viewType=allAlarms" target="_blank"><u>APIs Open Finance</u></a>, que são monitorados pelo <a class="corAvisoLink" href="https://axa.dxi-na1.saas.broadcom.com/sppclient/#/login?cn=BANCODOESTADODORIOGRANDEDOSU-2" target="_blank"><u>DXO2</u></a>, não serão mostrados neste dashboard.<strong> ⚠️</strong> Alertas do <a class="corAvisoLink" href="https://kibana.apps.prod.banrisul.com.br/s/monitoracao/app/dashboards#/view/14340450-73de-11ec-b0a6-f50769a62275?_g=(filters:!(),refreshInterval:(pause:!f,value:60000),time:(from:now-1h,to:now))" target="_blank"><u>API BEX</u></a> ainda são monitorados pelo <b>KIBANA</b><strong> ⚠️</strong> 
+		   </div>
 		   <div>
 			<div id="grafic4"> <!--  Gráficos Escala A -->
 			<table>  
@@ -1137,7 +1137,7 @@ span.onclick = function() {
 			<table>  
 			<tr>
 			<td id="MC1014">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1014&tipo=1#" target="_blank" title="Saldo de Conta Corrente 1014 / Minha Conta "><h4 style="background-color:Gray;"><p>MC-Saldo de Conta Corrente 1014</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=1014&tipo=1#" target="_blank" title="Saldo de Conta Corrente 1014 / Minha Conta "><h4 style="background-color:Gray;"><p>MC-Saldo de C. Corrente 1014</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1149,7 +1149,7 @@ span.onclick = function() {
 			<table>  
 			<tr>
 			<td id="OM1014">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=1014&tipo=1#" target="_blank" title="Saldo de Conta Corrente 1014 / Office Mobile"><h4 style="background-color:Gray;"><p>OM-Saldo de Conta Corrente 1014 </p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=1014&tipo=1#" target="_blank" title="Saldo de Conta Corrente 1014 / Office Mobile"><h4 style="background-color:Gray;"><p>OM-Saldo de C. Corrente 1014 </p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1161,31 +1161,31 @@ span.onclick = function() {
 			<table>  
 			<tr>
 			<td id="MC4050">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=4050&tipo=1#" target="_blank" title="Cons. Tit. Pagador 4050 / Minha Conta"><h4 style="background-color:Gray;"><p>MC-Cons. Tit. Pagador 4050</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=4050&tipo=1#" target="_blank" title="Cons. Dados de Boleto 4050 / Minha Conta"><h4 style="background-color:Gray;"><p>MC-Cons. Dados Boleto 4050</p></h4></a>
 			</td>
 			</tr>
 			<tr>
 			<td id="MC405001">
-			<iframe class="centrocentro" src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=17&servico=4050&tipo=1&graf=2" width="980" height="600" class="alerta1" align="center" id="MC40500102"></iframe> <!-- Cons. Tit. Pagador 4050 / Minha Conta -->
+			<iframe class="centrocentro" src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=17&servico=4050&tipo=1&graf=2" width="980" height="600" class="alerta1" align="center" id="MC40500102"></iframe> <!-- Cons. Dados de Boleto 4050 / Minha Conta -->
 			</td>
 			</tr>
 			</table>
 			<table>
 			<tr>
 			<td id="OB4050">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=4050&tipo=1#" target="_blank" title="Cons. Tit. Pagador 4050 / Office Banking "><h4 style="background-color:Gray;"><p>OB-Cons. Tit. Pagador 4050</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=4050&tipo=1#" target="_blank" title="Cons. Dados de Boleto 4050 / Office Banking "><h4 style="background-color:Gray;"><p>OB-Cons. Dados Boleto 4050</p></h4></a>
 			</td>
 			</tr>
 			<tr>
 			<td id="OB405001">
-			<iframe class="centrocentro" src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=10&servico=4050&tipo=1&graf=2" width="980" height="600"  class="alerta1" align="center" id="OB40500102"></iframe> <!-- Cons. Tit. Pagador 4050 / Office Banking  -->
+			<iframe class="centrocentro" src="https://monitora.corp.banrisul.com.br/brb/brb.php?canal=10&servico=4050&tipo=1&graf=2" width="980" height="600"  class="alerta1" align="center" id="OB40500102"></iframe> <!-- Cons. Dados de Boleto 4050 / Office Banking  -->
 			</td>
 			</tr>
 			</table>
 			<table>
 			<tr>
 			<td id="MC2501">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Minha Conta "><h4 style="background-color:Gray;"><p>MC-Transf. Entre Cont. Banrisul 2501</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Minha Conta "><h4 style="background-color:Gray;"><p>MC-Transf. Entre C. Banrisul 2501</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1199,7 +1199,7 @@ span.onclick = function() {
 			<table>  
 			<tr>
 			<td id="OB2501">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Office Banking "><h4 style="background-color:Gray;"><p>OB-Transf. Entre Cont. Banrisul 2501</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Office Banking "><h4 style="background-color:Gray;"><p>OB-Transf. Entre C. Banrisul 2501</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1211,7 +1211,7 @@ span.onclick = function() {
 			<table>
 			<tr>
 			<td id="OM2501">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Office Mobile"><h4 style="background-color:Gray;"><p>OM-Transf. Entre Cont. Banrisul 2501</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=16&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Office Mobile"><h4 style="background-color:Gray;"><p>OM-Transf. Entre C. Banrisul 2501</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1223,7 +1223,7 @@ span.onclick = function() {
 			<table>
 			<tr>
 			<td id="HB2501">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=20&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Home Banking  "><h4 style="background-color:Gray;"><p>HB-Transf. Entre Cont. Banrisul 2501</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=20&servico=2501&tipo=1#" target="_blank" title="Transf. Entre Contas Banrisul 2501 / Home Banking  "><h4 style="background-color:Gray;"><p>HB-Transf. Entre C. Banrisul 2501</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1309,7 +1309,7 @@ span.onclick = function() {
 			<table>
 			<tr>
 			<td id="MC2015">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=2015&tipo=1#" target="_blank" title="IPVA - RS 2015 / Minha Conta "><h4 style="background-color:Gray;"><p>MC-IPVA - RS 2015</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=17&servico=2015&tipo=1#" target="_blank" title="IPVA - RS | RPV 2015 / Minha Conta "><h4 style="background-color:Gray;"><p>MC-IPVA - RS|RPV 2015</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1321,7 +1321,7 @@ span.onclick = function() {
 			<table>
 			<tr>
 			<td id="OB2015">
-			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=2015&tipo=1#" target="_blank" title="IPVA - RS 2015 / Office Banking "><h4 style="background-color:Gray;"><p>OB-IPVA - RS 2015</p></h4></a>
+			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=10&servico=2015&tipo=1#" target="_blank" title="IPVA - RS | RPV 2015 / Office Banking "><h4 style="background-color:Gray;"><p>OB-IPVA - RS|RPV 2015</p></h4></a>
 			</td>
 			</tr>
 			<tr>
@@ -1361,127 +1361,7 @@ span.onclick = function() {
 			<tr><td><iframe id="BoletZoom" scrolling="no" class="alerta1x" src="https://apologialinux.github.io/passos.html" width="7000" height="3000"   align="center"></iframe></td></tr></table>
 			 
 			</div>
-		<div id="ConsutaBins"style="display:block">
-			 <h1><p>Consulta de BIN</p></h1>
-        <!-- Alterando o campo de input para textarea -->
-        <textarea class="binsInput" id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ..." rows="4"></textarea><br>
-        <button onclick="consultarApi()">Consultar</button>
-        <button onclick="copiarResultado()" id="x23" style="display:none">Copiar Consulta</button>
-        <p id="result"></p>
-        <!-- Botão para copiar o resultado -->
-        
-    			<script>
-        //const data = null;
-
-        // Carregar a chave da API do arquivo config.json
-        function carregarConfig() {
-            return fetch('config.json')
-                .then(response => response.json())
-                .then(config => {
-                    return config.apiKey; // Retorna a chave da API
-                })
-                .catch(error => {
-                    console.error("Erro ao carregar a configuração:", error);
-                    return null;
-                });
-        }
-
-        // Função para consultar a API
-        async function consultarApi() {
-            const binInput = document.getElementById('binInput').value;
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = ''; // Limpar resultados anteriores
-
-            // Filtra e extrai apenas números de 6 dígitos da string de entrada
-            const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
-
-            if (!bins || bins.length === 0) {
-                //resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
-		alert("Por favor, insira BINs válidos de 6 dígitos.");
-                return;
-            }
-
-            // Carrega a chave da API
-            const apiKey = await carregarConfig();
-
-            if (!apiKey) {
-                resultDiv.innerHTML = '<span class="error">Erro ao carregar a chave da API.</span>';
-                return;
-            }
-
-            // Processa cada BIN com delay
-            for (const bin of bins) {
-                // Espera 300ms antes de fazer a próxima consulta
-                await new Promise(resolve => setTimeout(resolve, 300));
-
-                const xhr = new XMLHttpRequest();
-                xhr.withCredentials = true;
-
-                xhr.addEventListener('readystatechange', function () {
-                    if (this.readyState === this.DONE) {
-                        try {
-                            const response = JSON.parse(this.responseText);
-
-                            if (response.message) {
-                                resultDiv.innerHTML += `<span class="error">Erro no BIN ${bin}: ${response.message}</span><br>`;
-                            } else {
-                                // Formatar os dados retornados
-                                const output = `
-BIN: ${response.bin || 'INDISPONÍVEL'}
-Marca: ${response.brand || 'INDISPONÍVEL'}
-Tipo: ${response.type || 'INDISPONÍVEL'}
-Categoria: ${response.category || 'INDISPONÍVEL'}
-Banco: ${response.issuer || 'INDISPONÍVEL'}
-País: ${response.country || 'INDISPONÍVEL'}
-<br>`;
-
-                                resultDiv.innerHTML += output;
-
-                                // Verificar se o Banco requer boletim
-                                const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA', 'BANCO DO BRASIL, S.A.', 'CAIXA ECONOMICA FEDERAL'];
-                                if (alertBanco.includes(response.issuer)) {
-                                    const alertMessage = `Pode ser necessário envio de boletim sobre ${response.issuer}.`;
-                                    // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
-                                    alert(alertMessage);
-                                }
-                            }
-                        } catch (e) {
-                            resultDiv.innerHTML += `<span class="error">Erro ao processar a resposta da API para o BIN ${bin}.</span><br>`;
-                        }
-                    }
-                });
-
-                xhr.open('GET', `https://bin-info.p.rapidapi.com/bin.php?bin=${bin}`);
-                xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
-                xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
-                xhr.send(data);
-            } document.getElementById("x23").style.display = 'block';
-        }
-
-        // Função para copiar o resultado da pesquisa
-        function copiarResultado() {
-            const resultDiv = document.getElementById('result');
-            const textToCopy = resultDiv.innerText || resultDiv.textContent;
-		document.getElementById("x23").style.display = 'none';
-
-            if (textToCopy) {
-                navigator.clipboard.writeText(textToCopy)
-                    .then(() => { 
-                        alert("Resultado copiado com sucesso!");
-                    })
-                    .catch(err => {
-                        alert("Erro ao copiar o resultado: " + err);
-                    });
-            } else {
-                alert("Não há resultados para copiar.");
-            }
-        }
-    </script>
-    <!-- Issuer Phone: ${response.issuer_phone || 'INDISPONÍVEL'}
-Issuer URL: ${response.issuer_url || 'INDISPONÍVEL'}
-ISO2: ${response.iso2 || 'INDISPONÍVEL'}
-ISO3: ${response.iso3 || 'INDISPONÍVEL'} -->
-			</div>
+		
 			<div class="watermark">  
            by Luís Silva - T03252  
     </div> 
@@ -1589,6 +1469,17 @@ ISO3: ${response.iso3 || 'INDISPONÍVEL'} -->
 		
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
