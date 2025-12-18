@@ -1862,17 +1862,7 @@ function myImpacto() {
 				document.getElementById('impactIndisp').innerText = "  ";
 				document.getElementById('impactSevDeg').innerText = "X";
 			} 
-			if (valorSelecionado == "Em análise pela CSU" || (valorSelecionado == "Em análise pela PROCERGS") || (valorSelecionado == "Em análise pela Dock") || (valorSelecionado == "Falha externa") ) {
-				document.getElementById('erroExt').innerText = "X";
-				document.getElementById('corfalha').style.background = '#C7EF91';
-				document.getElementById("falhaExt").checked = true;
-				  
-				}else {
-					document.getElementById('erroExt').innerText = " ";
-					document.getElementById('corfalha').style.background = '#F54927';
-					document.getElementById("falhaExt").checked = false;
-					 
-			}
+			
 			document.getElementById('corimpacto').style.background = '#C7EF91';
 			}
 			
@@ -2023,4 +2013,4 @@ function sendFullPageEmail() {
 
 			
 </body>
-</html>
+				</html>
