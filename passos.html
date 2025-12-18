@@ -478,7 +478,7 @@ textarea {
 				<h1><p id="copOk"  align="center"></p><h1>
 			</p>
 			<button id="copiar" style="display:block">Copiar Boletim</button>
-			<button id="prevBtn" onclick="changeStep(-1)" style="display:block">Anterior</button>
+			<button id="prevBtn" onclick="changeStep(-1);verificarCamposVazios()" style="display:block">Anterior</button>
         </div>
         <div class="buttons" style="display:block">
 			
@@ -2023,3 +2023,4 @@ function sendFullPageEmail() {
 			
 </body>
 </html>
+
