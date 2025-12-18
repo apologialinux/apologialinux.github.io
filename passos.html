@@ -1810,7 +1810,17 @@ function atualizarAssunto() {
 					document.getElementById("falhaInt").checked = false;
 					 
 			}
-			
+			if (valorSelecionado == "Em análise pela CSU" || (valorSelecionado == "Em análise pela PROCERGS") || (valorSelecionado == "Em análise pela Dock")  ) {
+				document.getElementById('erroExt').innerText = "X";
+				document.getElementById('corfalha').style.background = '#C7EF91';
+				document.getElementById("falhaExt").checked = true;
+				  
+				}else {
+					document.getElementById('erroExt').innerText = " ";
+					document.getElementById('corfalha').style.background = '#F54927';
+					document.getElementById("falhaExt").checked = false;
+					 
+			}
             // Atualiza a label com o conteúdo selecionado
             document.getElementById('colunaCausa').innerText = `${valorSelecionado}`;
         }); 
