@@ -208,6 +208,8 @@ textarea {
             resize: none;
 			font-size: 16px;
         }	
+		
+ 
 	
     </style>
 </head>
@@ -463,7 +465,7 @@ textarea {
 			</div>
 			<!-- button type="submit">Checar</button -->
 	</form>
-	<button id="nextBtn" onclick="changeStep(1)" style="display:block">Próximo</button> <p  align="center"><strong>Possível Modelo</strong></p><p id="sugest" align="center"><strong></strong></p>
+	<button  id="nextBtn" onclick="verificarCamposVazios()" style="display:block">Próximo</button> <p  align="center"><strong>Possível Modelo</strong></p><p id="sugest" align="center"><strong></strong></p>
         </div>
         <div class="content" data-content="2">
             <h2>Revisão</h2>
@@ -768,12 +770,13 @@ href="mailto:logisticati_monitoracao@banrisul.com.br">logisticati_monitoracao@ba
       campo.style.border = ''; // Remove o destaque se preenchido
     }
   });
-/*
+ 
   if (algumVazio) {
-    alert('Por favor, preencha todos os campos obrigatórios.');
+    //alert('Por favor, preencha todos os campos obrigatórios.');
   } else {
     //alert('Todos os campos estão preenchidos!');
-  }*/
+	changeStep(1);
+ }
 }
 
 
@@ -1859,6 +1862,17 @@ function myImpacto() {
 				document.getElementById('impactIndisp').innerText = "  ";
 				document.getElementById('impactSevDeg').innerText = "X";
 			} 
+			if (valorSelecionado == "Em análise pela CSU" || (valorSelecionado == "Em análise pela PROCERGS") || (valorSelecionado == "Em análise pela Dock") || (valorSelecionado == "Falha externa") ) {
+				document.getElementById('erroExt').innerText = "X";
+				document.getElementById('corfalha').style.background = '#C7EF91';
+				document.getElementById("falhaExt").checked = true;
+				  
+				}else {
+					document.getElementById('erroExt').innerText = " ";
+					document.getElementById('corfalha').style.background = '#F54927';
+					document.getElementById("falhaExt").checked = false;
+					 
+			}
 			document.getElementById('corimpacto').style.background = '#C7EF91';
 			}
 			
@@ -2009,5 +2023,4 @@ function sendFullPageEmail() {
 
 			
 </body>
-				</html>
-
+</html>
