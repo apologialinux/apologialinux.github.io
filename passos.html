@@ -265,7 +265,7 @@ textarea {
 		<option value="opcao3">Monitor_Erro_91</option>
 		<option value="opcao3">Monitor_Erro_90</option>
 		<option value="opcao3">Monitor_Erro_96</option>
-    </select> <!-- div id="causaID" style="display:none"><label for="numero">Número: </label><input  id="CausaX" align="left"  placeholder="12345"> </div -->
+    </select> <div id="causaID" style="display:none"><!-- label for="numero">Número: </label><input  id="CausaX" align="left"  placeholder="12345"--> </div>
 <br><br>
 		<label>IMPACTO:&nbsp </label>
 			<input type="radio" name="radiofalha2" id="falhaDeg" onclick="myImpacto()">&nbsp  Degradado &nbsp &nbsp
@@ -788,7 +788,7 @@ function atualizarAssunto() {
 
 	if (selecionados.length >= 2 && selecionados[1] === selecionados[0]) {
         selecionados.splice(1, 1); // remove o segundo
-		
+	atualizaAssunto();	
     }
 
 
@@ -1799,9 +1799,13 @@ function atualizarAssunto() {
             const valorSelecionado = this.options[this.selectedIndex].text;
 			if (valorSelecionado == "PDM XXXXX" ) {
 				document.getElementById('causaID').style.display = 'block';
+				document.getElementById('erroInt').innerText = "X";
+				document.getElementById('corfalha').style.background = '#C7EF91';
 				  
 				}else {
 					document.getElementById('causaID').style.display = 'none';
+					document.getElementById('erroInt').innerText = " ";
+					document.getElementById('corfalha').style.background = '#F54927';
 			}
 			
             // Atualiza a label com o conteúdo selecionado
