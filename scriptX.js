@@ -872,7 +872,7 @@ function dragElement(elmnt) {
 			
 			function REFB() {
  
-				/*document.getElementById('APIalerta02').src += ''; */
+				/*document.getElementById('APIalerta02').src += '';*/
 				document.getElementById('tempmediopagISPB02').src += ''; 
 				document.getElementById('acesso02').src += '';
 				document.getElementById('pixincluchave02').src += '';
@@ -1171,7 +1171,8 @@ function dragElement(elmnt) {
 				tag.style.background="black";
 					}
 			}
-			/*function EscB016() {
+/*
+			function EscB016() {
 			var x = document.getElementById('APIalerta');
 			var tag=document.getElementById("clicado40");
 			if (x.style.display === 'none') {
@@ -1184,7 +1185,7 @@ function dragElement(elmnt) {
 				document.getElementById('APIalerta01').style.display='none'; <!--  Gráfico -->
 				tag.style.background="black";
 					}
-			}*/
+			} */
 			function EscB17() {
 			var x = document.getElementById('recebimentoTMR');
 			var tag=document.getElementById("clicado40");
@@ -1679,4 +1680,3 @@ function dragElement(elmnt) {
 						}
  
 			
-
