@@ -465,7 +465,7 @@ textarea {
 			</div>
 			<!-- button type="submit">Checar</button -->
 	</form>
-	<button  id="nextBtn" onclick="verificarCamposVazios()" style="display:block">Próximo</button> <p  align="center"><strong>Possível Modelo</strong></p><p id="sugest" align="center"><strong></strong></p>
+	<button id="nextBtn" onclick="changeStep(1)" style="display:block">Próximo</button> <p  align="center"><strong>Possível Modelo</strong></p><p id="sugest" align="center"><strong></strong></p>
         </div>
         <div class="content" data-content="2">
             <h2>Revisão</h2>
@@ -775,7 +775,6 @@ href="mailto:logisticati_monitoracao@banrisul.com.br">logisticati_monitoracao@ba
     //alert('Por favor, preencha todos os campos obrigatórios.');
   } else {
     //alert('Todos os campos estão preenchidos!');
-	changeStep(1); 
  }
 }
 
@@ -2024,4 +2023,3 @@ function sendFullPageEmail() {
 			
 </body>
 </html>
-
