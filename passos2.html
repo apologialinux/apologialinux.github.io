@@ -1801,11 +1801,14 @@ function atualizarAssunto() {
 				document.getElementById('causaID').style.display = 'block';
 				document.getElementById('erroInt').innerText = "X";
 				document.getElementById('corfalha').style.background = '#C7EF91';
+				document.getElementById("falhaInt").checked = true;
 				  
 				}else {
 					document.getElementById('causaID').style.display = 'none';
 					document.getElementById('erroInt').innerText = " ";
 					document.getElementById('corfalha').style.background = '#F54927';
+					document.getElementById("falhaInt").checked = false;
+					 
 			}
 			
             // Atualiza a label com o conteúdo selecionado
@@ -1996,4 +1999,4 @@ function sendFullPageEmail() {
 
 			
 </body>
-</html>
+				</html>
