@@ -238,12 +238,12 @@ textarea {
   
 
 	<label for="numero">Incidente: </label>
-    <input  id="numero" align="left"  placeholder="12345678"> 	
+    <input  class="inicioIX" id="numero" align="left"  placeholder="12345678"> 	
     <label for="link">URL do Incidente:</label>
     <textarea id="link" placeholder="http://servicedesk/CAisd/pdmweb.exe?OP=SEARCH+FACTORY=cr+SKIPLIST=1+QBE.EQ.id=11223344" rows="2"></textarea>
 	
 	<br><br>
-   	<label>INICÍO:&nbsp <input type="date" id="dataInicial"></label> &nbsp<input type="time" id="horaInicial"></label>
+   	<label>INICÍO:&nbsp <input class="inicioDX" type="date" id="dataInicial"></label> &nbsp<input class="inicioHX" type="time" id="horaInicial"></label>
  
     <label>FIM:&nbsp <input type="date" id="dataFinal"></label> &nbsp <input type="time" id="horaFinal"></label>
 	       <br><br>
@@ -465,7 +465,7 @@ textarea {
 			</div>
 			<!-- button type="submit">Checar</button -->
 	</form>
-	<button id="nextBtn" onclick="changeStep(1)" style="display:block">Próximo</button> <p  align="center"><strong>Possível Modelo</strong></p><p id="sugest" align="center"><strong></strong></p>
+	<button id="nextBtn" onclick="verificarCamposVazios()" style="display:block">Próximo</button> <p  align="center"><strong>Possível Modelo</strong></p><p id="sugest" align="center"><strong></strong></p>
         </div>
         <div class="content" data-content="2">
             <h2>Revisão</h2>
@@ -478,7 +478,7 @@ textarea {
 				<h1><p id="copOk"  align="center"></p><h1>
 			</p>
 			<button id="copiar" style="display:block">Copiar Boletim</button>
-			<button id="prevBtn" onclick="changeStep(-1);verificarCamposVazios()" style="display:block">Anterior</button>
+			<button id="prevBtn" onclick="changeStep(-1);" style="display:block">Anterior</button>
         </div>
         <div class="buttons" style="display:block">
 			
@@ -759,7 +759,7 @@ href="mailto:logisticati_monitoracao@banrisul.com.br">logisticati_monitoracao@ba
 	//REMOVER TIRAR FIM
 		function verificarCamposVazios() {
   // Seleciona todos os inputs e textareas
-  const campos = document.querySelectorAll('input, textarea');
+  const campos = document.querySelectorAll('input.inicioDX, input.inicioHX, input.inicioIX, textarea');
   let algumVazio = false;
 
   campos.forEach(campo => {
@@ -775,6 +775,7 @@ href="mailto:logisticati_monitoracao@banrisul.com.br">logisticati_monitoracao@ba
     //alert('Por favor, preencha todos os campos obrigatórios.');
   } else {
     //alert('Todos os campos estão preenchidos!');
+	changeStep(1);
  }
 }
 
@@ -2023,4 +2024,3 @@ function sendFullPageEmail() {
 			
 </body>
 </html>
-
