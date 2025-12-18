@@ -741,8 +741,8 @@ border: 0px;
   --light-cell-width: calc(var(--line-height) * 3);
   --light-cell-separator-width: calc(var(--line-height) * 0.1);
   /* red light #ff000 */
-  --light-color-on: rgba(0,255,0,1);
-  --light-color-off: rgba(0,255,0,.25);
+  --light-color-on: rgba(165,255,0,1);
+  --light-color-off: rgba(165,255,0,.25);
   
 }
 
