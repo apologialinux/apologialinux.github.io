@@ -8,8 +8,8 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            border:0 x solid #000000;
-            background-color: #000000;;
+            border: 1px solid #000000;
+            background-color: #000000;
         }
         .container {
             max-width: 900px;
@@ -26,11 +26,9 @@
         #result {
             margin-top: 20px;
             padding: 10px;
-            border: 1px solid #FFFFFF;
-            background-color: #fefefe;
+	    border: 1px solid black;
+            background-color: black;
             white-space: pre-wrap;
-	    color: white;
-		text-align: left;
         }
         .error {
             color: red;
@@ -47,6 +45,9 @@
 			text-align: center;
 		color: white;
         }
+	span {
+	 color: white;
+	}
         #result {
             margin-top: 20px;
             padding: 10px;
@@ -60,21 +61,32 @@ input[type=date] {
     transform: scale(5);
 	padding-left: 0px;
 	text-align: center;
-	margin: 1.4rem 1;
+	margin: 0.4rem 0;
 	border: 0px;
 	outline: none;
 } 
+/*input[type=date]::-webkit-calendar-picker-indicator {
+  font-size: 20px;              Ajuste o tamanho 
+   transform: scale(5);
+	padding-left: 0px;
+	text-align: center;
+	margin: 0.4rem 0;
+	border: 0px;
+	outline: none;
+} */
+
+
 input[type=time] {
     transform: scale(5);
 	padding-left: 0px;
 	text-align: center;
-	margin: 1.4rem 1;
+	margin: 0.4rem 0;
 	border: 0px;
 	outline: none;
 	
 } 
 
-	    button {
+button {
   border: 3px solid white;
   color: white;
   padding: 16px 32px;
@@ -96,10 +108,13 @@ button:hover {
 
 }
 
-
-	    
-label {
+#botaoCopy:hover {
+  background-color: Green;
   color: white;
+}
+
+label {
+  color: black;
   font-size: 60px;
   padding: 0px;
   text-align: center;
@@ -116,21 +131,21 @@ h2 {
 		    <h1><p>Calculadora de Data/Horas</p></h1>
 
 	<p>Data/Hora Inicial:</p>
-	<p><input type="date" id="dataInicial"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaInicial">  </p>
+	<p><input type="date" id="dataInicial"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaInicial">  </p>
 
     <p>Data/Hora Final:</p>
-	<p><input type="date" id="dataFinal"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaFinal"></p>
+	<p><input type="date" id="dataFinal"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="time" id="horaFinal"></p>
     <br>
     <button onclick="calcularDiferenca()">Calcular</button>
-    <button onclick="copiarResultado2()" id="botaoCopy2">Copiar Cálculo</button>
+    <!-- button onclick="copiarResultado2()" id="botaoCopy2">Copiar Resultado</button -->
 	<p id="resultado"></p>
 	
         <h1><p>Consulta de BIN</p></h1>
         <!-- Alterando o campo de input para textarea -->
         <textarea id="binInput" placeholder="Digite ou cole: LQP2(1)534540; 650491; 454066; ..." rows="4"></textarea>
         <button onclick="consultarApi()">Consultar</button>
-        <button onclick="copiarResultado()" id="x23" style="display:none">Copiar Consulta</button>
-        <p id="result"></p>
+        <button onclick="copiarResultado();copiarResultado2()" id="botaoCopy">Copiar os Resultados</button>
+        <div id="result"></div>
         <!-- Botão para copiar o resultado -->
         
     </div>
@@ -142,7 +157,6 @@ h2 {
     let horaInicial = document.getElementById("horaInicial").value;
     let dataFinal = document.getElementById("dataFinal").value;
     let horaFinal = document.getElementById("horaFinal").value;
-    
 	
     
     let inicio = new Date(`${dataInicial}T${horaInicial}`);
@@ -156,7 +170,7 @@ h2 {
 		
     if (isNaN(inicio) || isNaN(fim)) {
         //document.getElementById("resultado").innerText = "Dados incompletos!";
-		alert("Dados incompletos!");
+		alert("Data/Hora incompletos!");
         return;
     }
     
@@ -200,20 +214,19 @@ h2 {
 		MesF = ('0' + MesF).slice(-2);
 	}
 	if (dataInicial == dataFinal) {
-	document.getElementById("resultado").innerText = "Início: " + horaInicial + "\nFim: " + horaFinal + "\nTotal: " + resultado;
-		document.getElementById("botaoCopy2").style.display = 'block';
+	document.getElementById("resultado").innerText = "Início: " + horaInicial + "\nFim: " + horaFinal + "\nTempo total: " + resultado;
+	document.getElementById("botaoCopy").style.display = 'block';
 	} else {
-	document.getElementById("resultado").innerText = "Início: " + DayI + "/" + MesI + "/" + anoI + " às " + horaInicial + "\nFim: " + DayF + "/" + MesF + "/" + anoF + " às " + horaFinal + "\nTotal: " + resultado;
-		document.getElementById("botaoCopy2").style.display = 'block';
+	document.getElementById("resultado").innerText = "Início: " + DayI + "/" + MesI + "/" + anoI + " às " + horaInicial + "\nFim: " + DayF + "/" + MesF + "/" + anoF + " às " + horaFinal + "\nTempo total: " + resultado;
+	document.getElementById("botaoCopy").style.display = 'block';
 
 	}
 }
 function copiarResultado2() {
     let resultado = document.getElementById("resultado").innerText;
-    navigator.clipboard.writeText(resultado).then(() => { 
+    navigator.clipboard.writeText(resultado).then(() => {
         //document.getElementById("resultado").innerText = "Copiado!";
-		alert("Resultado copiado com sucesso!");
-	    	    document.getElementById("botaoCopy2").style.display = 'none';
+		alert("Data/Hora copiado com sucesso!");
     });
 
 }
@@ -221,7 +234,7 @@ function definirDataAtual() {
     let hoje = new Date().toISOString().split('T')[0];
     document.getElementById("dataInicial").value = hoje;
     document.getElementById("dataFinal").value = hoje;
-    document.getElementById("botaoCopy2").style.display = 'none';
+	document.getElementById("botaoCopy").style.display = 'none';
 }
 
 	// FIM CALCULADORA
@@ -246,13 +259,13 @@ function definirDataAtual() {
             const binInput = document.getElementById('binInput').value;
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = ''; // Limpar resultados anteriores
+			document.getElementById("botaoCopy").style.display = 'block';
 
             // Filtra e extrai apenas números de 6 dígitos da string de entrada
             const bins = binInput.match(/\d{6}/g);  // Extrai todos os números de 6 dígitos da entrada
 
             if (!bins || bins.length === 0) {
-                //resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
-		alert("Por favor, insira BINs válidos de 6 dígitos.");
+                resultDiv.innerHTML = '<span class="error">Por favor, insira BINs válidos de 6 dígitos.</span>';
                 return;
             }
 
@@ -293,9 +306,9 @@ País: ${response.country || 'INDISPONÍVEL'}
                                 resultDiv.innerHTML += output;
 
                                 // Verificar se o Banco requer boletim
-                                const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA', 'BANCO DO BRASIL, S.A.', 'CAIXA ECONOMICA FEDERAL'];
+                                const alertBanco = ['CAIXA ECONOMICA', 'BANCO DO BRASIL', 'CAIXA'];
                                 if (alertBanco.includes(response.issuer)) {
-                                    const alertMessage = `Pode ser necessário envio de boletim sobre ${response.issuer}.`;
+                                    const alertMessage = `Necessário boletim para o ${response.issuer}.`;
                                     // resultDiv.innerHTML += `<div class="alert">${alertMessage}</div><br>`;
                                     alert(alertMessage);
                                 }
@@ -310,26 +323,26 @@ País: ${response.country || 'INDISPONÍVEL'}
                 xhr.setRequestHeader('x-rapidapi-key', apiKey); // Usando a chave da API carregada
                 xhr.setRequestHeader('x-rapidapi-host', 'bin-info.p.rapidapi.com');
                 xhr.send(data);
-            } document.getElementById("x23").style.display = 'block';
+            }
         }
 
         // Função para copiar o resultado da pesquisa
         function copiarResultado() {
-            const resultDiv = document.getElementById('result');
+            const resultDiv = document.getElementById('resultado') + document.getElementById('result');
             const textToCopy = resultDiv.innerText || resultDiv.textContent;
-		document.getElementById("x23").style.display = 'none';
 
             if (textToCopy) {
                 navigator.clipboard.writeText(textToCopy)
                     .then(() => { 
-                        alert("Resultado copiado com sucesso!");
+                        alert("Dados copiados com sucesso!");
                     })
                     .catch(err => {
-                        alert("Erro ao copiar o resultado: " + err);
+                        alert("Erro ao copiar o resultado Bins: " + err);
                     });
             } else {
-                alert("Não há resultados para copiar.");
+                alert("Não há Bins para copiar.");
             }
+			
         }
     </script>
     <!-- Issuer Phone: ${response.issuer_phone || 'INDISPONÍVEL'}
@@ -338,3 +351,6 @@ ISO2: ${response.iso2 || 'INDISPONÍVEL'}
 ISO3: ${response.iso3 || 'INDISPONÍVEL'} -->
 </body>
 </html>
+
+
+
