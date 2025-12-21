@@ -1,0 +1,21 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main   # ou a branch que você usa para desenvolvimento
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Deploy para apologialinux.github.io
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./   # raiz do repositório privado (onde estão seus HTML/CSS/JS)
+          external_repository: apologialinux/apologialinux.github.io
+          publish_branch: main  # Pages lê direto da main nesse tipo de repo
