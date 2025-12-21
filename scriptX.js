@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 	
 });
-//Pronto para mais um 
+//Pronto para mais dois...eheheh 
 /*Download */
 /*
   
