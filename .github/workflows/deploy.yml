@@ -17,16 +17,27 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Instalar Terser
-        run: npm install -g terser
+      - name: Instalar minificadores
+        run: |
+          npm install -g terser clean-css-cli html-minifier-terser
 
-      - name: Minificar arquivos JS
+      - name: Minificar arquivos
         run: |
           mkdir -p site
-          cp -r *.html *.css *.json site/ || true
+          # Minificar HTML
+          for file in *.html; do
+            html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true "$file" -o "site/$file"
+          done
+          # Minificar CSS
+          for file in *.css; do
+            cleancss -o "site/$file" "$file"
+          done
+          # Minificar JS
           for file in *.js; do
             terser "$file" -o "site/$file" --compress --mangle
           done
+          # Copiar JSON sem minificação
+          cp -r *.json site/ || true
 
       - name: Deploy para apologialinux.github.io
         uses: peaceiris/actions-gh-pages@v3
