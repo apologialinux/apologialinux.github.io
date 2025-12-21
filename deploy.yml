@@ -11,6 +11,11 @@ jobs:
     steps:
       - name: Checkout código
         uses: actions/checkout@v3
+      
+      - name: Preparar arquivos
+        run: |
+          mkdir -p site
+          cp -r *.html *.css *.js *.json site/ || true
 
       - name: Deploy para apologialinux.github.io
         uses: peaceiris/actions-gh-pages@v3
