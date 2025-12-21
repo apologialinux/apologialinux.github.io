@@ -3,7 +3,7 @@ name: Deploy static site to GitHub Pages
 on:
   push:
     branches:
-      - main   # branch do seu repositório privado
+      - main
 
 jobs:
   deploy:
@@ -12,11 +12,6 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v3
 
-      - name: Instalar Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
       - name: Instalar minificadores
         run: |
           npm install -g terser clean-css-cli html-minifier-terser
@@ -24,25 +19,23 @@ jobs:
       - name: Minificar arquivos
         run: |
           mkdir -p site
-          # Minificar HTML
-          for file in *.html; do
-            html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true "$file" -o "site/$file"
-          done
-          # Minificar CSS
-          for file in *.css; do
-            cleancss -o "site/$file" "$file"
-          done
           # Minificar JS
-          for file in *.js; do
+          for file in $(find . -name "*.js"); do
             terser "$file" -o "site/$file" --compress --mangle
           done
-          # Copiar JSON sem minificação
-          cp -r *.json site/ || true
+          # Minificar CSS
+          for file in $(find . -name "*.css"); do
+            cleancss -o "site/$file" "$file"
+          done
+          # Minificar HTML
+          for file in $(find . -name "*.html"); do
+            html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o "site/$file" "$file"
+          done
 
       - name: Deploy para apologialinux.github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
-  publish_dir: ./site
-  external_repository: apologialinux/apologialinux.github.io
-  publish_branch: main
+          publish_dir: ./site
+          external_repository: apologialinux/apologialinux.github.io
+          publish_branch: main
