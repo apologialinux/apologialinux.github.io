@@ -3,7 +3,7 @@ name: Deploy static site to GitHub Pages
 on:
   push:
     branches:
-      - main   # ou a branch que você usa para desenvolvimento
+      - main   # branch do seu repositório privado
 
 jobs:
   deploy:
@@ -11,16 +11,27 @@ jobs:
     steps:
       - name: Checkout código
         uses: actions/checkout@v3
-      
-      - name: Preparar arquivos
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar Terser
+        run: npm install -g terser
+
+      - name: Minificar arquivos JS
         run: |
           mkdir -p site
-          cp -r *.html *.css *.js *.json site/ || true
+          cp -r *.html *.css *.json site/ || true
+          for file in *.js; do
+            terser "$file" -o "site/$file" --compress --mangle
+          done
 
       - name: Deploy para apologialinux.github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.pERSONAL_TOKEN }}
-          publish_dir: ./   # raiz do repositório privado (onde estão seus HTML/CSS/JS)
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_dir: ./site
           external_repository: apologialinux/apologialinux.github.io
-          publish_branch: main  # Pages lê direto da main nesse tipo de repo
+          publish_branch: main
