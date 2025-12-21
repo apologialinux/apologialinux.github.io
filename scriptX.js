@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 */
 /* Fim Download */
-// CALCULADORA
+// CALCULADORA Teste
 	function calcularDiferenca() {
     let dataInicial = document.getElementById("dataInicial").value;
     let horaInicial = document.getElementById("horaInicial").value;
