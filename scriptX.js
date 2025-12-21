@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 	
 });
-//Pronto para mais dois...eheheh 
+//Último testes n6 
 /*Download */
 /*
   
