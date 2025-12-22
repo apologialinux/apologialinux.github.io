@@ -384,6 +384,7 @@ button {
 
 /*Botões natalinos*/
 button {
+  position: relative;
   border: 3px solid white;
   color: white;
   text-align: center;
@@ -395,8 +396,9 @@ button {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   /* formato circular */
-  width: 100px;
-  height: 100px;
+  width: 160px; /* aumente conforme necessário */ 
+  height: 160px; 
+  font-size: 28px; /* ajusta para caber dentro da bola */
   border-radius: 50%;
 
   /* gradiente para dar efeito de brilho */
