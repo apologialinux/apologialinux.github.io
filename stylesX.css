@@ -384,7 +384,7 @@ table, th, td {
   text-align: center;
   padding: 0px;
 }
-
+/*
 #MC0001,
 #MC0002,
 #MC0003,
@@ -408,7 +408,7 @@ table, th, td {
   position: relative;
  /* z-index: auto; /* ou 6, se quiser forçar */
 }
-
+*/
 
 
 tr.tabela:nth-child(even) {
