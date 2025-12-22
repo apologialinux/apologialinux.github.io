@@ -60,25 +60,29 @@ iframe {
 iframe:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
-	transform-origin: bottom right; 
+	transform-origin: bottom right;
+  z-index: 9999; 
 }
 
 iframe.alertaDX:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
-	transform-origin: bottom left; 
+	transform-origin: bottom left;
+  z-index: 9999; 
 }
 
 iframe.baixodireita:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: top left; 
+  z-index: 9999;
 }
 
 iframe.altodireita:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
-	transform-origin: bottom left; 
+	transform-origin: bottom left;
+  z-index: 9999; 
 }
 
 
@@ -86,24 +90,28 @@ iframe.altoesquerda:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: bottom right; 
+  z-index: 9999;
 }
 
 iframe.baixoesquerda:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: top right; 
+  z-index: 9999;
 }
 
 iframe.baixocentro:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: top center; 
+  z-index: 9999;
 }
 
 iframe.altocentro:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: bottom center; 
+  z-index: 9999;
 }
 
 iframe.centrocentro:hover {
@@ -116,12 +124,14 @@ iframe.esquerdacentro:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: left center; 
+  z-index: 9999;
 }
 
 iframe.direitacentro:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: right center; 
+  z-index: 9999;
 }
 
 
@@ -129,12 +139,14 @@ iframe.centroesquerda:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: center left; 
+  z-index: 9999;
 } 
 
 iframe.centrodireita:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: center right; 
+  z-index: 9999;
 } 
 
 #BoletZoom {
@@ -351,24 +363,12 @@ table.tabela, td.tabela {
   border-collapse: collapse;
 } 
 
-table, th {
+table, th, td {
   border: 1px solid black;
   border-spacing: collapse;
   border-collapse: collapse;
   text-align: center;
   padding: 0px;
-}
-
-td iframe {
-  transition: transform 0.3s ease;
-  position: relative;   /* cria contexto */
-  z-index: 1;           /* todos começam atrás */
-}
-
-td iframe.zoomed {
-  transform: scale(1.2);
-  position: relative;   /* garante que o z-index funcione */
-  z-index: 999;         /* só o iframe ativo vem pra frente */
 }
 
 
