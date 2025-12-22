@@ -377,7 +377,7 @@ table.tabela, td.tabela {
   border-collapse: collapse;
 } 
 
-table, th {
+table, th, td {
   border: 1px solid black;
   border-spacing: collapse;
   border-collapse: collapse;
@@ -385,10 +385,30 @@ table, th {
   padding: 0px;
 }
 
-td {
-  position: relative; /* ou static, se possível */
-  z-index: auto;      /* não força todos os títulos acima */
+#MC0001,
+#MC0002,
+#MC0003,
+#MC0004,
+#MC0005,
+#MC0006,
+#MC0007,
+#MC0008,
+#MC0009,
+#MC0010,
+#MC0011,
+#MC0012,
+#MC0013,
+#MC0014,
+#MC0015,
+#MC0016,
+#MC0017,
+#MC0018,
+#MC0019,
+#MC0020 {
+  position: absolute;
+  z-index: auto; /* ou 6, se quiser forçar */
 }
+
 
 
 tr.tabela:nth-child(even) {
