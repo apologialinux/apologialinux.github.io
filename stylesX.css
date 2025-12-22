@@ -840,3 +840,74 @@ border: 0px;
   from {transform: scale(0)}
   to {transform: scale(1)}
 }
+
+
+/* Exemplo assumindo que você já definiu algo assim no :root */
+:root {
+  --btn-bg: #2e87f0;        /* cor principal do botão */
+  --btn-color: #fff;        /* cor do texto */
+  --btn-radius: 50%;        /* arredondamento */
+  --btn-shadow: rgba(0,0,0,0.25);
+  --btn-size: 88px;         /* tamanho padrão */
+}
+
+/* Botão estilo bola de natal */
+.btn-ornament {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  border-radius: var(--btn-radius);
+  border: none;
+  cursor: pointer;
+  color: var(--btn-color);
+  font: 600 14px/1 "Inter", system-ui, sans-serif;
+  text-align: center;
+  padding: 0 12px;
+  background:
+    radial-gradient(120% 120% at 25% 25%, #ffffff66 0%, transparent 40%),
+    linear-gradient(160deg, var(--btn-bg) 0%, color-mix(in oklab, var(--btn-bg), #000 15%) 100%);
+  box-shadow:
+    0 10px 18px -6px var(--btn-shadow),
+    inset 0 10px 20px -8px #ffffff55,
+    inset 0 -10px 20px -8px #00000030;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+/* Gancho e tampinha */
+.btn-ornament::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 12px;
+  background: linear-gradient(#d9d9d9, #b7b7b7);
+  border-radius: 6px 6px 3px 3px;
+  box-shadow: 0 3px 6px -2px var(--btn-shadow);
+}
+.btn-ornament::after {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  border: 3px solid #b7b7b7;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 2px 4px -2px var(--btn-shadow);
+}
+
+/* Hover e Active */
+.btn-ornament:hover {
+  transform: translateY(-2px);
+  filter: saturate(1.1);
+}
+.btn-ornament:active {
+  transform: translateY(0);
+}
