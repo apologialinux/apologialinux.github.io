@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 });
 
-
-//Último testes n7 
 /*Download */
 /*
   
@@ -76,20 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 */
 /* Fim Download */
- 
-// Supondo que você já tem a lógica de hover por 3 segundos
-const tds = document.querySelectorAll("td");
-
-tds.forEach(td => {
-  td.addEventListener("mouseenter", () => {
-    td.classList.add("zoomed");
-  });
-
-  td.addEventListener("mouseleave", () => {
-    td.classList.remove("zoomed");
-  });
-});
-// CALCULADORA Teste
+// CALCULADORA
 	function calcularDiferenca() {
     let dataInicial = document.getElementById("dataInicial").value;
     let horaInicial = document.getElementById("horaInicial").value;
@@ -501,11 +486,14 @@ function dragElement(elmnt) {
 			}
 			
 			function BoletF() {
+			const bolet = document.getElementById('bolet01');
 			if (document.getElementById('bolet01').style.display === 'block') {
 				document.getElementById('bolet01').style.display = 'none';
 			} else {
 				document.getElementById('bolet01').style.display='block';
-
+				// rola suavemente até o iframe 
+				bolet.scrollIntoView({ behavior: "smooth" }); 
+				bolet.focus();
 					}
 			}
 		

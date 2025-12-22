@@ -47,7 +47,6 @@ h2 {
    /* }
 */
 iframe {
- /* position: absolute; */
     transition: transform 0.4s ease-in-out; /* Efeito suave */
     /*position: relative;*/
     margin: 0;
@@ -59,107 +58,83 @@ iframe {
 }
 
 iframe:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
-	transform-origin: bottom right;
-  z-index: 9999; 
+	transform-origin: bottom right; 
 }
 
 iframe.alertaDX:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
-	transform-origin: bottom left;
-  z-index: 9999; 
+	transform-origin: bottom left; 
 }
 
 iframe.baixodireita:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: top left; 
-  z-index: 9999;
 }
 
 iframe.altodireita:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
-	transform-origin: bottom left;
-  z-index: 9999; 
+	transform-origin: bottom left; 
 }
 
 
 iframe.altoesquerda:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: bottom right; 
-  z-index: 9999;
 }
 
 iframe.baixoesquerda:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: top right; 
-  z-index: 9999;
 }
 
 iframe.baixocentro:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: top center; 
-  z-index: 9999;
 }
 
 iframe.altocentro:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: bottom center; 
-  z-index: 9999;
 }
 
 iframe.centrocentro:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: center center; 
 }
 
 iframe.esquerdacentro:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: left center; 
-  z-index: 9999;
 }
 
 iframe.direitacentro:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: right center; 
-  z-index: 9999;
 }
 
 
 iframe.centroesquerda:hover {
-  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: center left; 
-  z-index: 9999;
 } 
 
 iframe.centrodireita:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: center right; 
-  z-index: 9999;
 } 
 
 #BoletZoom {
@@ -376,38 +351,13 @@ table.tabela, td.tabela {
   border-collapse: collapse;
 } 
 
-table, th, td {
+table, th, td, {
   border: 1px solid black;
   border-spacing: collapse;
   border-collapse: collapse;
   text-align: center;
   padding: 0px;
 }
-/*
-#MC0001,
-#MC0002,
-#MC0003,
-#MC0004,
-#MC0005,
-#MC0006,
-#MC0007,
-#MC0008,
-#MC0009,
-#MC0010,
-#MC0011,
-#MC0012,
-#MC0013,
-#MC0014,
-#MC0015,
-#MC0016,
-#MC0017,
-#MC0018,
-#MC0019,
-#MC0020 {
-  position: relative;
- /* z-index: auto; /* ou 6, se quiser forçar */
-}
-*/
 
 
 tr.tabela:nth-child(even) {
@@ -791,8 +741,8 @@ border: 0px;
   --light-cell-width: calc(var(--line-height) * 3);
   --light-cell-separator-width: calc(var(--line-height) * 0.1);
   /* red light #ff000 */
-  --light-color-on: rgba(165,255,0,1);
-  --light-color-off: rgba(165,255,0,.25);
+  --light-color-on: rgba(255,0,0,1);
+  --light-color-off: rgba(255,0,0,.25);
   
 }
 
@@ -890,4 +840,17 @@ border: 0px;
   from {transform: scale(0)}
   to {transform: scale(1)}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
