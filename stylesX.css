@@ -359,7 +359,17 @@ table, th {
   padding: 0px;
 }
 
-td { position: relative; /* cada td cria um contexto */ z-index: 1; /* todos começam atrás */ transition: transform 0.3s ease, z-index 0s; } td.zoomed { z-index: 999; /* só o td ativo vem pra frente */ transform: scale(1.2); /* exemplo de zoom */ }
+td iframe {
+  transition: transform 0.3s ease;
+  position: relative;   /* cria contexto */
+  z-index: 1;           /* todos começam atrás */
+}
+
+td iframe.zoomed {
+  transform: scale(1.2);
+  position: relative;   /* garante que o z-index funcione */
+  z-index: 999;         /* só o iframe ativo vem pra frente */
+}
 
 
 tr.tabela:nth-child(even) {

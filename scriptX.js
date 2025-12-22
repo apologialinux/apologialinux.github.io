@@ -75,7 +75,18 @@ document.addEventListener('DOMContentLoaded', function() {
 */
 /* Fim Download */
 
-const tds = document.querySelectorAll("td"); tds.forEach(td => { td.addEventListener("mouseenter", () => { td.classList.add("zoomed"); }); td.addEventListener("mouseleave", () => { td.classList.remove("zoomed"); }); });
+// Supondo que você já tem a lógica de hover por 3 segundos
+const tds = document.querySelectorAll("td");
+
+tds.forEach(td => {
+  td.addEventListener("mouseenter", () => {
+    td.classList.add("zoomed");
+  });
+
+  td.addEventListener("mouseleave", () => {
+    td.classList.remove("zoomed");
+  });
+});
 // CALCULADORA Teste
 	function calcularDiferenca() {
     let dataInicial = document.getElementById("dataInicial").value;
