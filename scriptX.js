@@ -77,15 +77,24 @@ document.addEventListener('DOMContentLoaded', function() {
 */
 /* Fim Download */
  const colors = ["red", "green", "blue", "yellow", "orange"];
-    const lights = document.querySelectorAll(".light");
+  const container = document.getElementById("christmas-lights");
 
-    setInterval(() => {
-      lights.forEach(light => {
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        light.style.backgroundColor = color;
-        light.style.boxShadow = `0 0 10px ${color}`;
-      });
-    }, 500);
+  // cria 10 luzes automaticamente
+  for (let i = 0; i < 10; i++) {
+    const light = document.createElement("div");
+    light.className = "light";
+    container.appendChild(light);
+  }
+
+  const lights = document.querySelectorAll(".light");
+
+  setInterval(() => {
+    lights.forEach(light => {
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      light.style.backgroundColor = color;
+      light.style.boxShadow = `0 0 10px ${color}`;
+    });
+  }, 500);
 
 
 
