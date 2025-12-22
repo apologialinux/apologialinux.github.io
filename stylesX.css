@@ -405,7 +405,7 @@ table, th, td {
 #MC0018,
 #MC0019,
 #MC0020 {
-  position: absolute;
+  position: relative;
  /* z-index: auto; /* ou 6, se quiser forçar */
 }
 
