@@ -901,7 +901,7 @@ border: 0px;
     pointer-events: none; /* não atrapalha cliques na página */
     padding: 10px;
   }
-  .light {
+  .lights {
     width: 15px;
     height: 15px;
     border-radius: 50%;

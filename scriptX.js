@@ -82,11 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // cria 10 luzes automaticamente
   for (let i = 0; i < 10; i++) {
     const light = document.createElement("div");
-    light.className = "light";
+    light.className = "lights";
     container.appendChild(light);
   }
 
-  const lights = document.querySelectorAll(".light");
+  const lights = document.querySelectorAll(".lights");
 
   setInterval(() => {
     lights.forEach(light => {
