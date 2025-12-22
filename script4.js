@@ -486,11 +486,14 @@ function dragElement(elmnt) {
 			}
 			
 			function BoletF() {
+			const bolet = document.getElementById('bolet01');
 			if (document.getElementById('bolet01').style.display === 'block') {
 				document.getElementById('bolet01').style.display = 'none';
 			} else {
 				document.getElementById('bolet01').style.display='block';
-
+				// rola suavemente até o iframe 
+				bolet.scrollIntoView({ behavior: "smooth" }); 
+				bolet.focus();
 					}
 			}
 		
