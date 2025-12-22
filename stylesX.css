@@ -351,13 +351,15 @@ table.tabela, td.tabela {
   border-collapse: collapse;
 } 
 
-table, th, td, {
+table, th {
   border: 1px solid black;
   border-spacing: collapse;
   border-collapse: collapse;
   text-align: center;
   padding: 0px;
 }
+
+td { position: relative; /* cada td cria um contexto */ z-index: 1; /* todos começam atrás */ transition: transform 0.3s ease, z-index 0s; } td.zoomed { z-index: 999; /* só o td ativo vem pra frente */ transform: scale(1.2); /* exemplo de zoom */ }
 
 
 tr.tabela:nth-child(even) {

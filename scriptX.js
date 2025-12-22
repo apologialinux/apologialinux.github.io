@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 */
 /* Fim Download */
+
+const tds = document.querySelectorAll("td"); tds.forEach(td => { td.addEventListener("mouseenter", () => { td.classList.add("zoomed"); }); td.addEventListener("mouseleave", () => { td.classList.remove("zoomed"); }); });
 // CALCULADORA Teste
 	function calcularDiferenca() {
     let dataInicial = document.getElementById("dataInicial").value;
