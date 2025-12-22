@@ -59,7 +59,7 @@ iframe {
 }
 
 iframe:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: bottom right;
@@ -67,7 +67,7 @@ iframe:hover {
 }
 
 iframe.alertaDX:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: bottom left;
@@ -75,7 +75,7 @@ iframe.alertaDX:hover {
 }
 
 iframe.baixodireita:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: top left; 
@@ -83,7 +83,7 @@ iframe.baixodireita:hover {
 }
 
 iframe.altodireita:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: bottom left;
@@ -92,7 +92,7 @@ iframe.altodireita:hover {
 
 
 iframe.altoesquerda:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: bottom right; 
@@ -100,7 +100,7 @@ iframe.altoesquerda:hover {
 }
 
 iframe.baixoesquerda:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: top right; 
@@ -108,7 +108,7 @@ iframe.baixoesquerda:hover {
 }
 
 iframe.baixocentro:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: top center; 
@@ -116,7 +116,7 @@ iframe.baixocentro:hover {
 }
 
 iframe.altocentro:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: bottom center; 
@@ -124,14 +124,14 @@ iframe.altocentro:hover {
 }
 
 iframe.centrocentro:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: center center; 
 }
 
 iframe.esquerdacentro:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: left center; 
@@ -139,7 +139,7 @@ iframe.esquerdacentro:hover {
 }
 
 iframe.direitacentro:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: right center; 
@@ -148,7 +148,7 @@ iframe.direitacentro:hover {
 
 
 iframe.centroesquerda:hover {
-  position: absolute;
+  
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: center left; 
@@ -156,7 +156,6 @@ iframe.centroesquerda:hover {
 } 
 
 iframe.centrodireita:hover {
-  position: absolute;
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: center right; 
@@ -891,6 +890,56 @@ border: 0px;
   from {transform: scale(0)}
   to {transform: scale(1)}
 }
+
+.tree {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 150px solid green;
+  }
+  .tree:before, .tree:after {
+    content: '';
+    position: absolute;
+    left: -80px;
+    width: 0;
+    height: 0;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 120px solid green;
+  }
+  .tree:before {
+    top: -100px;
+  }
+  .tree:after {
+    top: -200px;
+  }
+
+.star {
+    position: absolute;
+    top: -230px;
+    left: -15px;
+    font-size: 30px;
+    color: gold;
+    animation: twinkle 1s infinite alternate;
+  }
+  .light {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: red;
+    animation: blink 1s infinite alternate;
+  }
+  @keyframes blink {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+  }
+  @keyframes twinkle {
+    from { transform: scale(0.8); opacity: 0.5; }
+    to { transform: scale(1.2); opacity: 1; }
+  }
 
 
 
