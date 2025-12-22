@@ -76,29 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 */
 /* Fim Download */
- const colors = ["red", "green", "blue", "yellow", "orange"];
-  const container = document.getElementById("christmas-lights");
-
-  // cria 10 luzes automaticamente
-  for (let i = 0; i < 10; i++) {
-    const light = document.createElement("div");
-    light.className = "lights";
-    container.appendChild(light);
-  }
-
-  const lights = document.querySelectorAll(".lights");
-
-  setInterval(() => {
-    lights.forEach(light => {
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      light.style.backgroundColor = color;
-      light.style.boxShadow = `0 0 10px ${color}`;
-    });
-  }, 500);
-
-
-
-
+ 
 // Supondo que você já tem a lógica de hover por 3 segundos
 const tds = document.querySelectorAll("td");
 

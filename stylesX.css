@@ -891,21 +891,3 @@ border: 0px;
   to {transform: scale(1)}
 }
 
-#christmas-lights {
-    position: fixed;   /* fica por cima da página */
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    pointer-events: none; /* não atrapalha cliques na página */
-    padding: 10px;
-  }
-  .lights {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: red;
-    box-shadow: 0 0 10px red;
-    transition: background-color 0.5s, box-shadow 0.5s;
-  }
