@@ -377,12 +377,17 @@ table.tabela, td.tabela {
   border-collapse: collapse;
 } 
 
-table, th, td {
+table, th {
   border: 1px solid black;
   border-spacing: collapse;
   border-collapse: collapse;
   text-align: center;
   padding: 0px;
+}
+
+td {
+  position: relative; /* ou static, se possível */
+  z-index: auto;      /* não força todos os títulos acima */
 }
 
 
