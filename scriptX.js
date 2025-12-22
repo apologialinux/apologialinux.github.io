@@ -76,6 +76,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 */
 /* Fim Download */
+ const colors = ["red", "green", "blue", "yellow", "orange"];
+    const lights = document.querySelectorAll(".light");
+
+    setInterval(() => {
+      lights.forEach(light => {
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        light.style.backgroundColor = color;
+        light.style.boxShadow = `0 0 10px ${color}`;
+      });
+    }, 500);
 
 
 

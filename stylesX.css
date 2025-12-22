@@ -891,3 +891,11 @@ border: 0px;
   to {transform: scale(1)}
 }
 
+.light {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: red;
+      box-shadow: 0 0 10px red;
+      transition: background-color 0.5s, box-shadow 0.5s;
+    }
