@@ -406,7 +406,7 @@ table, th, td {
 #MC0019,
 #MC0020 {
   position: absolute;
-  z-index: auto; /* ou 6, se quiser forçar */
+ /* z-index: auto; /* ou 6, se quiser forçar */
 }
 
 
