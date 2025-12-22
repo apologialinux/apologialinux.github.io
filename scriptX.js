@@ -1682,23 +1682,3 @@ function dragElement(elmnt) {
 					}
 						}
  
-const colors = ["red", "green", "blue", "yellow", "orange"];
-  const container = document.getElementById("christmas-lights");
-
-  // cria 10 luzes automaticamente
-  for (let i = 0; i < 10; i++) {
-    const light = document.createElement("div");
-    light.className = "xmas-light";
-    container.appendChild(light);
-  }
-
-  const lights = document.querySelectorAll(".xmas-light");
-
-  setInterval(() => {
-    lights.forEach(light => {
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      light.style.backgroundColor = color;
-      light.style.boxShadow = `0 0 10px ${color}`;
-    });
-  }, 500);
-	
