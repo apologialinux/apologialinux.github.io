@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 	
 });
+
+
 //Último testes n7 
 /*Download */
 /*
@@ -75,30 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 */
 /* Fim Download */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
-  setInterval(() => {
-    const snowflake = document.createElement("div");
-    snowflake.textContent = "❄";
-    snowflake.style.position = "fixed";
-    snowflake.style.left = Math.random() * window.innerWidth + "px";
-    snowflake.style.top = "-20px";
-    snowflake.style.fontSize = Math.random() * 20 + 10 + "px";
-    snowflake.style.color = "white";
-    snowflake.style.opacity = Math.random();
-    body.appendChild(snowflake);
 
-    let fall = setInterval(() => {
-      let top = parseFloat(snowflake.style.top);
-      if (top < window.innerHeight) {
-        snowflake.style.top = top + 2 + "px";
-      } else {
-        clearInterval(fall);
-        snowflake.remove();
-      }
-    }, 30);
-  }, 300);
-});
 
 
 // Supondo que você já tem a lógica de hover por 3 segundos
