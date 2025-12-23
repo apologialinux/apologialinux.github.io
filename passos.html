@@ -147,11 +147,13 @@ select {
         }
 		/*
 #iframe.recargas {
-    		zoom: 3;
-			
-	
-		
+		zoom: 0.5;
+    		
 		}	*/
+		
+#graficRECARGA, #graficVERO {
+		transform: scale(0.8); 
+}		
 
 #dropzinho {
             width: 110px;
@@ -174,7 +176,7 @@ textarea {
 	        
 		.container3 {
             width: 100%;
-            max-width: 1050px;
+            max-width: 1040px;
             background-color: black;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
@@ -427,6 +429,7 @@ textarea {
 			</div>
 			</div>
 			<div id="EscolhaB" style="display:none">
+			<div>
 			<tr>
 			<!-- td id="pxu1l">
 			<a href="https://opmon10/grafana/d/pDg27Wlik/dashboard-bda-nova-cobranca-pxu?orgId=1&refresh=1m&theme=light" target="_blank" title="BDA NOVA COBRANÇA - PXU"><input type="checkbox" name="primeiro" id="Teste" onclick="graficpxu1l()"><label id="CorLetra" style="background-color:Gray;">&nbsp BDA - PXU</label></a>
@@ -443,7 +446,7 @@ textarea {
 			<td id="pixpag">
 			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2702&tipo=1#" target="_blank" title="PAGAMENTO PIX"><input type="checkbox" name="primeiro" id="Teste" value="PAGAMENTO PIX(2702)" onclick="graficpixpag()"><label id="CorLetra" style="background-color:Gray;">&nbsp PIX-PAGAMENTO 2702</label></a>
 			</td>
-			</tr><br><br>
+			</tr></div><br><div>
 			<tr>
 			<td id="pixreceb">
 			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2703&tipo=1#" target="_blank" title="RECEBIMENTO PIX"><input type="checkbox" name="primeiro" id="Teste" value="RECEBIMENTO PIX(2703)" onclick="graficpixreceb()"><label id="CorLetra" style="background-color:Gray;">&nbsp PIX-RECEBIMENTO 2703</label></a>
@@ -452,6 +455,15 @@ textarea {
 			<a href="https://ltp4.corp.banrisul.com.br/brb/home_mix.php?canal=22&servico=2711&tipo=1#" target="_blank" title="DEVOLUÇÃO PIX"><input type="checkbox" name="primeiro" id="Teste"  value="DEVOLUÇÃO PIX(2711)" onclick="graficpixdevol()"><label id="CorLetra" style="background-color:Gray;">&nbsp PIX-DEVOLUÇÃO 2711</label></a>
 			</td>
 			</tr>
+			</div>
+			<br>
+			<div>
+			<tr>
+			<td>
+			<a href="https://kibana.apps.prod.banrisul.com.br/s/monitoracao/app/dashboards#/view/4bb9bd60-48bf-11ec-a454-052757557239?_g=(filters:!(),refreshInterval:(pause:!f,value:60000),time:(from:now-1h,to:now))"  target="_blank" title="DICT"><input type="checkbox" name="primeiro" id="Teste"  value="DICT" onclick="graficquantconsulDICT02()"><label id="CorLetra" style="background-color:#4682B4;">&nbsp DICT </label></a>
+			</td>
+			</tr>
+			</div>
 			<br><br>
 			</div>
 			<div id="EscolhaPyw" style="display:none"> 
@@ -490,7 +502,7 @@ textarea {
 <div class="container2" id="container2">
 <table>
 		
-<label align="center"><b>Boletim de Eventos - </b></label><label id="assunt"> INÍCIO </label> <!-- select id="dropzinho">
+<label align="center"><b>Boletim de Eventos - </b></label><label id="assunt"> INICIO </label> <!-- select id="dropzinho">
 		<option value="opcao1">PARCIAL</option>
 		<option value="opcao1">ATUALIZAÇÃO</option>
 		<option value="opcao1">ERRATA</option>
@@ -742,8 +754,10 @@ href="mailto:logisticati_monitoracao@banrisul.com.br">logisticati_monitoracao@ba
 	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2702&tipo=1&graf=2" width="980" height="580"  id="graficpixpag" style="display:none"></iframe><!-- PAGAMENTO PIX -->
 	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2703&tipo=1&graf=2" width="980" height="580"  id="graficpixreceb" style="display:none"></iframe><!-- RECEBIMENTO PIX -->
 	<iframe src="https://ltp4.corp.banrisul.com.br/brb/brb.php?canal=22&servico=2711&tipo=1&graf=2" width="980" height="580"  id="graficpixdevol" style="display:none"></iframe><!-- DEVOLUÇÃO PIX -->
-	<iframe src="https://opmon10/grafana/d/QJAP4wRIk/dashboard-autorizador-payware?shareduid=4TqPME5F2zJlbPhilmI03BaddHuX8rA7Hr75xUzQHJdRehDJ977psgDRwAD6YQtvAa9__NHZwA==&kiosk&" width="980" height="580" id="graficVERO" style="display:none"></iframe>
-	<iframe src="https://opmon10/grafana/d/PYFSQwRIz/kpi-vero-autorizador-bph?shareduid=qBqJ00Xs5co_lw5SXiC0xLx1UGmVDIWO3tokS2lEJ9-QAGxk1JAKDvyNdIpYWLsrT5U=&kiosk&" width="980" height="580" id="graficRECARGA" style="display:none"></iframe>
+	<iframe src=
+	"https://kibana.apps.prod.banrisul.com.br/s/monitoracao/app/dashboards#/view/4bb9bd60-48bf-11ec-a454-052757557239?_g=(filters:!(),refreshInterval:(pause:!f,value:60000),time:(from:now-1h,to:now))" width="980" height="1000" class="alerta1" align="center" id="graficquantconsulDICT02" style="display:none"></iframe> <!--  width="1055" width="1200" height="1000" Quantidade de Consulta no DICT  -->
+	<iframe src="https://opmon10/grafana/d/QJAP4wRIk/dashboard-autorizador-payware?shareduid=4TqPME5F2zJlbPhilmI03BaddHuX8rA7Hr75xUzQHJdRehDJ977psgDRwAD6YQtvAa9__NHZwA==&kiosk&" width="1200" height="980"    id="graficVERO" style="display:none"></iframe>
+	<iframe src="https://opmon10/grafana/d/PYFSQwRIz/kpi-vero-autorizador-bph?shareduid=qBqJ00Xs5co_lw5SXiC0xLx1UGmVDIWO3tokS2lEJ9-QAGxk1JAKDvyNdIpYWLsrT5U=&kiosk&" width="1200" height="980"   id="graficRECARGA" style="display:none"></iframe>
  
  </div>
 
@@ -1605,6 +1619,26 @@ function atualizarAssunto() {
 		atualizarAssunto();
 	}
 	
+	function graficquantconsulDICT02() {
+		
+		var x = document.getElementById('graficquantconsulDICT02');
+			
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
+			document.getElementById('canaisStatus').innerText = "PIX\n";
+			document.getElementById('corcanais').style.background = '#C7EF91';
+			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
+			} else {
+				x.style.display = 'none';
+				document.getElementById('graficquantconsulDICT02').style.display='none'; <!--  Gráfico -->
+				document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('corcanais').style.background = '#F54927';
+				document.getElementById("sugest").innerHTML = "";
+				
+			}
+		atualizarAssunto();
+	}
+	
 	function graficVERO() {
 		
 		var x = document.getElementById('graficVERO');
@@ -1631,7 +1665,7 @@ function atualizarAssunto() {
 			
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
-			document.getElementById('canaisStatus').innerText = "REDE VERO\n";
+			document.getElementById('canaisStatus').innerText = "RECARGA\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			//document.getElementById('assunt').innerText += "DEVOLUÇÃO (2711)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Recarga de Celular da Operadora (VIVO-TIM-CLARO-OI)";
@@ -1801,13 +1835,13 @@ function atualizarAssunto() {
 			document.getElementById('corcausa').style.background = '#C7EF91';
             const valorSelecionado = this.options[this.selectedIndex].text;
 			if (valorSelecionado == "PDM XXXXX" ) {
-				document.getElementById('causaID').style.display = 'block';
+				//document.getElementById('causaID').style.display = 'block';
 				document.getElementById('erroInt').innerText = "X";
 				document.getElementById('corfalha').style.background = '#C7EF91';
 				document.getElementById("falhaInt").checked = true;
 				  
 				}else {
-					document.getElementById('causaID').style.display = 'none';
+					//document.getElementById('causaID').style.display = 'none';
 					document.getElementById('erroInt').innerText = " ";
 					document.getElementById('corfalha').style.background = '#F54927';
 					document.getElementById("falhaInt").checked = false;
@@ -1820,7 +1854,7 @@ function atualizarAssunto() {
 				  
 				}else {
 					document.getElementById('erroExt').innerText = " ";
-					document.getElementById('corfalha').style.background = '#F54927';
+					//document.getElementById('corfalha').style.background = '#F54927';
 					document.getElementById("falhaExt").checked = false;
 					 
 			}*/
@@ -1945,8 +1979,8 @@ function calcularTempoTotal() {
 	  document.getElementById("dataFinal").value = "";
 	  document.getElementById("tempototal").innerText = "";
 	  document.getElementById('corfim').style.background = '#C7EF91';
-	  document.getElementById('assunt').innerText = " - INICIO";  //NECESSÁRIO AJUSTAR
-	  InicioFim = " INICIO";
+	  document.getElementById('assunt').innerText = " INICIO";  //NECESSÁRIO AJUSTAR
+	  InicioFim = "- INICIO";
 	  document.getElementById('canaisStatus').innerText = " ";
       document.getElementById('corcanais').style.background = '#F54927';
 	  
@@ -1967,7 +2001,7 @@ function calcularTempoTotal() {
 	  document.getElementById("tempototal").innerText = "";
 	  document.getElementById('corfim').style.background = '#C7EF91';
 	  document.getElementById('corinicio').style.background = '#F54927';
-	  document.getElementById('assunt').innerText = "- INICIO"; 
+	  document.getElementById('assunt').innerText = " INICIO"; 
   }
 }
 
@@ -2013,11 +2047,4 @@ function sendFullPageEmail() {
 
 			
 </body>
-				</html>
-
-
-
-
-
-
-
+</html>
