@@ -56,6 +56,29 @@ dragElement(document.getElementById("divbutton2"));
 */
 
 </script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAkXe0s_toT_9lxbS7YwMfjECD7MRBjRog",
+    authDomain: "monitora-a4b2c.firebaseapp.com",
+    projectId: "monitora-a4b2c",
+    storageBucket: "monitora-a4b2c.firebasestorage.app",
+    messagingSenderId: "802400946738",
+    appId: "1:802400946738:web:144168f68d8f52963d4a2b",
+    measurementId: "G-F3WVB9SVQ1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 			 
 			<div id="divbutton" class="animate2"> <!--  Botões fixos -->
 			
