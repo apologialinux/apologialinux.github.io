@@ -1235,17 +1235,7 @@ function dragElement(elmnt) {
 			}
 			
 			function REFA() {
-				const bolet = document.getElementById('iddanger');
-			if (document.getElementById('iddanger').style.display === 'block') {
-				document.getElementById('iddanger').style.display = 'none';
-			} else {
-				document.getElementById('iddanger').style.display='block';
-				// rola suavemente até o iframe 
-				bolet.scrollIntoView({ behavior: "smooth" }); 
-				bolet.focus();
-					}
-			}
-				
+								
 				document.getElementById('MC00010102').src += '';
 				document.getElementById('OB00010102').src += '';
 				document.getElementById('OM00010102').src += '';
