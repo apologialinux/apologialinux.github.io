@@ -807,10 +807,10 @@ function atualizarAssunto() {
 
 	if (selecionados.length >= 2 && selecionados[1] === selecionados[0]) {
         selecionados.splice(1, 1); // remove o segundo
-	    atualizaAssunto();	
+	    	
     }
 
-
+	atualizaAssunto();
 	
     assunt.innerText = selecionados.join(', ') + InterBank + InicioFim || "Nenhum selecionado";
 }	
