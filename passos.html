@@ -802,7 +802,7 @@ function atualizarAssunto() {
 
     const selecionados = [...inputs]
         .filter(i => i.checked)
-        .map(i => i.value);
+        .map(i => i.vextalue);
 
 	if (selecionados.length >= 2 && selecionados[1] === selecionados[0]) {
         selecionados.splice(1, 1); // remove o segundo
@@ -1923,13 +1923,13 @@ function myESC() {
 				 document.getElementById('EscolhaB').style.display='block';
 				 document.getElementById('EscolhaPyw').style.display='none';
 				document.getElementById('canaisStatus').innerText = "Minha Conta";
-				InterBank = " ";
+				InterBank = "";
 			} else {
 				document.getElementById('EscolhaA').style.display='none';
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='block';
 				 document.getElementById('canaisStatus').innerText = "REDE VERO";
-				 InterBank = " ";
+				 InterBank = "";
 			} 
 			//document.getElementById('corcanais').style.background = '#C7EF91';
 			}
