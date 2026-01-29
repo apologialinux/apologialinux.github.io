@@ -802,7 +802,7 @@ function atualizarAssunto() {
 
     const selecionados = [...inputs]
         .filter(i => i.checked)
-        .map(i => i.vextalue);
+        .map(i => i.value);
 
 	if (selecionados.length >= 2 && selecionados[1] === selecionados[0]) {
         selecionados.splice(1, 1); // remove o segundo
@@ -811,7 +811,7 @@ function atualizarAssunto() {
 
 
 	
-    assunt.innerText = selecionados.join(', ') + InicioFim + InterBank || "Nenhum selecionado";
+    assunt.innerText = selecionados.join(', ') + InterBank + InicioFim || "Nenhum selecionado";
 }	
 	// SERVICOS 2 ESCALA A
 	function graficMC00010102() {
