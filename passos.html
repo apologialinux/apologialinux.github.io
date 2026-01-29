@@ -1562,7 +1562,7 @@ function atualizarAssunto() {
 			
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
-			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
+			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " ACESSO (0001)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (ACESSO)";
@@ -1585,7 +1585,7 @@ function atualizarAssunto() {
 			
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
-			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
+			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " INCLUSÃO DE CHAVE (2707)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
@@ -1607,10 +1607,10 @@ function atualizarAssunto() {
 			
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
-			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
+			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " EXTRATO (2704)";
-			//Prefixo = "PIX - ";
+			Prefixo = "PIX - ";
 			
 			} else {
 				x.style.display = 'none';
@@ -1618,7 +1618,7 @@ function atualizarAssunto() {
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
-				//Prefixo = " ";
+				Prefixo = " ";
 			}
 		atualizarAssunto();
 	}
@@ -1628,7 +1628,7 @@ function atualizarAssunto() {
 			
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
-			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
+			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " PAGAMENTO (2702)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
@@ -1649,7 +1649,7 @@ function atualizarAssunto() {
 			
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
-			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
+			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " RECEBIMENTO (2703)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
@@ -1670,17 +1670,17 @@ function atualizarAssunto() {
 			
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
-			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
+			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " DEVOLUÇÃO (2711)";
-			//Prefixo = "PIX - ";
+			Prefixo = "PIX - ";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixdevol').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
-				//Prefixo = " ";
+				Prefixo = " ";
 			}
 		atualizarAssunto();
 	}
@@ -1691,7 +1691,7 @@ function atualizarAssunto() {
 			
 		if (x.style.display === 'none') {
 			x.style.display = 'block';
-			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
+			document.getElementById('canaisStatus').innerText = "PIX\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
 			Prefixo = "PIX - ";
