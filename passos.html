@@ -810,8 +810,8 @@ function atualizarAssunto() {
 	    atualizaAssunto();	
     }
 
-	assunt.innerText = selecionados.join(', ') || "Nenhum selecionado";
-	assunt.innerText = assunt + InterBank + InicioFim;
+	assunt.innerText = Prefixo + selecionados.join(', ') + InterBank + InicioFim|| "Nenhum selecionado";
+	 
 }	
 	// SERVICOS 2 ESCALA A
 	function graficMC00010102() {
@@ -1805,6 +1805,7 @@ function atualizarAssunto() {
        // Data Início
 			let InicioFim = " - INICIO";
 			let InterBank = " ";
+			let Prefixo = " ";
 			document.getElementById('dataInicial').addEventListener('input', function() {
             const valorEntrada = this.value; // Valor no formato yyyy-mm-dd (padrão)
 
@@ -1973,7 +1974,7 @@ function myESC() {
 				 document.getElementById('EscolhaA').style.display='block';
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='none';
-				  
+				 Prefixo = "Serviço";
 				
 			} else if ( testeB === true ) {
 				document.getElementById('EscolhaA').style.display='none';
