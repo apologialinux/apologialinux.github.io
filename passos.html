@@ -1566,12 +1566,14 @@ function atualizarAssunto() {
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " ACESSO (0001)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (ACESSO)";
+			Prefixo = "PIX - ";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficacesso').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
+				Prefixo = " ";
 				
 			}
 		atualizarAssunto();
@@ -1587,12 +1589,14 @@ function atualizarAssunto() {
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " INCLUSÃO DE CHAVE (2707)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
+			Prefixo = "PIX - ";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixincluchave').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
+				Prefixo = " ";
 				
 			}
 		atualizarAssunto();
@@ -1606,6 +1610,7 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " EXTRATO (2704)";
+			//Prefixo = "PIX - ";
 			
 			} else {
 				x.style.display = 'none';
@@ -1613,7 +1618,7 @@ function atualizarAssunto() {
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
-				
+				//Prefixo = " ";
 			}
 		atualizarAssunto();
 	}
@@ -1627,13 +1632,14 @@ function atualizarAssunto() {
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " PAGAMENTO (2702)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
+			Prefixo = "PIX - ";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixpag').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
-				
+				Prefixo = " ";
 			}
 		atualizarAssunto();
 	}
@@ -1647,13 +1653,14 @@ function atualizarAssunto() {
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " RECEBIMENTO (2703)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
+			Prefixo = "PIX - ";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixreceb').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
-				
+				Prefixo = " ";
 			}
 		atualizarAssunto();
 	}
@@ -1666,13 +1673,14 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " DEVOLUÇÃO (2711)";
+			//Prefixo = "PIX - ";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixdevol').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
-				
+				/Prefixo = " ";
 			}
 		atualizarAssunto();
 	}
@@ -1686,13 +1694,14 @@ function atualizarAssunto() {
 			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
+			Prefixo = "PIX - ";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficquantconsulDICT02').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
-				
+				Prefixo = " ";
 			}
 		atualizarAssunto();
 	}
@@ -1708,13 +1717,14 @@ function atualizarAssunto() {
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Rede VERO (VISA-MASTER-ELO-BANRICOMPRAS-BANRICARD)\n\n Boletim de Eventos - Rede VERO (VERDECARD-CABAL-SODEXO...)\n\n Boletim de Eventos - Transações via GPRS Operadora (identificar) pequenos clientes via LYRA";
 
 			document.getElementById('assunt').innerText += "DEVOLUÇÃO (2711)";
+			Prefixo = "Rede Vero ";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficVERO').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
-				
+				Prefixo = " ";
 			}
 		atualizarAssunto();
 	}
@@ -1729,6 +1739,7 @@ function atualizarAssunto() {
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += "DEVOLUÇÃO (2711)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Recarga de Celular da Operadora (VIVO-TIM-CLARO-OI)";
+			Prefixo = "Recarga de Celular da Operadora ";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficRECARGA').style.display='none'; <!--  Gráfico -->
@@ -1974,7 +1985,7 @@ function myESC() {
 				 document.getElementById('EscolhaA').style.display='block';
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='none';
-				 Prefixo = "Serviço";
+				 Prefixo = "Serviço ";
 				
 			} else if ( testeB === true ) {
 				document.getElementById('EscolhaA').style.display='none';
