@@ -807,12 +807,11 @@ function atualizarAssunto() {
 
 	if (selecionados.length >= 2 && selecionados[1] === selecionados[0]) {
         selecionados.splice(1, 1); // remove o segundo
-	    	
+	    atualizaAssunto();	
     }
 
-	atualizaAssunto();
-	
-    assunt.innerText = selecionados.join(', ') + InterBank + InicioFim || "Nenhum selecionado";
+	assunt.innerText = selecionados.join(', ') || "Nenhum selecionado";
+	assunt.innerText = assunt + InterBank + InicioFim;
 }	
 	// SERVICOS 2 ESCALA A
 	function graficMC00010102() {
