@@ -849,12 +849,14 @@ function atualizarAssunto() {
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " Acesso (0001)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
+			InterBank = " nos Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficOB0001').style.display='none'; <!--  Gráfico -->
 				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
+				InterBank = " ";
 				
 			}
 		atualizarAssunto();
@@ -1918,7 +1920,7 @@ function myESC() {
 				 document.getElementById('EscolhaA').style.display='block';
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='none';
-				  InterBank = " nos Internet Banking"
+				  
 				
 			} else if ( testeB === true ) {
 				document.getElementById('EscolhaA').style.display='none';
