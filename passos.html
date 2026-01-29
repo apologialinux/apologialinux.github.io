@@ -1,5 +1,6 @@
 
 
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -1748,8 +1749,7 @@ function atualizarAssunto() {
 
        // Data Início
 			let InicioFim = " - INICIO";
-			//let InterBank = " nos canais Internet Banking"
-			const InterBank = " nos canais da Disney"
+			let InterBank = " ";
 			document.getElementById('dataInicial').addEventListener('input', function() {
             const valorEntrada = this.value; // Valor no formato yyyy-mm-dd (padrão)
 
@@ -1912,19 +1912,20 @@ function myESC() {
 			let testeA = document.getElementById("EscalA").checked;
 			let testeB = document.getElementById("EscalB").checked;
 			let testePYW = document.getElementById("EscalPyw").checked;
-		
+			
 			
 			if ( testeA === true ) {
 				 document.getElementById('EscolhaA').style.display='block';
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='none';
+				  InterBank = " nos Internet Banking"
 				
 			} else if ( testeB === true ) {
 				document.getElementById('EscolhaA').style.display='none';
 				 document.getElementById('EscolhaB').style.display='block';
 				 document.getElementById('EscolhaPyw').style.display='none';
 				document.getElementById('canaisStatus').innerText = "Minha Conta";
-				InterBank = "";
+				 InterBank = " ";
 				 
 				
 				
@@ -1933,7 +1934,7 @@ function myESC() {
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='block';
 				 document.getElementById('canaisStatus').innerText = "REDE VERO";
-				InterBank = "";
+				 InterBank = " ";
 				
 				 
 			} 
