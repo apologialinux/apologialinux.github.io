@@ -1523,7 +1523,7 @@ function atualizarAssunto() {
 			document.getElementById('corcanais').style.background = '#C7EF91';
 			document.getElementById('assunt').innerText += " Depósito de Cheques (4122)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - Serviço (especificar o nº e nome do serviço) nos canais Internet Banking";
-			InterBank = " nos canais Internet Banking";
+			InterBank = ") nos canais Internet Banking";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficMC4122').style.display='none'; <!--  Gráfico -->
@@ -1985,7 +1985,7 @@ function myESC() {
 				 document.getElementById('EscolhaA').style.display='block';
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='none';
-				 Prefixo = "Serviço ";
+				 Prefixo = "Serviço (";
 				
 			} else if ( testeB === true ) {
 				document.getElementById('EscolhaA').style.display='none';
