@@ -1764,7 +1764,7 @@ function atualizarAssunto() {
 				
 				 
             } else {
-                document.getElementById('datainicio').innerText = '';
+                document.getElementById('datainicio').innerText = " ";
             }
         });
 				// Hora Inicial
@@ -1804,8 +1804,8 @@ function atualizarAssunto() {
 		
 		document.getElementById('corfim').style.background = '#F54927'; 
             } else {
-                document.getElementById('datafim').innerText = '';
-				document.getElementById('assunt').innerText = "";
+                document.getElementById('datafim').innerText = " ";
+				document.getElementById('assunt').innerText = " ";
             }
         });				
 		// Hora Final
@@ -1827,7 +1827,7 @@ function atualizarAssunto() {
 		
             } else {
 			document.getElementById('assunt').innerText = " INICIO";
-                document.getElementById('horafim').innerText = ''; 
+                document.getElementById('horafim').innerText = " ";
 				//document.getElementById('confirm').style.background = '#F54927';
             }
         });
@@ -1923,14 +1923,14 @@ function myESC() {
 				 document.getElementById('EscolhaB').style.display='block';
 				 document.getElementById('EscolhaPyw').style.display='none';
 				document.getElementById('canaisStatus').innerText = "Minha Conta";
-				document.getElementById('InterBank').innerText = '';
+				document.getElementById('InterBank').innerHTML = '';
 			} else {
 				document.getElementById('EscolhaA').style.display='none';
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='block';
 				 document.getElementById('canaisStatus').innerText = "REDE VERO";
 				
-				document.getElementById('InterBank').innerText = '';
+				document.getElementById('InterBank').innerHTML = '';
 			} 
 			//document.getElementById('corcanais').style.background = '#C7EF91';
 			}
