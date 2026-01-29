@@ -1917,19 +1917,19 @@ function myESC() {
 				 document.getElementById('EscolhaA').style.display='block';
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='none';
-				 //document.getElementById('canaisStatus').innerText = "Internet Banking\n";
+				 
 			} else if ( testeB === true ) {
 				document.getElementById('EscolhaA').style.display='none';
 				 document.getElementById('EscolhaB').style.display='block';
 				 document.getElementById('EscolhaPyw').style.display='none';
 				document.getElementById('canaisStatus').innerText = "Minha Conta";
-				InterBank = "";
+				document.getElementById('InterBank').innerText = " ";
 			} else {
 				document.getElementById('EscolhaA').style.display='none';
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='block';
 				 document.getElementById('canaisStatus').innerText = "REDE VERO";
-				 InterBank = "";
+				 document.getElementById('InterBank').innerText = " ";
 			} 
 			//document.getElementById('corcanais').style.background = '#C7EF91';
 			}
