@@ -1529,12 +1529,12 @@ function atualizarAssunto() {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
-			//document.getElementById('assunt').innerText += " INCLUSÃO DE CHAVE (2707)";
+			document.getElementById('assunt').innerText += " INCLUSÃO DE CHAVE (2707)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixincluchave').style.display='none'; <!--  Gráfico -->
-				//document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
 				
@@ -1569,7 +1569,7 @@ function atualizarAssunto() {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
-			//document.getElementById('assunt').innerText += " PAGAMENTO (2702)";
+			document.getElementById('assunt').innerText += " PAGAMENTO (2702)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
 			} else {
 				x.style.display = 'none';
@@ -1589,12 +1589,12 @@ function atualizarAssunto() {
 			x.style.display = 'block';
 			document.getElementById('canaisStatus').innerText = "Minha Conta\n";
 			document.getElementById('corcanais').style.background = '#C7EF91';
-			//document.getElementById('assunt').innerText += " RECEBIMENTO (2703)";
+			document.getElementById('assunt').innerText += " RECEBIMENTO (2703)";
 			document.getElementById("sugest").innerHTML = "Boletim de Eventos - PIX (PAGAMENTO PIX - RECEBIMENTO PIX - CONSULTA DICT - CRIAÇÃO CHAVE PIX)";
 			} else {
 				x.style.display = 'none';
 				document.getElementById('graficpixreceb').style.display='none'; <!--  Gráfico -->
-				//document.getElementById('canaisStatus').innerText = " ";
+				document.getElementById('canaisStatus').innerText = " ";
 				document.getElementById('corcanais').style.background = '#F54927';
 				document.getElementById("sugest").innerHTML = "";
 				
@@ -1923,14 +1923,15 @@ function myESC() {
 				 document.getElementById('EscolhaB').style.display='block';
 				 document.getElementById('EscolhaPyw').style.display='none';
 				document.getElementById('canaisStatus').innerText = "Minha Conta";
-				document.getElementById('InterBank').innerHTML = '';
+				document.getElementById('InterBank').innerText = "";
+				
 			} else {
 				document.getElementById('EscolhaA').style.display='none';
 				 document.getElementById('EscolhaB').style.display='none';
 				 document.getElementById('EscolhaPyw').style.display='block';
 				 document.getElementById('canaisStatus').innerText = "REDE VERO";
 				
-				document.getElementById('InterBank').innerHTML = '';
+				document.getElementById('InterBank').innerText = "";
 			} 
 			//document.getElementById('corcanais').style.background = '#C7EF91';
 			}
