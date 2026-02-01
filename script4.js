@@ -1235,7 +1235,8 @@ function dragElement(elmnt) {
 			}
 			
 			function REFA() {
-								
+				
+				
 				document.getElementById('MC00010102').src += '';
 				document.getElementById('OB00010102').src += '';
 				document.getElementById('OM00010102').src += '';
@@ -1681,4 +1682,3 @@ function dragElement(elmnt) {
 					}
 						}
  
-			
