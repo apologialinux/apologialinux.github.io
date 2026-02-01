@@ -670,7 +670,7 @@ border: 0px;
 .modal {
   display: none; 
   position: fixed; 
-  z-index: 1; 
+  z-index: 1000; 
   left: 42%;
   top: 20%;
   width: 20.8%; 
@@ -687,7 +687,7 @@ border: 0px;
 .modal2 {
   display: none; 
   position: fixed; 
-  z-index: 1; 
+  z-index: 1000; 
   left: 37%;
   top: 30%;
   width: 30%; 
@@ -829,7 +829,7 @@ border: 0px;
 .modalB {
   display: none; 
   position: fixed; 
-  z-index: 1; 
+  z-index: 1000; 
   left: 0%;
   top: 20%;
   width: 90%; 
