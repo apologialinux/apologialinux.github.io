@@ -141,7 +141,7 @@ iframe.esquerdacentro:hover {
    todos os overlays somem juntos após 3s */
 .iframes:hover .overlay {
   opacity: 0;
-  transition-delay: 4s;
+  transition-delay: 3s;
 }
 
 
