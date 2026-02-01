@@ -57,8 +57,6 @@ iframe {
 	 
 }
 
-
-
 iframe:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
@@ -118,32 +116,7 @@ iframe.esquerdacentro:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
     transition-delay: 3s;
 	transform-origin: left center; 
-	
 }
-
-/* todos os contêineres têm posicionamento relativo */
-.iframe-container {
-  position: relative;
-  z-index: 100;
-}
-.iframe-container:hover { z-index: 999; /* valor bem maior durante o hover */ }
-/* todos os overlays começam visíveis */
-.overlay {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 200;
-  opacity: 1;
-  transition: opacity 1s ease;
-}
-
-/* quando QUALQUER iframe dentro do grupo estiver em hover,
-   todos os overlays somem juntos após 3s */
-.iframes:hover .overlay {
-  opacity: 0;
-  transition-delay: 4s;
-}
-
 
 iframe.direitacentro:hover {
     transform: scale(2.0); /* Aumenta o tamanho do iframe ao passar o mouse */
@@ -313,7 +286,7 @@ a.corAvisoLink {
 
 #divbutton {
     position: fixed;
-	z-index: 2000; 
+	z-index: 2; 
 	background-color: rgba(0,0,0,0.3);  
 	border-radius: 0px  80px;
 }
@@ -321,7 +294,7 @@ a.corAvisoLink {
 #divbutton2 {
     position: fixed; <!--  position: flex; fixed, absolute -->
 	top: 20%;
-	z-index: 1000; 
+	z-index: 1; 
 	overflow: hidden;  
     background-color: rgba(0,0,0,0.4);  
 	border-radius: 50px  0px;
@@ -385,9 +358,6 @@ table, th, td, {
   text-align: center;
   padding: 0px;
 }
-
-
-
 
 
 tr.tabela:nth-child(even) {
