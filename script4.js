@@ -209,9 +209,9 @@ function myFunction() {
 	} 
 	
 	if ( SelecionaAG === true ) {
-		w = " [AG] - ";
+		w = " (AG) - ";
 	} else if ( SelecionaMA === true ) {
-		w = " [MASSIVA] - ";
+		w = " (MASSIVA) - ";
 	} else {
 		w = " - ";
 		
